@@ -1,0 +1,8 @@
+{
+    "name": "react-native-boilerplate",
+    "version": "0.0.7",
+    "description": "React Native Template",
+    "repository": "https://github.com/Mindinventory/react-native-boilerplate.git",
+    "author": "Mindinventory",
+    "license": "MIT"
+  }
