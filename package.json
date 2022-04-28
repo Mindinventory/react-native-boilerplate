@@ -4,5 +4,10 @@
     "description": "React Native Template",
     "repository": "https://github.com/Mindinventory/react-native-boilerplate.git",
     "author": "Mindinventory",
-    "license": "MIT"
+    "license": "MIT",
+    "private": false,
+    "bugs": {
+      "url": "https://github.com/Mindinventory/react-native-boilerplate/issues"
+    },
+    "homepage": "https://github.com/Mindinventory/react-native-boilerplate/blob/master/README.md"
   }
