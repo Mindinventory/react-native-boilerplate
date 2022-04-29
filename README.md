@@ -2,6 +2,9 @@
 
 The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.
 
+![Banner](assets/Banner.png)
+
+
 # Using Boilerplate
 Create a new project using the boilerplate :
 
