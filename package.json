@@ -9,5 +9,21 @@
     "bugs": {
       "url": "https://github.com/Mindinventory/react-native-boilerplate/issues"
     },
-    "homepage": "https://github.com/Mindinventory/react-native-boilerplate/blob/master/README.md"
+    "homepage": "https://github.com/Mindinventory/react-native-boilerplate/blob/master/README.md",
+    "keywords": [
+      "react-native",
+      "mindinventory",
+      "boilerplate",
+      "starter-kit",
+      "react-native-template",
+      "react",
+      "native",
+      "template"
+    ],
+    "licenses" : [
+      {
+        "type": "MIT",
+        "url": "https://github.com/Mindinventory/react-native-boilerplate/blob/master/LICENSE"
+      }
+    ]
   }
