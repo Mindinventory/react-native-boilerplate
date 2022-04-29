@@ -2,7 +2,7 @@
 
 The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.
 
-[<img src="https://github.com/Mindinventory/react-native-boilerplate/blob/master/assets/Banner.png">](https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate){:target="_blank"}
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="_blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/blob/master/assets/Banner.png"></a>
 
 
 # Using Boilerplate
