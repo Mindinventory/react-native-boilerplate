@@ -1,5 +1,5 @@
 import axios, {AxiosInstance} from 'axios';
-import {TodosRes} from './Models/PostsModel';
+import {TodosRes} from './models/postsModel';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/';
 

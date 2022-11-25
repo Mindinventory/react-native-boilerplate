@@ -7,7 +7,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import styles from './styles';
 import {useHomeScreen} from './useHomeScreen';
 import {TodosRes} from 'app-services';
-import TodoList from './TodoList';
+import TodoList from './todoList';
 
 export type HomeScreenNavigationProps = NativeStackNavigationProp<
   RootStackParams,
