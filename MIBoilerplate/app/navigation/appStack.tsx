@@ -21,7 +21,11 @@ const AppStack = () => {
         headerTitleAlign: 'center',
         headerTintColor: palette.redPrimary,
       }}>
-      <Stack.Screen name={RouteNames.HomeScreen} component={HomeScreen} />
+      <Stack.Screen
+        name={RouteNames.HomeScreen}
+        component={HomeScreen}
+        initialParams={{userId: '001'}}
+      />
       <Stack.Screen name={RouteNames.DetailsScreen} component={DetailsScreen} />
     </Stack.Navigator>
   );

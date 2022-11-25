@@ -17,9 +17,7 @@ export type DetailsScreenRouteProps = RouteProp<
   'DetailsScreen'
 >;
 
-interface Props {}
-
-const DetailsScreen: React.FC<Props> = () => {
+const DetailsScreen = () => {
   const {onPressGoBack} = useDetailsScreen();
 
   return (
