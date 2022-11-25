@@ -7,10 +7,7 @@ interface Props {
   color?: string;
 }
 
-const Loader: React.FC<Props> = ({
-  color = palette.redPrimary,
-  size = 'large',
-}) => {
+const Loader = ({color = palette.redPrimary, size = 'large'}: Props) => {
   return <ActivityIndicator size={size} color={color} />;
 };
 

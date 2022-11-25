@@ -5,20 +5,20 @@ import {
   inputStyle,
   InputWithIconPresets,
   inputWithIconPresets,
-} from './Presets';
+} from './presets';
 
-interface TextInputWithIcon extends TextInputProps {
+interface Props extends TextInputProps {
   preset?: InputWithIconPresets;
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
 }
 
-const TextInputWithIcon: React.FC<TextInputWithIcon> = ({
+const TextInputWithIcon = ({
   preset = 'primary',
   leftIcon,
   rightIcon,
   ...props
-}) => {
+}: Props) => {
   const inputContainerStyle = [inputWithIconPresets[preset], props.style];
 
   const setWidthForInput = () => {

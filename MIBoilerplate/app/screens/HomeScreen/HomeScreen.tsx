@@ -16,9 +16,7 @@ export type HomeScreenNavigationProps = NativeStackNavigationProp<
 
 export type HomeScreenRouteProps = RouteProp<RootStackParams, 'HomeScreen'>;
 
-interface Props {}
-
-const HomeScreen: React.FC<Props> = () => {
+const HomeScreen = () => {
   const {todoData, onPressCard} = useHomeScreen();
 
   const renderTodoList = ({item}: {item: TodosRes}): JSX.Element => {

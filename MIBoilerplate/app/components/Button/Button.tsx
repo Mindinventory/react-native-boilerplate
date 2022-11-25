@@ -6,7 +6,7 @@ import {
   TouchableOpacityProps,
 } from 'react-native';
 import {AppText} from 'app-components';
-import {viewPresets, textPresets, ButtonPresets} from './Presets';
+import {viewPresets, textPresets, ButtonPresets} from './presets';
 
 export interface ButtonProps extends TouchableOpacityProps {
   textStyle?: StyleProp<TextStyle>;
