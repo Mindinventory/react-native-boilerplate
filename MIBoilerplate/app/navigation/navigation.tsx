@@ -1,11 +1,14 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import AppStack from './appStack';
+import {ThemeProvider} from 'app-theme';
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <AppStack />
+      <ThemeProvider>
+        <AppStack />
+      </ThemeProvider>
     </NavigationContainer>
   );
 };

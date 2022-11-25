@@ -19,6 +19,18 @@ export const palette = {
   redPrimary: '#ED1850',
 };
 
+export const lightTheme = {
+  ...palette,
+  primary: '#fff',
+  shadowColor: '#000',
+};
+
+export const darkTheme = {
+  ...palette,
+  primary: '#001a33',
+  shadowColor: '#fff',
+};
+
 export function getRandomColor() {
   var letters = 'BCDEF'.split('');
   var color = '#';

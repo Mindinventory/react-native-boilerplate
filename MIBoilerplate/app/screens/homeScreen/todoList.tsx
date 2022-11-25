@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {AppText} from 'app-components';
-import styles from './styles';
+import {default as themeStyles} from './styles';
 import {TodosRes} from 'app-services';
-
+import {ThemeContext} from 'app-theme';
 interface TodoListProps {
   listItem: TodosRes;
   onPressCard: () => void;
@@ -11,6 +11,9 @@ interface TodoListProps {
 
 const TodoList = (props: TodoListProps) => {
   const {listItem, onPressCard} = props;
+  const {palette} = useContext(ThemeContext);
+  const styles = themeStyles(palette);
+
   return (
     <TouchableOpacity
       style={[styles.cardLayout, {backgroundColor: listItem.backgroundColor}]}
