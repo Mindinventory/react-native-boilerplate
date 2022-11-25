@@ -8,13 +8,13 @@ import {
 import {AppText} from 'app-components';
 import {viewPresets, textPresets, ButtonPresets} from './presets';
 
-export interface ButtonProps extends TouchableOpacityProps {
+export interface Props extends TouchableOpacityProps {
   textStyle?: StyleProp<TextStyle>;
   text?: string;
   preset?: ButtonPresets;
 }
 
-export const AppButton: React.FC<ButtonProps> = ({
+export const AppButton: React.FC<Props> = ({
   style: containerStyleOverride,
   textStyle: textStyleOverride,
   preset = 'primary',

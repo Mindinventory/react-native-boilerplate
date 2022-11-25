@@ -18,12 +18,12 @@ export const presets = {
 
 export type TextPresets = keyof typeof presets;
 
-export interface TextProps extends TextProperties {
+export interface Props extends TextProperties {
   style?: StyleProp<TextStyle>;
   preset?: TextPresets;
 }
 
-const AppText: React.FC<TextProps> = ({children, ...props}) => {
+const AppText: React.FC<Props> = ({children, ...props}) => {
   const {preset = 'default', style: styleOverride, ...rest} = props;
 
   return (
