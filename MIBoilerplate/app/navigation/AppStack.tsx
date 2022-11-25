@@ -2,7 +2,7 @@ import React from 'react';
 import {Image} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {HomeScreen, DetailsScreen} from 'app-screens';
-import {RouteNames} from './Routes';
+import {RouteNames} from './routes';
 import {miLogo} from 'app-assets';
 import {palette, commonStyles} from 'app-constants';
 const Stack = createNativeStackNavigator();
