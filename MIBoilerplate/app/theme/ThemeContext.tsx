@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {lightTheme, darkTheme} from 'app-constants';
-// import AsyncStorage from "@react-native-async-storage/async-storage"
-// import { palette as theme, darkPalette, paletteType } from "./palette"
+import {getItemFromStorage} from 'app-utils';
 
 const initialState = {
   dark: false,
@@ -17,14 +16,16 @@ const ThemeProvider: React.FC<Props> = props => {
   const {children} = props;
   const [dark, setDark] = useState(false);
 
-  //   const setDarkMode = async () => {
-  //     const isDarkMode = await AsyncStorage.getItem("is_dark_mode")
-  //     setDark(isDarkMode === "true")
-  //   }
+  const setDarkMode = async () => {
+    const isDarkMode = await getItemFromStorage('is_dark_mode');
+    if (isDarkMode !== null) {
+      setDark(isDarkMode === 'true');
+    }
+  };
 
-  //   useEffect(() => {
-  //     setDarkMode()
-  //   }, [])
+  useEffect(() => {
+    setDarkMode();
+  }, []);
 
   const setThemeMode = (isDark: boolean) => {
     setDark(isDark);
