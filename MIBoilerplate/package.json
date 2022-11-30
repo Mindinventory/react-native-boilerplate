@@ -31,6 +31,13 @@
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import-order-autofix": "^0.8.3",
+    "eslint-plugin-no-inline-styles": "^1.0.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.67.0",
     "react-test-renderer": "17.0.2",
@@ -49,5 +56,116 @@
       "json",
       "node"
     ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "plugins": [
+      "import",
+      "sort-keys-fix",
+      "react-hooks",
+      "eslint-plugin-no-inline-styles"
+    ],
+    "extends": [
+      "@react-native-community",
+      "prettier",
+      "plugin:react-hooks/recommended"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error",
+      "no-inline-styles/no-inline-styles": 2,
+      "sort-keys-fix/sort-keys-fix": [
+        "error",
+        "asc",
+        {
+          "caseSensitive": false,
+          "natural": true
+        }
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ],
+      "no-restricted-imports": [
+        "error"
+      ],
+      "no-console": [
+        "error"
+      ],
+      "no-shadow": "off",
+      "sort-imports": [
+        "error",
+        {
+          "ignoreCase": true,
+          "ignoreDeclarationSort": true,
+          "ignoreMemberSort": false
+        }
+      ],
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            [
+              "external",
+              "builtin"
+            ],
+            "internal",
+            [
+              "sibling",
+              "parent"
+            ],
+            "index"
+          ],
+          "pathGroups": [
+            {
+              "pattern": "@(react|react-native)",
+              "group": "external",
+              "position": "before"
+            },
+            {
+              "pattern": "@mindinventory/**",
+              "group": "internal"
+            },
+            {
+              "pattern": "@src/**",
+              "group": "internal"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": [
+            "internal",
+            "react"
+          ],
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": true
+          }
+        }
+      ],
+      "import/newline-after-import": [
+        "warn",
+        {
+          "count": 1
+        }
+      ],
+      "import/no-duplicates": "error"
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
   }
 }

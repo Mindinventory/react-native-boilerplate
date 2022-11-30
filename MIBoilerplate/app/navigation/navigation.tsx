@@ -1,7 +1,7 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
+import { ThemeProvider } from 'app-theme';
 import AppStack from './appStack';
-import {ThemeProvider} from 'app-theme';
 
 const Navigation = () => {
   return (

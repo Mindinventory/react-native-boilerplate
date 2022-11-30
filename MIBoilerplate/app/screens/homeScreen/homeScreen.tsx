@@ -1,14 +1,14 @@
-import React, {useContext} from 'react';
-import {View, Image, FlatList} from 'react-native';
-import {miLogoImg} from 'app-assets';
-import {RootStackParams} from 'app-navigation';
-import {RouteProp} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {default as themeStyles} from './styles';
-import {useHomeScreen} from './useHomeScreen';
-import {TodosRes} from 'app-services';
+import React, { useContext } from 'react';
+import { View, Image, FlatList } from 'react-native';
+import { miLogoImg } from 'app-assets';
+import { RootStackParams } from 'app-navigation';
+import { RouteProp } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { default as themeStyles } from './styles';
+import { useHomeScreen } from './useHomeScreen';
+import { TodosRes } from 'app-services';
+import { ThemeContext } from 'app-theme';
 import TodoList from './todoList';
-import {ThemeContext} from 'app-theme';
 
 export type HomeScreenNavigationProps = NativeStackNavigationProp<
   RootStackParams,
@@ -18,12 +18,12 @@ export type HomeScreenNavigationProps = NativeStackNavigationProp<
 export type HomeScreenRouteProps = RouteProp<RootStackParams, 'HomeScreen'>;
 
 const HomeScreen = () => {
-  const {todoData, onPressCard} = useHomeScreen();
+  const { todoData, onPressCard } = useHomeScreen();
 
-  const {palette} = useContext(ThemeContext);
+  const { palette } = useContext(ThemeContext);
   const styles = themeStyles(palette);
 
-  const renderTodoList = ({item}: {item: TodosRes}): JSX.Element => {
+  const renderTodoList = ({ item }: { item: TodosRes }): JSX.Element => {
     return <TodoList listItem={item} onPressCard={onPressCard} />;
   };
 

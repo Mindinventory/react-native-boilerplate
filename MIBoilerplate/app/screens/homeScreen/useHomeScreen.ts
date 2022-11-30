@@ -1,9 +1,9 @@
-import {useState, useEffect} from 'react';
-import {API, TodosRes} from 'app-services';
-import {getRandomColor} from 'app-constants';
-import {HomeScreenNavigationProps} from './homeScreen';
-import {RouteNames} from 'app-navigation';
-import {useNavigation} from '@react-navigation/native';
+import { useState, useEffect } from 'react';
+import { API, TodosRes } from 'app-services';
+import { getRandomColor } from 'app-constants';
+import { HomeScreenNavigationProps } from './homeScreen';
+import { RouteNames } from 'app-navigation';
+import { useNavigation } from '@react-navigation/native';
 
 export const useHomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProps>();
@@ -17,7 +17,7 @@ export const useHomeScreen = () => {
     try {
       const getAllTodosRes = await API.getAllTodos();
       if (getAllTodosRes) {
-        getAllTodosRes.forEach(val => {
+        getAllTodosRes.forEach((val) => {
           val.backgroundColor = getRandomColor();
         });
         setTodoData(getAllTodosRes);

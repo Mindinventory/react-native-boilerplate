@@ -1,5 +1,5 @@
-import {useNavigation} from '@react-navigation/native';
-import {DetailsScreenNavigationProps} from './detailsScreen';
+import { useNavigation } from '@react-navigation/native';
+import { DetailsScreenNavigationProps } from './detailsScreen';
 
 export const useDetailsScreen = () => {
   const navigation = useNavigation<DetailsScreenNavigationProps>();

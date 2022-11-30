@@ -1,5 +1,5 @@
-import {ViewStyle, TextStyle} from 'react-native';
-import {palette} from 'app-constants';
+import { ViewStyle, TextStyle } from 'react-native';
+import { palette } from 'app-constants';
 
 const BASE_VIEW: ViewStyle = {
   padding: 6,
@@ -36,10 +36,10 @@ export const viewPresets = {
 };
 
 export const textPresets = {
-  primary: {...BASE_TEXT, color: palette.white} as TextStyle,
-  secondary: {...BASE_TEXT, color: palette.primaryBlue} as TextStyle,
-  primaryDisabled: {...BASE_TEXT, color: palette.white} as TextStyle,
-  disabled: {...BASE_TEXT, color: palette.grayChateau} as TextStyle,
+  primary: { ...BASE_TEXT, color: palette.white } as TextStyle,
+  secondary: { ...BASE_TEXT, color: palette.primaryBlue } as TextStyle,
+  primaryDisabled: { ...BASE_TEXT, color: palette.white } as TextStyle,
+  disabled: { ...BASE_TEXT, color: palette.grayChateau } as TextStyle,
 };
 
 export type ButtonPresets = keyof typeof viewPresets;

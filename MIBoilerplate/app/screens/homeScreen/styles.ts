@@ -1,8 +1,8 @@
-import {StyleSheet} from 'react-native';
-import {palette} from 'app-constants';
-import {constants} from 'app-constants';
+import { StyleSheet } from 'react-native';
+import { palette } from 'app-constants';
+import { constants } from 'app-constants';
 
-const {IS_ANDROID} = constants;
+const { IS_ANDROID } = constants;
 const cardWidth = constants.DEVICE_WIDTH / 2 - 20;
 
 const styles = (theme: any) =>
