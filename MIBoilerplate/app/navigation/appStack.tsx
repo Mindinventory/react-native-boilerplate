@@ -1,18 +1,18 @@
-import React, { useState, useContext, useLayoutEffect, useMemo } from 'react';
+import React, { useState, useLayoutEffect, useMemo } from 'react';
 import { Image, Switch } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen, DetailsScreen } from 'app-screens';
 import { RouteNames } from './routes';
 import { miLogo } from 'app-assets';
 import { commonStyles } from 'app-constants';
-import { ThemeContext } from 'app-theme';
+import { useTheme } from 'app-theme';
 import { setItemToStorage } from 'app-utils';
 
 const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   const [isEnabled, setIsEnabled] = useState(false);
-  const { setThemeMode, palette, dark } = useContext(ThemeContext);
+  const { setThemeMode, palette, dark } = useTheme();
   const toggleSwitch = async (toggle: boolean) => {
     setThemeMode(toggle);
     setIsEnabled(toggle);

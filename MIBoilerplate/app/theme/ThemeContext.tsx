@@ -1,18 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { lightTheme, darkTheme } from 'app-constants';
 import { getItemFromStorage } from 'app-utils';
 
-const initialState = {
+interface ThemeContextType {
+  dark: boolean;
+  setThemeMode: (isDark: boolean) => void;
+  palette: any;
+}
+
+const initialState: ThemeContextType = {
   dark: false,
   palette: lightTheme,
   setThemeMode: (_: boolean) => {},
 };
 
-const ThemeContext = React.createContext(initialState);
+const ThemeContext = React.createContext<ThemeContextType>(initialState);
+export const useTheme = () => useContext<ThemeContextType>(ThemeContext);
 
 interface Props {}
 
-const ThemeProvider: React.FC<Props> = (props) => {
+export const ThemeProvider: React.FC<Props> = (props) => {
   const { children } = props;
   const [dark, setDark] = useState(false);
 
@@ -39,5 +46,3 @@ const ThemeProvider: React.FC<Props> = (props) => {
     </ThemeContext.Provider>
   );
 };
-
-export { ThemeProvider, ThemeContext };

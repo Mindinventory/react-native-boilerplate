@@ -7,8 +7,9 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { default as themeStyles } from './styles';
 import { useHomeScreen } from './useHomeScreen';
 import { TodosRes } from 'app-services';
-import { ThemeContext } from 'app-theme';
+import { useTheme } from 'app-theme';
 import TodoList from './todoList';
+import { LocalizationContext } from '../../utils/localization/LocalisationContext';
 
 export type HomeScreenNavigationProps = NativeStackNavigationProp<
   RootStackParams,
@@ -20,7 +21,10 @@ export type HomeScreenRouteProps = RouteProp<RootStackParams, 'HomeScreen'>;
 const HomeScreen = () => {
   const { todoData, onPressCard } = useHomeScreen();
 
-  const { palette } = useContext(ThemeContext);
+  const { palette } = useTheme();
+  const { locale } = useContext(LocalizationContext);
+  console.log('1 >>> ', locale);
+
   const styles = themeStyles(palette);
 
   const renderTodoList = ({ item }: { item: TodosRes }): JSX.Element => {
