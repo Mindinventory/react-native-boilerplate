@@ -17,7 +17,6 @@ const styles = (theme: any) =>
     logo: {
       height: scaleHeight(80),
       width: scaleWidth(250),
-      // marginTop: 235,
     },
     button: {
       width: scaleWidth(200),
