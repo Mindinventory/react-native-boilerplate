@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { palette } from 'app-constants';
 import { constants } from 'app-constants';
+import { scaleWidth, scaleHeight } from 'app-utils';
 
 const { IS_ANDROID } = constants;
-const cardWidth = constants.DEVICE_WIDTH - 30;
+const cardWidth = constants.DEVICE_WIDTH - scaleWidth(30);
 
 const styles = (theme: any) =>
   StyleSheet.create({
@@ -14,16 +15,16 @@ const styles = (theme: any) =>
       backgroundColor: theme.primary,
     },
     logo: {
-      height: 80,
-      width: 250,
-      marginTop: 235,
+      height: scaleHeight(80),
+      width: scaleWidth(250),
+      // marginTop: 235,
     },
     button: {
-      width: 200,
-      height: 50,
+      width: scaleWidth(200),
+      height: scaleHeight(50),
       borderRadius: 13,
       borderWidth: 1,
-      borderColor: '#ccc',
+      borderColor: theme.darkGray,
       backgroundColor: palette.redPrimary,
     },
     btnTxt: {
@@ -56,14 +57,16 @@ const styles = (theme: any) =>
     },
     imgContainer: {
       backgroundColor: theme.primary,
-      width: constants.DEVICE_WIDTH + 220,
+
+      width: constants.DEVICE_WIDTH + scaleWidth(220),
       height: constants.DEVICE_HEIGHT / 2,
-      justifyContent: 'center',
+      justifyContent: 'flex-end',
       alignItems: 'center',
       borderBottomLeftRadius: 300,
       borderBottomRightRadius: 300,
       marginBottom: 20,
-      marginTop: -250,
+      marginTop: scaleHeight(-250),
+      paddingBottom: scaleHeight(50),
       shadowColor: theme.shadowColor,
       shadowOffset: {
         width: 0,

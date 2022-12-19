@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { scaleHeight, scaleWidth } from 'app-utils';
 
 const commonStyles = StyleSheet.create({
   headerImg: {
-    height: 40,
-    width: 40,
+    height: scaleHeight(40),
+    width: scaleWidth(40),
   },
 });
 

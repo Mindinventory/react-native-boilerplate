@@ -10,6 +10,7 @@ import { packageObj } from 'app-services';
 import { useTheme } from 'app-theme';
 import ListItem from './listItem';
 import { useLocalization } from 'app-utils';
+import { AppText } from 'app-components';
 
 export type HomeScreenNavigationProps = NativeStackNavigationProp<
   RootStackParams,
@@ -34,6 +35,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.appContainer}>
       <View style={styles.imgContainer}>
+        <AppText style={{ color: '#000', marginTop: 0 }}>Welocome to</AppText>
         <Image source={miLogoImg} resizeMode="contain" style={styles.logo} />
       </View>
       <FlatList

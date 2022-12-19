@@ -1,4 +1,6 @@
+import { scaleFontSize } from './../../utils/aspectRatio';
 import { StyleSheet } from 'react-native';
+import { scaleWidth, scaleHeight } from 'app-utils';
 
 const styles = (theme: any) =>
   StyleSheet.create({
@@ -9,18 +11,17 @@ const styles = (theme: any) =>
       backgroundColor: theme.primary,
     },
     boldText: {
-      fontSize: 18,
+      fontSize: scaleFontSize(18),
       color: theme.shadowColor,
     },
     button: {
-      width: 200,
-      height: 50,
+      width: scaleWidth(200),
+      height: scaleHeight(50),
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 13,
       borderWidth: 1,
-      borderColor: '#ccc',
-      marginTop: 15,
+      borderColor: theme.darkGray,
     },
   });
 
