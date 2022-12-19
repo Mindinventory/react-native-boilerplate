@@ -1,5 +1,5 @@
 import { Navigation } from 'app-navigation';
-import LocalizationProvider from './app/utils/localization/LocalisationContext';
+import { LocalizationProvider } from 'app-utils';
 import React from 'react';
 
 const App = () => {

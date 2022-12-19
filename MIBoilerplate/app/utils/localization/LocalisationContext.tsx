@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo, useState } from 'react';
-import i18n, { DEFAULT_LANGUAGE } from './i18n';
+import React, { useCallback, useMemo, useState, useContext } from 'react';
+import i18n from './i18n';
 
 interface LocalizationContextProps {
   // t: (key: string, options?: any) => string;
@@ -12,10 +12,12 @@ interface LocalizationContextProps {
 
 // @ts-ignore
 const LocalizationContext = React.createContext<LocalizationContextProps>();
+export const useLocalization = () =>
+  useContext<LocalizationContextProps>(LocalizationContext);
 
 interface Props {}
 
-const LocalizationProvider: React.FC<Props> = (props) => {
+export const LocalizationProvider: React.FC<Props> = (props) => {
   const { children } = props;
   const [locale, setLocale] = useState(i18n.locale);
 
@@ -40,6 +42,3 @@ const LocalizationProvider: React.FC<Props> = (props) => {
     </LocalizationContext.Provider>
   );
 };
-
-export { LocalizationContext };
-export default LocalizationProvider;

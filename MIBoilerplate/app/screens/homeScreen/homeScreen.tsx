@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { View, Image, FlatList } from 'react-native';
 import { miLogoImg } from 'app-assets';
 import { RootStackParams } from 'app-navigation';
@@ -9,7 +9,7 @@ import { useHomeScreen } from './useHomeScreen';
 import { TodosRes } from 'app-services';
 import { useTheme } from 'app-theme';
 import TodoList from './todoList';
-import { LocalizationContext } from '../../utils/localization/LocalisationContext';
+import { useLocalization } from 'app-utils';
 
 export type HomeScreenNavigationProps = NativeStackNavigationProp<
   RootStackParams,
@@ -22,7 +22,7 @@ const HomeScreen = () => {
   const { todoData, onPressCard } = useHomeScreen();
 
   const { palette } = useTheme();
-  const { locale } = useContext(LocalizationContext);
+  const { locale } = useLocalization();
   console.log('1 >>> ', locale);
 
   const styles = themeStyles(palette);

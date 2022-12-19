@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { AppText } from 'app-components';
 import { default as themeStyles } from './styles';
