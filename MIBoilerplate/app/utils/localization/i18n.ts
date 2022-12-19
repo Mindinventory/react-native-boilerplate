@@ -1,27 +1,17 @@
 import { I18n } from 'i18n-js';
 
-import * as RNLocalize from 'react-native-localize';
 import en from './locales/en.json';
 import es from './locales/es.json';
 import fr from './locales/fr.json';
 
-console.log('en >>> ', en);
+export enum AppLanguages {
+  En = 'en',
+  Es = 'Es',
+  Fr = 'fr',
+}
 
-// export const DEFAULT_LANGUAGE = 'en';
-
-export const translationGetters = {
-  en,
-  es,
-  fr,
-};
 const i18n = new I18n();
 
-const locales = RNLocalize.getLocales();
-console.log('locales >>> ', locales);
-
-if (Array.isArray(locales)) {
-  i18n.locale = locales[0].languageTag;
-}
 i18n.enableFallback = true;
 
 i18n.translations = {
@@ -29,5 +19,7 @@ i18n.translations = {
   es,
   fr,
 };
+i18n.locale = AppLanguages.En;
+i18n.defaultLocale = AppLanguages.En;
 
 export default i18n;
