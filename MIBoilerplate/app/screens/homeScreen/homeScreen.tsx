@@ -6,9 +6,9 @@ import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { default as themeStyles } from './styles';
 import { useHomeScreen } from './useHomeScreen';
-import { TodosRes } from 'app-services';
+import { packageObj } from 'app-services';
 import { useTheme } from 'app-theme';
-import TodoList from './todoList';
+import ListItem from './listItem';
 import { useLocalization } from 'app-utils';
 
 export type HomeScreenNavigationProps = NativeStackNavigationProp<
@@ -19,7 +19,7 @@ export type HomeScreenNavigationProps = NativeStackNavigationProp<
 export type HomeScreenRouteProps = RouteProp<RootStackParams, 'HomeScreen'>;
 
 const HomeScreen = () => {
-  const { todoData, onPressCard } = useHomeScreen();
+  const { packagesListData, onPressCard } = useHomeScreen();
 
   const { palette } = useTheme();
   const { locale } = useLocalization();
@@ -27,8 +27,8 @@ const HomeScreen = () => {
 
   const styles = themeStyles(palette);
 
-  const renderTodoList = ({ item }: { item: TodosRes }): JSX.Element => {
-    return <TodoList listItem={item} onPressCard={onPressCard} />;
+  const renderTodoList = ({ item }: { item: packageObj }): JSX.Element => {
+    return <ListItem listItem={item} onPressCard={onPressCard} />;
   };
 
   return (
@@ -37,10 +37,8 @@ const HomeScreen = () => {
         <Image source={miLogoImg} resizeMode="contain" style={styles.logo} />
       </View>
       <FlatList
-        data={todoData}
-        numColumns={2}
+        data={packagesListData}
         contentContainerStyle={styles.flatListContainer}
-        columnWrapperStyle={styles.columnWrapper}
         keyExtractor={(_item, index) => index.toString()}
         showsVerticalScrollIndicator={false}
         renderItem={renderTodoList}

@@ -3,7 +3,7 @@ import { palette } from 'app-constants';
 import { constants } from 'app-constants';
 
 const { IS_ANDROID } = constants;
-const cardWidth = constants.DEVICE_WIDTH / 2 - 20;
+const cardWidth = constants.DEVICE_WIDTH - 30;
 
 const styles = (theme: any) =>
   StyleSheet.create({

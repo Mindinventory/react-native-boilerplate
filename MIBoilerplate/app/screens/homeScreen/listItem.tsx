@@ -2,14 +2,14 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { AppText } from 'app-components';
 import { default as themeStyles } from './styles';
-import { TodosRes } from 'app-services';
+import { packageObj } from 'app-services';
 import { useTheme } from 'app-theme';
-interface TodoListProps {
-  listItem: TodosRes;
+interface ListItemProps {
+  listItem: packageObj;
   onPressCard: () => void;
 }
 
-const TodoList = (props: TodoListProps) => {
+const ListItem = (props: ListItemProps) => {
   const { listItem, onPressCard } = props;
   const { palette } = useTheme();
   const styles = themeStyles(palette);
@@ -17,14 +17,14 @@ const TodoList = (props: TodoListProps) => {
   return (
     <TouchableOpacity
       style={[styles.cardLayout, { backgroundColor: listItem.backgroundColor }]}
-      key={listItem.id}
+      key={listItem.package.name}
       onPress={onPressCard}
     >
       <AppText preset="bold" style={styles.cardText}>
-        {listItem.title}
+        {listItem.package.name}:
       </AppText>
     </TouchableOpacity>
   );
 };
 
-export default React.memo(TodoList);
+export default React.memo(ListItem);

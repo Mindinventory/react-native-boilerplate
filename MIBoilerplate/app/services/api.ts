@@ -1,7 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
-import { TodosRes } from './models/postsModel';
+import Config from 'react-native-config';
+import { PackagesListRes, packageObj } from './models/packagesListRes';
 
-const API_URL = 'https://jsonplaceholder.typicode.com/';
+const API_URL = Config.API_URL;
 
 class APIhandler {
   axios: AxiosInstance;
@@ -11,10 +12,12 @@ class APIhandler {
     });
   }
 
-  getAllTodos = async (): Promise<TodosRes[]> => {
+  getAllTodos = async (): Promise<packageObj[]> => {
     try {
-      const response = await this.axios.get<TodosRes[]>('todos');
-      return response.data;
+      const response = await this.axios.get<PackagesListRes>(
+        'search?text=scope:mindinventory'
+      );
+      return response.data.objects;
     } catch (error) {
       return Promise.reject(error);
     }

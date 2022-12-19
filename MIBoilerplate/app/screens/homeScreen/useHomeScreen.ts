@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { API, TodosRes } from 'app-services';
+import { API, packageObj } from 'app-services';
 import { getRandomColor } from 'app-constants';
 import { HomeScreenNavigationProps } from './homeScreen';
 import { RouteNames } from 'app-navigation';
@@ -7,7 +7,9 @@ import { useNavigation } from '@react-navigation/native';
 
 export const useHomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProps>();
-  const [todoData, setTodoData] = useState<TodosRes[] | []>([]);
+  const [packagesListData, setPackagesListData] = useState<packageObj[] | []>(
+    []
+  );
 
   useEffect(() => {
     getAllTodos();
@@ -15,12 +17,14 @@ export const useHomeScreen = () => {
 
   const getAllTodos = async () => {
     try {
-      const getAllTodosRes = await API.getAllTodos();
+      const getAllTodosRes: packageObj[] = await API.getAllTodos();
+      // const {} = getAllTodosRes
+
       if (getAllTodosRes) {
         getAllTodosRes.forEach((val) => {
           val.backgroundColor = getRandomColor();
         });
-        setTodoData(getAllTodosRes);
+        setPackagesListData(getAllTodosRes);
       }
     } catch (error) {
       console.log('getAllTodos Err >>> ', error);
@@ -32,7 +36,7 @@ export const useHomeScreen = () => {
   };
 
   return {
-    todoData,
+    packagesListData,
     onPressCard,
   };
 };
