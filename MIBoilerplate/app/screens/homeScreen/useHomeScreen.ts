@@ -24,8 +24,6 @@ export const useHomeScreen = () => {
       }
     } catch (error) {
       console.log('getAllTodos Err >>> ', error);
-
-      return Promise.reject(error);
     }
   };
 
