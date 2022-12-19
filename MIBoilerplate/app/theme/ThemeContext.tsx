@@ -2,10 +2,12 @@ import React, { useEffect, useState, useContext } from 'react';
 import { lightTheme, darkTheme } from 'app-constants';
 import { getItemFromStorage } from 'app-utils';
 
+type paletteType = typeof lightTheme;
+
 interface ThemeContextType {
   dark: boolean;
   setThemeMode: (isDark: boolean) => void;
-  palette: any;
+  palette: paletteType;
 }
 
 const initialState: ThemeContextType = {
