@@ -12,6 +12,8 @@ module.exports = {
           'app-constants': './app/constants/index.ts',
           'app-components': './app/components/index.ts',
           'app-services': './app/services/index.ts',
+          'app-theme': './app/theme/index.ts',
+          'app-utils': './app/utils/index.ts',
         },
       },
     ],

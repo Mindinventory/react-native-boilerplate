@@ -1,5 +1,2 @@
-import HomeScreen from './HomeScreen/HomeScreen';
-import {useHomeScreen} from './HomeScreen/useHomeScreen';
-import DetailsScreen from './DetailsScreen/DetailsScreen';
-
-export {HomeScreen, DetailsScreen, useHomeScreen};
+export { default as Home } from './home/home';
+export { default as Setting } from './setting/setting';

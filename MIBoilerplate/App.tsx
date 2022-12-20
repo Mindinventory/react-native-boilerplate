@@ -1,8 +1,13 @@
 import React from 'react';
-import {Navigation} from 'app-navigation';
+import { Navigation } from 'app-navigation';
+import { LocalizationProvider } from 'app-utils';
 
 const App = () => {
-  return <Navigation />;
+  return (
+    <LocalizationProvider>
+      <Navigation />
+    </LocalizationProvider>
+  );
 };
 
 export default App;

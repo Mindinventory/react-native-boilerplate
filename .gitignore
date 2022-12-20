@@ -1,0 +1,8 @@
+
+# 
+MIBoilerplate/.DS_Store
+MIBoilerplate/ios/Pods/
+MIBoilerplate/ios/Podfile.lock
+MIBoilerplate/node_modules
+MIBoilerplate/yarn-error.log
+MIBoilerplate/yarn.lock
