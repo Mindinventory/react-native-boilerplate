@@ -23,8 +23,7 @@ const HomeScreen = () => {
   const { packagesListData, onPressCard } = useHomeScreen();
 
   const { palette } = useTheme();
-  const { locale } = useLocalization();
-  console.log('1 >>> ', locale);
+  const { t } = useLocalization();
 
   const styles = themeStyles(palette);
 
@@ -35,7 +34,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.appContainer}>
       <View style={styles.imgContainer}>
-        <AppText preset="bold">Welocome to</AppText>
+        <AppText preset="bold">{t('welcome')}</AppText>
         <Image source={miLogoImg} resizeMode="contain" style={styles.logo} />
         <AppText>www.mindinventory.com</AppText>
       </View>

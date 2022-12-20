@@ -1,16 +1,15 @@
 import React, { useCallback, useState, useContext } from 'react';
-import { Scope, TranslateOptions } from 'i18n-js';
 import i18n from './i18n';
 
 interface LocalizationContextProps {
   locale: string;
   handleLocalizationChange: (key: string) => void;
-  t: (scope: Scope, options?: TranslateOptions | undefined) => string;
+  t: (key: string) => string;
 }
 const initialState: LocalizationContextProps = {
   locale: i18n.locale,
   handleLocalizationChange: (_: string) => {},
-  t: (_scope: Scope, _option?: TranslateOptions | undefined) => '',
+  t: (_key: string) => '',
 };
 
 const LocalizationContext =
@@ -23,11 +22,18 @@ interface Props {}
 export const LocalizationProvider: React.FC<Props> = (props) => {
   const { children } = props;
   const [locale, setLocale] = useState(i18n.locale);
-  const { t } = i18n;
 
-  const handleLocalizationChange = useCallback((newLocale?: any) => {
-    setLocale(newLocale);
+  const handleLocalizationChange = useCallback((newLocale: string) => {
+    i18n.locale = newLocale;
+    i18n.defaultLocale = newLocale;
+    setLocale(i18n.locale);
   }, []);
+
+  const a = i18n;
+  console.log('ABAB >>> ', a.t('welcome'));
+  const t = (key: string) => {
+    return i18n.t(key);
+  };
 
   return (
     <LocalizationContext.Provider

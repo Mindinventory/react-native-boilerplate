@@ -23,6 +23,9 @@ const ListItem = (props: ListItemProps) => {
       <AppText preset="bold" style={styles.cardText}>
         {listItem.package.name}
       </AppText>
+      <AppText preset="default" style={styles.cardText}>
+        version: {listItem.package.version}
+      </AppText>
     </TouchableOpacity>
   );
 };
