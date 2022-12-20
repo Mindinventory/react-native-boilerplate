@@ -31,12 +31,7 @@ export const useHomeScreen = () => {
     }
   };
 
-  const onPressCard = () => {
-    navigation.navigate(RouteNames.DetailsScreen);
-  };
-
   return {
     packagesListData,
-    onPressCard,
   };
 };

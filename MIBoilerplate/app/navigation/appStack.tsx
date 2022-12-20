@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect, useMemo } from 'react';
 import { Image, Switch } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen, DetailsScreen } from 'app-screens';
+import { HomeScreen } from 'app-screens';
 import { RouteNames } from './routes';
 import { miLogo } from 'app-assets';
 import { commonStyles } from 'app-constants';
@@ -60,7 +60,6 @@ const AppStack = () => {
         component={HomeScreen}
         initialParams={{ userId: '001' }}
       />
-      <Stack.Screen name={RouteNames.DetailsScreen} component={DetailsScreen} />
     </Stack.Navigator>
   );
 };

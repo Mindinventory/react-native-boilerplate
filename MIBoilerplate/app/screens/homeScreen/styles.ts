@@ -46,7 +46,7 @@ const styles = (theme: any) =>
       elevation: 5,
     },
     flatListContainer: {
-      paddingBottom: 8,
+      paddingVertical: 20,
     },
     columnWrapper: {
       justifyContent: 'space-between',
@@ -70,7 +70,7 @@ const styles = (theme: any) =>
         height: IS_ANDROID ? 2 : 4,
       },
       shadowOpacity: 0.25,
-      shadowRadius: IS_ANDROID ? 3.84 : 14.5,
+      shadowRadius: IS_ANDROID ? 3.84 : 4,
 
       elevation: 5,
     },

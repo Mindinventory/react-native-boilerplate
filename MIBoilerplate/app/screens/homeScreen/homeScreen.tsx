@@ -20,7 +20,7 @@ export type HomeScreenNavigationProps = NativeStackNavigationProp<
 export type HomeScreenRouteProps = RouteProp<RootStackParams, 'HomeScreen'>;
 
 const HomeScreen = () => {
-  const { packagesListData, onPressCard } = useHomeScreen();
+  const { packagesListData } = useHomeScreen();
 
   const { palette } = useTheme();
   const { t } = useLocalization();
@@ -28,7 +28,7 @@ const HomeScreen = () => {
   const styles = themeStyles(palette);
 
   const renderTodoList = ({ item }: { item: packageObj }): JSX.Element => {
-    return <ListItem listItem={item} onPressCard={onPressCard} />;
+    return <ListItem listItem={item} />;
   };
 
   return (
