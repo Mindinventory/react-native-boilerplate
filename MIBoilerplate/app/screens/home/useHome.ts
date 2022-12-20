@@ -14,8 +14,6 @@ export const useHome = () => {
   const getAllTodos = async () => {
     try {
       const getAllTodosRes: packageObj[] = await API.getAllTodos();
-      // const {} = getAllTodosRes
-
       if (getAllTodosRes) {
         getAllTodosRes.forEach((val) => {
           val.backgroundColor = getRandomColor();

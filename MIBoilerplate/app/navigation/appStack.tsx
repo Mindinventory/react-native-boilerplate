@@ -6,12 +6,13 @@ import { RouteNames } from './routes';
 import { bar_ic, miLogo } from 'app-assets';
 import { commonStyles } from 'app-constants';
 import { useTheme } from 'app-theme';
+import { useLocalization } from 'app-utils';
 
 const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   const { palette } = useTheme();
-
+  const { t } = useLocalization();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -44,11 +45,18 @@ const AppStack = () => {
               />
             </TouchableOpacity>
           ),
+          headerTitle: `${t('home')}`,
         })}
         name={RouteNames.Home}
         component={Home}
       />
-      <Stack.Screen name={RouteNames.Setting} component={Setting} />
+      <Stack.Screen
+        options={{
+          headerTitle: `${t('setting')}`,
+        }}
+        name={RouteNames.Setting}
+        component={Setting}
+      />
     </Stack.Navigator>
   );
 };

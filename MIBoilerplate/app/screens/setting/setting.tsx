@@ -48,7 +48,7 @@ const Setting = () => {
       <View style={styles.sectionLayout}>
         <View style={styles.sectionTitleView}>
           <AppText style={styles.sectionTitle} preset="bold">
-            Theme:
+            {t('theme')}:
           </AppText>
         </View>
         <View
@@ -58,7 +58,7 @@ const Setting = () => {
             commonStyles.marginTop10,
           ]}
         >
-          <AppText style={styles.sectionItemText}>Dark mode</AppText>
+          <AppText style={styles.sectionItemText}>{t('darkMode')}</AppText>
           <Switch
             trackColor={{
               false: palette.grayChateau,
@@ -75,11 +75,11 @@ const Setting = () => {
       <View style={styles.sectionLayout}>
         <View style={styles.sectionTitleView}>
           <AppText style={styles.sectionTitle} preset="bold">
-            Language:
+            {t('language')}:
           </AppText>
         </View>
         <View style={[commonStyles.marginTop10]}>
-          <AppText style={styles.sectionItemText}>Change language</AppText>
+          <AppText style={styles.sectionItemText}>{t('changeLang')}</AppText>
 
           <View>
             <FlatList
