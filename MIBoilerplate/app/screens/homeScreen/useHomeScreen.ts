@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react';
 import { API, packageObj } from 'app-services';
 import { getRandomColor } from 'app-constants';
-import { HomeScreenNavigationProps } from './homeScreen';
-import { RouteNames } from 'app-navigation';
-import { useNavigation } from '@react-navigation/native';
 
 export const useHomeScreen = () => {
-  const navigation = useNavigation<HomeScreenNavigationProps>();
   const [packagesListData, setPackagesListData] = useState<packageObj[] | []>(
     []
   );
