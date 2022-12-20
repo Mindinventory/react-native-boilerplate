@@ -1,3 +1,3 @@
 export const RouteNames = {
-  HomeScreen: 'HomeScreen',
+  Home: 'Home',
 } as const;

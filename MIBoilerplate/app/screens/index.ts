@@ -1,4 +1,4 @@
-import HomeScreen from './homeScreen/homeScreen';
-import { useHomeScreen } from './homeScreen/useHomeScreen';
+import Home from './home/home';
+import { useHome } from './home/useHome';
 
-export { HomeScreen, useHomeScreen };
+export { Home, useHome };

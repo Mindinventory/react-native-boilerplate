@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { API, packageObj } from 'app-services';
 import { getRandomColor } from 'app-constants';
 
-export const useHomeScreen = () => {
+export const useHome = () => {
   const [packagesListData, setPackagesListData] = useState<packageObj[] | []>(
     []
   );

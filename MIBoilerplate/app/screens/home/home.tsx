@@ -5,22 +5,22 @@ import { RootStackParams } from 'app-navigation';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { default as themeStyles } from './styles';
-import { useHomeScreen } from './useHomeScreen';
+import { useHome } from './useHome';
 import { packageObj } from 'app-services';
 import { useTheme } from 'app-theme';
 import ListItem from './listItem';
 import { useLocalization } from 'app-utils';
 import { AppText } from 'app-components';
 
-export type HomeScreenNavigationProps = NativeStackNavigationProp<
+export type HomeNavigationProps = NativeStackNavigationProp<
   RootStackParams,
-  'HomeScreen'
+  'Home'
 >;
 
-export type HomeScreenRouteProps = RouteProp<RootStackParams, 'HomeScreen'>;
+export type HomeRouteProps = RouteProp<RootStackParams, 'Home'>;
 
-const HomeScreen = () => {
-  const { packagesListData } = useHomeScreen();
+const Home = () => {
+  const { packagesListData } = useHome();
 
   const { palette } = useTheme();
   const { t } = useLocalization();
@@ -51,4 +51,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default Home;

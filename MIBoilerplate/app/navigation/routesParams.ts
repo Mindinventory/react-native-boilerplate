@@ -1,3 +1,3 @@
 export type RootStackParams = {
-  HomeScreen: undefined;
+  Home: undefined;
 };
