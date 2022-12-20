@@ -21,7 +21,7 @@ const ListItem = (props: ListItemProps) => {
       onPress={onPressCard}
     >
       <AppText preset="bold" style={styles.cardText}>
-        {listItem.package.name}:
+        {listItem.package.name}
       </AppText>
     </TouchableOpacity>
   );

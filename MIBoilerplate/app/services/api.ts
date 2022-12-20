@@ -1,8 +1,9 @@
 import axios, { AxiosInstance } from 'axios';
-import Config from 'react-native-config';
+import { constants } from 'app-constants';
 import { PackagesListRes, packageObj } from './models/packagesListRes';
 
-const API_URL = Config.API_URL;
+const { BASE_URL } = constants;
+const API_URL = BASE_URL;
 
 class APIhandler {
   axios: AxiosInstance;

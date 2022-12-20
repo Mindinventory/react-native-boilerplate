@@ -1,4 +1,3 @@
 export { palette, getRandomColor, lightTheme, darkTheme } from './color';
-import constants from './constants';
-import commonStyles from './commonStyles';
-export { constants, commonStyles };
+export { default as constants } from './constants';
+export { default as commonStyles } from './commonStyles';

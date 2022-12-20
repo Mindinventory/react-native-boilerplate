@@ -15,8 +15,8 @@ const styles = (theme: any) =>
       backgroundColor: theme.primary,
     },
     logo: {
-      height: scaleHeight(80),
-      width: scaleWidth(250),
+      height: scaleHeight(70),
+      width: scaleWidth(200),
     },
     button: {
       width: scaleWidth(200),
@@ -34,7 +34,7 @@ const styles = (theme: any) =>
       borderRadius: 8,
       padding: 8,
       width: cardWidth,
-
+      paddingVertical: scaleHeight(12),
       shadowColor: theme.shadowColor,
       shadowOffset: {
         width: 0,
