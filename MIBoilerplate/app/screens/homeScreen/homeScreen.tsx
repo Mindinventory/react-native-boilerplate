@@ -34,9 +34,11 @@ const HomeScreen = () => {
   return (
     <View style={styles.appContainer}>
       <View style={styles.imgContainer}>
-        <AppText preset="bold">{t('welcome')}</AppText>
+        <AppText preset="bold" style={styles.headerText}>
+          {t('welcome')}
+        </AppText>
         <Image source={miLogoImg} resizeMode="contain" style={styles.logo} />
-        <AppText>www.mindinventory.com</AppText>
+        <AppText style={styles.headerText}>www.mindinventory.com</AppText>
       </View>
       <FlatList
         data={packagesListData}

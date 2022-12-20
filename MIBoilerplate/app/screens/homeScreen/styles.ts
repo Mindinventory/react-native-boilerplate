@@ -57,15 +57,13 @@ const styles = (theme: any) =>
     imgContainer: {
       backgroundColor: theme.primary,
 
-      width: constants.DEVICE_WIDTH + scaleWidth(220),
-      height: constants.DEVICE_HEIGHT / 2,
-      justifyContent: 'flex-end',
+      width: constants.DEVICE_WIDTH - scaleWidth(30),
+      height: scaleHeight(160),
+      justifyContent: 'center',
       alignItems: 'center',
-      borderBottomLeftRadius: 300,
-      borderBottomRightRadius: 300,
-      marginBottom: 20,
-      marginTop: scaleHeight(-250),
-      paddingBottom: scaleHeight(50),
+      borderRadius: 15,
+      padding: 10,
+      marginVertical: scaleHeight(25),
       shadowColor: theme.shadowColor,
       shadowOffset: {
         width: 0,
@@ -75,6 +73,9 @@ const styles = (theme: any) =>
       shadowRadius: IS_ANDROID ? 3.84 : 14.5,
 
       elevation: 5,
+    },
+    headerText: {
+      color: theme.themeFontColor,
     },
   });
 
