@@ -9,7 +9,7 @@ import fr from './locales/fr.json';
 
 export enum AppLanguages {
   En = 'en',
-  Es = 'Es',
+  Es = 'es',
   Fr = 'fr',
 }
 

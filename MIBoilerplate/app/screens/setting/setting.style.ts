@@ -13,10 +13,38 @@ const settingStyles = (theme: PaletteType) =>
     backBtn: {
       backgroundColor: palette.redPrimary,
       height: scaleHeight(48),
+      marginTop: scaleHeight(200),
     },
     backBtnText: {
       color: palette.white,
       fontSize: 16,
+    },
+    sectionLayout: {
+      // backgroundColor: '#ccc',
+      marginVertical: scaleHeight(25),
+    },
+    sectionTitle: {
+      color: theme.themeFontColor,
+    },
+    sectionTitleView: {
+      backgroundColor: palette.grayChateau,
+      borderRadius: 4,
+      paddingLeft: 2,
+      paddingVertical: 2,
+    },
+    sectionItemText: {
+      color: theme.themeFontColor,
+    },
+    langBtn: {
+      height: scaleHeight(48),
+      marginVertical: scaleHeight(10),
+      borderColor: palette.redPrimary,
+    },
+    redPrimaryBg: {
+      backgroundColor: palette.redPrimary,
+    },
+    langBtnText: {
+      color: palette.redPrimary,
     },
   });
 

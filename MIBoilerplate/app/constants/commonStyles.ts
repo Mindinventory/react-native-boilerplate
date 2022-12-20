@@ -20,6 +20,16 @@ const commonStyles = StyleSheet.create({
     width: scaleWidth(30),
     tintColor: palette.redPrimary,
   },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  spaceBetween: {
+    justifyContent: 'space-between',
+  },
+  marginTop10: {
+    marginTop: scaleHeight(10),
+  },
 });
 
 export default commonStyles;

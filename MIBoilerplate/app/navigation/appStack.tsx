@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useMemo } from 'react';
+import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home, Setting } from 'app-screens';
@@ -6,26 +6,11 @@ import { RouteNames } from './routes';
 import { bar_ic, miLogo } from 'app-assets';
 import { commonStyles } from 'app-constants';
 import { useTheme } from 'app-theme';
-import { setItemToStorage } from 'app-utils';
 
 const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const { setThemeMode, palette, dark } = useTheme();
-  const toggleSwitch = async (toggle: boolean) => {
-    setThemeMode(toggle);
-    setIsEnabled(toggle);
-    await setItemToStorage('is_dark_mode', JSON.stringify(toggle));
-  };
-
-  const getThemeModeFromStorage = useMemo(async () => {
-    setIsEnabled(dark);
-  }, [dark]);
-
-  useLayoutEffect(() => {
-    getThemeModeFromStorage;
-  }, [getThemeModeFromStorage]);
+  const { palette } = useTheme();
 
   return (
     <Stack.Navigator
@@ -46,17 +31,8 @@ const AppStack = () => {
       }}
     >
       <Stack.Screen
-        options={({ navigation, route }) => ({
+        options={({ navigation }) => ({
           headerRight: () => (
-            // <Switch
-            //   trackColor={{
-            //     false: palette.grayChateau,
-            //     true: palette.whiteEDDFF6,
-            //   }}
-            //   thumbColor={isEnabled ? palette.redPrimary : palette.whiteF5FCFF}
-            //   onValueChange={(val) => toggleSwitch(val)}
-            //   value={isEnabled}
-            // />
             <TouchableOpacity
               onPress={() => navigation.navigate(RouteNames.Setting)}
               style={commonStyles.iconView}
