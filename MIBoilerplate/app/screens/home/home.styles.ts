@@ -2,11 +2,12 @@ import { StyleSheet } from 'react-native';
 import { palette } from 'app-constants';
 import { constants } from 'app-constants';
 import { scaleWidth, scaleHeight } from 'app-utils';
+import { PaletteType } from 'app-theme';
 
 const { IS_ANDROID } = constants;
 const cardWidth = constants.DEVICE_WIDTH - scaleWidth(30);
 
-const styles = (theme: any) =>
+const homeStyles = (theme: PaletteType) =>
   StyleSheet.create({
     appContainer: {
       flex: 1,
@@ -79,4 +80,4 @@ const styles = (theme: any) =>
     },
   });
 
-export default styles;
+export default homeStyles;

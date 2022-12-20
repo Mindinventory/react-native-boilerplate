@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect, useMemo } from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Home } from 'app-screens';
+import { Home, Setting } from 'app-screens';
 import { RouteNames } from './routes';
 import { bar_ic, miLogo } from 'app-assets';
 import { commonStyles } from 'app-constants';
@@ -37,24 +37,7 @@ const AppStack = () => {
             style={commonStyles.headerImg}
           />
         ),
-        headerRight: () => (
-          // <Switch
-          //   trackColor={{
-          //     false: palette.grayChateau,
-          //     true: palette.whiteEDDFF6,
-          //   }}
-          //   thumbColor={isEnabled ? palette.redPrimary : palette.whiteF5FCFF}
-          //   onValueChange={(val) => toggleSwitch(val)}
-          //   value={isEnabled}
-          // />
-          <TouchableOpacity style={commonStyles.iconView}>
-            <Image
-              source={bar_ic}
-              resizeMode="contain"
-              style={commonStyles.menuIcon}
-            />
-          </TouchableOpacity>
-        ),
+
         headerTitleAlign: 'center',
         headerTintColor: palette.redPrimary,
         headerStyle: {
@@ -62,7 +45,34 @@ const AppStack = () => {
         },
       }}
     >
-      <Stack.Screen name={RouteNames.Home} component={Home} />
+      <Stack.Screen
+        options={({ navigation, route }) => ({
+          headerRight: () => (
+            // <Switch
+            //   trackColor={{
+            //     false: palette.grayChateau,
+            //     true: palette.whiteEDDFF6,
+            //   }}
+            //   thumbColor={isEnabled ? palette.redPrimary : palette.whiteF5FCFF}
+            //   onValueChange={(val) => toggleSwitch(val)}
+            //   value={isEnabled}
+            // />
+            <TouchableOpacity
+              onPress={() => navigation.navigate(RouteNames.Setting)}
+              style={commonStyles.iconView}
+            >
+              <Image
+                source={bar_ic}
+                resizeMode="contain"
+                style={commonStyles.menuIcon}
+              />
+            </TouchableOpacity>
+          ),
+        })}
+        name={RouteNames.Home}
+        component={Home}
+      />
+      <Stack.Screen name={RouteNames.Setting} component={Setting} />
     </Stack.Navigator>
   );
 };

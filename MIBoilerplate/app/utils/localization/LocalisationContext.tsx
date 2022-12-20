@@ -29,8 +29,6 @@ export const LocalizationProvider: React.FC<Props> = (props) => {
     setLocale(i18n.locale);
   }, []);
 
-  const a = i18n;
-  console.log('ABAB >>> ', a.t('welcome'));
   const t = (key: string) => {
     return i18n.t(key);
   };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { AppText } from 'app-components';
-import { default as themeStyles } from './styles';
+import { default as themeStyles } from './home.styles';
 import { packageObj } from 'app-services';
 import { useTheme } from 'app-theme';
 interface ListItemProps {

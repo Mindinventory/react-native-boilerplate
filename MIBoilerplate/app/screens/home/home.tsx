@@ -4,7 +4,7 @@ import { miLogoImg } from 'app-assets';
 import { RootStackParams } from 'app-navigation';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { default as themeStyles } from './styles';
+import homeStyles from './home.styles';
 import { useHome } from './useHome';
 import { packageObj } from 'app-services';
 import { useTheme } from 'app-theme';
@@ -25,7 +25,7 @@ const Home = () => {
   const { palette } = useTheme();
   const { t } = useLocalization();
 
-  const styles = themeStyles(palette);
+  const styles = homeStyles(palette);
 
   const renderTodoList = ({ item }: { item: packageObj }): JSX.Element => {
     return <ListItem listItem={item} />;

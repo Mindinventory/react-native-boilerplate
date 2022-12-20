@@ -1,4 +1,2 @@
-import Home from './home/home';
-import { useHome } from './home/useHome';
-
-export { Home, useHome };
+export { default as Home } from './home/home';
+export { default as Setting } from './setting/setting';
