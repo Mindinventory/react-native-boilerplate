@@ -2,7 +2,8 @@
 
 # React Native Boilerplate
 
-[![npm version](https://img.shields.io/npm/v/@mindinventory/react-native-boilerplate.svg?style=flat-square)](<[https://www.npmjs.org/package/@mindinventory/react-native-boilerplate](https://www.npmjs.com/package/@mindinventory/react-native-boilerplate)>)![@mindinventory/React Native Boilerplate Top Language](https://img.shields.io/github/languages/top/Mindinventory/react-native-boilerplate)
+[![npm version](https://img.shields.io/npm/v/@mindinventory/react-native-boilerplate.svg)](<[https://www.npmjs.org/package/@mindinventory/react-native-boilerplate](https://www.npmjs.com/package/@mindinventory/react-native-boilerplate)>)
+![@mindinventory/React Native Boilerplate Top Language](https://img.shields.io/github/languages/top/Mindinventory/react-native-boilerplate)
 ![@mindinventory/React Native Boilerplate TypeScript](https://badgen.net/npm/types/tslib)
 ![@mindinventory/React Native Boilerplate License](https://img.shields.io/github/license/Mindinventory/react-native-boilerplate)
 
