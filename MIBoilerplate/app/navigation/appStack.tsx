@@ -45,14 +45,14 @@ const AppStack = () => {
               />
             </TouchableOpacity>
           ),
-          headerTitle: `${t('home')}`,
+          title: `${t('home')}`,
         })}
         name={RouteNames.Home}
         component={Home}
       />
       <Stack.Screen
         options={{
-          headerTitle: `${t('setting')}`,
+          title: `${t('setting')}`,
         }}
         name={RouteNames.Setting}
         component={Setting}
