@@ -8,7 +8,7 @@ export interface LanguageOptions {
 
 export const languageOptions: LanguageOptions[] = [
   {
-    title: 'Englisg',
+    title: 'English',
     langCode: AppLanguages.En,
     isSelected: true,
   },
