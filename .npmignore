@@ -10,6 +10,7 @@ documentation
 npm-debug.log
 yarn-error.log
 node_modules
+document
 MIBoilerplate/node_modules
 MIBoilerplate/ios/Pods
 MIBoilerplate/android/app/build
