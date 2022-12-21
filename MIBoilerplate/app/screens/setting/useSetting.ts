@@ -1,31 +1,27 @@
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { languageOptions, LanguageOptions } from 'app-constants';
 import { useTheme } from 'app-theme';
 import { setItemToStorage, useLocalization } from 'app-utils';
-import { useLayoutEffect, useMemo, useState } from 'react';
 import { SettingNavigationProps } from './setting';
 
 export const useSetting = () => {
   const { palette, setThemeMode, dark } = useTheme();
-  const { handleLocalizationChange } = useLocalization();
+  const { handleLocalizationChange, locale } = useLocalization();
   const navigation = useNavigation<SettingNavigationProps>();
   const [isEnabled, setIsEnabled] = useState(false);
   const [languagesData, setLanguagesData] =
     useState<LanguageOptions[]>(languageOptions);
 
-  const getThemeModeFromStorage = useMemo(async () => {
-    setIsEnabled(dark);
-  }, [dark]);
-
-  useLayoutEffect(() => {
-    getThemeModeFromStorage;
-  }, [getThemeModeFromStorage]);
-
-  const onPressLangBtn = (langObj: LanguageOptions) => {
-    handleLocalizationChange(langObj.langCode);
+  const findAndSetSelectedLang = useCallback((langCode: string) => {
     const langIndex = languagesData.findIndex(
-      (val: LanguageOptions) =>
-        val.title === langObj.title && val.langCode === langObj.langCode
+      (val: LanguageOptions) => val.langCode === langCode
     );
     const cloneLangData = languagesData.filter(
       (item: LanguageOptions, index: number) => {
@@ -37,7 +33,32 @@ export const useSetting = () => {
         return item;
       }
     );
-    setLanguagesData([...cloneLangData]);
+    return cloneLangData;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const setSelectedLangForData = useCallback(() => {
+    const newLangOptions = findAndSetSelectedLang(locale);
+    setLanguagesData([...newLangOptions]);
+  }, [findAndSetSelectedLang, locale]);
+
+  useEffect(() => {
+    setSelectedLangForData();
+  }, [setSelectedLangForData]);
+
+  const getThemeModeFromStorage = useMemo(async () => {
+    setIsEnabled(dark);
+  }, [dark]);
+
+  useLayoutEffect(() => {
+    getThemeModeFromStorage;
+  }, [getThemeModeFromStorage]);
+
+  const onPressLangBtn = async (langObj: LanguageOptions) => {
+    handleLocalizationChange(langObj.langCode);
+    await setItemToStorage('selected_language', langObj.langCode);
+    const newLangOptions = findAndSetSelectedLang(langObj.langCode);
+    setLanguagesData([...newLangOptions]);
   };
 
   const toggleSwitch = async (toggle: boolean) => {
