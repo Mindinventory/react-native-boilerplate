@@ -1,17 +1,10 @@
 import React from 'react';
 import { View, Switch, FlatList } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParams } from 'app-navigation';
 import { AppButton, AppText } from 'app-components';
 import { useLocalization } from 'app-contexts';
 import { useSetting } from './useSetting';
 import settingStyles from './setting.style';
 import { commonStyles, LanguageOptions } from 'app-constants';
-
-export type SettingNavigationProps = NativeStackNavigationProp<
-  RootStackParams,
-  'Setting'
->;
 
 const Setting = () => {
   const { t } = useLocalization();

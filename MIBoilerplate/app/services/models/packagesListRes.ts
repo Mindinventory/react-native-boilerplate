@@ -38,26 +38,6 @@ export interface Author {
   username?: string;
 }
 
-// export enum Email {
-//   AkashPatelMindinventoryCOM = 'akash.patel@mindinventory.com',
-//   AnkitPrajapatiMindinventoryCOM = 'ankit.prajapati@mindinventory.com',
-//   ChiragRamiMindinventoryCOM = 'chirag.rami@mindinventory.com',
-//   PratikPatelMindinventoryCOM = 'pratik.patel@mindinventory.com',
-//   PremshankarShahMindinventoryCOM = 'premshankar.shah@mindinventory.com',
-//   RuturajJadejaMindinventoryCOM = 'ruturaj.jadeja@mindinventory.com',
-//   TusharSanchaniyaMindinventoryCOM = 'tushar.sanchaniya@mindinventory.com',
-// }
-
-// export enum Username {
-//   AkashPatelMi = 'akash.patel.mi',
-//   AnkitPrajapati = 'ankit_prajapati',
-//   ChiragMi = 'chirag.mi',
-//   Pratikmi001 = 'pratikmi001',
-//   PremshankarShah = 'premshankar_shah',
-//   RuturajJadejaMi = 'ruturaj.jadeja.mi',
-//   Tusharsanchaniya = 'tusharsanchaniya',
-// }
-
 export interface Links {
   npm: string;
   homepage: string;

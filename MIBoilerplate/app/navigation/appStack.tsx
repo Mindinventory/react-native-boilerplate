@@ -1,36 +1,39 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationOptions,
+} from '@react-navigation/native-stack';
 import { Home, Setting } from 'app-screens';
-import { RouteNames } from './routes';
+import { RouteNames } from './navigation.type';
 import { bar_ic, miLogo } from 'app-assets';
 import { commonStyles } from 'app-constants';
-import { useTheme } from 'app-contexts';
-import { useLocalization } from 'app-contexts';
+import { useTheme, useLocalization } from 'app-contexts';
 
 const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   const { palette } = useTheme();
   const { t } = useLocalization();
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerLeft: () => (
-          <Image
-            source={miLogo}
-            resizeMode="contain"
-            style={commonStyles.headerImg}
-          />
-        ),
 
-        headerTitleAlign: 'center',
-        headerTintColor: palette.redPrimary,
-        headerStyle: {
-          backgroundColor: palette.primary,
-        },
-      }}
-    >
+  const screenOptions: NativeStackNavigationOptions = {
+    headerLeft: () => (
+      <Image
+        source={miLogo}
+        resizeMode="contain"
+        style={commonStyles.headerImg}
+      />
+    ),
+
+    headerTitleAlign: 'center',
+    headerTintColor: palette.redPrimary,
+    headerStyle: {
+      backgroundColor: palette.primary,
+    },
+  };
+
+  return (
+    <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen
         options={({ navigation }) => ({
           headerRight: () => (

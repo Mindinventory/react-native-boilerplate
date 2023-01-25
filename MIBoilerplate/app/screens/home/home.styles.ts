@@ -19,17 +19,6 @@ const homeStyles = (theme: PaletteType) =>
       height: scaleHeight(70),
       width: scaleWidth(200),
     },
-    button: {
-      width: scaleWidth(200),
-      height: scaleHeight(50),
-      borderRadius: 13,
-      borderWidth: 1,
-      borderColor: theme.darkGray,
-      backgroundColor: palette.redPrimary,
-    },
-    btnTxt: {
-      color: palette.white,
-    },
     cardLayout: {
       margin: 6,
       borderRadius: 8,
@@ -48,9 +37,6 @@ const homeStyles = (theme: PaletteType) =>
     },
     flatListContainer: {
       paddingVertical: 20,
-    },
-    columnWrapper: {
-      justifyContent: 'space-between',
     },
     cardText: {
       color: palette.darkBlack,

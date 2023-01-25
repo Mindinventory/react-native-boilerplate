@@ -1,23 +1,12 @@
 import React from 'react';
 import { View, Image, FlatList } from 'react-native';
 import { miLogoImg } from 'app-assets';
-import { RootStackParams } from 'app-navigation';
-import { RouteProp } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import homeStyles from './home.styles';
 import { useHome } from './useHome';
 import { packageObj } from 'app-services';
-import { useTheme } from 'app-contexts';
+import { useTheme, useLocalization } from 'app-contexts';
 import ListItem from './listItem';
-import { useLocalization } from 'app-contexts';
 import { AppText } from 'app-components';
-
-export type HomeNavigationProps = NativeStackNavigationProp<
-  RootStackParams,
-  'Home'
->;
-
-export type HomeRouteProps = RouteProp<RootStackParams, 'Home'>;
 
 const Home = () => {
   const { packagesListData } = useHome();

@@ -7,15 +7,14 @@ import {
 } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { languageOptions, LanguageOptions } from 'app-constants';
-import { useTheme } from 'app-contexts';
-import { useLocalization } from 'app-contexts';
+import { useTheme, useLocalization } from 'app-contexts';
 import { setItemToStorage } from 'app-utils';
-import { SettingNavigationProps } from './setting';
+import { AppNavigationProp } from 'app-navigation';
 
 export const useSetting = () => {
   const { palette, setThemeMode, dark } = useTheme();
   const { handleLocalizationChange, locale } = useLocalization();
-  const navigation = useNavigation<SettingNavigationProps>();
+  const navigation = useNavigation<AppNavigationProp>();
   const [isEnabled, setIsEnabled] = useState(false);
   const [languagesData, setLanguagesData] =
     useState<LanguageOptions[]>(languageOptions);
