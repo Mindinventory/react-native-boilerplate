@@ -7,9 +7,9 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import homeStyles from './home.styles';
 import { useHome } from './useHome';
 import { packageObj } from 'app-services';
-import { useTheme } from 'app-theme';
+import { useTheme } from 'app-contexts';
 import ListItem from './listItem';
-import { useLocalization } from 'app-utils';
+import { useLocalization } from 'app-contexts';
 import { AppText } from 'app-components';
 
 export type HomeNavigationProps = NativeStackNavigationProp<
@@ -27,7 +27,7 @@ const Home = () => {
 
   const styles = homeStyles(palette);
 
-  const renderTodoList = ({ item }: { item: packageObj }): JSX.Element => {
+  const renderPackagesList = ({ item }: { item: packageObj }): JSX.Element => {
     return <ListItem listItem={item} />;
   };
 
@@ -45,7 +45,7 @@ const Home = () => {
         contentContainerStyle={styles.flatListContainer}
         keyExtractor={(_item, index) => index.toString()}
         showsVerticalScrollIndicator={false}
-        renderItem={renderTodoList}
+        renderItem={renderPackagesList}
       />
     </View>
   );

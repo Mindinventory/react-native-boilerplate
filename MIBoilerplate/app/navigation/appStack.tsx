@@ -5,8 +5,8 @@ import { Home, Setting } from 'app-screens';
 import { RouteNames } from './routes';
 import { bar_ic, miLogo } from 'app-assets';
 import { commonStyles } from 'app-constants';
-import { useTheme } from 'app-theme';
-import { useLocalization } from 'app-utils';
+import { useTheme } from 'app-contexts';
+import { useLocalization } from 'app-contexts';
 
 const Stack = createNativeStackNavigator();
 

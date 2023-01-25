@@ -8,20 +8,20 @@ export const useHome = () => {
   );
 
   useEffect(() => {
-    getAllTodos();
+    getAllPackages();
   }, []);
 
-  const getAllTodos = async () => {
+  const getAllPackages = async () => {
     try {
-      const getAllTodosRes: packageObj[] = await API.getAllTodos();
-      if (getAllTodosRes) {
-        getAllTodosRes.forEach((val) => {
+      const allPackages: packageObj[] = await API.getAllPackages();
+      if (allPackages) {
+        allPackages.forEach((val) => {
           val.backgroundColor = getRandomColor();
         });
-        setPackagesListData(getAllTodosRes);
+        setPackagesListData(allPackages);
       }
     } catch (error) {
-      console.log('getAllTodos Err >>> ', error);
+      console.log('getAllPackages Err >>> ', error);
     }
   };
 

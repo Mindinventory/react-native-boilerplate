@@ -13,7 +13,7 @@ class APIhandler {
     });
   }
 
-  getAllTodos = async (): Promise<packageObj[]> => {
+  getAllPackages = async (): Promise<packageObj[]> => {
     try {
       const response = await this.axios.get<PackagesListRes>(
         'search?text=scope:mindinventory'

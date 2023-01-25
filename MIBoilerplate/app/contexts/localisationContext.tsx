@@ -1,6 +1,6 @@
 import { getItemFromStorage } from 'app-utils';
+import { i18n } from 'app-utils';
 import React, { useCallback, useState, useContext, useEffect } from 'react';
-import i18n from './i18n';
 
 interface LocalizationContextProps {
   locale: string;

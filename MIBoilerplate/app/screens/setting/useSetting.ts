@@ -7,8 +7,9 @@ import {
 } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { languageOptions, LanguageOptions } from 'app-constants';
-import { useTheme } from 'app-theme';
-import { setItemToStorage, useLocalization } from 'app-utils';
+import { useTheme } from 'app-contexts';
+import { useLocalization } from 'app-contexts';
+import { setItemToStorage } from 'app-utils';
 import { SettingNavigationProps } from './setting';
 
 export const useSetting = () => {

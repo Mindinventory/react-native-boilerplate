@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { AppText } from 'app-components';
 import { default as themeStyles } from './home.styles';
 import { packageObj } from 'app-services';
-import { useTheme } from 'app-theme';
+import { useTheme } from 'app-contexts';
 interface ListItemProps {
   listItem: packageObj;
 }

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { palette } from 'app-constants';
 import { scaleWidth, scaleHeight } from 'app-utils';
-import { PaletteType } from 'app-theme';
+import { PaletteType } from 'app-contexts';
 
 const settingStyles = (theme: PaletteType) =>
   StyleSheet.create({
