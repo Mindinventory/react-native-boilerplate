@@ -12,8 +12,8 @@ const BASE_TEXT: TextStyle = {
 
 export const presets = {
   default: BASE_TEXT,
-  bold: { ...BASE_TEXT, fontWeight: '700' } as TextStyle,
-  header: { ...BASE_TEXT, fontSize: 24, fontWeight: 'bold' } as TextStyle,
+  bold: {...BASE_TEXT, fontWeight: '700'} as TextStyle,
+  header: {...BASE_TEXT, fontSize: 24, fontWeight: 'bold'} as TextStyle,
 };
 
 export type TextPresets = keyof typeof presets;
@@ -23,8 +23,8 @@ export interface Props extends TextProperties {
   preset?: TextPresets;
 }
 
-const AppText: React.FC<Props> = ({ children, ...props }) => {
-  const { preset = 'default', style: styleOverride, ...rest } = props;
+const AppText: React.FC<Props> = ({children, ...props}) => {
+  const {preset = 'default', style: styleOverride, ...rest} = props;
 
   return (
     <RNText {...rest} style={[presets[preset], styleOverride]}>

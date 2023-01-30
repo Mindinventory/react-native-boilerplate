@@ -1,4 +1,4 @@
-import { TextStyle, ViewStyle } from 'react-native';
+import {TextStyle, ViewStyle} from 'react-native';
 // import {palette} from 'app-constants';
 
 const BASE_VIEW: TextStyle = {

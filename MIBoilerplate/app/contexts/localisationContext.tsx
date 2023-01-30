@@ -1,6 +1,6 @@
-import { getItemFromStorage } from 'app-utils';
-import { i18n } from 'app-utils';
-import React, { useCallback, useState, useContext, useEffect } from 'react';
+import {getItemFromStorage} from 'app-utils';
+import {i18n} from 'app-utils';
+import React, {useCallback, useState, useContext, useEffect} from 'react';
 
 interface LocalizationContextProps {
   locale: string;
@@ -20,8 +20,8 @@ export const useLocalization = () =>
 
 interface Props {}
 
-export const LocalizationProvider: React.FC<Props> = (props) => {
-  const { children } = props;
+export const LocalizationProvider: React.FC<Props> = props => {
+  const {children} = props;
   const [locale, setLocale] = useState(i18n.locale);
 
   const setSelectedLang = async () => {
@@ -48,9 +48,7 @@ export const LocalizationProvider: React.FC<Props> = (props) => {
   };
 
   return (
-    <LocalizationContext.Provider
-      value={{ locale, t, handleLocalizationChange }}
-    >
+    <LocalizationContext.Provider value={{locale, t, handleLocalizationChange}}>
       {children}
     </LocalizationContext.Provider>
   );

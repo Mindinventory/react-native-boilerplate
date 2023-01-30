@@ -1,20 +1,20 @@
 import React from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import {Image, TouchableOpacity} from 'react-native';
 import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
-import { Home, Setting } from 'app-screens';
-import { RouteNames } from './navigation.type';
-import { bar_ic, miLogo } from 'app-assets';
-import { commonStyles } from 'app-constants';
-import { useTheme, useLocalization } from 'app-contexts';
+import {Home, Setting} from 'app-screens';
+import {RouteNames} from './navigation.type';
+import {bar_ic, miLogo} from 'app-assets';
+import {commonStyles} from 'app-constants';
+import {useTheme, useLocalization} from 'app-contexts';
 
 const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
-  const { palette } = useTheme();
-  const { t } = useLocalization();
+  const {palette} = useTheme();
+  const {t} = useLocalization();
 
   const screenOptions: NativeStackNavigationOptions = {
     headerLeft: () => (
@@ -35,12 +35,11 @@ const AppStack = () => {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen
-        options={({ navigation }) => ({
+        options={({navigation}) => ({
           headerRight: () => (
             <TouchableOpacity
               onPress={() => navigation.navigate(RouteNames.Setting)}
-              style={commonStyles.iconView}
-            >
+              style={commonStyles.iconView}>
               <Image
                 source={bar_ic}
                 resizeMode="contain"

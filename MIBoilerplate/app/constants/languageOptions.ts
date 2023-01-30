@@ -1,4 +1,4 @@
-import { AppLanguages } from 'app-utils';
+import {AppLanguages} from 'app-utils';
 
 export interface LanguageOptions {
   title: string;

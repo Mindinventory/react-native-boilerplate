@@ -1,22 +1,22 @@
 import React from 'react';
-import { View, Image, FlatList } from 'react-native';
-import { miLogoImg } from 'app-assets';
+import {View, Image, FlatList} from 'react-native';
+import {miLogoImg} from 'app-assets';
 import homeStyles from './home.styles';
-import { useHome } from './useHome';
-import { packageObj } from 'app-services';
-import { useTheme, useLocalization } from 'app-contexts';
+import {useHome} from './useHome';
+import {PackageObj} from 'app-services';
+import {useTheme, useLocalization} from 'app-contexts';
 import ListItem from './listItem';
-import { AppText } from 'app-components';
+import {AppText} from 'app-components';
 
 const Home = () => {
-  const { packagesListData } = useHome();
+  const {packagesListData} = useHome();
 
-  const { palette } = useTheme();
-  const { t } = useLocalization();
+  const {palette} = useTheme();
+  const {t} = useLocalization();
 
   const styles = homeStyles(palette);
 
-  const renderPackagesList = ({ item }: { item: packageObj }): JSX.Element => {
+  const renderPackagesList = ({item}: {item: PackageObj}): JSX.Element => {
     return <ListItem listItem={item} />;
   };
 

@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native';
-import { palette } from 'app-constants';
-import { constants } from 'app-constants';
-import { scaleWidth, scaleHeight } from 'app-utils';
-import { PaletteType } from 'app-contexts';
+import {StyleSheet} from 'react-native';
+import {palette} from 'app-constants';
+import {constants} from 'app-constants';
+import {scaleWidth, scaleHeight} from 'app-utils';
+import {PaletteType} from 'app-contexts';
 
-const { IS_ANDROID } = constants;
+const {IS_ANDROID} = constants;
 const cardWidth = constants.DEVICE_WIDTH - scaleWidth(30);
 
 const homeStyles = (theme: PaletteType) =>

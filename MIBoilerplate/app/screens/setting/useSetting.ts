@@ -5,15 +5,15 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { languageOptions, LanguageOptions } from 'app-constants';
-import { useTheme, useLocalization } from 'app-contexts';
-import { setItemToStorage } from 'app-utils';
-import { AppNavigationProp } from 'app-navigation';
+import {useNavigation} from '@react-navigation/native';
+import {languageOptions, LanguageOptions} from 'app-constants';
+import {useTheme, useLocalization} from 'app-contexts';
+import {setItemToStorage} from 'app-utils';
+import {AppNavigationProp} from 'app-navigation';
 
 export const useSetting = () => {
-  const { palette, setThemeMode, dark } = useTheme();
-  const { handleLocalizationChange, locale } = useLocalization();
+  const {palette, setThemeMode, dark} = useTheme();
+  const {handleLocalizationChange, locale} = useLocalization();
   const navigation = useNavigation<AppNavigationProp>();
   const [isEnabled, setIsEnabled] = useState(false);
   const [languagesData, setLanguagesData] =
@@ -21,7 +21,7 @@ export const useSetting = () => {
 
   const findAndSetSelectedLang = useCallback((langCode: string) => {
     const langIndex = languagesData.findIndex(
-      (val: LanguageOptions) => val.langCode === langCode
+      (val: LanguageOptions) => val.langCode === langCode,
     );
     const cloneLangData = languagesData.filter(
       (item: LanguageOptions, index: number) => {
@@ -31,7 +31,7 @@ export const useSetting = () => {
           item.isSelected = false;
         }
         return item;
-      }
+      },
     );
     return cloneLangData;
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,4 +1,4 @@
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export const RouteNames = {
   Home: 'Home',

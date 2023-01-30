@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
-import { scaleHeight, scaleWidth } from 'app-utils';
-import { palette } from './color';
+import {StyleSheet} from 'react-native';
+import {scaleHeight, scaleWidth} from 'app-utils';
+import {palette} from './color';
 
 const commonStyles = StyleSheet.create({
   headerImg: {

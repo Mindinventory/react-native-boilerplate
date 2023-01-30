@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { API, packageObj } from 'app-services';
-import { getRandomColor } from 'app-constants';
+import {useState, useEffect} from 'react';
+import {API, PackageObj} from 'app-services';
+import {getRandomColor} from 'app-constants';
 
 export const useHome = () => {
-  const [packagesListData, setPackagesListData] = useState<packageObj[] | []>(
-    []
+  const [packagesListData, setPackagesListData] = useState<PackageObj[] | []>(
+    [],
   );
 
   useEffect(() => {
@@ -13,9 +13,9 @@ export const useHome = () => {
 
   const getAllPackages = async () => {
     try {
-      const allPackages: packageObj[] = await API.getAllPackages();
+      const allPackages: PackageObj[] = await API.getAllPackages();
       if (allPackages) {
-        allPackages.forEach((val) => {
+        allPackages.forEach(val => {
           val.backgroundColor = getRandomColor();
         });
         setPackagesListData(allPackages);
