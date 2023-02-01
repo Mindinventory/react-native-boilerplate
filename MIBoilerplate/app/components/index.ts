@@ -1,6 +1,6 @@
 import AppText from './appText/appText';
-import Loader from './loader/loader';
 import {AppButton} from './button/button';
+import Loader from './loader/loader';
 import TextInput from './textInput/textInput';
 import TextInputWithIcon from './textInput/textInputWithIcon';
 

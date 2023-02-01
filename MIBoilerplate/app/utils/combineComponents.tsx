@@ -11,6 +11,6 @@ export const combineComponents = (...components: FC[]): FC => {
         );
       };
     },
-    ({children}) => <>{children}</>,
+    ({children}) => <>{children}</>
   );
 };

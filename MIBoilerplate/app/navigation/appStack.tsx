@@ -1,14 +1,16 @@
 import React from 'react';
 import {Image, TouchableOpacity} from 'react-native';
+
 import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
-import {Home, Setting} from 'app-screens';
-import {RouteNames} from './navigation.type';
 import {bar_ic, miLogo} from 'app-assets';
 import {commonStyles} from 'app-constants';
-import {useTheme, useLocalization} from 'app-contexts';
+import {useLocalization, useTheme} from 'app-contexts';
+import {Home, Setting} from 'app-screens';
+
+import {RouteNames} from './navigation.type';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,11 +27,11 @@ const AppStack = () => {
       />
     ),
 
-    headerTitleAlign: 'center',
-    headerTintColor: palette.redPrimary,
     headerStyle: {
       backgroundColor: palette.primary,
     },
+    headerTintColor: palette.redPrimary,
+    headerTitleAlign: 'center',
   };
 
   return (

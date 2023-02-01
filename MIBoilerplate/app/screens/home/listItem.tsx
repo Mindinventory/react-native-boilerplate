@@ -1,9 +1,12 @@
 import React from 'react';
 import {View} from 'react-native';
+
 import {AppText} from 'app-components';
-import {default as themeStyles} from './home.styles';
-import {PackageObj} from 'app-services';
 import {useTheme} from 'app-contexts';
+import {PackageObj} from 'app-services';
+
+import {default as themeStyles} from './home.styles';
+
 interface ListItemProps {
   listItem: PackageObj;
 }

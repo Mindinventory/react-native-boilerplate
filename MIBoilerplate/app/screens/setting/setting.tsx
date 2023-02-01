@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, Switch, FlatList} from 'react-native';
+import {FlatList, Switch, View} from 'react-native';
+
 import {AppButton, AppText} from 'app-components';
-import {useLocalization} from 'app-contexts';
-import {useSetting} from './useSetting';
-import settingStyles from './setting.style';
 import {commonStyles, LanguageOptions} from 'app-constants';
+import {useLocalization} from 'app-contexts';
+
+import settingStyles from './setting.style';
+import {useSetting} from './useSetting';
 
 const Setting = () => {
   const {t} = useLocalization();

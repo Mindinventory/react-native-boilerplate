@@ -1,5 +1,6 @@
 import React from 'react';
 import {ActivityIndicator} from 'react-native';
+
 import {palette} from 'app-constants';
 
 interface Props {

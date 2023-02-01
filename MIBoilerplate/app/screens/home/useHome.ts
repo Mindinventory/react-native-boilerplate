@@ -1,10 +1,11 @@
-import {useState, useEffect} from 'react';
-import {API, PackageObj} from 'app-services';
+import {useEffect, useState} from 'react';
+
 import {getRandomColor} from 'app-constants';
+import {API, PackageObj} from 'app-services';
 
 export const useHome = () => {
   const [packagesListData, setPackagesListData] = useState<PackageObj[] | []>(
-    [],
+    []
   );
 
   useEffect(() => {

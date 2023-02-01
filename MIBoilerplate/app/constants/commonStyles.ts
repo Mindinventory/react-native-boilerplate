@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
+
 import {scaleHeight, scaleWidth} from 'app-utils';
+
 import {palette} from './color';
 
 const commonStyles = StyleSheet.create({
@@ -8,27 +10,27 @@ const commonStyles = StyleSheet.create({
     width: scaleWidth(40),
   },
   iconView: {
-    padding: 5,
+    alignItems: 'center',
 
-    justifyContent: 'center',
-    alignItems: 'center',
     height: scaleHeight(40),
+    justifyContent: 'center',
+    padding: 5,
     width: scaleWidth(40),
-  },
-  menuIcon: {
-    height: scaleHeight(30),
-    width: scaleWidth(30),
-    tintColor: palette.redPrimary,
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  spaceBetween: {
-    justifyContent: 'space-between',
   },
   marginTop10: {
     marginTop: scaleHeight(10),
+  },
+  menuIcon: {
+    height: scaleHeight(30),
+    tintColor: palette.redPrimary,
+    width: scaleWidth(30),
+  },
+  row: {
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  spaceBetween: {
+    justifyContent: 'space-between',
   },
 });
 

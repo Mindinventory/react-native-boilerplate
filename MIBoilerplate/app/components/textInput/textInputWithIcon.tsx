@@ -1,5 +1,6 @@
 import React from 'react';
 import {TextInput as RNTextInput, TextInputProps, View} from 'react-native';
+
 import {
   iconContainer,
   inputStyle,

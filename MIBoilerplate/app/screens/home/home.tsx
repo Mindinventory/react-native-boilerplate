@@ -1,12 +1,14 @@
 import React from 'react';
-import {View, Image, FlatList} from 'react-native';
+import {FlatList, Image, View} from 'react-native';
+
 import {miLogoImg} from 'app-assets';
-import homeStyles from './home.styles';
-import {useHome} from './useHome';
-import {PackageObj} from 'app-services';
-import {useTheme, useLocalization} from 'app-contexts';
-import ListItem from './listItem';
 import {AppText} from 'app-components';
+import {useLocalization, useTheme} from 'app-contexts';
+import {PackageObj} from 'app-services';
+
+import homeStyles from './home.styles';
+import ListItem from './listItem';
+import {useHome} from './useHome';
 
 const Home = () => {
   const {packagesListData} = useHome();

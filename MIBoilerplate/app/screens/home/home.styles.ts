@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
-import {palette} from 'app-constants';
-import {constants} from 'app-constants';
-import {scaleWidth, scaleHeight} from 'app-utils';
+
+import {constants, palette} from 'app-constants';
 import {PaletteType} from 'app-contexts';
+import {scaleHeight, scaleWidth} from 'app-utils';
 
 const {IS_ANDROID} = constants;
 const cardWidth = constants.DEVICE_WIDTH - scaleWidth(30);
@@ -10,59 +10,59 @@ const cardWidth = constants.DEVICE_WIDTH - scaleWidth(30);
 const homeStyles = (theme: PaletteType) =>
   StyleSheet.create({
     appContainer: {
-      flex: 1,
-      justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: theme.primary,
-    },
-    logo: {
-      height: scaleHeight(70),
-      width: scaleWidth(200),
+      flex: 1,
+      justifyContent: 'space-between',
     },
     cardLayout: {
-      margin: 6,
       borderRadius: 8,
+      elevation: 5,
+      margin: 6,
       padding: 8,
-      width: cardWidth,
       paddingVertical: scaleHeight(12),
       shadowColor: theme.shadowColor,
       shadowOffset: {
-        width: 0,
         height: 2,
+        width: 0,
       },
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
 
-      elevation: 5,
-    },
-    flatListContainer: {
-      paddingVertical: 20,
+      width: cardWidth,
     },
     cardText: {
       color: palette.darkBlack,
     },
+    flatListContainer: {
+      paddingVertical: 20,
+    },
+    headerText: {
+      color: theme.themeFontColor,
+    },
     imgContainer: {
-      backgroundColor: theme.primary,
+      alignItems: 'center',
 
-      width: constants.DEVICE_WIDTH - scaleWidth(30),
+      backgroundColor: theme.primary,
+      borderRadius: 15,
+      elevation: 5,
       height: scaleHeight(160),
       justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 15,
-      padding: 10,
       marginVertical: scaleHeight(25),
+      padding: 10,
       shadowColor: theme.shadowColor,
       shadowOffset: {
-        width: 0,
         height: IS_ANDROID ? 2 : 4,
+        width: 0,
       },
       shadowOpacity: 0.25,
       shadowRadius: IS_ANDROID ? 3.84 : 4,
 
-      elevation: 5,
+      width: constants.DEVICE_WIDTH - scaleWidth(30),
     },
-    headerText: {
-      color: theme.themeFontColor,
+    logo: {
+      height: scaleHeight(70),
+      width: scaleWidth(200),
     },
   });
 
