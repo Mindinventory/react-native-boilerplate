@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {PropsWithChildren, useContext, useEffect, useState} from 'react';
 
 import {darkTheme, lightTheme} from 'app-constants';
 import {getItemFromStorage} from 'app-utils';
@@ -20,7 +20,7 @@ const initialState: ThemeContextType = {
 const ThemeContext = React.createContext<ThemeContextType>(initialState);
 export const useTheme = () => useContext<ThemeContextType>(ThemeContext);
 
-interface Props {}
+interface Props extends PropsWithChildren {}
 
 export const ThemeProvider: React.FC<Props> = props => {
   const {children} = props;

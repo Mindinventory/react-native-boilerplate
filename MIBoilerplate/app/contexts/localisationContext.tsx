@@ -1,4 +1,10 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react';
+import React, {
+  PropsWithChildren,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
 import {getItemFromStorage, i18n} from 'app-utils';
 
@@ -18,7 +24,7 @@ const LocalizationContext =
 export const useLocalization = () =>
   useContext<LocalizationContextProps>(LocalizationContext);
 
-interface Props {}
+interface Props extends PropsWithChildren {}
 
 export const LocalizationProvider: React.FC<Props> = props => {
   const {children} = props;
