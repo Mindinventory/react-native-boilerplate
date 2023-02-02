@@ -55,13 +55,13 @@ module.exports = {
         'import/order': [
           'error',
           {
-            groups: [
+            'groups': [
               ['external', 'builtin'],
               'internal',
               ['sibling', 'parent'],
               'index',
             ],
-            pathGroups: [
+            'pathGroups': [
               {
                 pattern: '@(react|react-native)',
                 group: 'external',
@@ -76,9 +76,9 @@ module.exports = {
                 group: 'internal',
               },
             ],
-            pathGroupsExcludedImportTypes: ['internal', 'react'],
+            'pathGroupsExcludedImportTypes': ['internal', 'react'],
             'newlines-between': 'always',
-            alphabetize: {
+            'alphabetize': {
               order: 'asc',
               caseInsensitive: true,
             },
