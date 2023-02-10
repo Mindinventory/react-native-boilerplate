@@ -1,20 +1,15 @@
 import React from 'react';
-import { View, Switch, FlatList } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParams } from 'app-navigation';
-import { AppButton, AppText } from 'app-components';
-import { useLocalization } from 'app-utils';
-import { useSetting } from './useSetting';
-import settingStyles from './setting.style';
-import { commonStyles, LanguageOptions } from 'app-constants';
+import {FlatList, Switch, View} from 'react-native';
 
-export type SettingNavigationProps = NativeStackNavigationProp<
-  RootStackParams,
-  'Setting'
->;
+import {AppButton, AppText} from 'app-components';
+import {commonStyles, LanguageOptions} from 'app-constants';
+import {useLocalization} from 'app-contexts';
+
+import settingStyles from './setting.style';
+import {useSetting} from './useSetting';
 
 const Setting = () => {
-  const { t } = useLocalization();
+  const {t} = useLocalization();
   const {
     onPressGoBack,
     palette,
@@ -25,18 +20,16 @@ const Setting = () => {
   } = useSetting();
   const styles = settingStyles(palette);
 
-  const renderItem = ({ item }: { item: LanguageOptions }) => {
+  const renderItem = ({item}: {item: LanguageOptions}) => {
     return (
       <AppButton
         key={item.langCode}
         onPress={() => onPressLangBtn(item)}
         preset="secondary"
-        style={[styles.langBtn, item.isSelected && styles.redPrimaryBg]}
-      >
+        style={[styles.langBtn, item.isSelected && styles.redPrimaryBg]}>
         <AppText
           style={[styles.langBtnText, item.isSelected && styles.backBtnText]}
-          preset="bold"
-        >
+          preset="bold">
           {item.title}
         </AppText>
       </AppButton>
@@ -56,8 +49,7 @@ const Setting = () => {
             commonStyles.row,
             commonStyles.spaceBetween,
             commonStyles.marginTop10,
-          ]}
-        >
+          ]}>
           <AppText style={styles.sectionItemText}>{t('darkMode')}</AppText>
           <Switch
             trackColor={{
@@ -65,7 +57,7 @@ const Setting = () => {
               true: palette.whiteEDDFF6,
             }}
             thumbColor={isEnabled ? palette.redPrimary : palette.whiteF5FCFF}
-            onValueChange={(val) => toggleSwitch(val)}
+            onValueChange={val => toggleSwitch(val)}
             value={isEnabled}
           />
         </View>
@@ -85,7 +77,7 @@ const Setting = () => {
             <FlatList
               data={languagesData}
               renderItem={renderItem}
-              keyExtractor={(item) => item.title}
+              keyExtractor={item => item.title}
             />
           </View>
         </View>

@@ -1,33 +1,24 @@
 import React from 'react';
-import { View, Image, FlatList } from 'react-native';
-import { miLogoImg } from 'app-assets';
-import { RootStackParams } from 'app-navigation';
-import { RouteProp } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import {FlatList, Image, View} from 'react-native';
+
+import {miLogoImg} from 'app-assets';
+import {AppText} from 'app-components';
+import {useLocalization, useTheme} from 'app-contexts';
+import {PackageObj} from 'app-services';
+
 import homeStyles from './home.styles';
-import { useHome } from './useHome';
-import { packageObj } from 'app-services';
-import { useTheme } from 'app-theme';
 import ListItem from './listItem';
-import { useLocalization } from 'app-utils';
-import { AppText } from 'app-components';
-
-export type HomeNavigationProps = NativeStackNavigationProp<
-  RootStackParams,
-  'Home'
->;
-
-export type HomeRouteProps = RouteProp<RootStackParams, 'Home'>;
+import {useHome} from './useHome';
 
 const Home = () => {
-  const { packagesListData } = useHome();
+  const {packagesListData} = useHome();
 
-  const { palette } = useTheme();
-  const { t } = useLocalization();
+  const {palette} = useTheme();
+  const {t} = useLocalization();
 
   const styles = homeStyles(palette);
 
-  const renderTodoList = ({ item }: { item: packageObj }): JSX.Element => {
+  const renderPackagesList = ({item}: {item: PackageObj}): JSX.Element => {
     return <ListItem listItem={item} />;
   };
 
@@ -45,7 +36,7 @@ const Home = () => {
         contentContainerStyle={styles.flatListContainer}
         keyExtractor={(_item, index) => index.toString()}
         showsVerticalScrollIndicator={false}
-        renderItem={renderTodoList}
+        renderItem={renderPackagesList}
       />
     </View>
   );

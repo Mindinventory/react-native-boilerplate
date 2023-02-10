@@ -1,6 +1,7 @@
 import React from 'react';
-import { TextInput as RNTextInput, TextInputProps } from 'react-native';
-import { InputPresets, inputPresets } from './presets';
+import {TextInput as RNTextInput, TextInputProps} from 'react-native';
+
+import {InputPresets, inputPresets} from './presets';
 
 interface Props extends TextInputProps {
   preset?: InputPresets;

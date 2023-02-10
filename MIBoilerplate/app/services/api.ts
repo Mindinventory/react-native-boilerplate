@@ -1,8 +1,9 @@
-import axios, { AxiosInstance } from 'axios';
-import { constants } from 'app-constants';
-import { PackagesListRes, packageObj } from './models/packagesListRes';
+import {constants} from 'app-constants';
+import axios, {AxiosInstance} from 'axios';
 
-const { BASE_URL } = constants;
+import {PackageObj, PackagesListRes} from './models/packagesListRes';
+
+const {BASE_URL} = constants;
 const API_URL = BASE_URL;
 
 class APIhandler {
@@ -13,7 +14,7 @@ class APIhandler {
     });
   }
 
-  getAllTodos = async (): Promise<packageObj[]> => {
+  getAllPackages = async (): Promise<PackageObj[]> => {
     try {
       const response = await this.axios.get<PackagesListRes>(
         'search?text=scope:mindinventory'

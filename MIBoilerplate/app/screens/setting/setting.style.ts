@@ -1,15 +1,11 @@
-import { StyleSheet } from 'react-native';
-import { palette } from 'app-constants';
-import { scaleWidth, scaleHeight } from 'app-utils';
-import { PaletteType } from 'app-theme';
+import {StyleSheet} from 'react-native';
+
+import {palette} from 'app-constants';
+import {PaletteType} from 'app-contexts';
+import {scaleHeight, scaleWidth} from 'app-utils';
 
 const settingStyles = (theme: PaletteType) =>
   StyleSheet.create({
-    settingContainer: {
-      flex: 1,
-      paddingHorizontal: scaleWidth(20),
-      backgroundColor: theme.primary,
-    },
     backBtn: {
       backgroundColor: palette.redPrimary,
       height: scaleHeight(48),
@@ -18,6 +14,20 @@ const settingStyles = (theme: PaletteType) =>
     backBtnText: {
       color: palette.white,
       fontSize: 16,
+    },
+    langBtn: {
+      borderColor: palette.redPrimary,
+      height: scaleHeight(48),
+      marginVertical: scaleHeight(10),
+    },
+    langBtnText: {
+      color: palette.redPrimary,
+    },
+    redPrimaryBg: {
+      backgroundColor: palette.redPrimary,
+    },
+    sectionItemText: {
+      color: theme.themeFontColor,
     },
     sectionLayout: {
       // backgroundColor: '#ccc',
@@ -32,19 +42,10 @@ const settingStyles = (theme: PaletteType) =>
       paddingLeft: 2,
       paddingVertical: 2,
     },
-    sectionItemText: {
-      color: theme.themeFontColor,
-    },
-    langBtn: {
-      height: scaleHeight(48),
-      marginVertical: scaleHeight(10),
-      borderColor: palette.redPrimary,
-    },
-    redPrimaryBg: {
-      backgroundColor: palette.redPrimary,
-    },
-    langBtnText: {
-      color: palette.redPrimary,
+    settingContainer: {
+      backgroundColor: theme.primary,
+      flex: 1,
+      paddingHorizontal: scaleWidth(20),
     },
   });
 

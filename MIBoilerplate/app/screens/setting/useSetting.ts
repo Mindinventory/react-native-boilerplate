@@ -5,16 +5,17 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { languageOptions, LanguageOptions } from 'app-constants';
-import { useTheme } from 'app-theme';
-import { setItemToStorage, useLocalization } from 'app-utils';
-import { SettingNavigationProps } from './setting';
+
+import {useNavigation} from '@react-navigation/native';
+import {languageOptions, LanguageOptions} from 'app-constants';
+import {useLocalization, useTheme} from 'app-contexts';
+import {AppNavigationProp} from 'app-navigation';
+import {setItemToStorage} from 'app-utils';
 
 export const useSetting = () => {
-  const { palette, setThemeMode, dark } = useTheme();
-  const { handleLocalizationChange, locale } = useLocalization();
-  const navigation = useNavigation<SettingNavigationProps>();
+  const {palette, setThemeMode, dark} = useTheme();
+  const {handleLocalizationChange, locale} = useLocalization();
+  const navigation = useNavigation<AppNavigationProp>();
   const [isEnabled, setIsEnabled] = useState(false);
   const [languagesData, setLanguagesData] =
     useState<LanguageOptions[]>(languageOptions);
@@ -72,11 +73,11 @@ export const useSetting = () => {
   };
 
   return {
-    onPressGoBack,
-    toggleSwitch,
-    palette,
     isEnabled,
     languagesData,
+    onPressGoBack,
     onPressLangBtn,
+    palette,
+    toggleSwitch,
   };
 };
