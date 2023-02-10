@@ -1,12 +1,13 @@
 import React from 'react';
-import { Navigation } from 'app-navigation';
-import { LocalizationProvider } from 'app-utils';
+
+import {AppContextProvider} from 'app-contexts';
+import {Navigation} from 'app-navigation';
 
 const App = () => {
   return (
-    <LocalizationProvider>
+    <AppContextProvider>
       <Navigation />
-    </LocalizationProvider>
+    </AppContextProvider>
   );
 };
 

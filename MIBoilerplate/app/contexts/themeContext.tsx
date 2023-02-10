@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { lightTheme, darkTheme } from 'app-constants';
-import { getItemFromStorage } from 'app-utils';
+import React, {PropsWithChildren, useContext, useEffect, useState} from 'react';
+
+import {darkTheme, lightTheme} from 'app-constants';
+import {getItemFromStorage} from 'app-utils';
 
 export type PaletteType = typeof lightTheme;
 
@@ -19,10 +20,10 @@ const initialState: ThemeContextType = {
 const ThemeContext = React.createContext<ThemeContextType>(initialState);
 export const useTheme = () => useContext<ThemeContextType>(ThemeContext);
 
-interface Props {}
+interface Props extends PropsWithChildren {}
 
-export const ThemeProvider: React.FC<Props> = (props) => {
-  const { children } = props;
+export const ThemeProvider: React.FC<Props> = props => {
+  const {children} = props;
   const [dark, setDark] = useState(false);
 
   const setDarkMode = async () => {
@@ -43,7 +44,7 @@ export const ThemeProvider: React.FC<Props> = (props) => {
   const palette = dark ? darkTheme : lightTheme;
 
   return (
-    <ThemeContext.Provider value={{ palette, dark, setThemeMode }}>
+    <ThemeContext.Provider value={{dark, palette, setThemeMode}}>
       {children}
     </ThemeContext.Provider>
   );

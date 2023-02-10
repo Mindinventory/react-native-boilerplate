@@ -17,10 +17,8 @@ MIBoilerplate/android/app/build
 MIBoilerplate/android/.gradle
 MIBoilerplate/android/.idea
 MIBoilerplate/.buckconfig
-MIBoilerplate/.eslintrc.js
 MIBoilerplate/.flowconfig
 MIBoilerplate/.gitattributes
 MIBoilerplate/.gitignore
-MIBoilerplate/.prettierrc.js
 MIBoilerplate/.watchmanconfig
 

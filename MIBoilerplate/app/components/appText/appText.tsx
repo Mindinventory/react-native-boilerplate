@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  TextStyle,
-  TextProps as TextProperties,
   Text as RNText,
   StyleProp,
+  TextProps as TextProperties,
+  TextStyle,
 } from 'react-native';
 
 const BASE_TEXT: TextStyle = {
@@ -11,9 +11,9 @@ const BASE_TEXT: TextStyle = {
 };
 
 export const presets = {
+  bold: {...BASE_TEXT, fontWeight: '700'} as TextStyle,
   default: BASE_TEXT,
-  bold: { ...BASE_TEXT, fontWeight: '700' } as TextStyle,
-  header: { ...BASE_TEXT, fontSize: 24, fontWeight: 'bold' } as TextStyle,
+  header: {...BASE_TEXT, fontSize: 24, fontWeight: 'bold'} as TextStyle,
 };
 
 export type TextPresets = keyof typeof presets;
@@ -23,8 +23,8 @@ export interface Props extends TextProperties {
   preset?: TextPresets;
 }
 
-const AppText: React.FC<Props> = ({ children, ...props }) => {
-  const { preset = 'default', style: styleOverride, ...rest } = props;
+const AppText: React.FC<Props> = ({children, ...props}) => {
+  const {preset = 'default', style: styleOverride, ...rest} = props;
 
   return (
     <RNText {...rest} style={[presets[preset], styleOverride]}>

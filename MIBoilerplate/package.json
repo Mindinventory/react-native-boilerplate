@@ -5,48 +5,51 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.11",
-    "@react-navigation/native": "^6.0.10",
-    "@react-navigation/native-stack": "^6.6.1",
-    "axios": "^0.26.1",
-    "i18n-js": "^4.2.0",
-    "react": "18.1.0",
-    "react-native": "0.70.6",
-    "react-native-safe-area-context": "^4.2.4",
-    "react-native-screens": "^3.13.1"
+    "@react-navigation/native": "^6.1.3",
+    "@react-navigation/native-stack": "^6.9.9",
+    "axios": "^1.3.1",
+    "i18n-js": "^4.2.2",
+    "react": "18.2.0",
+    "react-native": "0.71.2",
+    "react-native-safe-area-context": "^4.5.0",
+    "react-native-screens": "^3.19.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/runtime": "^7.12.5",
-    "@react-native-community/eslint-config": "^2.0.0",
-    "@types/i18n-js": "^3.8.3",
-    "@types/jest": "^26.0.23",
-    "@types/react-native": "^0.67.3",
-    "@types/react-test-renderer": "^17.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
-    "babel-jest": "^26.6.3",
-    "babel-plugin-module-resolver": "^4.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@tsconfig/react-native": "^2.0.2",
+    "@types/i18n-js": "^3.8.4",
+    "@types/jest": "^29.2.1",
+    "@types/react": "^18.0.24",
+    "@types/react-test-renderer": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "babel-jest": "^29.2.1",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-import-order-autofix": "^0.8.3",
     "eslint-plugin-no-inline-styles": "^1.0.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
-    "jest": "^26.6.3",
-    "metro-react-native-babel-preset": "^0.67.0",
-    "react-test-renderer": "17.0.2",
-    "typescript": "^4.4.4"
+    "jest": "^29.2.1",
+    "metro-react-native-babel-preset": "0.73.7",
+    "prettier": "^2.4.1",
+    "react-test-renderer": "18.2.0",
+    "typescript": "4.8.4"
   },
   "resolutions": {
-    "@types/react": "^17"
+    "@types/react": "^18.0.24"
   },
   "jest": {
     "preset": "react-native",
@@ -59,115 +62,8 @@
       "node"
     ]
   },
-  "eslintConfig": {
-    "root": true,
-    "plugins": [
-      "import",
-      "sort-keys-fix",
-      "react-hooks",
-      "eslint-plugin-no-inline-styles"
-    ],
-    "extends": [
-      "@react-native-community",
-      "prettier",
-      "plugin:react-hooks/recommended"
-    ],
-    "rules": {
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "error",
-      "no-inline-styles/no-inline-styles": 2,
-      "sort-keys-fix/sort-keys-fix": [
-        "error",
-        "asc",
-        {
-          "caseSensitive": false,
-          "natural": true
-        }
-      ],
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ],
-      "no-restricted-imports": [
-        "error"
-      ],
-      "no-console": [
-        "error"
-      ],
-      "no-shadow": "off",
-      "sort-imports": [
-        "error",
-        {
-          "ignoreCase": true,
-          "ignoreDeclarationSort": true,
-          "ignoreMemberSort": false
-        }
-      ],
-      "import/order": [
-        "error",
-        {
-          "groups": [
-            [
-              "external",
-              "builtin"
-            ],
-            "internal",
-            [
-              "sibling",
-              "parent"
-            ],
-            "index"
-          ],
-          "pathGroups": [
-            {
-              "pattern": "@(react|react-native)",
-              "group": "external",
-              "position": "before"
-            },
-            {
-              "pattern": "@mindinventory/**",
-              "group": "internal"
-            },
-            {
-              "pattern": "@src/**",
-              "group": "internal"
-            }
-          ],
-          "pathGroupsExcludedImportTypes": [
-            "internal",
-            "react"
-          ],
-          "newlines-between": "always",
-          "alphabetize": {
-            "order": "asc",
-            "caseInsensitive": true
-          }
-        }
-      ],
-      "import/newline-after-import": [
-        "warn",
-        {
-          "count": 1
-        }
-      ],
-      "import/no-duplicates": "error"
-    }
-  },
   "eslintIgnore": [
     "node_modules/",
     "lib/"
-  ],
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
-  }
+  ]
 }

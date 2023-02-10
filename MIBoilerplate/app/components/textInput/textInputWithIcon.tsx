@@ -1,5 +1,6 @@
 import React from 'react';
-import { TextInput as RNTextInput, TextInputProps, View } from 'react-native';
+import {TextInput as RNTextInput, TextInputProps, View} from 'react-native';
+
 import {
   iconContainer,
   inputStyle,
@@ -23,11 +24,11 @@ const TextInputWithIcon = ({
 
   const setWidthForInput = () => {
     if (leftIcon === undefined && rightIcon === undefined) {
-      return { width: '100%' };
+      return {width: '100%'};
     } else if (leftIcon === undefined || rightIcon === undefined) {
-      return { width: '88%' };
+      return {width: '88%'};
     } else {
-      return { width: '76%' };
+      return {width: '76%'};
     }
   };
 
