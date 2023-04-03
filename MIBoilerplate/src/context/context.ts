@@ -1,16 +1,67 @@
-import type {ContentLanguage} from './content';
+import {createContext, useContext} from 'react';
 
-export interface SecretWorldContextType {
+import type {IndicatorRef} from '@app/blueprints';
+
+import {
+  type SecretWorldNavigationProp,
+  useWithNavigation,
+  type WithNavigation,
+} from '@src/navigation';
+
+import type {ContentLanguage, DefaultContentType} from './content';
+import type {Storage} from './storage';
+import type {defaultStyles} from './styles';
+import type en from '../i18n/locales/en.json';
+
+export interface AppContextType {
+  /**
+   * styles of app of particular screens.
+   * @declare by styles: styles.homeStyles
+   */
   styles: ReturnType<typeof defaultStyles>;
-  getIcons: (image: IconsSource, props?: IconProps) => JSX.Element;
-  getImages: (image: ImageSource, props?: ImageProps) => JSX.Element;
+  /**
+   * get language content for app.
+   * @example contents('common', 'home')
+   * @returns `String` app language content.
+   * @constructor
+   */
   contents: <T extends DefaultContentType, Key extends keyof (typeof en)[T]>(
     obj: T,
     key: Key
   ) => string;
   language: ContentLanguage;
+  /**
+   * to show loading indicator in app on API call or any process.
+   * @example to show loader `loader.current.show()`.
+   * @example to hide loader `loader.current.hide()`.
+   * @example to get loader state is loading or not `loader.current.isLoading`.
+   */
   loader: React.RefObject<IndicatorRef>;
-  services: SecreateWorldServices;
+  /**
+   * For setLanguage change content lang
+   * @example i18n.locale = ContentLanguage.France
+   * @return void change app content language.
+   */
   setLanguageInApp: (lang: ContentLanguage) => void;
+  /**
+   *Storage is a type that is used to store data. It can be used to store strings, numbers, objects, etc. It is typically used to store information that needs to be accessed quickly and efficiently.
+   */
   storage: Storage;
 }
+
+export const AppContext = createContext<AppContextType | undefined>(undefined);
+
+export const useAppContextOnly = () => {
+  const context = useContext(AppContext);
+  if (!context) throw Error('useAppContextOnly must be used inside AppContext');
+  return context;
+};
+
+export const useAppContext = (): WithNavigation<
+  SecretWorldNavigationProp,
+  AppContextType
+> => {
+  return useWithNavigation<SecretWorldNavigationProp, AppContextType>(
+    useAppContextOnly()
+  );
+};
