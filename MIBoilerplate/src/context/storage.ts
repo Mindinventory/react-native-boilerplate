@@ -1,7 +1,7 @@
 import type {STORAGES_KEY} from '@src/constants';
 import {logger} from '@src/utils';
 
-import {storageMmkv} from '..';
+import {storageMmkv} from '../index';
 
 export type dataStoreType = 'string' | 'boolean' | 'number' | 'object';
 

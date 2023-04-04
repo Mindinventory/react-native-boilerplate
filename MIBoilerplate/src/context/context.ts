@@ -30,6 +30,10 @@ export interface AppContextType {
     obj: T,
     key: Key
   ) => string;
+  /**
+   * This variable is of type ContentLanguage and is used to store the language of content.
+   * language = "English";
+   */
   language: ContentLanguage;
   /**
    * to show loading indicator in app on API call or any process.

@@ -6,5 +6,5 @@
 
     "source.fixAll": true
   },
-  "cSpell.words": ["Formik", "gradlew", "MMKV"]
+  "cSpell.words": ["Formik", "gradlew", "MMKV", "persistor"]
 }

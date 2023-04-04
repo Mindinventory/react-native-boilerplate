@@ -3,11 +3,18 @@ import axios, {AxiosInstance, AxiosResponse} from 'axios';
 import {API_CLIENT, APIResponse} from './appServices.type';
 
 class APIhandler {
+  private readonly axiosInstance: AxiosInstance;
+  private readonly axiosHeaders = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  };
+
   constructor() {
     this.axiosInstance = axios.create({
       baseURL: API_CLIENT.API_URL,
       headers: this.axiosHeaders,
-      // timeout: 2000,
+      timeout: 1000,
+      timeoutErrorMessage: 'Slow Network',
       validateStatus(status) {
         return (
           (status >= 200 && status < 300) || status === 400 || status === 401
@@ -38,12 +45,6 @@ class APIhandler {
     //   return res;
     // });
   }
-
-  axiosInstance: AxiosInstance;
-  axiosHeaders = {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-  };
 
   requestHeader = () => {
     return {

@@ -1,14 +1,13 @@
 import React from 'react';
-import {Button, View} from 'react-native';
+import {View} from 'react-native';
 
 import {Text} from '@app/blueprints';
-
-import {ContentLanguage} from '@src/context';
 
 import {useHome} from './useHome';
 
 const Home = () => {
-  const {loader, styles, contents, setLanguageInApp, language} = useHome();
+  const {loader, styles, contents, setLanguageInApp, language, navigation} =
+    useHome();
 
   return (
     <View style={styles.container}>
@@ -17,15 +16,6 @@ const Home = () => {
         onPress={() => (loader?.isLoading ? loader.hide() : loader?.show())}>
         {contents('common', 'coming_soon_title')}
       </Text>
-
-      <Button
-        title="Press"
-        onPress={() => {
-          language === ContentLanguage.Hindi
-            ? setLanguageInApp(ContentLanguage.English)
-            : setLanguageInApp(ContentLanguage.Hindi);
-        }}
-      />
     </View>
   );
 };

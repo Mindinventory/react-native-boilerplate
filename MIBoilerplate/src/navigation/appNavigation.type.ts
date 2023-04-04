@@ -8,9 +8,7 @@ export enum Screen {
 
 export type NavStackParams = {
   [Screen.HOME]: undefined;
-  [Screen.SETTING]: {
-    theme: 'string';
-  };
+  [Screen.SETTING]: undefined;
 };
 
 export type SecretWorldNavigationProp =

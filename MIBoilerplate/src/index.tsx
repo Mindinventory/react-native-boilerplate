@@ -2,6 +2,8 @@ import React, {useCallback, useMemo, useRef, useState} from 'react';
 
 import {IndicatorRef, IndicatorView} from '@app/blueprints';
 import {MMKV} from 'react-native-mmkv';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 
 import {
   AppContext,
@@ -14,6 +16,7 @@ import {defaultStyles} from './context/styles';
 import i18n from './i18n';
 import {AppNavigation} from './navigation';
 import {appServices} from './services';
+import store, {persistor} from './store';
 
 export const storageMmkv = new MMKV();
 
@@ -47,9 +50,20 @@ export const MainApp = () => {
   }, [language, setLanguageInApp]);
 
   return (
-    <AppContext.Provider value={context}>
-      <AppNavigation />
-      <IndicatorView ref={loader} />
-    </AppContext.Provider>
+    <Provider store={store}>
+      <AppContext.Provider value={context}>
+        {/**
+         * PersistGate delays the rendering of the app's UI until the persisted state has been retrieved
+         * and saved to redux.
+         * The `loading` prop can be `null` or any react instance to show during loading (e.g. a splash screen),
+         * for example `loading={<SplashScreen />}`.
+         * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
+         */}
+        <PersistGate loading={null} persistor={persistor}>
+          <AppNavigation />
+          <IndicatorView ref={loader} />
+        </PersistGate>
+      </AppContext.Provider>
+    </Provider>
   );
 };
