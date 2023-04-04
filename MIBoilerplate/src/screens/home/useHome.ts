@@ -1,7 +1,7 @@
 import {useAppContext} from '@src/context';
 
 export const useHome = () => {
-  const {contents, loader, styles, setLanguageInApp, language} =
+  const {contents, loader, styles, setLanguageInApp, language, services} =
     useAppContext();
 
   return {

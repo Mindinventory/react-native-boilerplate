@@ -13,6 +13,7 @@ import {
 import {defaultStyles} from './context/styles';
 import i18n from './i18n';
 import {AppNavigation} from './navigation';
+import {appServices} from './services';
 
 export const storageMmkv = new MMKV();
 
@@ -37,9 +38,8 @@ export const MainApp = () => {
     return {
       contents: (obj, key) => defaultContent(obj, key),
       language,
-
       loader,
-
+      services: appServices,
       setLanguageInApp,
       storage,
       styles: defaultStyles(),

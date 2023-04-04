@@ -17,6 +17,7 @@ const Home = () => {
         onPress={() => (loader?.isLoading ? loader.hide() : loader?.show())}>
         {contents('common', 'coming_soon_title')}
       </Text>
+
       <Button
         title="Press"
         onPress={() => {

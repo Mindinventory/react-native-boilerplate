@@ -7,6 +7,7 @@ import {
   useWithNavigation,
   type WithNavigation,
 } from '@src/navigation';
+import {AppServices} from '@src/services';
 
 import type {ContentLanguage, DefaultContentType} from './content';
 import type {Storage} from './storage';
@@ -47,6 +48,10 @@ export interface AppContextType {
    *Storage is a type that is used to store data. It can be used to store strings, numbers, objects, etc. It is typically used to store information that needs to be accessed quickly and efficiently.
    */
   storage: Storage;
+  /**
+   * AppServices is a service that provides an interface for applications to interact with a database.
+   */
+  services: AppServices;
 }
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
