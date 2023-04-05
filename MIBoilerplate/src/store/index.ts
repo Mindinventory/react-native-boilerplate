@@ -13,8 +13,9 @@ import {
   Storage,
 } from 'redux-persist';
 
+import {storageMmkv} from '@src/context';
+
 import {userData, userDataName} from './reducers';
-import {storageMmkv} from '../index';
 
 const rootReducer = combineReducers({
   userData,

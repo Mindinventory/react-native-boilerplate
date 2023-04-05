@@ -1,20 +1,22 @@
-import {ServicesEndPoints} from './appApiEndPoints';
 import {API_METHODS} from './appServices.type';
-import {ApiUserResponse, ListUserReq} from './models';
+import {ServicesEndPoints} from './appServicesEndPoints';
+import {GetUserCommercialResponseAdapter} from './commercial/adapters/response/getUserCommercialResponseAdapter';
+import {UserResponseDTO} from './commercial/dtos/UserResponseDTO';
+import {ListUserReq, UserResult} from './models';
 import serviceAdapter from './serviceAdapter';
 
 export class AppServices {
   constructor() {}
 
-  listUsers = async (listUserReq: ListUserReq): Promise<ApiUserResponse> => {
+  listUsers = async (listUserReq: ListUserReq): Promise<UserResult[]> => {
     return new Promise((resolve, reject) => {
-      serviceAdapter<ApiUserResponse, ListUserReq>(
+      serviceAdapter<UserResponseDTO, ListUserReq>(
         API_METHODS.GET,
         ServicesEndPoints.USERS,
         listUserReq
       )
         .then(res => {
-          resolve(res);
+          resolve(new GetUserCommercialResponseAdapter().service(res));
         })
         .catch(error => {
           reject(error);

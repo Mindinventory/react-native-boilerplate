@@ -1,17 +1,17 @@
 import React, {useCallback, useImperativeHandle, useRef, useState} from 'react';
 import {ActivityIndicator, Pressable, StyleSheet, View} from 'react-native';
 
-import {scaledSize} from '@src/utils';
+import {Color, scaledSize} from '@src/utils';
 
 import {Text} from '../text';
 
 export interface IndicatorProps {}
 
-export interface IndicatorRef {
+export type IndicatorRef = {
   hide: () => void;
   isLoading: boolean;
   show: () => void;
-}
+};
 
 export const IndicatorViewRef = (
   _props: IndicatorProps,
@@ -34,30 +34,38 @@ export const IndicatorViewRef = (
     }
   }, []);
 
-  useImperativeHandle(ref, () => ({hide, isLoading, show}), [
-    hide,
-    isLoading,
-    show,
-  ]);
+  useImperativeHandle(
+    ref,
+    () => {
+      return {
+        hide,
+        isLoading,
+        show,
+      };
+    },
+    [hide, isLoading, show]
+  );
 
-  return isLoading ? (
+  if (!isLoading) return <></>;
+
+  return (
     <Pressable onPress={handlePressCount} style={styles.container}>
       <View style={styles.loaderContainer}>
         <ActivityIndicator
           size={'large'}
-          color={'white'}
+          color={Color.blue}
           style={styles.loaderStyle}
         />
-        <Text preset="h2" color="white">
+        <Text preset="h2" color={Color.white}>
           Please wait ...
         </Text>
       </View>
     </Pressable>
-  ) : null;
+  );
 };
 
-export const IndicatorView = React.memo(
-  React.forwardRef<IndicatorRef, IndicatorProps>(IndicatorViewRef)
+export const IndicatorView = React.forwardRef<IndicatorRef, IndicatorProps>(
+  IndicatorViewRef
 );
 
 const styles = StyleSheet.create({
@@ -68,7 +76,7 @@ const styles = StyleSheet.create({
   },
   loaderContainer: {
     alignItems: 'center',
-    backgroundColor: '#262626',
+    backgroundColor: Color.black,
     borderRadius: scaledSize(15),
     justifyContent: 'center',
     padding: scaledSize(20),

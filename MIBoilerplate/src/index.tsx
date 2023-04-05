@@ -1,7 +1,6 @@
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 
 import {IndicatorRef, IndicatorView} from '@app/blueprints';
-import {MMKV} from 'react-native-mmkv';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 
@@ -17,8 +16,6 @@ import i18n from './i18n';
 import {AppNavigation} from './navigation';
 import {appServices} from './services';
 import store, {persistor} from './store';
-
-export const storageMmkv = new MMKV();
 
 export const MainApp = () => {
   const loader = useRef<IndicatorRef>(null);

@@ -1,9 +1,11 @@
+import {MMKV} from 'react-native-mmkv';
+
 import type {STORAGES_KEY} from '@src/constants';
 import {logger} from '@src/utils';
 
-import {storageMmkv} from '../index';
-
 export type dataStoreType = 'string' | 'boolean' | 'number' | 'object';
+
+export const storageMmkv = new MMKV();
 
 export const getData = (key: STORAGES_KEY, type: dataStoreType) => {
   try {

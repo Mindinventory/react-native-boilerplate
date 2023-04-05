@@ -8,17 +8,3 @@ export enum API_METHODS {
   POST = 'POST',
   PUT = 'PUT',
 }
-
-export interface APIResponse {
-  page: number;
-  per_page: number;
-  total: number;
-  total_pages: number;
-  data: any;
-  token: string;
-  error: string;
-  support: {
-    text: string;
-    url: string;
-  };
-}

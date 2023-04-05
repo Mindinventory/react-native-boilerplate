@@ -14,7 +14,7 @@ import type {Storage} from './storage';
 import type {defaultStyles} from './styles';
 import type en from '../i18n/locales/en.json';
 
-export interface AppContextType {
+export type AppContextType = {
   /**
    * styles of app of particular screens.
    * @declare by styles: styles.homeStyles
@@ -56,7 +56,7 @@ export interface AppContextType {
    * AppServices is a service that provides an interface for applications to interact with a database.
    */
   services: AppServices;
-}
+};
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
 

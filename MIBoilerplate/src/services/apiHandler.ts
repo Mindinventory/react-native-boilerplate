@@ -1,6 +1,6 @@
 import axios, {AxiosInstance, AxiosResponse} from 'axios';
 
-import {API_CLIENT, APIResponse} from './appServices.type';
+import {API_CLIENT} from './appServices.type';
 
 class APIhandler {
   private readonly axiosInstance: AxiosInstance;
@@ -52,9 +52,7 @@ class APIhandler {
     };
   };
 
-  handleBodyResponse = async (
-    response: AxiosResponse
-  ): Promise<APIResponse> => {
+  handleBodyResponse = async (response: AxiosResponse): Promise<any> => {
     if (response.status === 200) {
       return Promise.resolve(JSON.parse(JSON.stringify(response)));
     } else if (response.status === 400) {
