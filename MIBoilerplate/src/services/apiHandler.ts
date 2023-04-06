@@ -54,7 +54,7 @@ class APIhandler {
 
   handleBodyResponse = async (response: AxiosResponse): Promise<any> => {
     if (response.status === 200) {
-      return Promise.resolve(JSON.parse(JSON.stringify(response)));
+      return Promise.resolve(JSON.parse(JSON.stringify(response.data)));
     } else if (response.status === 400) {
       return Promise.reject({
         cause: response.status.toString(),

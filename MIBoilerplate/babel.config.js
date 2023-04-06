@@ -5,6 +5,7 @@ module.exports = {
       {
         alias: {
           '@app/blueprints': './blueprints',
+          '@src/components': './src/components',
           '@src/constants': './src/constants',
           '@src/context': './src/context',
           '@src/hooks': './src/hooks',
@@ -12,6 +13,7 @@ module.exports = {
           '@src/navigation': './src/navigation',
           '@src/screens': './src/screens',
           '@src/services': './src/services',
+          '@src/store': './src/store',
           '@src/utils': './src/utils',
         },
         extensions: ['.js', '.json'],

@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react';
 
 import type { IndicatorRef } from '@app/blueprints';
+import { ColorSchemeName } from 'react-native/types';
 
 import {
   type SecretWorldNavigationProp,
@@ -15,6 +16,10 @@ import type { defaultStyles } from './styles';
 import type en from '../i18n/locales/en.json';
 
 export type AppContextType = {
+  /**
+   * The appTheme variable is used to define the color scheme used for the application. It takes a ColorSchemeName as its value.
+   */
+  appTheme: ColorSchemeName;
   /**
    * styles of app of particular screens.
    * @declare by styles: styles.homeStyles
@@ -42,6 +47,13 @@ export type AppContextType = {
    * @example to get loader state is loading or not `loader.current.isLoading`.
    */
   loader: React.RefObject<IndicatorRef>;
+  /**
+   * This function is used to set the theme of the application. It takes a single argument, _theme, which should be of type ColorSchemeName.
+   * @example setAppTheme('dark');
+   * @param _theme ColorSchemeName
+   * @returns void
+   */
+  setAppTheme: (_theme: ColorSchemeName) => void;
   /**
    * For setLanguage change content lang
    * @example i18n.locale = ContentLanguage.France

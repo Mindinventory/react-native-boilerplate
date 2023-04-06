@@ -12,8 +12,7 @@ export class AppServices {
     return new Promise((resolve, reject) => {
       serviceAdapter<UserResponseDTO, ListUserReq>(
         API_METHODS.GET,
-        ServicesEndPoints.USERS,
-        listUserReq
+        `${ServicesEndPoints.USERS}?page=${listUserReq.page}&per_page=${listUserReq.per_page}`
       )
         .then(res => {
           resolve(new GetUserCommercialResponseAdapter().service(res));

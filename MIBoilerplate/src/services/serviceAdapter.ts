@@ -7,7 +7,7 @@ import { API_METHODS } from './appServices.type';
 export default async function serviceAdapter<T, reqParams>(
   method: API_METHODS,
   url: string,
-  requestParam: reqParams
+  requestParam?: reqParams
 ): Promise<T> {
   const status = await isNetworkConnected();
   if (status) {

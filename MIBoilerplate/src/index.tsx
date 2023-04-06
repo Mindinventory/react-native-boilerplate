@@ -1,9 +1,17 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { ColorSchemeName, useColorScheme } from 'react-native';
 
 import { IndicatorRef, IndicatorView } from '@app/blueprints';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import { StorageKeys } from './constants';
 import {
   AppContext,
   AppContextType,
@@ -16,10 +24,14 @@ import i18n from './i18n';
 import { AppNavigation } from './navigation';
 import { appServices } from './services';
 import store, { persistor } from './store';
+import { color } from './utils';
 
 export const MainApp = () => {
   const loader = useRef<IndicatorRef>(null);
 
+  const colorScheme = useColorScheme();
+
+  const [appTheme, setTheme] = useState<ColorSchemeName>(colorScheme);
   const [language, setLanguage] = useState<ContentLanguage>(
     ContentLanguage.English
   );
@@ -30,21 +42,41 @@ export const MainApp = () => {
    * @return void change app content language.
    */
   const setLanguageInApp = useCallback((lang: ContentLanguage) => {
+    loader.current?.show();
     i18n.locale = lang;
     setLanguage(lang);
+    loader.current?.hide();
   }, []);
+
+  /**
+   * For setAppTheme change app theming.
+   * setTheme(ColorSchemeName)
+   * @return void change app Theme.
+   */
+  const setAppTheme = useCallback((_theme: ColorSchemeName) => {
+    loader.current?.show();
+    storage.setData(StorageKeys.APP_THEME, _theme);
+    setTheme(_theme);
+    loader.current?.hide();
+  }, []);
+
+  useEffect(() => {
+    setAppTheme(colorScheme);
+  }, [colorScheme, setAppTheme]);
 
   const context: AppContextType = useMemo(() => {
     return {
+      appTheme,
       contents: (obj, key) => defaultContent(obj, key),
       language,
       loader,
       services: appServices,
+      setAppTheme,
       setLanguageInApp,
       storage,
-      styles: defaultStyles(),
+      styles: defaultStyles(color[appTheme || 'light']),
     };
-  }, [language, setLanguageInApp]);
+  }, [appTheme, language, setAppTheme, setLanguageInApp]);
 
   return (
     <Provider store={store}>

@@ -1,5 +1,6 @@
 export interface ListUserReq {
   page: number;
+  per_page: number;
 }
 
 export interface UserResult {

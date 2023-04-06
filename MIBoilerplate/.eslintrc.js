@@ -69,9 +69,8 @@ module.exports = {
     'no-restricted-imports': [
       'error',
       {
-        importNames: ['Text', 'Button', 'TextInput', 'Image'],
-        message:
-          'Please use @miBoilerplate/blueprint for importing main elements.',
+        importNames: ['Text', 'Image'],
+        message: 'Please use @app/blueprints for importing main elements.',
         name: 'react-native',
       },
     ],

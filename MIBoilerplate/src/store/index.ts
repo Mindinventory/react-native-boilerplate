@@ -69,3 +69,4 @@ export const useAppDispatch = () => useDispatch<typeof store.dispatch>();
 export default store;
 
 export * from './reducers';
+export * from './observers';
