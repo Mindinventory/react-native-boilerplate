@@ -7,7 +7,7 @@ import {
   TextStyle,
 } from 'react-native';
 
-import {scaledSize} from '../../src/utils';
+import { scaledSize } from '../../src/utils';
 
 const BASE_TEXT: TextStyle = {
   fontSize: scaledSize(14),
@@ -64,7 +64,7 @@ export interface TextProps extends TextProperties {
   color?: string;
 }
 
-export const Text = ({children, ...props}: TextProps) => {
+export const Text = ({ children, ...props }: TextProps) => {
   const {
     preset = 'default',
     style: styleOverride,
@@ -75,7 +75,7 @@ export const Text = ({children, ...props}: TextProps) => {
   return (
     <RNText
       {...rest}
-      style={[presets[preset] as TextProps, {color}, styleOverride]}>
+      style={[presets[preset] as TextProps, { color }, styleOverride]}>
       {children}
     </RNText>
   );

@@ -1,8 +1,8 @@
-import React, {useCallback, useMemo, useRef, useState} from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 
-import {IndicatorRef, IndicatorView} from '@app/blueprints';
-import {Provider} from 'react-redux';
-import {PersistGate} from 'redux-persist/integration/react';
+import { IndicatorRef, IndicatorView } from '@app/blueprints';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import {
   AppContext,
@@ -11,11 +11,11 @@ import {
   defaultContent,
   storage,
 } from './context';
-import {defaultStyles} from './context/styles';
+import { defaultStyles } from './context/styles';
 import i18n from './i18n';
-import {AppNavigation} from './navigation';
-import {appServices} from './services';
-import store, {persistor} from './store';
+import { AppNavigation } from './navigation';
+import { appServices } from './services';
+import store, { persistor } from './store';
 
 export const MainApp = () => {
   const loader = useRef<IndicatorRef>(null);

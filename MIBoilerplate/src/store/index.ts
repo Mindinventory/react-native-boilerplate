@@ -1,5 +1,5 @@
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
-import {useDispatch} from 'react-redux';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
 import {
   FLUSH,
   PAUSE,
@@ -13,9 +13,9 @@ import {
   Storage,
 } from 'redux-persist';
 
-import {storageMmkv} from '@src/context';
+import { storageMmkv } from '@src/context';
 
-import {userData, userDataName} from './reducers';
+import { userData, userDataName } from './reducers';
 
 const rootReducer = combineReducers({
   userData,

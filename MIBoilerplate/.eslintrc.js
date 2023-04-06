@@ -11,7 +11,7 @@ module.exports = {
         '@typescript-eslint/no-shadow': ['error'],
         'no-shadow': 'off',
         'no-undef': 'off',
-        'react/no-unstable-nested-components': ['off', {allowAsProps: true}],
+        'react/no-unstable-nested-components': ['off', { allowAsProps: true }],
       },
     },
   ],
@@ -79,6 +79,9 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
+        arrowParens: 'avoid',
+        bracketSameLine: true,
+        bracketSpacing: true,
         quoteProps: 'consistent',
         singleQuote: true,
         tabWidth: 2,

@@ -1,17 +1,17 @@
-import {createContext, useContext} from 'react';
+import { createContext, useContext } from 'react';
 
-import type {IndicatorRef} from '@app/blueprints';
+import type { IndicatorRef } from '@app/blueprints';
 
 import {
   type SecretWorldNavigationProp,
   useWithNavigation,
   type WithNavigation,
 } from '@src/navigation';
-import {AppServices} from '@src/services';
+import { AppServices } from '@src/services';
 
-import type {ContentLanguage, DefaultContentType} from './content';
-import type {Storage} from './storage';
-import type {defaultStyles} from './styles';
+import type { ContentLanguage, DefaultContentType } from './content';
+import type { Storage } from './storage';
+import type { defaultStyles } from './styles';
 import type en from '../i18n/locales/en.json';
 
 export type AppContextType = {

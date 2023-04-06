@@ -1,7 +1,7 @@
-import {useAppContext} from '@src/context';
+import { useAppContext } from '@src/context';
 
 const useSettings = () => {
-  const {navigation, styles} = useAppContext();
+  const { navigation, styles } = useAppContext();
 
   // add your code here
 

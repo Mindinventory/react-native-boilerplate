@@ -4,11 +4,11 @@ import {
   NavigationContainer,
   type NavigationContainerRef,
 } from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import {Home, SettingsScreen} from '@src/screens';
+import { Home, SettingsScreen } from '@src/screens';
 
-import {NavStackParams, Screen} from './appNavigation.type';
+import { NavStackParams, Screen } from './appNavigation.type';
 
 export const navigationRef =
   React.createRef<NavigationContainerRef<NavStackParams>>();

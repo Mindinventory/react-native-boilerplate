@@ -1,7 +1,7 @@
-import {MMKV} from 'react-native-mmkv';
+import { MMKV } from 'react-native-mmkv';
 
-import type {STORAGES_KEY} from '@src/constants';
-import {logger} from '@src/utils';
+import type { STORAGES_KEY } from '@src/constants';
+import { logger } from '@src/utils';
 
 export type dataStoreType = 'string' | 'boolean' | 'number' | 'object';
 

@@ -1,8 +1,8 @@
-import {API_METHODS} from './appServices.type';
-import {ServicesEndPoints} from './appServicesEndPoints';
-import {GetUserCommercialResponseAdapter} from './commercial/adapters/response/getUserCommercialResponseAdapter';
-import {UserResponseDTO} from './commercial/dtos/UserResponseDTO';
-import {ListUserReq, UserResult} from './models';
+import { API_METHODS } from './appServices.type';
+import { ServicesEndPoints } from './appServicesEndPoints';
+import { GetUserCommercialResponseAdapter } from './commercial/adapters/response/getUserCommercialResponseAdapter';
+import { UserResponseDTO } from './commercial/dtos/UserResponseDTO';
+import { ListUserReq, UserResult } from './models';
 import serviceAdapter from './serviceAdapter';
 
 export class AppServices {

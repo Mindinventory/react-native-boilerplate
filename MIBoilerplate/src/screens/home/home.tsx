@@ -1,16 +1,15 @@
-import React, {useState} from 'react';
-import {Button, View} from 'react-native';
+import React from 'react';
+// eslint-disable-next-line no-restricted-imports
+import { Button, View } from 'react-native';
 
-import {Text} from '@app/blueprints';
+import { Text } from '@app/blueprints';
 
-import {useHome} from './useHome';
+import { ContentLanguage } from '@src/context';
+
+import { useHome } from './useHome';
 
 const Home = () => {
-  const {loader, styles, contents, setLanguageInApp, language, navigation} =
-    useHome();
-  console.log('loader?.isLoading: ', loader?.isLoading, loader?.show);
-
-  const [state, setState] = useState(false);
+  const { loader, styles, contents, setLanguageInApp, language } = useHome();
 
   return (
     <View style={styles.container}>
@@ -22,7 +21,9 @@ const Home = () => {
       <Button
         title="Press "
         onPress={() => {
-          console.log(loader);
+          language === ContentLanguage.English
+            ? setLanguageInApp(ContentLanguage.Hindi)
+            : setLanguageInApp(ContentLanguage.English);
         }}
       />
     </View>

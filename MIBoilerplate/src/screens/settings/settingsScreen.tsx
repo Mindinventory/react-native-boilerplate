@@ -1,12 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 
-import {Text} from '@app/blueprints';
+import { Text } from '@app/blueprints';
 
 import useSettings from './useSettings';
 
 const SettingsScreen = () => {
-  const {styles} = useSettings();
+  const { styles } = useSettings();
 
   return (
     <View style={styles.container}>

@@ -1,4 +1,4 @@
-import {homeStyles} from '@src/screens/home/home.style';
+import { homeStyles } from '@src/screens/home/home.style';
 
 export const defaultStyles = () => {
   return {

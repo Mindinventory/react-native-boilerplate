@@ -6,7 +6,7 @@ import {
   useRoute,
 } from '@react-navigation/native';
 
-import type {NavStackParams} from './appNavigation.type';
+import type { NavStackParams } from './appNavigation.type';
 
 export declare type WithNavigation<
   NavProp extends NavigationProp<ParamListBase>,
@@ -23,5 +23,5 @@ export function useWithNavigation<
   const navigation = useNavigation<NavProp>();
   const route = useRoute<RouteProp<NavStackParams>>();
 
-  return {...data, navigation, route};
+  return { ...data, navigation, route };
 }

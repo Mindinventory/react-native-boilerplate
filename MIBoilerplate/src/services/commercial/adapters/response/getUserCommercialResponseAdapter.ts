@@ -1,6 +1,6 @@
-import {UserResult} from '@src/services/models/user';
+import { UserResult } from '@src/services/models/user';
 
-import {UserResponseDTO} from '../../dtos/UserResponseDTO';
+import { UserResponseDTO } from '../../dtos/UserResponseDTO';
 
 export class GetUserCommercialResponseAdapter {
   constructor() {}

@@ -1,9 +1,14 @@
-import React, {useCallback, useImperativeHandle, useRef, useState} from 'react';
-import {ActivityIndicator, Pressable, StyleSheet, View} from 'react-native';
+import React, {
+  useCallback,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
+import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 
-import {Color, scaledSize} from '@src/utils';
+import { Color, scaledSize } from '@src/utils';
 
-import {Text} from '../text';
+import { Text } from '../text';
 
 export interface IndicatorProps {}
 

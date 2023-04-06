@@ -1,4 +1,4 @@
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 
 type ClearTimerFn = (id: number | undefined) => void;
 type RunTimerFn = (handler: () => void, timeout: number) => number;

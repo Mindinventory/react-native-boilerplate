@@ -11,7 +11,7 @@ export type BaseLayoutProps = React.PropsWithChildren & {
   style?: StyleProp<ViewStyle>;
 };
 
-export const BaseLayout = React.memo(({children, style}: BaseLayoutProps) => {
+export const BaseLayout = React.memo(({ children, style }: BaseLayoutProps) => {
   return (
     <SafeAreaView style={[styles.safeAreaStyle, style]}>
       <StatusBar barStyle={'dark-content'} backgroundColor="#FFFFFF" />

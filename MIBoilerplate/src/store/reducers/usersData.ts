@@ -1,9 +1,9 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import {UserResponse} from '@src/services';
+import { UserResult } from '@src/services';
 
 type MapDataValue = {
-  users: Array<UserResponse>;
+  users: UserResult[];
 };
 
 const initialState: MapDataValue = {
@@ -15,7 +15,7 @@ export const userDataSlice = createSlice({
   name: 'userData',
   reducers: {
     resetUserData: () => initialState,
-    setUsers: (state, {payload}: PayloadAction<Array<UserResponse> | []>) => {
+    setUsers: (state, { payload }: PayloadAction<UserResult[] | []>) => {
       state.users = payload;
     },
   },
@@ -23,6 +23,6 @@ export const userDataSlice = createSlice({
 
 export const {
   reducer: userData,
-  actions: {resetUserData, setUsers},
+  actions: { resetUserData, setUsers },
   name: userDataName,
 } = userDataSlice;

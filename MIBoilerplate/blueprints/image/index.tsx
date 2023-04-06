@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Falsy,
@@ -10,7 +10,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import type {LayoutChangeEvent} from 'react-native';
+import type { LayoutChangeEvent } from 'react-native';
 
 import FastImage, {
   FastImageProps as FastImageProp,
@@ -62,7 +62,7 @@ export const Image = React.memo((props: ImageProps) => {
   // MARK: - Events
 
   const onLayout = (e: LayoutChangeEvent) => {
-    const {height} = e.nativeEvent.layout;
+    const { height } = e.nativeEvent.layout;
     if (layout && layout.height === height && layout.width === width) {
       return;
     }
@@ -107,9 +107,9 @@ export const Image = React.memo((props: ImageProps) => {
     _imageStyle.flex === 1 &&
     layout
   ) {
-    _imageStyle = {...(style || {})};
+    _imageStyle = { ...(style || {}) };
     delete _imageStyle.flex;
-    _imageStyle = {..._imageStyle, ...layout};
+    _imageStyle = { ..._imageStyle, ...layout };
   }
 
   return (

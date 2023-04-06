@@ -1,6 +1,6 @@
-import axios, {AxiosInstance, AxiosResponse} from 'axios';
+import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
-import {API_CLIENT} from './appServices.type';
+import { API_CLIENT } from './appServices.type';
 
 class APIhandler {
   private readonly axiosInstance: AxiosInstance;
@@ -76,7 +76,7 @@ class APIhandler {
   postAPIService = async (api: string, reqParams: any): Promise<any> => {
     try {
       const response = await this.axiosInstance.post<any>(api, reqParams, {
-        headers: {...this.axiosHeaders, ...this.requestHeader()},
+        headers: { ...this.axiosHeaders, ...this.requestHeader() },
       });
       return this.handleBodyResponse(response);
     } catch (error) {
@@ -88,7 +88,7 @@ class APIhandler {
     try {
       // get<T = any, R = AxiosResponse<T>, D = any>(url: string, config?: AxiosRequestConfig<D>): Promise<R>;
       const response = await this.axiosInstance.get(api, {
-        headers: {...this.axiosHeaders, ...this.requestHeader()},
+        headers: { ...this.axiosHeaders, ...this.requestHeader() },
       });
       return this.handleBodyResponse(response);
     } catch (error) {
@@ -99,7 +99,7 @@ class APIhandler {
   deleteAPIService = async (api: string, reqParams: any = {}): Promise<any> => {
     try {
       const response = await this.axiosInstance.delete<any>(api, {
-        headers: {...this.axiosHeaders, ...this.requestHeader()},
+        headers: { ...this.axiosHeaders, ...this.requestHeader() },
         params: reqParams,
       });
       return this.handleBodyResponse(response);
@@ -112,7 +112,7 @@ class APIhandler {
     try {
       const response = await this.axiosInstance<any>({
         data: reqParams,
-        headers: {...this.axiosHeaders, ...this.requestHeader()},
+        headers: { ...this.axiosHeaders, ...this.requestHeader() },
         method: 'PUT',
         url: api,
       });
