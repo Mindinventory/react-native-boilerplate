@@ -3,4 +3,5 @@ export enum ServicesEndPoints {
   AUTO_COMPLETE = '/auto-complete',
   USERS = '/users',
   UNKNOWN = '/unknown',
+  LOGIN = '/login',
 }

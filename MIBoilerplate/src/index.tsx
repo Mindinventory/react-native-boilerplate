@@ -1,13 +1,11 @@
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
-import { ColorSchemeName, useColorScheme } from 'react-native';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { useColorScheme } from 'react-native';
 
 import { IndicatorRef, IndicatorView } from '@app/blueprints';
+import {
+  NavigationContainer,
+  NavigationContainerRef,
+} from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -21,17 +19,20 @@ import {
 } from './context';
 import { defaultStyles } from './context/styles';
 import i18n from './i18n';
-import { AppNavigation } from './navigation';
+import { AppNavigation, NavStackParams } from './navigation';
 import { appServices } from './services';
 import store, { persistor } from './store';
-import { color } from './utils';
+import { color, Theme } from './utils';
+
+export const navigationRef =
+  React.createRef<NavigationContainerRef<NavStackParams>>();
 
 export const MainApp = () => {
   const loader = useRef<IndicatorRef>(null);
 
   const colorScheme = useColorScheme();
 
-  const [appTheme, setTheme] = useState<ColorSchemeName>(colorScheme);
+  const [appTheme, setTheme] = useState<Theme>(colorScheme);
   const [language, setLanguage] = useState<ContentLanguage>(
     ContentLanguage.English
   );
@@ -53,16 +54,12 @@ export const MainApp = () => {
    * setTheme(ColorSchemeName)
    * @return void change app Theme.
    */
-  const setAppTheme = useCallback((_theme: ColorSchemeName) => {
+  const setAppTheme = useCallback((_theme: Theme) => {
     loader.current?.show();
     storage.setData(StorageKeys.APP_THEME, _theme);
     setTheme(_theme);
     loader.current?.hide();
   }, []);
-
-  useEffect(() => {
-    setAppTheme(colorScheme);
-  }, [colorScheme, setAppTheme]);
 
   const context: AppContextType = useMemo(() => {
     return {
@@ -88,10 +85,12 @@ export const MainApp = () => {
          * for example `loading={<SplashScreen />}`.
          * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
          */}
-        <PersistGate loading={null} persistor={persistor}>
-          <AppNavigation />
-          <IndicatorView ref={loader} />
-        </PersistGate>
+        <NavigationContainer ref={navigationRef}>
+          <PersistGate loading={null} persistor={persistor}>
+            <AppNavigation />
+            <IndicatorView isLoading={false} ref={loader} />
+          </PersistGate>
+        </NavigationContainer>
       </AppContext.Provider>
     </Provider>
   );

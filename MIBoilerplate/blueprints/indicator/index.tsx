@@ -6,12 +6,14 @@ import React, {
 } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 
-import { useAppContextOnly } from '@src/context';
+import { useAppContext } from '@src/context';
 import { Palette, scaledSize } from '@src/utils';
 
 import { Text } from '../text';
 
-export interface IndicatorProps {}
+export interface IndicatorProps {
+  isLoading: boolean;
+}
 
 export type IndicatorRef = {
   hide: () => void;
@@ -20,11 +22,12 @@ export type IndicatorRef = {
 };
 
 export const IndicatorViewRef = (
-  _props: IndicatorProps,
+  props: IndicatorProps,
   ref: React.Ref<IndicatorRef>
 ) => {
-  const { styles } = useAppContextOnly();
-  const [isLoading, setIsLoading] = useState(false);
+  const { isLoading = true } = props;
+  const { styles } = useAppContext();
+  const [loading, setIsLoading] = useState(isLoading);
 
   const pressCount = useRef(0);
 
@@ -46,16 +49,16 @@ export const IndicatorViewRef = (
     () => {
       return {
         hide,
-        isLoading,
+        isLoading: loading,
         show,
       };
     },
-    [hide, isLoading, show]
+    [hide, loading, show]
   );
 
   const indicatorStyle = styles.indicatorStyle;
 
-  if (!isLoading) return <></>;
+  if (!loading) return <></>;
 
   return (
     <Pressable onPress={handlePressCount} style={indicatorStyle.container}>
@@ -77,7 +80,11 @@ export const IndicatorView = React.forwardRef<IndicatorRef, IndicatorProps>(
   IndicatorViewRef
 );
 
-export const indicatorStyles = ({ black, blue, white }: Palette) =>
+export const indicatorStyles = ({
+  primaryColor,
+  textColor,
+  backgroundColor,
+}: Palette) =>
   StyleSheet.create({
     container: {
       alignItems: 'center',
@@ -86,16 +93,16 @@ export const indicatorStyles = ({ black, blue, white }: Palette) =>
     },
     loaderContainer: {
       alignItems: 'center',
-      backgroundColor: black,
+      backgroundColor: backgroundColor,
       borderRadius: scaledSize(15),
       justifyContent: 'center',
       padding: scaledSize(20),
     },
     loaderStyle: {
-      color: blue,
+      color: primaryColor,
       padding: scaledSize(15),
     },
     text: {
-      color: white,
+      color: textColor,
     },
   });

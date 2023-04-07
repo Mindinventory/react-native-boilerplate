@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 import { useAppContext } from '@src/context';
 import { setUsers, useAppDispatch, usersData } from '@src/store';
-//
 
 export const useHome = () => {
   const {

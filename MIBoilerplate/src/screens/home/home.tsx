@@ -17,7 +17,6 @@ const Home = () => {
     setLanguageInApp,
     language,
     users,
-    appTheme,
     setAppTheme,
   } = useHome();
 
@@ -51,13 +50,16 @@ const Home = () => {
                 language === ContentLanguage.English
                   ? setLanguageInApp(ContentLanguage.Hindi)
                   : setLanguageInApp(ContentLanguage.English);
-                appTheme === 'dark'
-                  ? setAppTheme('light')
-                  : setAppTheme('dark');
               }}
             />
           )}
         />
+        <Button title="Dark" onPress={() => setAppTheme('dark')} />
+        <Button title="Light" onPress={() => setAppTheme('light')} />
+        <Button title="Theme1" onPress={() => setAppTheme('theme1')} />
+        <Button title="Theme3" onPress={() => setAppTheme('theme2')} />
+        <Button title="Theme3" onPress={() => setAppTheme('theme3')} />
+        <Button title="Theme4" onPress={() => setAppTheme('theme4')} />
       </View>
     </BaseLayout>
   );

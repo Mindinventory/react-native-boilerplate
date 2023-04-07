@@ -85,9 +85,9 @@ export const Text = ({ children, ...props }: TextProps) => {
   );
 };
 
-export const textStyles = ({ black }: Palette) =>
+export const textStyles = ({ textColor }: Palette) =>
   StyleSheet.create({
     content: {
-      color: black,
+      color: textColor,
     },
   });
