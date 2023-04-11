@@ -6,6 +6,7 @@ export type DefaultContentType = keyof typeof en;
 export enum ContentLanguage {
   English = 'en',
   Hindi = 'hi',
+  Arabic = 'ar',
 }
 
 export const defaultContent = <

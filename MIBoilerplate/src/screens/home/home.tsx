@@ -5,6 +5,7 @@ import { Text } from '@app/blueprints';
 
 import { BaseLayout } from '@src/components';
 import { ContentLanguage } from '@src/context';
+import { Screen } from '@src/navigation';
 import { scaleHeight } from '@src/utils';
 
 import { useHome } from './useHome';
@@ -18,6 +19,8 @@ const Home = () => {
     language,
     users,
     setAppTheme,
+    paging,
+    navigation,
   } = useHome();
 
   return (
@@ -26,8 +29,13 @@ const Home = () => {
         <Text
           preset="h1"
           onPress={() => (loader?.isLoading ? loader.hide : loader?.show())}>
-          {contents('common', 'coming_soon_title')}
+          {contents('common', 'delete_desc')}
         </Text>
+        <Button title="Press" onPress={paging} />
+        <Button
+          title="Network"
+          onPress={() => navigation.navigate(Screen.SETTING)}
+        />
         <FlatList
           data={users}
           renderItem={({ item }) => (
@@ -53,6 +61,12 @@ const Home = () => {
               }}
             />
           )}
+        />
+        <Button
+          title="Arabic"
+          onPress={() => {
+            setLanguageInApp(ContentLanguage.Arabic);
+          }}
         />
         <Button title="Dark" onPress={() => setAppTheme('dark')} />
         <Button title="Light" onPress={() => setAppTheme('light')} />

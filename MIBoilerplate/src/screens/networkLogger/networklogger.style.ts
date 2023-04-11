@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const splashStyles = () =>
+export const networkloggerStyles = () =>
   StyleSheet.create({
     container: {
       alignItems: 'center',

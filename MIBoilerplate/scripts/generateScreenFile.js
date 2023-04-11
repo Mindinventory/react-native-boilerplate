@@ -23,20 +23,20 @@ fs.mkdir(`../src/screens/${folderName}`, err => {
   const useHookFileName = capitalizeFirstLetter(fileName);
 
   // create hook js hookFile.ts
-  const hookFile = `import {useAppContext} from '@src/context';
+  const hookFile = `import { useAppContext } from '@src/context';
 
-  const use${useHookFileName} = () => {
-    const {navigation, styles} = useAppContext();
-  
-    // add your code here
-  
-    return {
-      navigation,
-      styles: styles.homeStyle,
-    };
+const use${useHookFileName} = () => {
+  const { navigation, styles } = useAppContext();
+
+  // add your code here
+
+  return {
+    navigation,
+    styles: styles.homeStyle,
   };
-  
-  export default use${useHookFileName};
+};
+
+export default use${useHookFileName};
 `;
 
   fs.writeFileSync(
@@ -49,17 +49,16 @@ fs.mkdir(`../src/screens/${folderName}`, err => {
   );
 
   // create styleFile.ts
-  const styleFile = `import {StyleSheet} from 'react-native';
+  const styleFile = `import { StyleSheet } from 'react-native';
 
 export const ${fileName}Styles = () =>
-    StyleSheet.create({
-      container: {
-        alignItems: 'center',
-        flex: 1,
-        justifyContent: 'center',
-      },
-    });
-  
+  StyleSheet.create({
+    container: {
+      alignItems: 'center',
+      flex: 1,
+      justifyContent: 'center',
+    },
+  });
 `;
   fs.writeFileSync(
     path.join(`../src/screens/${fileName}`, `${fileName}.style.ts`),
@@ -72,24 +71,23 @@ export const ${fileName}Styles = () =>
 
   // create defaultScreen.tsx
   const defaultScreen = `import React from 'react';
-  import {View} from 'react-native';
-  
-  import {Text} from '@app/blueprints';
-  
-  import use${useHookFileName} from './use${useHookFileName}';
-  
-  const ${useHookFileName}Screen = () => {
-    const {styles} = use${useHookFileName}();
-  
-    return (
-      <View style={styles.container}>
-        <Text preset="h1">${useHookFileName} Screen</Text>
-      </View>
-    );
-  };
-  
-  export default React.memo(${useHookFileName}Screen);
-  
+import { View } from 'react-native';
+
+import { Text } from '@app/blueprints';
+
+import use${useHookFileName} from './use${useHookFileName}';
+
+const ${useHookFileName}Screen = () => {
+  const { styles } = use${useHookFileName}();
+
+  return (
+    <View style={styles.container}>
+      <Text preset="h1">${useHookFileName} Screen</Text>
+    </View>
+  );
+};
+
+export default React.memo(${useHookFileName}Screen);
 `;
 
   fs.writeFileSync(
@@ -101,7 +99,7 @@ export const ${fileName}Styles = () =>
     }
   );
 
-  const exportToIndex = `export {default as ${useHookFileName}Screen} from './${folderName}/${fileName}Screen';\n`;
+  const exportToIndex = `export { default as ${useHookFileName}Screen } from './${folderName}/${fileName}Screen';\n`;
 
   fs.appendFile(`../src/screens/index.ts`, exportToIndex, errScreen => {
     if (errScreen) throw errScreen;
