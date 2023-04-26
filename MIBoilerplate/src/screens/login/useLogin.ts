@@ -7,7 +7,7 @@ const useLogin = () => {
 
   return {
     navigation,
-    styles: styles.loginStyle,
+    styles: styles.homeStyle,
   };
 };
 

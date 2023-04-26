@@ -64,6 +64,7 @@ export const MainApp = () => {
   const context: AppContextType = useMemo(() => {
     return {
       appTheme,
+      color: color[appTheme || 'light'],
       contents: (obj, key) => defaultContent(obj, key),
       language,
       loader,
@@ -78,14 +79,14 @@ export const MainApp = () => {
   return (
     <Provider store={store}>
       <AppContext.Provider value={context}>
-        {/**
-         * PersistGate delays the rendering of the app's UI until the persisted state has been retrieved
-         * and saved to redux.
-         * The `loading` prop can be `null` or any react instance to show during loading (e.g. a splash screen),
-         * for example `loading={<SplashScreen />}`.
-         * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
-         */}
         <NavigationContainer ref={navigationRef}>
+          {/**
+           * PersistGate delays the rendering of the app's UI until the persisted state has been retrieved
+           * and saved to redux.
+           * The `loading` prop can be `null` or any react instance to show during loading (e.g. a splash screen),
+           * for example `loading={<SplashScreen />}`.
+           * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
+           */}
           <PersistGate loading={null} persistor={persistor}>
             <AppNavigation />
             <IndicatorView isLoading={false} ref={loader} />

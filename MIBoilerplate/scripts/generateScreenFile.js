@@ -51,7 +51,9 @@ export default use${useHookFileName};
   // create styleFile.ts
   const styleFile = `import { StyleSheet } from 'react-native';
 
-export const ${fileName}Styles = () =>
+import { Palette } from '@src/utils';
+
+export const ${fileName}Styles = ({}: Palette) =>
   StyleSheet.create({
     container: {
       alignItems: 'center',
@@ -103,6 +105,6 @@ export default React.memo(${useHookFileName}Screen);
 
   fs.appendFile(`../src/screens/index.ts`, exportToIndex, errScreen => {
     if (errScreen) throw errScreen;
-    console.log('homeScreen.ts file created successfully');
+    console.log(`${useHookFileName} file created successfully`);
   });
 });

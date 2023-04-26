@@ -2,11 +2,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { UserResult } from '@src/services';
 
-type MapDataValue = {
+type UserData = {
   users: UserResult[];
 };
 
-const initialState: MapDataValue = {
+const initialState: UserData = {
   users: [],
 };
 

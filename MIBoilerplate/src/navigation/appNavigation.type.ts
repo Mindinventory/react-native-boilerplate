@@ -11,8 +11,7 @@ export type NavStackParams = {
   [Screen.SETTING]: undefined;
 };
 
-export type SecretWorldNavigationProp =
-  NativeStackNavigationProp<NavStackParams>;
+export type AppNavigationProp = NativeStackNavigationProp<NavStackParams>;
 
 export type SettingScreenNavigationProp = RouteProp<
   NavStackParams,

@@ -3,12 +3,12 @@ import { createContext, useContext } from 'react';
 import type { IndicatorRef } from '@app/blueprints';
 
 import {
-  type SecretWorldNavigationProp,
+  type AppNavigationProp,
   useWithNavigation,
   type WithNavigation,
 } from '@src/navigation';
 import { AppServices } from '@src/services';
-import { Theme } from '@src/utils';
+import { Palette, Theme } from '@src/utils';
 
 import type { ContentLanguage, DefaultContentType } from './content';
 import type { Storage } from './storage';
@@ -68,6 +68,10 @@ export type AppContextType = {
    * AppServices is a service that provides an interface for applications to interact with a database.
    */
   services: AppServices;
+  /**
+   * Get app palette colors.
+   */
+  color: Palette;
 };
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -79,10 +83,10 @@ export const useAppContextOnly = () => {
 };
 
 export const useAppContext = (): WithNavigation<
-  SecretWorldNavigationProp,
+  AppNavigationProp,
   AppContextType
 > => {
-  return useWithNavigation<SecretWorldNavigationProp, AppContextType>(
+  return useWithNavigation<AppNavigationProp, AppContextType>(
     useAppContextOnly()
   );
 };

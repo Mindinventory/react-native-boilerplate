@@ -2,7 +2,7 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { Home, NetworkloggerScreen, SettingsScreen } from '@src/screens';
+import { Home, NetworkloggerScreen } from '@src/screens';
 
 import { NavStackParams, Screen } from './appNavigation.type';
 
