@@ -3,6 +3,7 @@ module.exports = {
     '@react-native-community',
     'prettier',
     'plugin:react-hooks/recommended',
+    'plugin:react-native/all',
   ],
   overrides: [
     {
@@ -22,6 +23,7 @@ module.exports = {
     'import',
     'react-hooks',
     'sort-keys-fix',
+    'react-native',
   ],
   root: true,
   rules: {

@@ -3,14 +3,12 @@ import {
   // eslint-disable-next-line no-restricted-imports
   Text as RNText,
   StyleProp,
-  StyleSheet,
   TextProps as TextProperties,
   TextStyle,
 } from 'react-native';
 
 import { useAppContext } from '@src/context';
-
-import { Palette, scaledSize } from '../../src/utils';
+import { scaledSize } from '@src/utils';
 
 const BASE_TEXT: TextStyle = {
   fontSize: scaledSize(14),
@@ -46,7 +44,6 @@ export const presets = {
   h6: {
     ...BASE_TEXT,
     fontSize: scaledSize(18),
-    fontWeight: '500',
   } as TextStyle,
   small: {
     ...BASE_TEXT,
@@ -55,7 +52,6 @@ export const presets = {
   title: {
     ...BASE_TEXT,
     fontSize: scaledSize(26),
-    fontWeight: '600',
   } as TextStyle,
 };
 
@@ -70,24 +66,17 @@ export interface TextProps extends TextProperties {
 export const Text = ({ children, ...props }: TextProps) => {
   const { preset = 'default', style: styleOverride, color, ...rest } = props;
 
-  const { styles } = useAppContext();
+  const { color: palette } = useAppContext();
 
   return (
     <RNText
       {...rest}
       style={[
         presets[preset] as TextProps,
-        color ? { color } : styles.textStyle.content,
+        { color: color ? color : palette.textColor },
         styleOverride,
       ]}>
       {children}
     </RNText>
   );
 };
-
-export const textStyles = ({ textColor }: Palette) =>
-  StyleSheet.create({
-    content: {
-      color: textColor,
-    },
-  });

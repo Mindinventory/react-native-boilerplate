@@ -26,7 +26,7 @@ export const IndicatorViewRef = (
   ref: React.Ref<IndicatorRef>
 ) => {
   const { isLoading = true } = props;
-  const { styles } = useAppContext();
+  const { color } = useAppContext();
   const [loading, setIsLoading] = useState(isLoading);
 
   const pressCount = useRef(0);
@@ -56,19 +56,19 @@ export const IndicatorViewRef = (
     [hide, loading, show]
   );
 
-  const indicatorStyle = styles.indicatorStyle;
+  const styles = indicatorStyles(color);
 
   if (!loading) return <></>;
 
   return (
-    <Pressable onPress={handlePressCount} style={indicatorStyle.container}>
-      <View style={indicatorStyle.loaderContainer}>
+    <Pressable onPress={handlePressCount} style={styles.container}>
+      <View style={styles.loaderContainer}>
         <ActivityIndicator
           size={'large'}
-          color={indicatorStyle.loaderStyle.color}
-          style={indicatorStyle.loaderStyle}
+          color={color.primaryColor}
+          style={styles.loaderStyle}
         />
-        <Text preset="h2" color={indicatorStyle.text.color}>
+        <Text preset="h2" color={color.textColor}>
           Please wait ...
         </Text>
       </View>
@@ -80,12 +80,8 @@ export const IndicatorView = React.forwardRef<IndicatorRef, IndicatorProps>(
   IndicatorViewRef
 );
 
-export const indicatorStyles = ({
-  primaryColor,
-  textColor,
-  backgroundColor,
-}: Palette) =>
-  StyleSheet.create({
+export const indicatorStyles = ({ backgroundColor }: Palette) => {
+  const styles = StyleSheet.create({
     container: {
       alignItems: 'center',
       justifyContent: 'center',
@@ -99,10 +95,9 @@ export const indicatorStyles = ({
       padding: scaledSize(20),
     },
     loaderStyle: {
-      color: primaryColor,
       padding: scaledSize(15),
     },
-    text: {
-      color: textColor,
-    },
   });
+
+  return styles;
+};

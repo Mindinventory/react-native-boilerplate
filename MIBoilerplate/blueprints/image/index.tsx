@@ -102,7 +102,7 @@ export const Image = React.memo((props: ImageProps) => {
   return (
     <View style={[styles.container, containerStyle]} onLayout={onLayout}>
       <FastImage
-        style={[imageStyle]}
+        style={imageStyle}
         source={imageSource}
         resizeMode={resizeMode || FastImage.resizeMode.contain}
         onLoadStart={() => {
