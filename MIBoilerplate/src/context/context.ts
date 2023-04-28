@@ -1,7 +1,8 @@
 import { createContext, useContext } from 'react';
 
-import type { IndicatorRef } from '@app/blueprints';
+import type { ImageProps, IndicatorRef } from '@app/blueprints';
 
+import { Icons } from '@src/assets';
 import {
   type AppNavigationProp,
   useWithNavigation,
@@ -11,6 +12,8 @@ import { AppServices } from '@src/services';
 import { Palette, Theme } from '@src/utils';
 
 import type { ContentLanguage, DefaultContentType } from './content';
+import { IconProps } from './iconFactory';
+import { ImageSource } from './imageFactory';
 import type { Storage } from './storage';
 import type { defaultStyles } from './styles';
 import type en from '../i18n/locales/en.json';
@@ -72,6 +75,16 @@ export type AppContextType = {
    * Get app palette colors.
    */
   color: Palette;
+  /**
+   * get all App icons from this
+   * @example getIcons(Icons.SIDEMENU_ICONS)
+   */
+  getIcons: (icon: Icons, props?: IconProps) => JSX.Element;
+  /**
+   * get all App icons from this
+   * @example getImages(Images.PLACEHOLDER_IMAGE)
+   */
+  getImages: (image: ImageSource, props?: ImageProps) => JSX.Element;
 };
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);

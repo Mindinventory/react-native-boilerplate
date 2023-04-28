@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { useColorScheme } from 'react-native';
 
-import { IndicatorRef, IndicatorView } from '@app/blueprints';
+import { ImageProps, IndicatorRef, IndicatorView } from '@app/blueprints';
 import {
   NavigationContainer,
   NavigationContainerRef,
@@ -9,6 +9,7 @@ import {
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import { Icons } from './assets';
 import { StorageKeys } from './constants';
 import {
   AppContext,
@@ -17,6 +18,8 @@ import {
   defaultContent,
   storage,
 } from './context';
+import { getAppIconSource, IconProps } from './context/iconFactory';
+import { getAppImagesSource, ImageSource } from './context/imageFactory';
 import { defaultStyles } from './context/styles';
 import i18n from './i18n';
 import { AppNavigation, NavStackParams } from './navigation';
@@ -66,6 +69,10 @@ export const MainApp = () => {
       appTheme,
       color: color[appTheme || 'light'],
       contents: (obj, key) => defaultContent(obj, key),
+      getIcons: (icon: Icons, props?: IconProps) =>
+        getAppIconSource(icon, props),
+      getImages: (image: ImageSource, props?: ImageProps) =>
+        getAppImagesSource(image, props),
       language,
       loader,
       services: appServices,
