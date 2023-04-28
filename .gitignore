@@ -11,3 +11,13 @@ MIBoilerplate/yarn.lock
 .scannerwork/report-task.txt
 mindinventory-react-native-boilerplate-1.0.7.tgz
 sonar-project.properties
+
+# node.js
+#
+npm-debug.log
+yarn-error.log
+yarn-lock.json
+package-lock.json
+yarn.lock
+
+node_modules

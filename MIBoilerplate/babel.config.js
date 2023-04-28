@@ -5,6 +5,7 @@ module.exports = {
       {
         alias: {
           '@app/blueprints': './blueprints',
+          '@src/assets': './src/assets',
           '@src/components': './src/components',
           '@src/constants': './src/constants',
           '@src/context': './src/context',
@@ -20,7 +21,6 @@ module.exports = {
         root: ['./src'],
       },
     ],
-    'inline-dotenv',
   ],
   presets: ['module:metro-react-native-babel-preset'],
 };

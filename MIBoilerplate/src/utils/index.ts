@@ -1,3 +1,3 @@
 export * from './dimensions';
-export * from './utils';
+export * from './helper';
 export * from './color';

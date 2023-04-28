@@ -1,79 +1,19 @@
 import React from 'react';
-import { Button, FlatList, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Text } from '@app/blueprints';
 
 import { BaseLayout } from '@src/components';
-import { ContentLanguage } from '@src/context';
-import { Screen } from '@src/navigation';
-import { scaleHeight } from '@src/utils';
 
 import { useHome } from './useHome';
 
 const Home = () => {
-  const {
-    loader,
-    styles,
-    contents,
-    setLanguageInApp,
-    language,
-    users,
-    setAppTheme,
-    paging,
-    navigation,
-  } = useHome();
+  const { styles, contents } = useHome();
 
   return (
     <BaseLayout>
       <View style={styles.container}>
-        <Text
-          preset="h1"
-          onPress={() => (loader?.isLoading ? loader.hide : loader?.show())}>
-          {contents('common', 'delete_desc')}
-        </Text>
-        <Button title="Press" onPress={paging} />
-        <Button
-          title="Network"
-          onPress={() => navigation.navigate(Screen.SETTING)}
-        />
-        <FlatList
-          data={users}
-          renderItem={({ item }) => (
-            <Text preset="h3" color={styles.text.color}>
-              {item.id}. {item.firstName} {item.lastName}
-            </Text>
-          )}
-          ItemSeparatorComponent={() => (
-            <View
-              style={{
-                marginVertical: scaleHeight(20),
-              }}
-            />
-          )}
-          ListEmptyComponent={() => <Text preset="h2">No data</Text>}
-          ListFooterComponent={() => (
-            <Button
-              title="Press"
-              onPress={() => {
-                language === ContentLanguage.English
-                  ? setLanguageInApp(ContentLanguage.Hindi)
-                  : setLanguageInApp(ContentLanguage.English);
-              }}
-            />
-          )}
-        />
-        <Button
-          title="Arabic"
-          onPress={() => {
-            setLanguageInApp(ContentLanguage.Arabic);
-          }}
-        />
-        <Button title="Dark" onPress={() => setAppTheme('dark')} />
-        <Button title="Light" onPress={() => setAppTheme('light')} />
-        <Button title="Theme1" onPress={() => setAppTheme('theme1')} />
-        <Button title="Theme3" onPress={() => setAppTheme('theme2')} />
-        <Button title="Theme3" onPress={() => setAppTheme('theme3')} />
-        <Button title="Theme4" onPress={() => setAppTheme('theme4')} />
+        <Text preset="h1">{contents('common', 'coming_soon_title')}</Text>
       </View>
     </BaseLayout>
   );

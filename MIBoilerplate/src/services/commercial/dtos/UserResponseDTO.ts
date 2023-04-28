@@ -19,3 +19,7 @@ export interface SupportDTO {
   url: string;
   text: string;
 }
+
+export interface LoginResponseDTO {
+  token: string;
+}

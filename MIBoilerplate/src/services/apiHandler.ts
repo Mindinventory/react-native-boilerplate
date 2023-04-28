@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
-import { API_CLIENT } from './appServices.type';
+import { AppConfig } from '@src/constants';
 
 class APIhandler {
   private readonly axiosInstance: AxiosInstance;
@@ -11,7 +11,7 @@ class APIhandler {
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: API_CLIENT.API_URL,
+      baseURL: AppConfig.API_URL,
       headers: this.axiosHeaders,
       timeout: 1000,
       timeoutErrorMessage: 'Slow Network',

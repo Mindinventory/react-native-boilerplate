@@ -1,8 +1,13 @@
 import { API_METHODS } from './appServices.type';
 import { ServicesEndPoints } from './appServicesEndPoints';
 import { GetUserCommercialResponseAdapter } from './commercial/adapters/response/getUserCommercialResponseAdapter';
-import { UserResponseDTO } from './commercial/dtos/UserResponseDTO';
-import { ListUserReq, LoginParams, LoginResult, UserResult } from './models';
+import { PostLoginCommercialResponseAdapter } from './commercial/adapters/response/postLoginCommercialResponseAdapter';
+import {
+  LoginResponseDTO,
+  UserResponseDTO,
+} from './commercial/dtos/UserResponseDTO';
+import { ListUserReq, UserResult } from './models';
+import { LoginParams, LoginResult } from './models/login';
 import serviceAdapter from './serviceAdapter';
 
 export class AppServices {
@@ -10,13 +15,13 @@ export class AppServices {
 
   loginUser = async (loginParams: LoginParams): Promise<LoginResult> => {
     return new Promise((resolve, reject) => {
-      serviceAdapter<LoginResult, LoginParams>(
+      serviceAdapter<LoginResponseDTO, LoginParams>(
         API_METHODS.POST,
         ServicesEndPoints.LOGIN,
         loginParams
       )
         .then(res => {
-          resolve(res);
+          resolve(new PostLoginCommercialResponseAdapter().service(res));
         })
         .catch(error => {
           reject(error);
