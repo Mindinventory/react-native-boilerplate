@@ -19,6 +19,22 @@ Create a new project using the boilerplate :
 npx react-native init APP_NAME --template @mindinventory/react-native-boilerplate
 ```
 
+## Tech Stack
+
+| Library                   | Category             | Version | Description                                    |
+| ------------------------- | -------------------- | ------- | ---------------------------------------------- |
+| React Native              | Mobile Framework     | v0.71   | The best cross-platform mobile framework       |
+| React                     | UI Framework         | v18     | The most popular UI framework in the world     |
+| TypeScript                | Language             | v4      | Static typechecking                            |
+| React Navigation          | Navigation           | v6      | Performant and consistent navigation framework |
+| React Native Localization | Internationalization | v13     | i18n support (including RTL!)                  |
+| Redux                     | State Management     | v5      | Observable state tree                          |
+| Redux-toolkit             | Redux integration    | v3      | New redux library with some function helpers   |
+| RN Reanimated             | Animations           | v2      | Beautiful and performant animations            |
+| MMKV                      | Persistence          | v1      | State persistence                              |
+| axios                     | REST client          | v1      | Communicate with back-end                      |
+| Hermes                    | JS engine            |         | Fine-tuned JS engine for RN                    |
+
 # Features
 
 Built in implemented features.

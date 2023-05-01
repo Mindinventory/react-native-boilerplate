@@ -16,8 +16,9 @@ export const AppNavigation = () => {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name={Screen.HOME} component={Home} />
-      {/* <Stack.Screen name={Screen.SETTING} component={SettingsScreen} /> */}
-      <Stack.Screen name={Screen.SETTING} component={NetworkloggerScreen} />
+      {__DEV__ && (
+        <Stack.Screen name={Screen.SETTING} component={NetworkloggerScreen} />
+      )}
     </Stack.Navigator>
   );
 };
