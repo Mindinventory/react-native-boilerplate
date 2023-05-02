@@ -1,6 +1,9 @@
 {
   "common": {
     "about_us": "About Us",
+    "Breaking_News": "Breaking News",
+    "anonymous": "anonymous",
+    "general": "general",
     "activity": "Activity",
     "cancel": "Cancel",
     "coming_soon_title": "Coming Soon",

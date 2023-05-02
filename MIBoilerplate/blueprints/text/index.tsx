@@ -24,41 +24,49 @@ export const presets = {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(48),
+    fontWeight: '700',
   } as TextStyle,
   h2: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(42),
+    fontWeight: '700',
   } as TextStyle,
   h3: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(36),
+    fontWeight: '500',
   } as TextStyle,
   h4: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(30),
+    fontWeight: '500',
   } as TextStyle,
   h5: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(24),
+    fontWeight: '300',
   } as TextStyle,
   h6: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(18),
+    fontWeight: '300',
   } as TextStyle,
   small: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(12),
+    fontWeight: '300',
   } as TextStyle,
   title: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(26),
+    fontWeight: '700',
   } as TextStyle,
 };
 

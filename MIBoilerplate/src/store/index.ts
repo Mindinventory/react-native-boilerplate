@@ -15,9 +15,10 @@ import {
 
 import { storageMmkv } from '@src/context';
 
-import { userData, userDataName } from './reducers';
+import { newsData, newsDataName, userData } from './reducers';
 
 const rootReducer = combineReducers({
+  newsData,
   userData,
 });
 
@@ -41,7 +42,7 @@ export const reduxStorage: Storage = {
 const persistConfig: PersistConfig<RootState> = {
   key: 'root',
   storage: reduxStorage,
-  whitelist: [userDataName],
+  whitelist: [newsDataName],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
