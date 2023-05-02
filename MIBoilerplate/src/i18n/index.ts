@@ -1,7 +1,6 @@
 import { I18n } from 'i18n-js';
 import * as RNLocalize from 'react-native-localize';
 
-import ar from './locales/ar.json';
 import en from './locales/en.json';
 import hi from './locales/hi.json';
 
@@ -17,7 +16,6 @@ export const locale = locales[0]?.languageCode;
 i18n.enableFallback = true;
 
 i18n.translations = {
-  ar,
   en,
   hi,
 };

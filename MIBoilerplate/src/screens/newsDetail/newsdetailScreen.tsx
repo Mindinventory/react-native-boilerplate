@@ -20,7 +20,7 @@ const NewsdetailScreen = () => {
         })}
         <View style={styles.infoContainer}>
           <Text preset="h5">
-            {data.author ? data.author : contents('common', 'anonymous')}
+            {data.author ? data.author : contents('newsDetail', 'anonymous')}
           </Text>
           <Text preset="h5">{getPublishedMonth(data.publishedAt)}</Text>
         </View>

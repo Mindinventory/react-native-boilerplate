@@ -20,10 +20,10 @@ const NewslistScreen = () => {
     onPressNewsItem,
   } = useNewslist();
 
-  const ListHeaderComponent = () => {
+  const listHeaderComponent = () => {
     return (
       <View style={styles.headerContainer}>
-        <Text preset="h1">{contents('common', 'Breaking_News')}</Text>
+        <Text preset="h1">{contents('newsList', 'breaking_News')}</Text>
         <TouchableOpacity style={styles.networkButton} onPress={onPressNetwork}>
           {getIcons(Icons.SIDEMENU_ICONS, {
             resizeMode: 'contain',
@@ -33,7 +33,7 @@ const NewslistScreen = () => {
     );
   };
 
-  const NewsListItem = ({ item }: { item: NewsResult }) => {
+  const renderItem = ({ item }: { item: NewsResult }) => {
     return (
       <TouchableOpacity
         style={styles.newsItemContainer}
@@ -44,16 +44,12 @@ const NewslistScreen = () => {
         })}
         <View style={styles.newsTextView}>
           <Text preset="h6">
-            {item?.author ? item.author : contents('common', 'general')}
+            {item?.author ? item.author : contents('newsList', 'general')}
           </Text>
           <Text preset="title">{item.title}</Text>
         </View>
       </TouchableOpacity>
     );
-  };
-
-  const renderItem = ({ item }: { item: NewsResult }) => {
-    return <NewsListItem item={item} />;
   };
 
   return (
@@ -68,7 +64,7 @@ const NewslistScreen = () => {
           return `${item.publishedAt}${index}`;
         }}
         renderItem={renderItem}
-        ListHeaderComponent={ListHeaderComponent}
+        ListHeaderComponent={listHeaderComponent}
       />
     </BaseLayout>
   );
