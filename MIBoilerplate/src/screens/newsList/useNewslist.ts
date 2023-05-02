@@ -24,10 +24,8 @@ const useNewslist = () => {
 
   const getNewsData = useCallback(async () => {
     loader.current?.show();
-
     const getNews = await services.getNews(newsReqPrams);
     dispatch(setNews(getNews));
-
     loader.current?.hide();
   }, [dispatch, loader, services]);
 
@@ -42,9 +40,7 @@ const useNewslist = () => {
   };
 
   useEffect(() => {
-    if (data.length < 0) {
-      getNewsData();
-    }
+    getNewsData();
   }, [data.length, getNewsData]);
 
   return {
