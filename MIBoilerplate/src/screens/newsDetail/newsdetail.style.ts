@@ -14,7 +14,7 @@ export const newsdetailStyles = ({}: Palette) =>
     infoContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      marginVertical: scaledSize(8),
+      marginVertical: scaleHeight(8),
     },
     newsImage: {
       height: screenWidth * 0.8,

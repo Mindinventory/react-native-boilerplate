@@ -17,7 +17,7 @@ export const newslistStyles = ({ backgroundColor }: Palette) =>
     headerContainer: {
       alignItems: 'center',
       justifyContent: 'center',
-      marginVertical: scaledSize(10),
+      marginVertical: scaleHeight(10),
     },
     networkButton: {
       position: 'absolute',
