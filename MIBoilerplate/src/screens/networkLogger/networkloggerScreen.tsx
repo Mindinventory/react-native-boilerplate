@@ -7,7 +7,7 @@ import { BaseLayout } from '@src/components';
 const NetworkloggerScreen = () => {
   return (
     <BaseLayout>
-      <NetworkLogger theme={'dark'} />
+      <NetworkLogger theme={'light'} />
     </BaseLayout>
   );
 };

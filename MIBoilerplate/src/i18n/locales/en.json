@@ -1,33 +1,25 @@
 {
   "common": {
-    "about_us": "About Us",
-    "activity": "Activity",
     "cancel": "Cancel",
-    "coming_soon_title": "Coming Soon",
     "create": "Create",
-    "delete_desc": "Do you wanna delete your account?\nYour data will be permanently deleted.",
     "delete": "Delete",
     "errorMessage": "Unknown error..!!!",
-    "fbLoginUserCancel": "Opps !! You cancelled Login",
     "hey": "Hey there,",
-    "internetConnectionError": "Please check you internet connectivity.",
-    "kmAway": "km away",
-    "maybeLater": "Maybe later",
-    "notify_me": "Notify Me",
     "ohhNo": "Ohh Noo!!!",
-    "ok": "OK",
     "or": "Or",
-    "previous": "Previous",
+    "ok": "OK",
     "save": "Save",
     "see_more": "See More",
     "skip": "Skip",
-    "subscribe": "Subscribe",
-    "tryAgain": "Try again",
-    "userSessionExpired": "'Your session has been expired..!!! please login again...'",
-    "verify": "Verify",
-    "warn": "Warning",
     "welcome": "Welcome",
     "yes": "Yes",
-    "yesSignMeUp": "Yes sign me up"
+    "internetConnectionError": "Please check you internet connectivity."
+  },
+  "newsList": {
+    "breaking_News": "Breaking News",
+    "general": "general"
+  },
+  "newsDetail": {
+    "anonymous": "anonymous"
   }
 }

@@ -8,5 +8,5 @@ import { scaled } from '@src/utils';
 export type IconProps = Omit<ImageProps, 'source'>;
 
 export const getAppIconSource = (icon: Icons, props?: IconProps) => {
-  return <Image source={icon} style={{ ...scaled(25) }} {...props} />;
+  return <Image source={icon} style={{ ...scaled(13) }} {...props} />;
 };

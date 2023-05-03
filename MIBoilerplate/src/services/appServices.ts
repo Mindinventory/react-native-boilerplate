@@ -1,12 +1,14 @@
 import { API_METHODS } from './appServices.type';
 import { ServicesEndPoints } from './appServicesEndPoints';
+import { getNewsListResponseAdapter } from './commercial/adapters/response/getNewsListResponseAdapter';
 import { GetUserCommercialResponseAdapter } from './commercial/adapters/response/getUserCommercialResponseAdapter';
 import { PostLoginCommercialResponseAdapter } from './commercial/adapters/response/postLoginCommercialResponseAdapter';
+import { NewsResponseDTO } from './commercial/dtos/NewsResponseDTO';
 import {
   LoginResponseDTO,
   UserResponseDTO,
 } from './commercial/dtos/UserResponseDTO';
-import { ListUserReq, UserResult } from './models';
+import { ListUserReq, NewsResult, UserResult } from './models';
 import { LoginParams, LoginResult } from './models/login';
 import serviceAdapter from './serviceAdapter';
 
@@ -37,6 +39,21 @@ export class AppServices {
       )
         .then(res => {
           resolve(new GetUserCommercialResponseAdapter().service(res));
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  };
+
+  getNews = async (): Promise<NewsResult[]> => {
+    return new Promise((resolve, reject) => {
+      serviceAdapter<NewsResponseDTO, undefined>(
+        API_METHODS.GET,
+        ServicesEndPoints.NEWS
+      )
+        .then(res => {
+          resolve(new getNewsListResponseAdapter().service(res));
         })
         .catch(error => {
           reject(error);

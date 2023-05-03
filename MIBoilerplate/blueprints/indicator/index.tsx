@@ -90,12 +90,12 @@ export const indicatorStyles = ({ backgroundColor }: Palette) => {
     loaderContainer: {
       alignItems: 'center',
       backgroundColor: backgroundColor,
-      borderRadius: scaledSize(15),
+      borderRadius: scaledSize(7),
       justifyContent: 'center',
-      padding: scaledSize(20),
+      padding: scaledSize(10),
     },
     loaderStyle: {
-      padding: scaledSize(15),
+      padding: scaledSize(7),
     },
   });
 

@@ -15,7 +15,7 @@ export enum Fonts {
 }
 
 const BASE_TEXT: TextStyle = {
-  fontSize: scaledSize(14),
+  fontSize: scaledSize(7),
 };
 
 export const presets = {
@@ -23,42 +23,50 @@ export const presets = {
   h1: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
-    fontSize: scaledSize(48),
+    fontSize: scaledSize(24),
+    fontWeight: '700',
   } as TextStyle,
   h2: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
-    fontSize: scaledSize(42),
+    fontSize: scaledSize(21),
+    fontWeight: '700',
   } as TextStyle,
   h3: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
-    fontSize: scaledSize(36),
+    fontSize: scaledSize(18),
+    fontWeight: '500',
   } as TextStyle,
   h4: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
-    fontSize: scaledSize(30),
+    fontSize: scaledSize(15),
+    fontWeight: '500',
   } as TextStyle,
   h5: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
-    fontSize: scaledSize(24),
+    fontSize: scaledSize(12),
+    fontWeight: '300',
   } as TextStyle,
   h6: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
-    fontSize: scaledSize(18),
+    fontSize: scaledSize(9),
+    fontWeight: '300',
   } as TextStyle,
   small: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
-    fontSize: scaledSize(12),
+    fontSize: scaledSize(6),
+    fontWeight: '300',
   } as TextStyle,
   title: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
-    fontSize: scaledSize(26),
+    fontSize: scaledSize(13),
+    fontWeight: '700',
   } as TextStyle,
 };
 
