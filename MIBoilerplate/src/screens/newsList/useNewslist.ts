@@ -8,10 +8,16 @@ import { NewsResult } from '@src/services';
 import { getNewsData as newsData, setNews, useAppDispatch } from '@src/store';
 
 const useNewslist = () => {
-  const { navigation, styles, loader, getIcons, contents, getImages } =
-    useAppContext();
+  const {
+    navigation,
+    styles,
+    loader,
+    getIcons,
+    contents,
+    getImages,
+    services,
+  } = useAppContext();
   const dispatch = useAppDispatch();
-  const { services } = useAppContext();
 
   const data = useSelector(newsData);
 
@@ -22,15 +28,18 @@ const useNewslist = () => {
     loader.current?.hide();
   }, [dispatch, loader, services]);
 
-  const onPressNetwork = () => {
+  const handleNavigationNetwork = useCallback(() => {
     navigation.navigate(Screen.SETTING);
-  };
+  }, [navigation]);
 
-  const onPressNewsItem = (item: NewsResult) => () => {
-    navigation.navigate(Screen.NEWS_DETAIL, {
-      item,
-    });
-  };
+  const handleNavigationNewsItem = useCallback(
+    (item: NewsResult) => () => {
+      navigation.navigate(Screen.NEWS_DETAIL, {
+        item,
+      });
+    },
+    [navigation]
+  );
 
   useEffect(() => {
     getNewsData();
@@ -41,8 +50,8 @@ const useNewslist = () => {
     data,
     getIcons,
     getImages,
-    onPressNetwork,
-    onPressNewsItem,
+    handleNavigationNetwork,
+    handleNavigationNewsItem,
     styles: styles.newsListStyle,
   };
 };

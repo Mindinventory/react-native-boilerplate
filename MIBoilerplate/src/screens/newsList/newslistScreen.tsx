@@ -16,8 +16,8 @@ const NewslistScreen = () => {
     getIcons,
     getImages,
     contents,
-    onPressNetwork,
-    onPressNewsItem,
+    handleNavigationNetwork,
+    handleNavigationNewsItem,
   } = useNewslist();
 
   return (
@@ -35,7 +35,7 @@ const NewslistScreen = () => {
           return (
             <TouchableOpacity
               style={styles.newsItemContainer}
-              onPress={onPressNewsItem(item)}>
+              onPress={handleNavigationNewsItem(item)}>
               {getImages(item.imageurl, {
                 resizeMode: 'cover',
                 style: styles.newsImage,
@@ -55,7 +55,7 @@ const NewslistScreen = () => {
               <Text preset="h1">{contents('newsList', 'breaking_News')}</Text>
               <TouchableOpacity
                 style={styles.networkButton}
-                onPress={onPressNetwork}>
+                onPress={handleNavigationNetwork}>
                 {getIcons(Icons.DEBUG_ICONS, {
                   resizeMode: 'contain',
                   style: styles.debugIcon,
