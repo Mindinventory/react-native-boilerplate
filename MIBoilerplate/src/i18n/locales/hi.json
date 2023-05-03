@@ -12,7 +12,8 @@
     "see_more": "और देखें",
     "skip": "छोड़ें",
     "welcome": "स्वागत",
-    "yes": "हाँ"
+    "yes": "हाँ",
+    "internetConnectionError": "कृपया आप इंटरनेट कनेक्टिविटी की जाँच करें।"
   },
   "newsList": {
     "breaking_News": "आज की ताजा खबर",

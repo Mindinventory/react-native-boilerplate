@@ -12,7 +12,8 @@
     "see_more": "See More",
     "skip": "Skip",
     "welcome": "Welcome",
-    "yes": "Yes"
+    "yes": "Yes",
+    "internetConnectionError": "Please check you internet connectivity."
   },
   "newsList": {
     "breaking_News": "Breaking News",
