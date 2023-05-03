@@ -3,10 +3,6 @@ export interface Source {
   name: string;
 }
 
-export interface NewsReqParams {
-  API_KEY: string;
-}
-
 export interface NewsResult {
   body: string;
   categories: string;

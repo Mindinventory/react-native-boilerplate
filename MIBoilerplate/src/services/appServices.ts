@@ -8,7 +8,7 @@ import {
   LoginResponseDTO,
   UserResponseDTO,
 } from './commercial/dtos/UserResponseDTO';
-import { ListUserReq, NewsReqParams, NewsResult, UserResult } from './models';
+import { ListUserReq, NewsResult, UserResult } from './models';
 import { LoginParams, LoginResult } from './models/login';
 import serviceAdapter from './serviceAdapter';
 
@@ -46,11 +46,11 @@ export class AppServices {
     });
   };
 
-  getNews = async (newsReqParams: NewsReqParams): Promise<NewsResult[]> => {
+  getNews = async (): Promise<NewsResult[]> => {
     return new Promise((resolve, reject) => {
-      serviceAdapter<NewsResponseDTO, NewsReqParams>(
+      serviceAdapter<NewsResponseDTO, undefined>(
         API_METHODS.GET,
-        `${newsReqParams.API_KEY}`
+        ServicesEndPoints.NEWS
       )
         .then(res => {
           resolve(new getNewsListResponseAdapter().service(res));
