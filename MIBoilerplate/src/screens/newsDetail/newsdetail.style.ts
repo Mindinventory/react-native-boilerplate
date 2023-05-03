@@ -18,7 +18,7 @@ export const newsdetailStyles = ({}: Palette) =>
     },
     newsImage: {
       height: screenWidth * 0.8,
-      width: screenWidth * 1 - scaleWidth(40),
+      width: screenWidth - scaleWidth(40),
     },
     scrollViewContainer: { paddingHorizontal: scaleWidth(20) },
   });
