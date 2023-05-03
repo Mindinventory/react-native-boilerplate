@@ -5,7 +5,6 @@ import { NewsResult } from '@src/services';
 
 export enum Screen {
   SETTING = 'SETTING',
-  MAIN_NEWS = 'MAIN_NEWS',
   NEWS_LIST = 'NEWS_LIST',
   NEWS_DETAIL = 'NEWS_DETAIL',
 }
