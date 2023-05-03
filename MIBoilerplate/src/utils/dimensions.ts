@@ -2,8 +2,10 @@ import { Dimensions } from 'react-native';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
-export const designWidth = 750;
-export const designHeight = 1641;
+// resolution changes as per design
+
+export const designWidth = 375;
+export const designHeight = 812;
 
 const scaleWidth = (val: number) => {
   return (screenWidth * val) / designWidth;

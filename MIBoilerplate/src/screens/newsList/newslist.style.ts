@@ -11,34 +11,34 @@ import {
 export const newslistStyles = ({ backgroundColor }: Palette) =>
   StyleSheet.create({
     debugIcon: {
-      ...scaled(45),
+      ...scaled(22),
     },
-    flatlistStyles: { paddingHorizontal: scaledSize(10) },
+    flatlistStyles: { paddingHorizontal: scaledSize(5) },
     headerContainer: {
       alignItems: 'center',
       justifyContent: 'center',
-      marginVertical: scaledSize(20),
+      marginVertical: scaledSize(10),
     },
     networkButton: {
       position: 'absolute',
-      right: scaleWidth(10),
-      ...scaled(40),
+      right: scaleWidth(5),
+      ...scaled(20),
     },
     newsImage: {
-      borderRadius: scaledSize(10),
-      height: scaleHeight(190),
-      width: scaleWidth(240),
+      borderRadius: scaledSize(5),
+      height: scaleHeight(95),
+      width: scaleWidth(120),
     },
     newsItemContainer: {
       backgroundColor,
-      borderRadius: scaledSize(10),
+      borderRadius: scaledSize(5),
       flex: 1,
       flexDirection: 'row',
-      marginBottom: scaleHeight(10),
-      marginTop: scaleHeight(10),
+      marginBottom: scaleHeight(5),
+      marginTop: scaleHeight(5),
     },
     newsTextView: {
       flex: 1,
-      padding: scaledSize(10),
+      padding: scaledSize(5),
     },
   });
