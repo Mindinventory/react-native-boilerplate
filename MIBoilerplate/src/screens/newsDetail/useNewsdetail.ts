@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { useRoute } from '@react-navigation/native';
 
 import { useAppContext } from '@src/context';
@@ -10,10 +12,10 @@ const useNewsdetail = () => {
     params: { item: data },
   } = useRoute<NewsDetailRoute>();
 
-  const getPublishedMonth = (val: string) => {
+  const getPublishedMonth = useCallback((val: number) => {
     const publishedAt = new Date(val).toString();
     return publishedAt.split(' ').slice(0, 3).join(' ');
-  };
+  }, []);
 
   return {
     contents,
