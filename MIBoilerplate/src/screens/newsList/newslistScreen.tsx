@@ -20,38 +20,6 @@ const NewslistScreen = () => {
     onPressNewsItem,
   } = useNewslist();
 
-  const listHeaderComponent = () => {
-    return (
-      <View style={styles.headerContainer}>
-        <Text preset="h1">{contents('newsList', 'breaking_News')}</Text>
-        <TouchableOpacity style={styles.networkButton} onPress={onPressNetwork}>
-          {getIcons(Icons.SIDEMENU_ICONS, {
-            resizeMode: 'contain',
-          })}
-        </TouchableOpacity>
-      </View>
-    );
-  };
-
-  const renderItem = ({ item }: { item: NewsResult }) => {
-    return (
-      <TouchableOpacity
-        style={styles.newsItemContainer}
-        onPress={onPressNewsItem(item)}>
-        {getImages(item.urlToImage, {
-          resizeMode: 'cover',
-          style: styles.newsImage,
-        })}
-        <View style={styles.newsTextView}>
-          <Text preset="h6">
-            {item?.author ? item.author : contents('newsList', 'general')}
-          </Text>
-          <Text preset="title">{item.title}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  };
-
   return (
     <BaseLayout>
       <FlatList
@@ -61,10 +29,41 @@ const NewslistScreen = () => {
         data={data}
         style={styles.flatlistStyles}
         keyExtractor={(item, index) => {
-          return `${item.publishedAt}${index}`;
+          return `${item.id}${index}`;
         }}
-        renderItem={renderItem}
-        ListHeaderComponent={listHeaderComponent}
+        renderItem={({ item }: { item: NewsResult }) => {
+          return (
+            <TouchableOpacity
+              style={styles.newsItemContainer}
+              onPress={onPressNewsItem(item)}>
+              {getImages(item.imageurl, {
+                resizeMode: 'cover',
+                style: styles.newsImage,
+              })}
+              <View style={styles.newsTextView}>
+                <Text preset="h6">
+                  {item?.source ? item.source : contents('newsList', 'general')}
+                </Text>
+                <Text preset="title">{item.title}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        }}
+        ListHeaderComponent={() => {
+          return (
+            <View style={styles.headerContainer}>
+              <Text preset="h1">{contents('newsList', 'breaking_News')}</Text>
+              <TouchableOpacity
+                style={styles.networkButton}
+                onPress={onPressNetwork}>
+                {getIcons(Icons.DEBUG_ICONS, {
+                  resizeMode: 'contain',
+                  style: styles.debugIcon,
+                })}
+              </TouchableOpacity>
+            </View>
+          );
+        }}
       />
     </BaseLayout>
   );

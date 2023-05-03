@@ -1,5 +1,3 @@
-import { AppConfig } from '@src/constants';
-
 import { API_METHODS } from './appServices.type';
 import { ServicesEndPoints } from './appServicesEndPoints';
 import { getNewsListResponseAdapter } from './commercial/adapters/response/getNewsListResponseAdapter';
@@ -50,12 +48,13 @@ export class AppServices {
 
   getNews = async (newsReqParams: NewsReqParams): Promise<NewsResult[]> => {
     return new Promise((resolve, reject) => {
-      serviceAdapter<NewsResponseDTO<NewsResult[]>, NewsReqParams>(
+      serviceAdapter<NewsResponseDTO, NewsReqParams>(
         API_METHODS.GET,
-        `${ServicesEndPoints.TOP_HEADLINES}?country=${newsReqParams.country}&pageSize=${newsReqParams.pageSize}&apiKey=${AppConfig.API_KEY}`,
-        newsReqParams
+        `${newsReqParams.API_KEY}`
       )
-        .then(res => resolve(new getNewsListResponseAdapter().service(res)))
+        .then(res => {
+          resolve(new getNewsListResponseAdapter().service(res));
+        })
         .catch(error => {
           reject(error);
         });

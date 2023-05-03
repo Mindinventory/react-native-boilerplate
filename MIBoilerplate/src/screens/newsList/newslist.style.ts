@@ -8,8 +8,11 @@ import {
   scaleWidth,
 } from '@src/utils';
 
-export const newslistStyles = ({ primaryColor, backgroundColor }: Palette) =>
+export const newslistStyles = ({ backgroundColor }: Palette) =>
   StyleSheet.create({
+    debugIcon: {
+      ...scaled(45),
+    },
     flatlistStyles: { paddingHorizontal: scaledSize(10) },
     headerContainer: {
       alignItems: 'center',
@@ -17,7 +20,6 @@ export const newslistStyles = ({ primaryColor, backgroundColor }: Palette) =>
       marginVertical: scaledSize(20),
     },
     networkButton: {
-      backgroundColor: primaryColor,
       position: 'absolute',
       right: scaleWidth(10),
       ...scaled(40),
@@ -28,12 +30,12 @@ export const newslistStyles = ({ primaryColor, backgroundColor }: Palette) =>
       width: scaleWidth(240),
     },
     newsItemContainer: {
-      alignItems: 'center',
       backgroundColor,
       borderRadius: scaledSize(10),
       flex: 1,
       flexDirection: 'row',
       marginBottom: scaleHeight(10),
+      marginTop: scaleHeight(10),
     },
     newsTextView: {
       flex: 1,

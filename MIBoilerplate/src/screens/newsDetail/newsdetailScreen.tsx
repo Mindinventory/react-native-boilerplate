@@ -14,19 +14,21 @@ const NewsdetailScreen = () => {
   return (
     <BaseLayout>
       <ScrollView bounces={false} style={styles.scrollViewContainer}>
-        {getImages(data.urlToImage, {
+        {getImages(data.imageurl, {
           resizeMode: 'cover',
           style: styles.newsImage,
         })}
         <View style={styles.infoContainer}>
           <Text preset="h5">
-            {data.author ? data.author : contents('newsDetail', 'anonymous')}
+            {data.categories
+              ? data.categories
+              : contents('newsDetail', 'anonymous')}
           </Text>
-          <Text preset="h5">{getPublishedMonth(data.publishedAt)}</Text>
+          <Text preset="h5">{getPublishedMonth(data.published_on)}</Text>
         </View>
-        <Text preset="title">{data.title}</Text>
-        <Text preset="h4" style={styles.descriptionText}>
-          {data.description}
+        <Text preset="h1">{data.title}</Text>
+        <Text preset="h5" style={styles.descriptionText}>
+          {data.body}
         </Text>
       </ScrollView>
     </BaseLayout>

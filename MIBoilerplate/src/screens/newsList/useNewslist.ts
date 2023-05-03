@@ -4,14 +4,13 @@ import { useSelector } from 'react-redux';
 
 import { useAppContext } from '@src/context';
 import { Screen } from '@src/navigation';
-import { Country, NewsReqParams, NewsResult } from '@src/services';
+import { NewsReqParams, NewsResult } from '@src/services';
 import { getNewsData as newsData, setNews, useAppDispatch } from '@src/store';
 
-const PAGE_SIZE = 100;
+const API_KEY = 'https://min-api.cryptocompare.com/data/v2/news/';
 
 const newsReqPrams: NewsReqParams = {
-  country: Country.India,
-  pageSize: PAGE_SIZE,
+  API_KEY: API_KEY,
 };
 
 const useNewslist = () => {

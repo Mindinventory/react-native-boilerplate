@@ -4,14 +4,17 @@ import { NewsResponseDTO } from '../../dtos/NewsResponseDTO';
 export class getNewsListResponseAdapter {
   constructor() {}
 
-  service(dto: NewsResponseDTO<NewsResult[]>): NewsResult[] {
-    return dto.articles.map(item => {
+  service(dto: NewsResponseDTO): NewsResult[] {
+    return dto.Data.map((item: NewsResult) => {
       return {
-        author: item.author,
-        description: item.description,
-        publishedAt: item.publishedAt,
+        body: item.body,
+        categories: item.categories,
+        id: item.id,
+        imageurl: item.imageurl,
+        published_on: item.published_on,
+        source: item.source,
+        tags: item.tags,
         title: item.title,
-        urlToImage: item.urlToImage,
       };
     });
   }
