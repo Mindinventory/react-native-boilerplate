@@ -39,6 +39,33 @@ npx react-native init APP_NAME --template @mindinventory/react-native-boilerplat
 | axios                     | REST client          | v1      | Communicate with back-end                      |
 | Hermes                    | JS engine            |         | Fine-tuned JS engine for RN                    |
 
+## Folder Structure
+
+The project structure follows a modular approach to organize your codebase in a scalable manner. Here's an overview of the key folders:
+
+- **blueprints**: Contains the app elements that Customize as per app development required.
+- **src**: Contains the main source code of your application.
+  - **assets**: Stores static assets such as images, fonts, and icons.
+  - **components**: Reusable UI components.
+  - **constants**: App constants.
+  - **context**: App context to manage app styles, theme, localization, storage, navigation, iconFactory and imageFactory.
+  - **i18n**: Localization files for i18next.
+  - **navigation**: Navigation setup and configuration.
+  - **screens**: Individual screens/pages of your application.
+  - **services**: Handles API-related logic and communication.
+  - **store**: Redux store, actions, reducers, selectors and state observers.
+  - **utils**: Utility functions and helpers.
+
+## Configuration
+
+The boilerplate comes with a few configuration files that you can customize to fit your project's needs:
+
+- **.env**: Environment-specific configuration (e.g., API URLs, keys).
+- **.husky**: Husky improves your commits and more.
+- **.prettierrc**: Configuration for Prettier code formatting.
+- **.eslintrc**: Configuration for ESLint code linting.
+- **tsconfig.json**: TypeScript compiler configuration.
+
 ## Features
 
 Built in implemented features.
@@ -228,7 +255,7 @@ npm start
 
 Feel free to customize the React Native Boilerplate to fit your project's specific needs. Here are some areas you might consider modifying:
 
-- **App Configuration:** Update the app's configuration files, such as `app.json` and `metro.config.js`, to match your desired settings.
+- **App Configuration:** Update the app's configuration files, such as `app.json`, `babel.config.js` and `metro.config.js`, to match your desired settings.
 
 - **Directory Structure:** Adjust the project's directory structure to better organize your codebase.
 

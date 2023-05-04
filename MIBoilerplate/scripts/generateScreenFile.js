@@ -32,7 +32,7 @@ const use${useHookFileName} = () => {
 
   return {
     navigation,
-    styles: styles.homeStyle,
+    styles: styles.baseLayoutStyle,
   };
 };
 
