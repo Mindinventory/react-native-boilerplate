@@ -9,7 +9,7 @@
 
 The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.
 
-<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="./media/Banner.png" ></a>
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="./media/Banner.png"></a>
 
 # Using Boilerplate
 
@@ -17,18 +17,18 @@ The Boilerplate contains all the basic packages, common components and, prebuilt
 
 Built in implemented features.
 
-- Attractive code architecture.
-- Context API.
-- Environment Setup
-- Eslint for better code linting
-- Husky improves your commits and more.
-- Light/Dark custom theme modes.
-- Local storage(MMKV).
-- Localization.
-- Navigation.
-- Network request (API implementation).
-- Supported for responsive UI.
-- Typescript.
+- [x] Attractive code architecture.
+- [x] Context API.
+- [x] Environment Setup
+- [x] Eslint for better code linting
+- [x] Husky improves your commits and more.
+- [x] Light/Dark custom theme modes.
+- [x] Local storage(MMKV).
+- [x] Localization.
+- [x] Navigation.
+- [x] Network request (API implementation).
+- [x] Supported for responsive UI.
+- [x] Typescript.
 
 ## Code linting
 
@@ -78,7 +78,13 @@ npx react-native init APP_NAME --template @mindinventory/react-native-boilerplat
 
 The project structure follows a modular approach to organize your codebase in a scalable manner. Here's an overview of the key folders:
 
-![blueprints png](/media/blueprints.png)
+```
+├── blueprints
+│ ├── text
+│ ├── image
+│ └── indicator
+│ └── ...
+```
 
 - **blueprints**: Contains the app elements that Customize as per app development required.
 
@@ -114,7 +120,20 @@ The project structure follows a modular approach to organize your codebase in a 
     loader.current.isLoading;
     ```
 
-![source png](/media/src.png)
+```
+├── src
+│ ├── assets
+│ ├── components
+│ ├── context
+│ ├── hooks
+│ ├── i18n
+│ ├── navigation
+│ ├── screens
+│ ├── services
+│ ├── store
+│ ├── utils
+└── index.tsx
+```
 
 - **src**: Contains the main source code of your application.
 
@@ -129,7 +148,26 @@ The project structure follows a modular approach to organize your codebase in a 
   - **store**: Redux store, actions, reducers, selectors and state observers.
   - **utils**: Utility functions and helpers.
 
-![services png](/media/services.png)
+```
+├── src
+│ ├── services
+│ ├──├──commercial
+│ ├──├──├──response
+│ ├──├──├──├── ...commercialResponseAdapters
+│ ├── dtos
+│ ├──├── ...apiResponseDTO type
+│ ├── ...
+│ ├── models
+│ ├──├── ...apiModels type required in app
+│ ├── apiHandler
+│ ├── apiServices
+│ ├── apiServices.type
+│ ├── apiServicesEndPoints
+│ ├── serviceAdapter
+│ ├── ...
+└── ...
+```
+
 ![screens png](/media/screens.png)
 ![context png](/media/context.png)
 ![navigation png](/media/navigation.png)
@@ -226,26 +264,28 @@ To utilize these functions for creating a responsive UI, follow these steps:
 
 Feel free to customize and extend these functions as per your project requirements to achieve the desired responsive behavior.
 
-## Customize the visual assets:
+## Customize the visual assets
 
 This boilerplate provides a convenient set of scripts to generate images and icons. You can find these scripts in the `scripts` directory. Follow the instructions below to generate your assets:
 
 - **Generating Images:**
 
-  1.  Place your source images in the `src/assets/images` directory.
-  2.  Run the following command to automatically import the images into the assets/images/index.ts file:
-      ```
-      npm run generate:images
-      ```
-  3.  Get your images in app from context
-      For example:
+  1. Place your source images in the `src/assets/images` directory.
+  2. Run the following command to automatically import the images into the assets/images/index.ts file:
 
-      ```javascript
-      getIcons: return JSX.Element;
-      const { getImages } = useAppContext();
-      ```
+     ```bash
+     npm run generate:images
+     ```
 
-      use it in component as
+  3. Get your images in app from context
+     For example:
+
+     ```javascript
+     getIcons: return JSX.Element;
+     const { getImages } = useAppContext();
+     ```
+
+     use it in component as
 
   ```JSX
   <TouchableOpacity>
@@ -255,20 +295,22 @@ This boilerplate provides a convenient set of scripts to generate images and ico
 
 - **Generating Icons:**
 
-  1.  Place your source icon image in the `src/assets/icons` directory.
-  2.  Run the following command to automatically import the icons into the assets/icons/index.ts file:
-      ```
-      npm run generate:icons
-      ```
-  3.  Get your icon in app from context
-      For example:
+  1. Place your source icon image in the `src/assets/icons` directory.
+  2. Run the following command to automatically import the icons into the assets/icons/index.ts file:
 
-      ```javascript
-      getIcons: return JSX.Element;
-      const { getIcons } = useAppContext();
-      ```
+     ```bash
+     npm run generate:icons
+     ```
 
-      use it in component as
+  3. Get your icon in app from context
+     For example:
+
+     ```javascript
+     getIcons: return JSX.Element;
+     const { getIcons } = useAppContext();
+     ```
+
+     use it in component as
 
   ```js
   <TouchableOpacity>
@@ -281,14 +323,16 @@ This boilerplate provides a convenient set of scripts to generate images and ico
 
 - **Linking fonts:**
 
-* [React-Native-Asset](https://github.com/unimonkiez/react-native-asset)
+- [React-Native-Asset](https://github.com/unimonkiez/react-native-asset)
 
-  1.  Place your fonts in the `src/assets/fonts` directory.
-  2.  Run the following command to automatically link on native side.
-      ```
-      npx react-native-asset
-      ```
-  3.  For linking of custom that not in google fonts required extra steps in iOS.
+  1. Place your fonts in the `src/assets/fonts` directory.
+  2. Run the following command to automatically link on native side.
+
+     ```bash
+     npx react-native-asset
+     ```
+
+  3. For linking of custom that not in google fonts required extra steps in iOS.
 
   - add those fonts first in fontBook app then use that name used given in fontBook.
 
@@ -306,7 +350,7 @@ This boilerplate uses the `react-native-config` library for environment variable
 
 2. Define environment-specific variables in the `.env` files:
 
-   ```
+   ```env
    API_BASE_URL=https://api.example.com
    API_KEY=your-api-key
    ```
@@ -315,6 +359,7 @@ This boilerplate uses the `react-native-config` library for environment variable
 
 3. Access environment variables in your code:
    Declare env keys in `constants/config` file
+
    ```typescript
    export type ConfigTypes = {
      ENV: string;
@@ -336,34 +381,32 @@ Declare
 1. Create DTOs
    Create the DTOs (Data Transfer Objects) that represent the structure of the API response data. Each DTO should define the properties that match the response data fields.
 
-For example, let's create a UserDTO to represent user data:
+   For example, let's create a UserDTO to represent user data:
 
-```typescript
-export interface UserResponseDTO {
-  page: number;
-  per_page: number;
-  total: number;
-  total_pages: number;
-  data: DatumDTO[];
-  support: SupportDTO;
-}
-
-export interface DatumDTO {
-  id: number;
-  email: string;
-  first_name: string;
-  last_name: string;
-  avatar: string;
-}
-
-export interface SupportDTO {
-  url: string;
-  text: string;
-}
-```
+   ```typescript
+   export interface UserResponseDTO {
+     page: number;
+     per_page: number;
+     total: number;
+     total_pages: number;
+     data: DatumDTO[];
+     support: SupportDTO;
+   }
+   export interface DatumDTO {
+     id: number;
+     email: string;
+     first_name: string;
+     last_name: string;
+     avatar: string;
+   }
+   export interface SupportDTO {
+     url: string;
+     text: string;
+   }
+   ```
 
 2. Define API Endpoints
-   Define the API endpoints in your React Native application in `src/services/appServicesEndPoints.ts`. These endpoints should include the URL, HTTP method, and any required headers or parameters.
+   API endpoints in your React Native application in `src/services/appServicesEndPoints.ts`. These endpoints should include the URL, HTTP method, and any required headers or parameters.
 
 3. Call api as per serviceAdapter methods in `src/services/appServices.ts`.
    Create a function in class:
@@ -389,9 +432,9 @@ export interface SupportDTO {
 
 5. Call your api mapper DTOs to in services as show in 3rd point.
 
-## Start the development server:
+## Start the development server
 
-```
+```bash
 npm start
 ```
 
@@ -411,11 +454,11 @@ Feel free to customize the React Native Boilerplate to fit your project's specif
 
 Contributions to this boilerplate are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the repository.
 
-# LICENSE!
+# LICENSE
 
 react-native-boilerplate is [MIT-licensed](https://github.com/Mindinventory/react-native-boilerplate/blob/master/LICENSE).
 
-# Let us know!
+# Let us know
 
 If you use our open-source libraries in your project, please make sure to credit us and Give a star to www.mindinventory.com
 
