@@ -161,7 +161,7 @@ The boilerplate comes with a few configuration files that you can customize to f
 - **.eslintrc**: Configuration for ESLint code linting.
 - **tsconfig.json**: TypeScript compiler configuration.
 
-# React Native Responsive UI Helpers
+# Responsive UI Helpers
 
 This set of helper functions provides a convenient way to create responsive user interfaces in your React Native applications. It helps in scaling and sizing UI elements based on the device's screen dimensions.
 
