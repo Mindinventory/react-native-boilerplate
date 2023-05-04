@@ -9,9 +9,25 @@
 
 The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.
 
-<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/blob/master/document/Banner.png"></a>
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="./media/Banner.png" width="203" height="43"></a>
 
 # Using Boilerplate
+
+## Features
+
+Built in implemented features.
+
+- Typescript.
+- Light/Dark mode.
+- Localization.
+- Navigation.
+- Network request (API implementation).
+- Context API.
+- Default common components.
+- Custom hook.
+- Supported for responsive UI.
+- Local storage.
+- Attractive code architecture.
 
 ## Introduction
 
@@ -116,22 +132,6 @@ The boilerplate comes with a few configuration files that you can customize to f
 - **.prettierrc**: Configuration for Prettier code formatting.
 - **.eslintrc**: Configuration for ESLint code linting.
 - **tsconfig.json**: TypeScript compiler configuration.
-
-## Features
-
-Built in implemented features.
-
-- Typescript.
-- Light/Dark mode.
-- Localization.
-- Navigation.
-- Network request (API implementation).
-- Context API.
-- Default common components.
-- Custom hook.
-- Supported for responsive UI.
-- Local storage.
-- Attractive code architecture.
 
 ## Customize the visual assets:
 
@@ -328,5 +328,5 @@ If you use our open-source libraries in your project, please make sure to credit
 
 <p><h4>Please feel free to use this component and Let us know if you are interested to building Apps or Designing Products.</h4>
 <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=circular-cards-stack-view" target="__blank">
-<img src="https://github.com/Sammindinventory/MindInventory/blob/main/hirebutton.png" width="203" height="43"  alt="app development">
+<img src="./media/hire_button.png" width="203" height="43"  alt="app development">
 </a>
