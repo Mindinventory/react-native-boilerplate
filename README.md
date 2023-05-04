@@ -41,6 +41,8 @@ npx react-native init APP_NAME --template @mindinventory/react-native-boilerplat
 
 ## Folder Structure
 
+![architecture png](/document/architecture.png)
+
 The project structure follows a modular approach to organize your codebase in a scalable manner. Here's an overview of the key folders:
 
 - **blueprints**: Contains the app elements that Customize as per app development required.
