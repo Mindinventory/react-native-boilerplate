@@ -9,7 +9,7 @@
 
 The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.
 
-<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="./media/Banner.png" width="203" height="43"></a>
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="./media/Banner.png" ></a>
 
 # Using Boilerplate
 
@@ -59,7 +59,7 @@ npx react-native init APP_NAME --template @mindinventory/react-native-boilerplat
 
 The project structure follows a modular approach to organize your codebase in a scalable manner. Here's an overview of the key folders:
 
-![blueprints png](/document/blueprints.png)
+![blueprints png](/media/blueprints.png)
 
 - **blueprints**: Contains the app elements that Customize as per app development required.
 
@@ -95,7 +95,7 @@ The project structure follows a modular approach to organize your codebase in a 
     loader.current.isLoading;
     ```
 
-![source png](/document/src.png)
+![source png](/media/src.png)
 
 - **src**: Contains the main source code of your application.
 
@@ -110,18 +110,18 @@ The project structure follows a modular approach to organize your codebase in a 
   - **store**: Redux store, actions, reducers, selectors and state observers.
   - **utils**: Utility functions and helpers.
 
-![services png](/document/services.png)
-![screens png](/document/screens.png)
-![context png](/document/context.png)
-![navigation png](/document/navigation.png)
-![utils png](/document/utils.png)
-![assets png](/document/assets.png)
-![i18n png](/document/i18n.png)
-![components png](/document/components.png)
+![services png](/media/services.png)
+![screens png](/media/screens.png)
+![context png](/media/context.png)
+![navigation png](/media/navigation.png)
+![utils png](/media/utils.png)
+![assets png](/media/assets.png)
+![i18n png](/media/i18n.png)
+![components png](/media/components.png)
 
 ## Modules
 
-![modules png](/document/modules.png)
+![modules png](/media/modules.png)
 
 ## Configuration
 
