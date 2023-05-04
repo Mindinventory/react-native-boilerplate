@@ -17,17 +17,18 @@ The Boilerplate contains all the basic packages, common components and, prebuilt
 
 Built in implemented features.
 
-- Typescript.
+- Attractive code architecture.
+- Context API.
+- Environment Setup
+- Eslint for better code linting
+- Husky improves your commits and more.
 - Light/Dark custom theme modes.
+- Local storage(MMKV).
 - Localization.
 - Navigation.
 - Network request (API implementation).
-- Context API.
 - Supported for responsive UI.
-- Local storage(MMKV).
-- Attractive code architecture.
-- Eslint for better code linting
-- Husky improves your commits and more.
+- Typescript.
 
 ## Code linting
 
