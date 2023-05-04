@@ -77,7 +77,7 @@ export type AppContextType = {
   color: Palette;
   /**
    * get all App icons from this
-   * @example getIcons(Icons.SIDEMENU_ICONS)
+   * @example getIcons(Icons.DEBUG_ICONS)
    */
   getIcons: (icon: Icons, props?: IconProps) => JSX.Element;
   /**

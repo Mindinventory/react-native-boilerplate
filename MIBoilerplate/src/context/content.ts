@@ -15,5 +15,5 @@ export const defaultContent = <
   obj: T,
   key: Key
 ) => {
-  return i18n.t(`${obj}.${key as string}`);
+  return i18n.t(`${obj}.${String(key)}`);
 };

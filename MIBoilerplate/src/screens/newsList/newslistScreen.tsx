@@ -52,7 +52,7 @@ const NewslistScreen = () => {
         ListHeaderComponent={() => {
           return (
             <View style={styles.headerContainer}>
-              <Text preset="h1">{contents('newsList', 'breaking_News')}</Text>
+              <Text preset="h1">{contents('newsList', 'breakingNews')}</Text>
               <TouchableOpacity
                 style={styles.networkButton}
                 onPress={handleNavigationNetwork}>
