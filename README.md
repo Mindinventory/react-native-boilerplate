@@ -108,31 +108,18 @@ This boilerplate provides a convenient set of scripts to generate images and ico
   </TouchableOpacity>
   ```
 
-  - **Linking fonts:**
+- **Linking fonts:**
+
+* [React-Native-Asset](https://github.com/unimonkiez/react-native-asset)
 
   1.  Place your fonts in the `src/assets/fonts` directory.
-  2.  Run the following command to automatically link fonts on native side assets/icons/index.ts file:
+  2.  Run the following command to automatically link on native side.
       ```
-      npm run generate:icons
+      npx react-native-asset
       ```
-  3.  Get your icon in app from context
-      For example:
+  3.  For linking of custom that not in google fonts required extra steps in iOS.
 
-      ```js
-      getIcons: return JSX.Element;
-      const { getIcons } = useAppContext();
-      ```
-
-      use it in component as
-
-  ```js
-  <TouchableOpacity>
-    {getIcons(Icons.DEBUG_ICONS, {
-      resizeMode: "contain",
-      style: styles.debugIcon,
-    })}
-  </TouchableOpacity>
-  ```
+  - add those fonts first in fontBook app then use that name used given in fontBook.
 
 ## Environment Setup
 
