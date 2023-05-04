@@ -18,16 +18,34 @@ The Boilerplate contains all the basic packages, common components and, prebuilt
 Built in implemented features.
 
 - Typescript.
-- Light/Dark mode.
+- Light/Dark custom theme modes.
 - Localization.
 - Navigation.
 - Network request (API implementation).
 - Context API.
-- Default common components.
-- Custom hook.
 - Supported for responsive UI.
-- Local storage.
+- Local storage(MMKV).
 - Attractive code architecture.
+- Eslint for better code linting
+- Husky improves your commits and more.
+
+## Code linting
+
+This React Native boilerplate utilizes ESLint, a popular linting tool, to enforce consistent and high-quality code across your project. ESLint helps identify and fix common code issues, ensuring your codebase adheres to best practices and coding standards.
+
+The ESLint configuration in this boilerplate includes the following features and plugins:
+
+- `@commitlint/cli`: Enforces conventional commit messages.
+- `@commitlint/config-conventional`: Provides commit message linting rules following conventional commit format.
+- `eslint-plugin-import`: Provides rules for linting ES6 import/export syntax.
+- `eslint-plugin-import-order-autofix`: Sorts import statements automatically.
+- `eslint-plugin-no-inline-styles`: Detects and discourages the use of inline styles in React Native.
+- `eslint-plugin-prettier`: Integrates Prettier code formatting rules into ESLint.
+- `eslint-plugin-react-hooks`: Enforces rules for React Hooks.
+- `eslint-plugin-react-native`: Provides rules specific to React Native development.
+- `eslint-plugin-sort-keys-fix`: Sorts object keys in alphabetical order.
+
+configuration of this lint is added in `.eslintrc.js` file.
 
 ## Introduction
 
@@ -121,7 +139,17 @@ The project structure follows a modular approach to organize your codebase in a 
 
 ## Modules
 
-![modules png](/media/modules.png)
+<p align="center">
+ <img src="./media/modules.png">
+</p>
+
+Modules are collection of source files and build settings that allow you to divide a project into discrete units of functionality. In this case apart from dividing by functionality/responsibility, existing the following dependence between them:
+
+The above graph shows the app modularisation:
+
+- `:app` depends on `:context` and indirectly depends on `:store` by dynamic-features.
+- `:context` modules depends on `:theming`, `:i18n`, `:navigation` `:services` and `:app`.
+- `:store` redux store for global state management with redux persist state persistence.
 
 ## Configuration
 
@@ -132,6 +160,70 @@ The boilerplate comes with a few configuration files that you can customize to f
 - **.prettierrc**: Configuration for Prettier code formatting.
 - **.eslintrc**: Configuration for ESLint code linting.
 - **tsconfig.json**: TypeScript compiler configuration.
+
+# React Native Responsive UI Helpers
+
+This set of helper functions provides a convenient way to create responsive user interfaces in your React Native applications. It helps in scaling and sizing UI elements based on the device's screen dimensions.
+
+## Functions
+
+The following functions are available in this helper module:
+
+- `scaleWidth(val: number): number` - Scales a value proportionally based on the device's screen width and the predefined design width.
+- `scaleHeight(val: number): number` - Scales a value proportionally based on the device's screen height and the predefined design height.
+- `moderateScale(size: number, factor = 1): number` - Scales a size value using a factor to provide a moderate scaling effect.
+- `scaledSize(size: number): number` - Scales a size value proportionally based on the overall screen scale.
+- `screenWidth: number` - The width of the device's screen.
+- `screenHeight: number` - The height of the device's screen.
+
+## Usage
+
+To utilize these functions for creating a responsive UI, follow these steps:
+
+1. Import the required functions and variables from the helper module:
+
+   ```javascript
+   import {
+     scaleWidth,
+     scaleHeight,
+     moderateScale,
+     scaledSize,
+     screenWidth,
+     screenHeight,
+   } from "@src/utils/dimensions";
+   ```
+
+2. Use the functions in your styles or component logic to achieve responsive sizing:
+
+   ```javascript
+   const styles = StyleSheet.create({
+     container: {
+       width: scaleWidth(300),
+       height: scaleHeight(200),
+       marginVertical: moderateScale(10),
+       fontSize: scaledSize(16),
+     },
+   });
+   ```
+
+   In this example, the width and height of the container will be scaled proportionally based on the device's screen width and height. The `moderateScale` function is used to provide a moderate scaling effect to the margin, and the `scaledSize` function is used to scale the font size.
+
+3. Adjust the predefined design width and height if needed:
+
+   ```javascript
+   export const designWidth = 375;
+   export const designHeight = 812;
+   ```
+
+   Modify these values according to your design specifications to ensure accurate scaling.
+
+## Notes
+
+- The `scaleWidth` and `scaleHeight` functions are useful for scaling dimensions, such as width, height, padding, or margin values.
+- The `moderateScale` function can be used to achieve a more subtle scaling effect by providing a factor that controls the degree of scaling.
+- The `scaledSize` function is handy for scaling font sizes or any other numerical values that need to adapt to different screen sizes.
+
+Feel free to customize and extend these functions as per your project requirements to achieve the desired responsive behavior.
 
 ## Customize the visual assets:
 
