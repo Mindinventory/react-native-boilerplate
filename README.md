@@ -41,12 +41,48 @@ npx react-native init APP_NAME --template @mindinventory/react-native-boilerplat
 
 ## Folder Structure
 
-![architecture png](/document/architecture.png)
-
 The project structure follows a modular approach to organize your codebase in a scalable manner. Here's an overview of the key folders:
 
+![blueprints png](/document/blueprints.png)
+
 - **blueprints**: Contains the app elements that Customize as per app development required.
+
+  - **Text**: Text element(typography) for app consist presets of all font family and font-size that we have to use in app.
+    For Example:
+
+    ```js
+    import { Text } from "@app/blueprints";
+
+    <Text preset="h1">{contents("newsList", "breakingNews")}</Text>;
+    ```
+
+  - **Image**: React Native's Image component handles image caching like browsers for the most part using `react-native-fast-image` library.
+    For Example:
+
+    ```js
+    import { Image } from "@app/blueprints";
+
+    <Image source={sourcePath} {...props} />;
+    ```
+
+  - **Indicator**: Show loader in app with customize way. use it form context of app.
+    For Example:
+
+    ```js
+    const { loader } = useAppContext();
+
+    //to show Indicator
+    loader.current.show();
+    //to hide Indicator
+    loader.current.hide();
+    //get Indicator status
+    loader.current.isLoading;
+    ```
+
+![source png](/document/src.png)
+
 - **src**: Contains the main source code of your application.
+
   - **assets**: Stores static assets such as images, fonts, and icons.
   - **components**: Reusable UI components.
   - **constants**: App constants.
@@ -57,6 +93,19 @@ The project structure follows a modular approach to organize your codebase in a 
   - **services**: Handles API-related logic and communication.
   - **store**: Redux store, actions, reducers, selectors and state observers.
   - **utils**: Utility functions and helpers.
+
+![services png](/document/services.png)
+![screens png](/document/screens.png)
+![context png](/document/context.png)
+![navigation png](/document/navigation.png)
+![utils png](/document/utils.png)
+![assets png](/document/assets.png)
+![i18n png](/document/i18n.png)
+![components png](/document/components.png)
+
+## Modules
+
+![modules png](/document/modules.png)
 
 ## Configuration
 
