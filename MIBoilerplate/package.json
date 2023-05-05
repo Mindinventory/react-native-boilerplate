@@ -7,7 +7,7 @@
     "fix:lint": "yarn lint --fix && yarn typescript",
     "generate:icons": "cd scripts && node icons.js",
     "generate:images": "cd scripts && node images.js",
-    "generateScreen": "cd scripts && node generateScreenFile.js",
+    "generate:screen": "cd scripts && node generateScreenFile.js",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "postinstall": "npx pod-install",

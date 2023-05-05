@@ -5,10 +5,14 @@ const iconFileNames = () => {
   const array = fs
     .readdirSync('../src/assets/icons')
     .filter(file => {
-      return file.endsWith('.png');
+      return ['gif', 'jpeg', 'jpg', 'png', 'webp'].includes(file.split('.')[1]);
     })
     .map(file => {
-      return file.replace('@2x.png', '').replace('@3x.png', '');
+      const ext = path.parse(file).ext;
+      return file.split('@').length > 1 &&
+        ['1x', '2x', '3x'].includes(file.split('@')[1].split('.')[0])
+        ? file.replace(`@2x${ext}`, `${ext}`).replace(`@3x${ext}`, `${ext}`)
+        : file;
     });
 
   return Array.from(new Set(array));

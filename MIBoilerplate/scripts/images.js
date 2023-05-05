@@ -5,10 +5,14 @@ const imageFileNames = () => {
   const array = fs
     .readdirSync('../src/assets/images')
     .filter(file => {
-      return file.endsWith('.webp');
+      return ['gif', 'jpeg', 'jpg', 'png', 'webp'].includes(file.split('.')[1]);
     })
     .map(file => {
-      return file.replace('@2x.webp', '').replace('@3x.webp', '');
+      const ext = path.parse(file).ext;
+      return file.split('@').length > 1 &&
+        ['1x', '2x', '3x'].includes(file.split('@')[1].split('.')[0])
+        ? file.replace(`@2x${ext}`, `${ext}`).replace(`@3x${ext}`, `${ext}`)
+        : file;
     });
 
   return Array.from(new Set(array));
@@ -17,7 +21,7 @@ const imageFileNames = () => {
 const generate = () => {
   let properties = imageFileNames()
     .map(name => {
-      const imageName = path.parse(name).name.toUpperCase();
+      const imageName = path.parse(name).name.toUpperCase().replace(/\s/g, '_');
       return `${imageName}_IMAGE = require('./${name}'),`;
     })
     .join('\n  ');

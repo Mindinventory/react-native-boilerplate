@@ -153,17 +153,21 @@ The project structure follows a modular approach to organize your codebase in a 
 │ ├── services
 │ ├──├──commercial
 │ ├──├──├──response
-│ ├──├──├──├── ...commercialResponseAdapters
+│ ├──├──├──├── getLoginResponseAdapter.ts
+│ ├──├──├──├── getNesListResponseAdapter.ts
+│ ├──├──├──├── ...
 │ ├── dtos
-│ ├──├── ...apiResponseDTO type
-│ ├── ...
+│ ├──├── LoginResponseDTO.ts
+│ ├──├── NewsListResponseDTO.ts
+│ ├──├── ...
 │ ├── models
-│ ├──├── ...apiModels type required in app
+│ ├──├── login.ts
+│ ├──├── news.ts
+│ ├──├── ...
 │ ├── apiHandler
 │ ├── apiServices
 │ ├── apiServices.type
 │ ├── apiServicesEndPoints
-│ ├── serviceAdapter
 │ ├── ...
 └── ...
 ```
@@ -171,44 +175,15 @@ The project structure follows a modular approach to organize your codebase in a 
 ```
 ├── src
 │ ├── screens
-│ ├──├── ...screenName Folder
-│ ├──├──├── ....screen.style
-│ ├──├──├── ...mainScreen
-│ ├──├──├── ...useScreenHook
-│ ├── ... import & export all in index.ts
-└── ...
-```
-
-```
-├── src
-│ ├── context
-│ ├──├── content  (i18n translation contents in this)
-│ ├──├── context (required methods that globally reusable values)
-│ ├──├── iconFactory
-│ ├──├── imageFactory
-│ ├──├── storages (app local storage helper functions)
-│ ├──├── styles (export all styles form styles file)
-│ ├──├── ...
-└── ...
-```
-
-```
-├── src
-│ ├── navigation
-│ ├──├── appNavigation  (stack of all screens in this)
-│ ├──├── appNavigation.type (include all screen names and params in this)
-│ ├──├── withNavigation
-│ ├──├── ...
-└── ...
-```
-
-```
-├── src
-│ ├── utils
-│ ├──├── color (include themes color of app)
-│ ├──├── dimensions (for responsive UI helper fucntions)
-│ ├──├── helper (include app helper function)
-│ ├──├── ...
+│ ├──├── newsList
+│ ├──├──├── newsList.style.ts
+│ ├──├──├── newListScreen.tsx
+│ ├──├──├── useNewsList.ts
+│ ├──├── login
+│ ├──├──├── login.style.ts
+│ ├──├──├── loginScreen.tsx
+│ ├──├──├── useLogin.ts
+│ ├── ...
 └── ...
 ```
 
@@ -219,24 +194,32 @@ The project structure follows a modular approach to organize your codebase in a 
 │ ├──├── icons (app icons)
 │ ├──├── images (local images used in app)
 │ ├──├── ...
-└── ...
-```
-
-```
-├── src
+│ ├── components
+│ ├──├── ... app reusable components
+│ ├──├── index (export all in this)
+│ ├──├── ...
+│ ├── context
+│ ├──├── storage (app local storage)
+│ ├──├── ...
 │ ├── i18n
 │ ├──├── locales
-│ ├──├──├── ...languagesCode json (content all local strings in this)
-│ ├──├── index.ts (methods of i18n includes in this)
+│ ├──├──├── en.json
+│ ├──├──├── ...
+│ ├──├── index.ts
+│ ├──├── ...
+│ ├── utils
+│ ├──├── color (include themes color of app)
+│ ├──├── dimensions (for responsive UI helper fucntions)
+│ ├──├── helper (include app helper function)
 │ ├──├── ...
 └── ...
 ```
 
 ```
 ├── src
-│ ├── components
-│ ├──├── ... app reusable components
-│ ├──├── index (export all in this)
+│ ├── navigation
+│ ├──├── appNavigation  (stack of all screens in this)
+│ ├──├── appNavigation.type (include all screen names and params in this)
 │ ├──├── ...
 └── ...
 ```
