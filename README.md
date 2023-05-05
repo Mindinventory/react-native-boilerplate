@@ -168,13 +168,78 @@ The project structure follows a modular approach to organize your codebase in a 
 └── ...
 ```
 
-![screens png](/media/screens.png)
-![context png](/media/context.png)
-![navigation png](/media/navigation.png)
-![utils png](/media/utils.png)
-![assets png](/media/assets.png)
-![i18n png](/media/i18n.png)
-![components png](/media/components.png)
+```
+├── src
+│ ├── screens
+│ ├──├── ...screenName Folder
+│ ├──├──├── ....screen.style
+│ ├──├──├── ...mainScreen
+│ ├──├──├── ...useScreenHook
+│ ├── ... import & export all in index.ts
+└── ...
+```
+
+```
+├── src
+│ ├── context
+│ ├──├── content  (i18n translation contents in this)
+│ ├──├── context (required methods that globally reusable values)
+│ ├──├── iconFactory
+│ ├──├── imageFactory
+│ ├──├── storages (app local storage helper functions)
+│ ├──├── styles (export all styles form styles file)
+│ ├──├── ...
+└── ...
+```
+
+```
+├── src
+│ ├── navigation
+│ ├──├── appNavigation  (stack of all screens in this)
+│ ├──├── appNavigation.type (include all screen names and params in this)
+│ ├──├── withNavigation
+│ ├──├── ...
+└── ...
+```
+
+```
+├── src
+│ ├── utils
+│ ├──├── color (include themes color of app)
+│ ├──├── dimensions (for responsive UI helper fucntions)
+│ ├──├── helper (include app helper function)
+│ ├──├── ...
+└── ...
+```
+
+```
+├── src
+│ ├── assets
+│ ├──├── fonts (all fonts in this)
+│ ├──├── icons (app icons)
+│ ├──├── images (local images used in app)
+│ ├──├── ...
+└── ...
+```
+
+```
+├── src
+│ ├── i18n
+│ ├──├── locales
+│ ├──├──├── ...languagesCode json (content all local strings in this)
+│ ├──├── index.ts (methods of i18n includes in this)
+│ ├──├── ...
+└── ...
+```
+
+```
+├── src
+│ ├── components
+│ ├──├── ... app reusable components
+│ ├──├── index (export all in this)
+│ ├──├── ...
+└── ...
+```
 
 ## Modules
 
