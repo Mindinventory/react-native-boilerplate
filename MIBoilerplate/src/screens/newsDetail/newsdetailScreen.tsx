@@ -14,7 +14,7 @@ const NewsdetailScreen = () => {
   return (
     <BaseLayout>
       <ScrollView bounces={false} style={styles.scrollViewContainer}>
-        {getImages(data.imageurl, {
+        {getImages(data.imageUrl, {
           resizeMode: 'cover',
           style: styles.newsImage,
         })}
