@@ -1,14 +1,9 @@
 import React from 'react';
 
-import {AppContextProvider} from 'app-contexts';
-import {Navigation} from 'app-navigation';
+import { MainApp } from './src';
 
 const App = () => {
-  return (
-    <AppContextProvider>
-      <Navigation />
-    </AppContextProvider>
-  );
+  return <MainApp />;
 };
 
 export default App;

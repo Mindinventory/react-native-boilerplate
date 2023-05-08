@@ -9,9 +9,48 @@
 
 The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.
 
-<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/blob/master/document/Banner.png"></a>
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="./media/Banner.png"></a>
 
 # Using Boilerplate
+
+## Features
+
+Built in implemented features.
+
+- [x] Attractive code architecture.
+- [x] Context API.
+- [x] Environment Setup
+- [x] Eslint for better code linting
+- [x] Husky improves your commits and more.
+- [x] Light/Dark custom theme modes.
+- [x] Local storage(MMKV).
+- [x] Localization.
+- [x] Navigation.
+- [x] Network request (API implementation).
+- [x] Supported for responsive UI.
+- [x] Typescript.
+
+## Code linting
+
+This React Native boilerplate utilizes ESLint, a popular linting tool, to enforce consistent and high-quality code across your project. ESLint helps identify and fix common code issues, ensuring your codebase adheres to best practices and coding standards.
+
+The ESLint configuration in this boilerplate includes the following features and plugins:
+
+- `@commitlint/cli`: Enforces conventional commit messages.
+- `@commitlint/config-conventional`: Provides commit message linting rules following conventional commit format.
+- `eslint-plugin-import`: Provides rules for linting ES6 import/export syntax.
+- `eslint-plugin-import-order-autofix`: Sorts import statements automatically.
+- `eslint-plugin-no-inline-styles`: Detects and discourages the use of inline styles in React Native.
+- `eslint-plugin-prettier`: Integrates Prettier code formatting rules into ESLint.
+- `eslint-plugin-react-hooks`: Enforces rules for React Hooks.
+- `eslint-plugin-react-native`: Provides rules specific to React Native development.
+- `eslint-plugin-sort-keys-fix`: Sorts object keys in alphabetical order.
+
+configuration of this lint is added in `.eslintrc.js` file.
+
+## Introduction
+
+This repository serves as a boilerplate for React Native projects, providing a solid foundation to kickstart your development process. It includes a collection of scripts to generate images and icons, making it easier to customize your app's visual assets.
 
 Create a new project using the boilerplate :
 
@@ -19,31 +58,459 @@ Create a new project using the boilerplate :
 npx react-native init APP_NAME --template @mindinventory/react-native-boilerplate
 ```
 
-# Features
+## Tech Stack
 
-Built in implemented features.
+| Library                   | Category             | Version | Description                                    |
+| ------------------------- | -------------------- | ------- | ---------------------------------------------- |
+| React Native              | Mobile Framework     | v0.71   | The best cross-platform mobile framework       |
+| React                     | UI Framework         | v18     | The most popular UI framework in the world     |
+| TypeScript                | Language             | v4      | Static typechecking                            |
+| React Navigation          | Navigation           | v6      | Performant and consistent navigation framework |
+| React Native Localization | Internationalization | v13     | i18n support (including RTL!)                  |
+| Redux                     | State Management     | v5      | Observable state tree                          |
+| Redux-toolkit             | Redux integration    | v3      | New redux library with some function helpers   |
+| RN Reanimated             | Animations           | v2      | Beautiful and performant animations            |
+| MMKV                      | Persistence          | v1      | State persistence                              |
+| axios                     | REST client          | v1      | Communicate with back-end                      |
+| Hermes                    | JS engine            |         | Fine-tuned JS engine for RN                    |
 
-- Typescript.
-- Light/Dark mode.
-- Localization.
-- Navigation.
-- Network request (API implementation).
-- Context API.
-- Default common components.
-- Custom hook.
-- Supported for responsive UI.
-- Local storage.
-- Attractive code architecture.
+## Folder Structure
 
-# LICENSE!
+The project structure follows a modular approach to organize your codebase in a scalable manner. Here's an overview of the key folders:
+
+```
+├── blueprints
+│ ├── text
+│ ├── image
+│ └── indicator
+│ └── ...
+```
+
+- **blueprints**: Contains the app elements that Customize as per app development required.
+
+  - **Text**: Text element(typography) for app consist presets of all font family and font-size that we have to use in app.
+    For Example:
+
+    ```js
+    import { Text } from "@app/blueprints";
+
+    <Text preset="h1">{contents("newsList", "breakingNews")}</Text>;
+    ```
+
+  - **Image**: React Native's Image component handles image caching like browsers for the most part using `react-native-fast-image` library.
+    For Example:
+
+    ```js
+    import { Image } from "@app/blueprints";
+
+    <Image source={sourcePath} {...props} />;
+    ```
+
+  - **Indicator**: Show loader in app with customize way. use it form context of app.
+    For Example:
+
+    ```js
+    const { loader } = useAppContext();
+
+    //to show Indicator
+    loader.current.show();
+    //to hide Indicator
+    loader.current.hide();
+    //get Indicator status
+    loader.current.isLoading;
+    ```
+
+```
+├── src
+│ ├── assets
+│ ├── components
+│ ├── context
+│ ├── hooks
+│ ├── i18n
+│ ├── navigation
+│ ├── screens
+│ ├── services
+│ ├── store
+│ ├── utils
+└── index.tsx
+```
+
+- **src**: Contains the main source code of your application.
+
+  - **assets**: Stores static assets such as images, fonts, and icons.
+  - **components**: Reusable UI components.
+  - **constants**: App constants.
+  - **context**: App context to manage app styles, theme, localization, storage, navigation, iconFactory and imageFactory.
+  - **i18n**: Localization files for i18next.
+  - **navigation**: Navigation setup and configuration.
+  - **screens**: Individual screens/pages of your application.
+  - **services**: Handles API-related logic and communication.
+  - **store**: Redux store, actions, reducers, selectors and state observers.
+  - **utils**: Utility functions and helpers.
+
+```
+├── src
+│ ├── services
+│ ├──├──commercial
+│ ├──├──├──response
+│ ├──├──├──├── getLoginResponseAdapter.ts
+│ ├──├──├──├── getNesListResponseAdapter.ts
+│ ├──├──├──├── ...
+│ ├── dtos
+│ ├──├── LoginResponseDTO.ts
+│ ├──├── NewsListResponseDTO.ts
+│ ├──├── ...
+│ ├── models
+│ ├──├── login.ts
+│ ├──├── news.ts
+│ ├──├── ...
+│ ├── apiHandler
+│ ├── apiServices
+│ ├── apiServices.type
+│ ├── apiServicesEndPoints
+│ ├── ...
+└── ...
+```
+
+```
+├── src
+│ ├── screens
+│ ├──├── newsList
+│ ├──├──├── newsList.style.ts
+│ ├──├──├── newListScreen.tsx
+│ ├──├──├── useNewsList.ts
+│ ├──├── login
+│ ├──├──├── login.style.ts
+│ ├──├──├── loginScreen.tsx
+│ ├──├──├── useLogin.ts
+│ ├── ...
+└── ...
+```
+
+```
+├── src
+│ ├── assets
+│ ├──├── fonts (all fonts in this)
+│ ├──├── icons (app icons)
+│ ├──├── images (local images used in app)
+│ ├──├── ...
+│ ├── components
+│ ├──├── ... app reusable components
+│ ├──├── index (export all in this)
+│ ├──├── ...
+│ ├── context
+│ ├──├── storage (app local storage)
+│ ├──├── ...
+│ ├── i18n
+│ ├──├── locales
+│ ├──├──├── en.json
+│ ├──├──├── ...
+│ ├──├── index.ts
+│ ├──├── ...
+│ ├── utils
+│ ├──├── color (include themes color of app)
+│ ├──├── dimensions (for responsive UI helper fucntions)
+│ ├──├── helper (include app helper function)
+│ ├──├── ...
+└── ...
+```
+
+```
+├── src
+│ ├── navigation
+│ ├──├── appNavigation  (stack of all screens in this)
+│ ├──├── appNavigation.type (include all screen names and params in this)
+│ ├──├── ...
+└── ...
+```
+
+## Modules
+
+<p align="center">
+ <img src="./media/modules.png">
+</p>
+
+Modules are collection of source files and build settings that allow you to divide a project into discrete units of functionality. In this case apart from dividing by functionality/responsibility, existing the following dependence between them:
+
+The above graph shows the app modularisation:
+
+- `:app` depends on `:context` and indirectly depends on `:store` by dynamic-features.
+- `:context` modules depends on `:theming`, `:i18n`, `:navigation` `:services` and `:app`.
+- `:store` redux store for global state management with redux persist state persistence.
+
+## Configuration
+
+The boilerplate comes with a few configuration files that you can customize to fit your project's needs:
+
+- **.env**: Environment-specific configuration (e.g., API URLs, keys).
+- **.husky**: Husky improves your commits and more.
+- **.prettierrc**: Configuration for Prettier code formatting.
+- **.eslintrc**: Configuration for ESLint code linting.
+- **tsconfig.json**: TypeScript compiler configuration.
+
+# Responsive UI Helpers
+
+This set of helper functions provides a convenient way to create responsive user interfaces in your React Native applications. It helps in scaling and sizing UI elements based on the device's screen dimensions.
+
+## Functions
+
+The following functions are available in this helper module:
+
+- `scaleWidth(val: number): number` - Scales a value proportionally based on the device's screen width and the predefined design width.
+- `scaleHeight(val: number): number` - Scales a value proportionally based on the device's screen height and the predefined design height.
+- `moderateScale(size: number, factor = 1): number` - Scales a size value using a factor to provide a moderate scaling effect.
+- `scaledSize(size: number): number` - Scales a size value proportionally based on the overall screen scale.
+- `screenWidth: number` - The width of the device's screen.
+- `screenHeight: number` - The height of the device's screen.
+
+## Usage
+
+To utilize these functions for creating a responsive UI, follow these steps:
+
+1. Import the required functions and variables from the helper module:
+
+   ```javascript
+   import {
+     scaleWidth,
+     scaleHeight,
+     moderateScale,
+     scaledSize,
+     screenWidth,
+     screenHeight,
+   } from "@src/utils/dimensions";
+   ```
+
+2. Use the functions in your styles or component logic to achieve responsive sizing:
+
+   ```javascript
+   const styles = StyleSheet.create({
+     container: {
+       width: scaleWidth(300),
+       height: scaleHeight(200),
+       marginVertical: moderateScale(10),
+       fontSize: scaledSize(16),
+     },
+   });
+   ```
+
+   In this example, the width and height of the container will be scaled proportionally based on the device's screen width and height. The `moderateScale` function is used to provide a moderate scaling effect to the margin, and the `scaledSize` function is used to scale the font size.
+
+3. Adjust the predefined design width and height if needed:
+
+   ```javascript
+   export const designWidth = 375;
+   export const designHeight = 812;
+   ```
+
+   Modify these values according to your design specifications to ensure accurate scaling.
+
+## Notes
+
+- The `scaleWidth` and `scaleHeight` functions are useful for scaling dimensions, such as width, height, padding, or margin values.
+- The `moderateScale` function can be used to achieve a more subtle scaling effect by providing a factor that controls the degree of scaling.
+- The `scaledSize` function is handy for scaling font sizes or any other numerical values that need to adapt to different screen sizes.
+
+Feel free to customize and extend these functions as per your project requirements to achieve the desired responsive behavior.
+
+## Customize the visual assets
+
+This boilerplate provides a convenient set of scripts to generate images and icons. You can find these scripts in the `scripts` directory. Follow the instructions below to generate your assets:
+
+- **Generating Images:**
+
+  1. Place your source images in the `src/assets/images` directory.
+  2. Run the following command to automatically import the images into the assets/images/index.ts file:
+
+     ```bash
+     npm run generate:images
+     ```
+
+  3. Get your images in app from context
+     For example:
+
+     ```javascript
+     getIcons: return JSX.Element;
+     const { getImages } = useAppContext();
+     ```
+
+     use it in component as
+
+  ```JSX
+  <TouchableOpacity>
+    {getImages(`imageSource || Images.PLACEHOLDER_IMAGE`, { resizeMode: 'contain', style:styles.debugIcon, })}
+  </TouchableOpacity>
+  ```
+
+- **Generating Icons:**
+
+  1. Place your source icon image in the `src/assets/icons` directory.
+  2. Run the following command to automatically import the icons into the assets/icons/index.ts file:
+
+     ```bash
+     npm run generate:icons
+     ```
+
+  3. Get your icon in app from context
+     For example:
+
+     ```javascript
+     getIcons: return JSX.Element;
+     const { getIcons } = useAppContext();
+     ```
+
+     use it in component as
+
+  ```js
+  <TouchableOpacity>
+    {getIcons(Icons.DEBUG_ICONS, {
+      resizeMode: "contain",
+      style: styles.debugIcon,
+    })}
+  </TouchableOpacity>
+  ```
+
+- **Linking fonts:**
+
+- [React-Native-Asset](https://github.com/unimonkiez/react-native-asset)
+
+  1. Place your fonts in the `src/assets/fonts` directory.
+  2. Run the following command to automatically link on native side.
+
+     ```bash
+     npx react-native-asset
+     ```
+
+  3. For linking of custom that not in google fonts required extra steps in iOS.
+
+  - add those fonts first in fontBook app then use that name used given in fontBook.
+
+## Environment Setup
+
+This boilerplate uses the `react-native-config` library for environment variable setup. It allows you to define environment-specific variables in `.env` files and access them in your code.
+
+1. Create `.env` files:
+
+   - `.env.development` for development environment variables
+   - `.env.staging` for staging environment variables
+   - `.env.production` for production environment variables
+
+   Note: You can create additional `.env` files for other environments as needed.
+
+2. Define environment-specific variables in the `.env` files:
+
+   ```env
+   API_BASE_URL=https://api.example.com
+   API_KEY=your-api-key
+   ```
+
+   Customize the variables based on your project's requirements.
+
+3. Access environment variables in your code:
+   Declare env keys in `constants/config` file
+
+   ```typescript
+   export type ConfigTypes = {
+     ENV: string;
+     API_URL: string;
+   };
+   ```
+
+## Services(API) handling
+
+Config your api in `src/services/apiHandler.ts` in this file set your all api handling request `get | post | put | delete` or any methods in it. Set your api base url in axios instances. Handle response status as per required.
+
+- **Api Mapper with DTOs:**
+  API Mapper with DTOs is a utility that simplifies the process of making API requests and mapping the response data to Data Transfer Objects (DTOs) in a React Native application.
+
+- **Usage:**
+
+Declare
+
+1. Create DTOs
+   Create the DTOs (Data Transfer Objects) that represent the structure of the API response data. Each DTO should define the properties that match the response data fields.
+
+   For example, let's create a UserDTO to represent user data:
+
+   ```typescript
+   export interface UserResponseDTO {
+     page: number;
+     per_page: number;
+     total: number;
+     total_pages: number;
+     data: DatumDTO[];
+     support: SupportDTO;
+   }
+   export interface DatumDTO {
+     id: number;
+     email: string;
+     first_name: string;
+     last_name: string;
+     avatar: string;
+   }
+   export interface SupportDTO {
+     url: string;
+     text: string;
+   }
+   ```
+
+2. Define API Endpoints
+   API endpoints in your React Native application in `src/services/appServicesEndPoints.ts`. These endpoints should include the URL, HTTP method, and any required headers or parameters.
+
+3. Call api as per serviceAdapter methods in `src/services/appServices.ts`.
+   Create a function in class:
+
+   ```typescript
+   getNews = async (): Promise<NewsResult[]> => {
+     return new Promise((resolve, reject) => {
+       serviceAdapter<NewsResponseDTO, undefined>(
+         API_METHODS.GET,
+         ServicesEndPoints.NEWS
+       )
+         .then((res) => {
+           resolve(new getNewsListResponseAdapter().service(res));
+         })
+         .catch((error) => {
+           reject(error);
+         });
+     });
+   };
+   ```
+
+4. Map your response in `src/services/commercial/adapters/response` with your api name like for newList `getNewsListResponseAdapter.ts`
+
+5. Call your api mapper DTOs to in services as show in 3rd point.
+
+## Start the development server
+
+```bash
+npm start
+```
+
+## Customization
+
+Feel free to customize the React Native Boilerplate to fit your project's specific needs. Here are some areas you might consider modifying:
+
+- **App Configuration:** Update the app's configuration files, such as `app.json`, `babel.config.js` and `metro.config.js`, to match your desired settings.
+
+- **Directory Structure:** Adjust the project's directory structure to better organize your codebase.
+
+- **Styling and Theming:** Modify the existing styles and themes or add your own to create a unique visual identity for your app.
+
+- **Additional Scripts:** Extend the `scripts` directory with your own scripts to automate repetitive tasks specific to your project.
+
+## Contribution
+
+Contributions to this boilerplate are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the repository.
+
+# LICENSE
 
 react-native-boilerplate is [MIT-licensed](https://github.com/Mindinventory/react-native-boilerplate/blob/master/LICENSE).
 
-# Let us know!
+# Let us know
 
 If you use our open-source libraries in your project, please make sure to credit us and Give a star to www.mindinventory.com
 
 <p><h4>Please feel free to use this component and Let us know if you are interested to building Apps or Designing Products.</h4>
 <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=circular-cards-stack-view" target="__blank">
-<img src="https://github.com/Sammindinventory/MindInventory/blob/main/hirebutton.png" width="203" height="43"  alt="app development">
+<img src="./media/hire_button.png" width="203" height="43"  alt="app development">
 </a>

@@ -1,0 +1,10 @@
+{
+  "eslint.options": {},
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.run": "onSave",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "cSpell.words": ["Formik", "gradlew", "MMKV", "persistor"]
+}
