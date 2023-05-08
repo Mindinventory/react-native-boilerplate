@@ -36,7 +36,7 @@ const NewslistScreen = () => {
             <TouchableOpacity
               style={styles.newsItemContainer}
               onPress={handleNavigationNewsItem(item)}>
-              {getImages(item.imageurl, {
+              {getImages(item.imageUrl, {
                 resizeMode: 'cover',
                 style: styles.newsImage,
               })}

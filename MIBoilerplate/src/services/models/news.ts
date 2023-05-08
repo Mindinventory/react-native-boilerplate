@@ -7,7 +7,7 @@ export interface NewsResult {
   body: string;
   categories: string;
   id: string;
-  imageurl: string;
+  imageUrl: string;
   published_on: number;
   source: string;
   tags: string;
