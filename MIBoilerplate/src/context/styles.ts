@@ -1,15 +1,15 @@
 import { baseLayoutStyles } from '@src/components';
-import { newsdetailStyles } from '@src/screens/newsDetail/newsdetail.style';
-import { newslistStyles } from '@src/screens/newsList/newslist.style';
+import { newsDetailStyles } from '@src/screens/NewsDetail/NewsDetail.style';
+import { newsListStyles } from '@src/screens/NewsList/NewsList.style';
 import { Palette } from '@src/utils';
 
-import { indicatorStyles } from '../../blueprints/indicator';
+import { indicatorStyles } from '../../blueprints/Indicator/Indicator';
 
 export const defaultStyles = (theme: Palette) => {
   return {
     baseLayoutStyle: baseLayoutStyles(theme),
     indicatorStyle: indicatorStyles(theme),
-    newsDetailStyle: newsdetailStyles(theme),
-    newsListStyle: newslistStyles(theme),
+    newsDetailStyle: newsDetailStyles(theme),
+    newsListStyle: newsListStyles(theme),
   };
 };

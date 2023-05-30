@@ -5,11 +5,11 @@ import { Text } from '@app/blueprints';
 
 import { BaseLayout } from '@src/components';
 
-import useNewsdetail from './useNewsdetail';
+import useNewsDetail from './useNewsDetail';
 
-const NewsdetailScreen = () => {
+const NewsDetailScreen = () => {
   const { styles, data, getImages, contents, getPublishedMonth } =
-    useNewsdetail();
+    useNewsDetail();
 
   return (
     <BaseLayout>
@@ -35,4 +35,4 @@ const NewsdetailScreen = () => {
   );
 };
 
-export default React.memo(NewsdetailScreen);
+export default React.memo(NewsDetailScreen);

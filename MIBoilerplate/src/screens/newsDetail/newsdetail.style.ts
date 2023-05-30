@@ -8,7 +8,7 @@ import {
   screenWidth,
 } from '@src/utils';
 
-export const newsdetailStyles = ({}: Palette) =>
+export const newsDetailStyles = ({}: Palette) =>
   StyleSheet.create({
     descriptionText: { lineHeight: scaledSize(25), marginTop: scaleHeight(5) },
     infoContainer: {

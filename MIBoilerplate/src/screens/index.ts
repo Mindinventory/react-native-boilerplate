@@ -1,3 +1,3 @@
-export { default as NetworkloggerScreen } from './networkLogger/networkloggerScreen';
-export { default as NewslistScreen } from './newsList/newslistScreen';
-export { default as NewsdetailScreen } from './newsDetail/newsdetailScreen';
+export { default as NetworkLoggerScreen } from './NetworkLogger/NetworkLoggerScreen';
+export { default as NewsListScreen } from './NewsList/NewsListScreen';
+export { default as NewsDetailScreen } from './NewsDetail/NewDetailScreen';

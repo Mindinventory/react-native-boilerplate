@@ -9,7 +9,7 @@ import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import { useAppContext } from '@src/context';
 import { Palette, scaledSize } from '@src/utils';
 
-import { Text } from '../text';
+import { Text } from '../Text/Text';
 
 export interface IndicatorProps {
   isLoading: boolean;

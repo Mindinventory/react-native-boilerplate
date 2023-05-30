@@ -8,7 +8,7 @@ import {
   scaleWidth,
 } from '@src/utils';
 
-export const newslistStyles = ({ backgroundColor }: Palette) =>
+export const newsListStyles = ({ backgroundColor }: Palette) =>
   StyleSheet.create({
     debugIcon: {
       ...scaled(22),

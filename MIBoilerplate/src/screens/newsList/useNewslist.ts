@@ -7,7 +7,7 @@ import { Screen } from '@src/navigation';
 import { NewsResult } from '@src/services';
 import { getNewsData as newsData, setNews, useAppDispatch } from '@src/store';
 
-const useNewslist = () => {
+const useNewsList = () => {
   const {
     navigation,
     styles,
@@ -56,4 +56,4 @@ const useNewslist = () => {
   };
 };
 
-export default useNewslist;
+export default useNewsList;

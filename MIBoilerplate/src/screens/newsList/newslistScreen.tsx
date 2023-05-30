@@ -7,9 +7,9 @@ import { Icons } from '@src/assets';
 import { BaseLayout } from '@src/components';
 import type { NewsResult } from '@src/services';
 
-import useNewslist from './useNewslist';
+import useNewsList from './useNewsList';
 
-const NewslistScreen = () => {
+const NewsListScreen = () => {
   const {
     styles,
     data,
@@ -18,7 +18,7 @@ const NewslistScreen = () => {
     contents,
     handleNavigationNetwork,
     handleNavigationNewsItem,
-  } = useNewslist();
+  } = useNewsList();
 
   return (
     <BaseLayout>
@@ -69,4 +69,4 @@ const NewslistScreen = () => {
   );
 };
 
-export default React.memo(NewslistScreen);
+export default React.memo(NewsListScreen);

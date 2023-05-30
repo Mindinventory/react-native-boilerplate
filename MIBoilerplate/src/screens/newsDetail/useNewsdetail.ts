@@ -5,7 +5,7 @@ import { useRoute } from '@react-navigation/native';
 import { useAppContext } from '@src/context';
 import { NewsDetailRoute } from '@src/navigation';
 
-const useNewsdetail = () => {
+const useNewsDetail = () => {
   const { navigation, styles, getImages, contents } = useAppContext();
 
   const {
@@ -27,4 +27,4 @@ const useNewsdetail = () => {
   };
 };
 
-export default useNewsdetail;
+export default useNewsDetail;
