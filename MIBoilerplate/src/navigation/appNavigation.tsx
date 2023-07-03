@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { NavigationContainerRef } from '@react-navigation/native';
 import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
@@ -12,6 +13,9 @@ import {
 } from '@src/screens';
 
 import { NavStackParams, Screen } from './appNavigation.type';
+
+export const navigationRef =
+  React.createRef<NavigationContainerRef<NavStackParams>>();
 
 const Stack = createNativeStackNavigator<NavStackParams>();
 

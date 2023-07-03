@@ -2,10 +2,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { ImageProps, IndicatorRef, IndicatorView } from '@app/blueprints';
-import {
-  NavigationContainer,
-  NavigationContainerRef,
-} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -21,13 +18,10 @@ import {
 import { getAppIconSource, IconProps } from './context/iconFactory';
 import { getAppImagesSource, ImageSource } from './context/imageFactory';
 import i18n from './i18n';
-import { AppNavigation, NavStackParams } from './navigation';
+import { AppNavigation, navigationRef } from './navigation/AppNavigation';
 import { appServices } from './services';
 import store, { persistor } from './store';
 import { color, Theme } from './utils';
-
-export const navigationRef =
-  React.createRef<NavigationContainerRef<NavStackParams>>();
 
 export const MainApp = () => {
   const loader = useRef<IndicatorRef>(null);

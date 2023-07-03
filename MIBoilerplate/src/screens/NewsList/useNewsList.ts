@@ -3,12 +3,12 @@ import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppContext } from '@src/context';
-import { Screen } from '@src/navigation';
 import { NewsResult } from '@src/services';
 import { getNewsData as newsData, setNews, useAppDispatch } from '@src/store';
 import { logger } from '@src/utils';
 
 import { newsListStyles } from './NewsList.style';
+import { Screen } from '../../navigation/appNavigation.type';
 
 const useNewsList = () => {
   const { navigation, loader, getIcons, contents, getImages, services, color } =
