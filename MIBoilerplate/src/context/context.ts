@@ -15,7 +15,6 @@ import type { ContentLanguage, DefaultContentType } from './content';
 import { IconProps } from './iconFactory';
 import { ImageSource } from './imageFactory';
 import type { Storage } from './storage';
-import type { defaultStyles } from './styles';
 import type en from '../i18n/locales/en.json';
 
 export type AppContextType = {
@@ -23,11 +22,6 @@ export type AppContextType = {
    * The appTheme variable is used to define the color scheme used for the application. It takes a ColorSchemeName as its value.
    */
   appTheme: Theme;
-  /**
-   * styles of app of particular screens.
-   * @declare by styles: styles.homeStyles
-   */
-  styles: ReturnType<typeof defaultStyles>;
   /**
    * get language content for app.
    * @example contents('common', 'home')

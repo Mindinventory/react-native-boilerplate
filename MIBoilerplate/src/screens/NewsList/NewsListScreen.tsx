@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, TouchableOpacity, View } from 'react-native';
 
-import { Text } from '@app/blueprints';
+import { AnimatedTouchableOpacity, Text } from '@app/blueprints';
 
 import { Icons } from '@src/assets';
 import { BaseLayout } from '@src/components';
@@ -33,11 +33,10 @@ const NewsListScreen = () => {
         }}
         renderItem={({ item }: { item: NewsResult }) => {
           return (
-            <TouchableOpacity
-              style={styles.newsItemContainer}
+            <AnimatedTouchableOpacity
+              containerStyle={styles.newsItemContainer}
               onPress={handleNavigationNewsItem(item)}>
               {getImages(item.imageUrl, {
-                resizeMode: 'cover',
                 style: styles.newsImage,
               })}
               <View style={styles.newsTextView}>
@@ -46,7 +45,7 @@ const NewsListScreen = () => {
                 </Text>
                 <Text preset="title">{item.title}</Text>
               </View>
-            </TouchableOpacity>
+            </AnimatedTouchableOpacity>
           );
         }}
         ListHeaderComponent={() => {

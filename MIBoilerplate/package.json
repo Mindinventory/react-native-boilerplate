@@ -8,6 +8,8 @@
     "generate:icons": "cd scripts && node icons.js",
     "generate:images": "cd scripts && node images.js",
     "generate:screen": "cd scripts && node generateScreenFile.js",
+    "preios": "ENVFILE=.env",
+    "preandroid": "ENVFILE=.env",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "postinstall": "npx pod-install",

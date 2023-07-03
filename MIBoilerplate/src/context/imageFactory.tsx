@@ -8,6 +8,11 @@ export type ImageSource = Images | string;
 
 export const getAppImagesSource = (image: ImageSource, props?: ImageProps) => {
   return (
-    <Image source={image} {...props} defaultSource={Images.PLACEHOLDER_IMAGE} />
+    <Image
+      source={image}
+      defaultSource={Images.PLACEHOLDER_IMAGE}
+      resizeMode="contain"
+      {...props}
+    />
   );
 };

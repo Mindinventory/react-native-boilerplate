@@ -1,21 +1,24 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 
-import { Text } from '@app/blueprints';
+import { AnimatedButton, Text } from '@app/blueprints';
 
 import { BaseLayout } from '@src/components';
+import { scaleHeight } from '@src/utils';
 
 import useNewsDetail from './useNewsDetail';
 
 const NewsDetailScreen = () => {
-  const { styles, data, getImages, contents, getPublishedMonth } =
+  const { contents, data, getImages, getPublishedMonth, styles, handleGoBack } =
     useNewsDetail();
 
   return (
     <BaseLayout>
       <ScrollView bounces={false} style={styles.scrollViewContainer}>
+        <Text preset="h2" style={styles.title}>
+          {data.title}
+        </Text>
         {getImages(data.imageUrl, {
-          resizeMode: 'cover',
           style: styles.newsImage,
         })}
         <View style={styles.infoContainer}>
@@ -26,10 +29,15 @@ const NewsDetailScreen = () => {
           </Text>
           <Text preset="h5">{getPublishedMonth(data.published_on)}</Text>
         </View>
-        <Text preset="h1">{data.title}</Text>
+
         <Text preset="h5" style={styles.descriptionText}>
           {data.body}
         </Text>
+        <AnimatedButton
+          buttonContainerStyle={{ marginTop: scaleHeight(15) }}
+          title="Go back"
+          onPress={handleGoBack}
+        />
       </ScrollView>
     </BaseLayout>
   );

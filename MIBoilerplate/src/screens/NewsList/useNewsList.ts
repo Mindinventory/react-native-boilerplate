@@ -6,26 +6,27 @@ import { useAppContext } from '@src/context';
 import { Screen } from '@src/navigation';
 import { NewsResult } from '@src/services';
 import { getNewsData as newsData, setNews, useAppDispatch } from '@src/store';
+import { logger } from '@src/utils';
+
+import { newsListStyles } from './NewsList.style';
 
 const useNewsList = () => {
-  const {
-    navigation,
-    styles,
-    loader,
-    getIcons,
-    contents,
-    getImages,
-    services,
-  } = useAppContext();
+  const { navigation, loader, getIcons, contents, getImages, services, color } =
+    useAppContext();
   const dispatch = useAppDispatch();
 
   const data = useSelector(newsData);
 
   const getNewsData = useCallback(async () => {
     loader.current?.show();
-    const getNews = await services.getNews();
-    dispatch(setNews(getNews));
-    loader.current?.hide();
+    try {
+      const getNews = await services.getNews();
+      dispatch(setNews(getNews));
+    } catch (error) {
+      logger('Error getNews>>', error);
+    } finally {
+      loader.current?.hide();
+    }
   }, [dispatch, loader, services]);
 
   const handleNavigationNetwork = useCallback(() => {
@@ -43,7 +44,7 @@ const useNewsList = () => {
 
   useEffect(() => {
     getNewsData();
-  }, [data.length, getNewsData]);
+  }, [getNewsData]);
 
   return {
     contents,
@@ -52,7 +53,7 @@ const useNewsList = () => {
     getImages,
     handleNavigationNetwork,
     handleNavigationNewsItem,
-    styles: styles.newsListStyle,
+    styles: newsListStyles(color),
   };
 };
 

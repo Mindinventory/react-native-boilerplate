@@ -5,8 +5,10 @@ import { useRoute } from '@react-navigation/native';
 import { useAppContext } from '@src/context';
 import { NewsDetailRoute } from '@src/navigation';
 
+import { newsDetailStyles } from './NewsDetail.style';
+
 const useNewsDetail = () => {
-  const { navigation, styles, getImages, contents } = useAppContext();
+  const { navigation, getImages, contents, color } = useAppContext();
 
   const {
     params: { item: data },
@@ -17,13 +19,18 @@ const useNewsDetail = () => {
     return publishedAt.split(' ').slice(0, 3).join(' ');
   }, []);
 
+  const handleGoBack = useCallback(() => {
+    navigation.goBack();
+  }, [navigation]);
+
   return {
     contents,
     data,
     getImages,
     getPublishedMonth,
+    handleGoBack,
     navigation,
-    styles: styles.newsDetailStyle,
+    styles: newsDetailStyles(color),
   };
 };
 

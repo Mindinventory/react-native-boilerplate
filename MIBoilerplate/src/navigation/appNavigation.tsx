@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationOptions,
+} from '@react-navigation/native-stack';
 
 import {
   NetworkLoggerScreen,
@@ -12,7 +15,8 @@ import { NavStackParams, Screen } from './appNavigation.type';
 
 const Stack = createNativeStackNavigator<NavStackParams>();
 
-const screenOptions = {
+const screenOptions: NativeStackNavigationOptions = {
+  animation: 'slide_from_right',
   headerShown: false,
 };
 

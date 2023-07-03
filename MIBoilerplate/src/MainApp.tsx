@@ -20,7 +20,6 @@ import {
 } from './context';
 import { getAppIconSource, IconProps } from './context/iconFactory';
 import { getAppImagesSource, ImageSource } from './context/imageFactory';
-import { defaultStyles } from './context/styles';
 import i18n from './i18n';
 import { AppNavigation, NavStackParams } from './navigation';
 import { appServices } from './services';
@@ -79,7 +78,6 @@ export const MainApp = () => {
       setAppTheme,
       setLanguageInApp,
       storage,
-      styles: defaultStyles(color[appTheme || 'light']),
     };
   }, [appTheme, language, setAppTheme, setLanguageInApp]);
 
