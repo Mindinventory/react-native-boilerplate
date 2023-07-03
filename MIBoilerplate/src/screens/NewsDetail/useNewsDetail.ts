@@ -3,9 +3,9 @@ import { useCallback } from 'react';
 import { useRoute } from '@react-navigation/native';
 
 import { useAppContext } from '@src/context';
-import { NewsDetailRoute } from '@src/navigation';
 
 import { newsDetailStyles } from './NewsDetail.style';
+import { NewsDetailRoute } from '../../navigation/appNavigation.type';
 
 const useNewsDetail = () => {
   const { navigation, getImages, contents, color } = useAppContext();
@@ -19,7 +19,7 @@ const useNewsDetail = () => {
     return publishedAt.split(' ').slice(0, 3).join(' ');
   }, []);
 
-  const handleGoBack = useCallback(() => {
+  const handleGoBack = useCallback(async () => {
     navigation.goBack();
   }, [navigation]);
 
