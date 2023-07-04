@@ -7,7 +7,7 @@ import { AppServices } from '@src/services';
 import { Palette, Theme } from '@src/utils';
 
 import type { ContentLanguage, DefaultContentType } from './content';
-import { IconProps } from './iconFactory';
+import { IconProps, SVGIconProps, SVGIcons } from './iconFactory';
 import { ImageSource } from './imageFactory';
 import type { Storage } from './storage';
 import type en from '../i18n/locales/en.json';
@@ -79,6 +79,11 @@ export type AppContextType = {
    * @example getImages(Images.PLACEHOLDER_IMAGE)
    */
   getImages: (image: ImageSource, props?: ImageProps) => JSX.Element;
+  /**
+   * get all App icons from this
+   * @example getSvgIcons("C")
+   */
+  getSvgIcons: (icon: SVGIcons, iconProps: SVGIconProps) => JSX.Element;
 };
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);

@@ -11,7 +11,7 @@ import { newsListStyles } from './NewsList.style';
 import { Screen } from '../../navigation/appNavigation.type';
 
 const useNewsList = () => {
-  const { navigation, loader, getIcons, contents, getImages, services, color } =
+  const { color, contents, getIcons, getImages, loader, navigation, services } =
     useAppContext();
   const dispatch = useAppDispatch();
 

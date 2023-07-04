@@ -15,7 +15,13 @@ import {
   defaultContent,
   storage,
 } from './context';
-import { getAppIconSource, IconProps } from './context/iconFactory';
+import {
+  getAppIconSource,
+  getAppSVGIconSource,
+  IconProps,
+  SVGIconProps,
+  SVGIcons,
+} from './context/iconFactory';
 import { getAppImagesSource, ImageSource } from './context/imageFactory';
 import i18n from './i18n';
 import { AppNavigation, navigationRef } from './navigation/AppNavigation';
@@ -66,6 +72,8 @@ export const MainApp = () => {
         getAppIconSource(icon, props),
       getImages: (image: ImageSource, props?: ImageProps) =>
         getAppImagesSource(image, props),
+      getSvgIcons: (icon: SVGIcons, iconProps: SVGIconProps) =>
+        getAppSVGIconSource(icon, iconProps),
       language,
       loader,
       services: appServices,
