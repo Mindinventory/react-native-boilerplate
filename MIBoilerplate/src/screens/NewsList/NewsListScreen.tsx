@@ -11,13 +11,13 @@ import useNewsList from './useNewsList';
 
 const NewsListScreen = () => {
   const {
-    styles,
+    contents,
     data,
     getIcons,
     getImages,
-    contents,
     handleNavigationNetwork,
     handleNavigationNewsItem,
+    styles,
   } = useNewsList();
 
   return (

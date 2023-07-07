@@ -8,7 +8,7 @@ import { newsDetailStyles } from './NewsDetail.style';
 import { NewsDetailRoute } from '../../navigation/appNavigation.type';
 
 const useNewsDetail = () => {
-  const { navigation, getImages, contents, color } = useAppContext();
+  const { color, contents, getImages, navigation } = useAppContext();
 
   const {
     params: { item: data },

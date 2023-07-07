@@ -22,7 +22,7 @@ export const newsDataSlice = createSlice({
 });
 
 export const {
-  reducer: newsData,
   actions: { resetNewsData, setNews },
   name: newsDataName,
+  reducer: newsData,
 } = newsDataSlice;

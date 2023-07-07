@@ -22,7 +22,7 @@ export const userDataSlice = createSlice({
 });
 
 export const {
-  reducer: userData,
   actions: { resetUserData, setUsers },
   name: userDataName,
+  reducer: userData,
 } = userDataSlice;

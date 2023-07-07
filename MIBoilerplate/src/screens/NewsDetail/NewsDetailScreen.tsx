@@ -9,7 +9,7 @@ import { scaleHeight } from '@src/utils';
 import useNewsDetail from './useNewsDetail';
 
 const NewsDetailScreen = () => {
-  const { contents, data, getImages, getPublishedMonth, styles, handleGoBack } =
+  const { contents, data, getImages, getPublishedMonth, handleGoBack, styles } =
     useNewsDetail();
 
   return (

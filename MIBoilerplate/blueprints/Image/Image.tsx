@@ -35,16 +35,16 @@ export interface ImageProps extends FastImageProps {
 
 export const Image = React.memo((props: ImageProps) => {
   const {
+    children,
     containerStyle,
-    style,
-    source,
-    resizeMode,
+    indicatorSize = 20,
     priority,
+    resizeMode,
+    showIndicator = true,
+    source,
+    style,
     uploading,
     width,
-    children,
-    showIndicator = true,
-    indicatorSize = 20,
     ...rest
   } = props;
   const { color } = useAppContext();
