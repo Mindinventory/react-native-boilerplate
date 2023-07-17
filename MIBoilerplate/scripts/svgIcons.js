@@ -23,13 +23,21 @@ const generate = () => {
     .join('\n');
 
   let exportFiles = iconFileNames()
-    .map(name => {
+    .map((name, index) => {
       const iconName = path.parse(name).name.toUpperCase();
-      return `${iconName}_ICON,`;
+      return `${iconName} = ${index + 1},`;
     })
     .join('\n  ');
 
-  const string = `${properties}\n\nexport const SVGIcons = {\n  ${exportFiles}
+  let mapper = iconFileNames()
+    .map((name, index) => {
+      const iconName = path.parse(name).name.toUpperCase();
+      return `${index + 1}: ${iconName}_ICON,`;
+    })
+    .join('\n  ');
+
+  const string = `${properties}\n\nexport enum SVGIcons {\n  ${exportFiles}
+}; \n\nexport const SVGIconsMapper = {\n  ${mapper}
 };\n`;
 
   fs.writeFileSync('../src/assets/svgIcons/index.ts', string, 'utf8');

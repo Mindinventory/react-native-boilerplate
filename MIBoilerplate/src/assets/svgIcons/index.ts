@@ -1,5 +1,9 @@
 import SETTING_ICON from './setting.svg';
 
-export const SVGIcons = {
-  SETTING_ICON,
+export enum SVGIcons {
+  SETTING = 1,
+}
+
+export const SVGIconsMapper = {
+  1: SETTING_ICON,
 };
