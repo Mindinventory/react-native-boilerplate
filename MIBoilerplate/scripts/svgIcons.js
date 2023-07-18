@@ -37,7 +37,7 @@ const generate = () => {
     .join('\n  ');
 
   const string = `${properties}\n\nexport enum SVGIcons {\n  ${exportFiles}
-}; \n\nexport const SVGIconsMapper = {\n  ${mapper}
+}\n\nexport const SVGIconsMapper = {\n  ${mapper}
 };\n`;
 
   fs.writeFileSync('../src/assets/svgIcons/index.ts', string, 'utf8');

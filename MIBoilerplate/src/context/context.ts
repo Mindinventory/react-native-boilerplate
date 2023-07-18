@@ -1,16 +1,13 @@
 import { createContext, useContext } from 'react';
 
-import type { ImageProps, IndicatorRef } from '@app/blueprints';
+import type { IndicatorRef } from '@app/blueprints';
+import { TranslateOptions } from 'i18n-js';
 
-import { Icons } from '@src/assets';
 import { AppServices } from '@src/services';
 import { Palette, Theme } from '@src/utils';
 
-import type { ContentLanguage, DefaultContentType } from './content';
-import { IconProps, SVGIconProps, SVGIcons } from './iconFactory';
-import { ImageSource } from './imageFactory';
+import type { ContentLanguage, TxKeyPath } from './content';
 import type { Storage } from './storage';
-import type en from '../i18n/locales/en.json';
 import type { AppNavigationProp } from '../navigation/appNavigation.type';
 import {
   useWithNavigation,
@@ -28,10 +25,7 @@ export type AppContextType = {
    * @returns `String` app language content.
    * @constructor
    */
-  contents: <T extends DefaultContentType, Key extends keyof (typeof en)[T]>(
-    obj: T,
-    key: Key
-  ) => string;
+  contents: (key: TxKeyPath, options?: TranslateOptions) => string;
   /**
    * This variable is of type ContentLanguage and is used to store the language of content.
    * language = "English";
@@ -43,7 +37,7 @@ export type AppContextType = {
    * @example to hide loader `loader.current.hide()`.
    * @example to get loader state is loading or not `loader.current.isLoading`.
    */
-  loader: React.RefObject<IndicatorRef>;
+  loader: IndicatorRef | null;
   /**
    * This function is used to set the theme of the application. It takes a single argument, _theme, which should be of type ColorSchemeName.
    * @example setAppTheme('dark');
@@ -69,21 +63,6 @@ export type AppContextType = {
    * Get app palette colors.
    */
   color: Palette;
-  /**
-   * get all App icons from this
-   * @example getIcons(Icons.DEBUG_ICONS)
-   */
-  getIcons: (icon: Icons, props?: IconProps) => JSX.Element;
-  /**
-   * get all App icons from this
-   * @example getImages(Images.PLACEHOLDER_IMAGE)
-   */
-  getImages: (image: ImageSource, props?: ImageProps) => JSX.Element;
-  /**
-   * get all App icons from this
-   * @example getSvgIcons("C")
-   */
-  getSvgIcons: (icon: SVGIcons, iconProps: SVGIconProps) => JSX.Element;
 };
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
