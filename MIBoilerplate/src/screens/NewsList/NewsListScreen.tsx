@@ -5,20 +5,14 @@ import { AnimatedTouchableOpacity, Text } from '@app/blueprints';
 
 import { Icons } from '@src/assets';
 import { BaseLayout } from '@src/components';
+import { AppImage, contents, Icon } from '@src/context';
 import type { NewsResult } from '@src/services';
 
 import useNewsList from './useNewsList';
 
 const NewsListScreen = () => {
-  const {
-    contents,
-    data,
-    getIcons,
-    getImages,
-    handleNavigationNetwork,
-    handleNavigationNewsItem,
-    styles,
-  } = useNewsList();
+  const { data, handleNavigationNetwork, handleNavigationNewsItem, styles } =
+    useNewsList();
 
   return (
     <BaseLayout>
@@ -36,12 +30,10 @@ const NewsListScreen = () => {
             <AnimatedTouchableOpacity
               containerStyle={styles.newsItemContainer}
               onPress={handleNavigationNewsItem(item)}>
-              {getImages(item.imageUrl, {
-                style: styles.newsImage,
-              })}
+              <AppImage source={item.imageUrl} style={styles.newsImage} />
               <View style={styles.newsTextView}>
                 <Text preset="h6">
-                  {item?.source ? item.source : contents('newsList', 'general')}
+                  {item?.source ? item.source : contents('newsList.general')}
                 </Text>
                 <Text preset="title">{item.title}</Text>
               </View>
@@ -51,14 +43,11 @@ const NewsListScreen = () => {
         ListHeaderComponent={() => {
           return (
             <View style={styles.headerContainer}>
-              <Text preset="h1">{contents('newsList', 'breakingNews')}</Text>
+              <Text preset="h1">{contents('newsList.breakingNews')}</Text>
               <TouchableOpacity
                 style={styles.networkButton}
                 onPress={handleNavigationNetwork}>
-                {getIcons(Icons.DEBUG_ICONS, {
-                  resizeMode: 'contain',
-                  style: styles.debugIcon,
-                })}
+                <Icon icon={Icons.DEBUG_ICONS} style={styles.debugIcon} />
               </TouchableOpacity>
             </View>
           );

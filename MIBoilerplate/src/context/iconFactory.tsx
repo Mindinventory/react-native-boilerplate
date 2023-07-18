@@ -7,10 +7,20 @@ import { SvgProps } from 'react-native-svg';
 import { Icons, SVGIcons, SVGIconsMapper } from '@src/assets';
 import { scaled } from '@src/utils';
 
-export type IconProps = Omit<ImageProps, 'source'>;
+export type IconProps = Omit<ImageProps, 'source'> & {
+  icon: Icons;
+};
 
-export const getAppIconSource = (icon: Icons, props?: IconProps) => {
-  return <Image source={icon} style={{ ...scaled(13) }} {...props} />;
+export const Icon = (props: IconProps) => {
+  const { icon } = props;
+  return (
+    <Image
+      source={icon}
+      style={{ ...scaled(13) }}
+      resizeMode="contain"
+      {...props}
+    />
+  );
 };
 
 /**
@@ -18,15 +28,14 @@ export const getAppIconSource = (icon: Icons, props?: IconProps) => {
  */
 
 export type SVGIconProps = SvgProps & {
+  icon: SVGIcons;
   height?: number | string;
   width?: number | string;
 };
 
-export const getAppSVGIconSource = (
-  icon: SVGIcons,
-  iconProps?: SVGIconProps
-) => {
+export const SvgIcon = (props: SVGIconProps) => {
+  const { icon } = props;
   const IconsImage = SVGIconsMapper[icon];
 
-  return <IconsImage {...scaled(12)} {...iconProps} />;
+  return <IconsImage {...scaled(12)} {...props} />;
 };

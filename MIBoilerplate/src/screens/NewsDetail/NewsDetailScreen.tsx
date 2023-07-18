@@ -4,13 +4,13 @@ import { ScrollView, View } from 'react-native';
 import { AnimatedButton, Text } from '@app/blueprints';
 
 import { BaseLayout } from '@src/components';
+import { AppImage, contents } from '@src/context';
 import { scaleHeight } from '@src/utils';
 
 import useNewsDetail from './useNewsDetail';
 
 const NewsDetailScreen = () => {
-  const { contents, data, getImages, getPublishedMonth, handleGoBack, styles } =
-    useNewsDetail();
+  const { data, getPublishedMonth, handleGoBack, styles } = useNewsDetail();
 
   return (
     <BaseLayout>
@@ -18,14 +18,12 @@ const NewsDetailScreen = () => {
         <Text preset="h2" style={styles.title}>
           {data.title}
         </Text>
-        {getImages(data.imageUrl, {
-          style: styles.newsImage,
-        })}
+        <AppImage source={data.imageUrl} style={styles.newsImage} />
         <View style={styles.infoContainer}>
           <Text preset="h5">
             {data.categories
               ? data.categories
-              : contents('newsDetail', 'anonymous')}
+              : contents('newsDetail.anonymous')}
           </Text>
           <Text preset="h5">{getPublishedMonth(data.published_on)}</Text>
         </View>

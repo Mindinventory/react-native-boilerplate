@@ -28,7 +28,7 @@ fs.mkdir(`../src/screens/${capitalizeFirstLetter(folderName)}`, err => {
 import { ${folderName}Styles } from './${fileName}.style';
 
 const use${useHookFileName} = () => {
-  const { navigation, color } = useAppContext();
+  const { color, navigation } = useAppContext();
 
   // add your code here
 
