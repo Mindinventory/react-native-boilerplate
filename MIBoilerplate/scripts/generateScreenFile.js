@@ -14,25 +14,27 @@ function capitalizeFirstLetter(str) {
 }
 
 // create the folder
-fs.mkdir(`../src/screens/${folderName}`, err => {
+fs.mkdir(`../src/screens/${capitalizeFirstLetter(folderName)}`, err => {
   if (err) throw err;
   console.log(`Folder ${folderName} created successfully`);
 
-  const fileName = folderName.toLocaleLowerCase();
+  const fileName = capitalizeFirstLetter(folderName);
 
   const useHookFileName = capitalizeFirstLetter(fileName);
 
   // create hook js hookFile.ts
   const hookFile = `import { useAppContext } from '@src/context';
 
+import { ${folderName}Styles } from './${fileName}.style';
+
 const use${useHookFileName} = () => {
-  const { navigation, styles } = useAppContext();
+  const { color, navigation } = useAppContext();
 
   // add your code here
 
   return {
     navigation,
-    styles: styles.baseLayoutStyle,
+    styles: ${folderName}Styles(color),
   };
 };
 
@@ -53,7 +55,7 @@ export default use${useHookFileName};
 
 import { Palette } from '@src/utils';
 
-export const ${fileName}Styles = ({}: Palette) =>
+export const ${folderName}Styles = ({}: Palette) =>
   StyleSheet.create({
     container: {
       alignItems: 'center',
@@ -97,11 +99,11 @@ export default React.memo(${useHookFileName}Screen);
     defaultScreen,
     errScreen => {
       if (errScreen) throw errScreen;
-      console.log('homeScreen.ts file created successfully');
+      console.log(`${fileName}Screen.tsx file created successfully`);
     }
   );
 
-  const exportToIndex = `export { default as ${useHookFileName}Screen } from './${folderName}/${fileName}Screen';\n`;
+  const exportToIndex = `export { default as ${useHookFileName}Screen } from './${fileName}/${fileName}Screen';\n`;
 
   fs.appendFile(`../src/screens/index.ts`, exportToIndex, errScreen => {
     if (errScreen) throw errScreen;

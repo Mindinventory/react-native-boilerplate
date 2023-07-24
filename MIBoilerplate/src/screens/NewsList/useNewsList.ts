@@ -3,29 +3,29 @@ import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppContext } from '@src/context';
-import { Screen } from '@src/navigation';
 import { NewsResult } from '@src/services';
 import { getNewsData as newsData, setNews, useAppDispatch } from '@src/store';
+import { logger } from '@src/utils';
 
-const useNewslist = () => {
-  const {
-    navigation,
-    styles,
-    loader,
-    getIcons,
-    contents,
-    getImages,
-    services,
-  } = useAppContext();
+import { newsListStyles } from './NewsList.style';
+import { Screen } from '../../navigation/appNavigation.type';
+
+const useNewsList = () => {
+  const { color, contents, loader, navigation, services } = useAppContext();
   const dispatch = useAppDispatch();
 
   const data = useSelector(newsData);
 
   const getNewsData = useCallback(async () => {
-    loader.current?.show();
-    const getNews = await services.getNews();
-    dispatch(setNews(getNews));
-    loader.current?.hide();
+    loader?.show();
+    try {
+      const getNews = await services.getNews();
+      dispatch(setNews(getNews));
+    } catch (error) {
+      logger('Error getNews>>', error);
+    } finally {
+      loader?.hide();
+    }
   }, [dispatch, loader, services]);
 
   const handleNavigationNetwork = useCallback(() => {
@@ -43,17 +43,15 @@ const useNewslist = () => {
 
   useEffect(() => {
     getNewsData();
-  }, [data.length, getNewsData]);
+  }, [getNewsData]);
 
   return {
     contents,
     data,
-    getIcons,
-    getImages,
     handleNavigationNetwork,
     handleNavigationNewsItem,
-    styles: styles.newsListStyle,
+    styles: newsListStyles(color),
   };
 };
 
-export default useNewslist;
+export default useNewsList;

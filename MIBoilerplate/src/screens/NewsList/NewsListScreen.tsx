@@ -1,24 +1,18 @@
 import React from 'react';
 import { FlatList, TouchableOpacity, View } from 'react-native';
 
-import { Text } from '@app/blueprints';
+import { AnimatedTouchableOpacity, Text } from '@app/blueprints';
 
 import { Icons } from '@src/assets';
 import { BaseLayout } from '@src/components';
+import { AppImage, contents, Icon } from '@src/context';
 import type { NewsResult } from '@src/services';
 
-import useNewslist from './useNewslist';
+import useNewsList from './useNewsList';
 
-const NewslistScreen = () => {
-  const {
-    styles,
-    data,
-    getIcons,
-    getImages,
-    contents,
-    handleNavigationNetwork,
-    handleNavigationNewsItem,
-  } = useNewslist();
+const NewsListScreen = () => {
+  const { data, handleNavigationNetwork, handleNavigationNewsItem, styles } =
+    useNewsList();
 
   return (
     <BaseLayout>
@@ -33,33 +27,27 @@ const NewslistScreen = () => {
         }}
         renderItem={({ item }: { item: NewsResult }) => {
           return (
-            <TouchableOpacity
-              style={styles.newsItemContainer}
+            <AnimatedTouchableOpacity
+              containerStyle={styles.newsItemContainer}
               onPress={handleNavigationNewsItem(item)}>
-              {getImages(item.imageurl, {
-                resizeMode: 'cover',
-                style: styles.newsImage,
-              })}
+              <AppImage source={item.imageUrl} style={styles.newsImage} />
               <View style={styles.newsTextView}>
                 <Text preset="h6">
-                  {item?.source ? item.source : contents('newsList', 'general')}
+                  {item?.source ? item.source : contents('newsList.general')}
                 </Text>
                 <Text preset="title">{item.title}</Text>
               </View>
-            </TouchableOpacity>
+            </AnimatedTouchableOpacity>
           );
         }}
         ListHeaderComponent={() => {
           return (
             <View style={styles.headerContainer}>
-              <Text preset="h1">{contents('newsList', 'breakingNews')}</Text>
+              <Text preset="h1">{contents('newsList.breakingNews')}</Text>
               <TouchableOpacity
                 style={styles.networkButton}
                 onPress={handleNavigationNetwork}>
-                {getIcons(Icons.DEBUG_ICONS, {
-                  resizeMode: 'contain',
-                  style: styles.debugIcon,
-                })}
+                <Icon icon={Icons.DEBUG_ICONS} style={styles.debugIcon} />
               </TouchableOpacity>
             </View>
           );
@@ -69,4 +57,4 @@ const NewslistScreen = () => {
   );
 };
 
-export default React.memo(NewslistScreen);
+export default React.memo(NewsListScreen);

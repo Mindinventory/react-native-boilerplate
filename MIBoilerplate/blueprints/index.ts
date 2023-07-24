@@ -1,3 +1,4 @@
-export * from './text';
-export * from './image';
-export * from './indicator';
+export * from './Text/Text';
+export * from './Image/Image';
+export * from './Indicator/Indicator';
+export * from './Button/Button';

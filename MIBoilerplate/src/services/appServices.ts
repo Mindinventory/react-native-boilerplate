@@ -1,6 +1,6 @@
 import { API_METHODS } from './appServices.type';
 import { ServicesEndPoints } from './appServicesEndPoints';
-import { getNewsListResponseAdapter } from './commercial/adapters/response/getNewsListResponseAdapter';
+import { getNewsCommercialResponseAdapter } from './commercial/adapters/response/getNewsCommercialResponseAdapter';
 import { GetUserCommercialResponseAdapter } from './commercial/adapters/response/getUserCommercialResponseAdapter';
 import { PostLoginCommercialResponseAdapter } from './commercial/adapters/response/postLoginCommercialResponseAdapter';
 import { NewsResponseDTO } from './commercial/dtos/NewsResponseDTO';
@@ -53,7 +53,7 @@ export class AppServices {
         ServicesEndPoints.NEWS
       )
         .then(res => {
-          resolve(new getNewsListResponseAdapter().service(res));
+          resolve(new getNewsCommercialResponseAdapter().service(res));
         })
         .catch(error => {
           reject(error);

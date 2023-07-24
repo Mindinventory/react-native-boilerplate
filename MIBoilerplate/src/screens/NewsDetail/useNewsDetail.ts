@@ -3,10 +3,12 @@ import { useCallback } from 'react';
 import { useRoute } from '@react-navigation/native';
 
 import { useAppContext } from '@src/context';
-import { NewsDetailRoute } from '@src/navigation';
 
-const useNewsdetail = () => {
-  const { navigation, styles, getImages, contents } = useAppContext();
+import { newsDetailStyles } from './NewsDetail.style';
+import { NewsDetailRoute } from '../../navigation/appNavigation.type';
+
+const useNewsDetail = () => {
+  const { color, contents, navigation } = useAppContext();
 
   const {
     params: { item: data },
@@ -17,14 +19,18 @@ const useNewsdetail = () => {
     return publishedAt.split(' ').slice(0, 3).join(' ');
   }, []);
 
+  const handleGoBack = useCallback(async () => {
+    navigation.goBack();
+  }, [navigation]);
+
   return {
     contents,
     data,
-    getImages,
     getPublishedMonth,
+    handleGoBack,
     navigation,
-    styles: styles.newsDetailStyle,
+    styles: newsDetailStyles(color),
   };
 };
 
-export default useNewsdetail;
+export default useNewsDetail;

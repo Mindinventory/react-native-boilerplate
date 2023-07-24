@@ -79,7 +79,7 @@ export interface TextProps extends TextProperties {
 }
 
 export const Text = ({ children, ...props }: TextProps) => {
-  const { preset = 'default', style: styleOverride, color, ...rest } = props;
+  const { color, preset = 'default', style: styleOverride, ...rest } = props;
 
   const { color: palette } = useAppContext();
 
