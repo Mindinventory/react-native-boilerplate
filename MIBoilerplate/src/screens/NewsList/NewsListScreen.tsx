@@ -4,8 +4,8 @@ import { FlatList, TouchableOpacity, View } from 'react-native';
 import { AnimatedTouchableOpacity, Text } from '@app/blueprints';
 
 import { Icons } from '@src/assets';
-import { BaseLayout } from '@src/components';
-import { AppImage, contents, Icon } from '@src/context';
+import { AppImage, BaseLayout, Icon } from '@src/components';
+import { contents } from '@src/context';
 import type { NewsResult } from '@src/services';
 
 import useNewsList from './useNewsList';

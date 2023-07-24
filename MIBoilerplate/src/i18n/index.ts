@@ -9,13 +9,13 @@ const locales = RNLocalize.getLocales();
 const i18n = new I18n();
 
 if (Array.isArray(locales)) {
-  i18n.locale = locales[0]?.languageTag ? locales[0].languageTag : '';
+  i18n.locale = locales[0]?.languageTag ? locales[0].languageTag : 'en';
 }
 export const locale = locales[0]?.languageCode;
 
 i18n.enableFallback = true;
 
-i18n.defaultLocale = locales[0]?.languageTag ? locales[0].languageTag : 'en';
+i18n.defaultLocale = 'en';
 
 i18n.translations = {
   en,

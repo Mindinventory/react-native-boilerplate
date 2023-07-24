@@ -3,8 +3,8 @@ import { ScrollView, View } from 'react-native';
 
 import { AnimatedButton, Text } from '@app/blueprints';
 
-import { BaseLayout } from '@src/components';
-import { AppImage, contents } from '@src/context';
+import { AppImage, BaseLayout } from '@src/components';
+import { contents } from '@src/context';
 import { scaleHeight } from '@src/utils';
 
 import useNewsDetail from './useNewsDetail';
