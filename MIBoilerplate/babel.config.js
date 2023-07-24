@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    ['react-native-reanimated/plugin'],
     [
       'module-resolver',
       {
@@ -11,7 +12,6 @@ module.exports = {
           '@src/context': './src/context',
           '@src/hooks': './src/hooks',
           '@src/i18n': './src/i18n',
-          '@src/navigation': './src/navigation',
           '@src/screens': './src/screens',
           '@src/services': './src/services',
           '@src/store': './src/store',

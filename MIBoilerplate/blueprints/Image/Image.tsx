@@ -16,6 +16,8 @@ import FastImage, {
   Source,
 } from 'react-native-fast-image';
 
+import { useAppContext } from '@src/context';
+
 export type FastImageProps = Omit<FastImageProp, 'source'>;
 
 export interface ImageProps extends FastImageProps {
@@ -33,18 +35,19 @@ export interface ImageProps extends FastImageProps {
 
 export const Image = React.memo((props: ImageProps) => {
   const {
+    children,
     containerStyle,
-    style,
-    source,
-    resizeMode,
+    indicatorSize = 20,
     priority,
+    resizeMode,
+    showIndicator = true,
+    source,
+    style,
     uploading,
     width,
-    children,
-    showIndicator = true,
-    indicatorSize = 20,
     ...rest
   } = props;
+  const { color } = useAppContext();
 
   const [loading, setLoading] = useState(false);
   const [layout, setLayout] = useState<LayoutRectangle | null>(null);
@@ -73,7 +76,7 @@ export const Image = React.memo((props: ImageProps) => {
     indicator = (
       <View style={styles.indicator}>
         <ActivityIndicator
-          color={'blue'}
+          color={color.primaryColor}
           size={indicatorSize}
           animating={loading}
         />

@@ -1,4 +1,4 @@
-import { defaultContent } from '@src/context';
+import { contents } from '@src/context';
 import { isNetworkConnected } from '@src/utils';
 
 import { API } from './apiHandler';
@@ -23,8 +23,6 @@ export default async function serviceAdapter<T, reqParams>(
       return Promise.reject('REST METHOD NOT EXITSt');
     }
   } else {
-    return Promise.reject(
-      Error(defaultContent('common', 'internetConnectionError'))
-    );
+    return Promise.reject(Error(contents('common.internetConnectionError')));
   }
 }

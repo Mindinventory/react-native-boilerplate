@@ -1,4 +1,5 @@
 import { MMKV } from 'react-native-mmkv';
+import { Storage as ReduxStorage } from 'redux-persist';
 
 import type { STORAGES_KEY } from '@src/constants';
 import { logger } from '@src/utils';
@@ -54,6 +55,21 @@ export const storage = {
   getData,
   getStorageKey,
   setData,
+};
+
+export const reduxStorage: ReduxStorage = {
+  getItem: key => {
+    const value = storageMmkv.getString(key);
+    return Promise.resolve(value);
+  },
+  removeItem: key => {
+    storageMmkv.delete(key);
+    return Promise.resolve();
+  },
+  setItem: (key, value) => {
+    storageMmkv.set(key, value);
+    return Promise.resolve(true);
+  },
 };
 
 export type Storage = typeof storage;

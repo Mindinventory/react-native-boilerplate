@@ -1,16 +1,16 @@
 import { NewsResult } from '../../../models';
-import { NewsResponseDTO } from '../../dtos/NewsResponseDTO';
+import { NewDataResponse, NewsResponseDTO } from '../../dtos/NewsResponseDTO';
 
-export class getNewsListResponseAdapter {
+export class getNewsCommercialResponseAdapter {
   constructor() {}
 
   service(dto: NewsResponseDTO): NewsResult[] {
-    return dto.Data.map((item: NewsResult) => {
+    return dto.Data.map((item: NewDataResponse) => {
       return {
         body: item.body,
         categories: item.categories,
         id: item.id,
-        imageurl: item.imageurl,
+        imageUrl: item.imageurl,
         published_on: item.published_on,
         source: item.source,
         tags: item.tags,

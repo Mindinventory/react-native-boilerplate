@@ -15,6 +15,8 @@ export const locale = locales[0]?.languageCode;
 
 i18n.enableFallback = true;
 
+i18n.defaultLocale = locales[0]?.languageTag ? locales[0].languageTag : 'en';
+
 i18n.translations = {
   en,
   hi,

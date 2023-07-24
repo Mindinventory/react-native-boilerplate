@@ -11,10 +11,10 @@ export function isEmpty(obj: object) {
   return Object.keys(obj).length === 0;
 }
 
-export const logger = (prefix?: any) => {
+export const logger = (...args: any) => {
   if (__DEV__) {
     // eslint-disable-next-line no-console
-    console.log(`${String(prefix)}`, prefix);
+    console.log(...args);
   }
 };
 
