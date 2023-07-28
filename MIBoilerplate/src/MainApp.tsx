@@ -11,7 +11,6 @@ import {
   AppContext,
   AppContextType,
   ContentLanguage,
-  contents,
   storage,
 } from './context';
 import i18n from './i18n';
@@ -59,7 +58,6 @@ export const MainApp = () => {
     return {
       appTheme,
       color: color[appTheme || 'light'],
-      contents: (key, options) => contents(key, options),
       language,
       loader: loader.current,
       services: appServices,

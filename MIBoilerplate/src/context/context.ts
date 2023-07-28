@@ -1,12 +1,11 @@
 import { createContext, useContext } from 'react';
 
 import type { IndicatorRef } from '@app/blueprints';
-import { TranslateOptions } from 'i18n-js';
 
 import { AppServices } from '@src/services';
 import { Palette, Theme } from '@src/utils';
 
-import type { ContentLanguage, TxKeyPath } from './content';
+import type { ContentLanguage } from './content';
 import type { Storage } from './storage';
 import type { AppNavigationProp } from '../navigation/appNavigation.type';
 import {
@@ -19,13 +18,6 @@ export type AppContextType = {
    * The appTheme variable is used to define the color scheme used for the application. It takes a ColorSchemeName as its value.
    */
   appTheme: Theme;
-  /**
-   * get language content for app.
-   * @example contents('common', 'home')
-   * @returns `String` app language content.
-   * @constructor
-   */
-  contents: (key: TxKeyPath, options?: TranslateOptions) => string;
   /**
    * This variable is of type ContentLanguage and is used to store the language of content.
    * language = "English";
