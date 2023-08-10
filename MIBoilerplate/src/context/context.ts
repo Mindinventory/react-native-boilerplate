@@ -1,43 +1,23 @@
 import { createContext, useContext } from 'react';
 
-import type { ImageProps, IndicatorRef } from '@app/blueprints';
+import type { IndicatorRef } from '@app/blueprints';
 
-import { Icons } from '@src/assets';
-import {
-  type AppNavigationProp,
-  useWithNavigation,
-  type WithNavigation,
-} from '@src/navigation';
 import { AppServices } from '@src/services';
 import { Palette, Theme } from '@src/utils';
 
-import type { ContentLanguage, DefaultContentType } from './content';
-import { IconProps } from './iconFactory';
-import { ImageSource } from './imageFactory';
+import type { ContentLanguage } from './content';
 import type { Storage } from './storage';
-import type { defaultStyles } from './styles';
-import type en from '../i18n/locales/en.json';
+import type { AppNavigationProp } from '../navigation/appNavigation.type';
+import {
+  useWithNavigation,
+  WithNavigation,
+} from '../navigation/withNavigation';
 
 export type AppContextType = {
   /**
    * The appTheme variable is used to define the color scheme used for the application. It takes a ColorSchemeName as its value.
    */
   appTheme: Theme;
-  /**
-   * styles of app of particular screens.
-   * @declare by styles: styles.homeStyles
-   */
-  styles: ReturnType<typeof defaultStyles>;
-  /**
-   * get language content for app.
-   * @example contents('common', 'home')
-   * @returns `String` app language content.
-   * @constructor
-   */
-  contents: <T extends DefaultContentType, Key extends keyof (typeof en)[T]>(
-    obj: T,
-    key: Key
-  ) => string;
   /**
    * This variable is of type ContentLanguage and is used to store the language of content.
    * language = "English";
@@ -49,7 +29,7 @@ export type AppContextType = {
    * @example to hide loader `loader.current.hide()`.
    * @example to get loader state is loading or not `loader.current.isLoading`.
    */
-  loader: React.RefObject<IndicatorRef>;
+  loader: IndicatorRef | null;
   /**
    * This function is used to set the theme of the application. It takes a single argument, _theme, which should be of type ColorSchemeName.
    * @example setAppTheme('dark');
@@ -75,16 +55,6 @@ export type AppContextType = {
    * Get app palette colors.
    */
   color: Palette;
-  /**
-   * get all App icons from this
-   * @example getIcons(Icons.DEBUG_ICONS)
-   */
-  getIcons: (icon: Icons, props?: IconProps) => JSX.Element;
-  /**
-   * get all App icons from this
-   * @example getImages(Images.PLACEHOLDER_IMAGE)
-   */
-  getImages: (image: ImageSource, props?: ImageProps) => JSX.Element;
 };
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);

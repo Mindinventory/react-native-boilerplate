@@ -1,19 +1,31 @@
-import i18n from '../i18n';
-import type en from '../i18n/locales/en.json';
+import { TranslateOptions } from 'i18n-js';
 
-export type DefaultContentType = keyof typeof en;
+import i18n, { TxKeyPath } from '../i18n';
 
-export enum ContentLanguage {
-  English = 'en',
-  Hindi = 'hi',
-}
-
-export const defaultContent = <
-  T extends DefaultContentType,
-  Key extends keyof (typeof en)[T]
->(
-  obj: T,
-  key: Key
-) => {
-  return i18n.t(`${obj}.${String(key)}`);
+/**
+ * Translates text.
+ *
+ * @param key The i18n key.
+ * @param options The i18n options.
+ * @returns The translated text.
+ *
+ * @example
+ * Translations:
+ *
+ * ```en.json
+ * {
+ *  "hello": "Hello, {{name}}!"
+ * }
+ * ```
+ *
+ * Usage:
+ * ```ts
+ * import { contents } from '@src/context';
+ *
+ * contents("common.hello", { name: "world" })
+ * => "Hello world!"
+ * ```
+ */
+export const contents = (key: TxKeyPath, options?: TranslateOptions) => {
+  return i18n.t(key, options);
 };

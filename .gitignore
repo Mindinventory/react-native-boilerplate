@@ -22,3 +22,6 @@ yarn.lock
 
 node_modules
 mindinventory-react-native-boilerplate-2.0.0.tgz
+MIBoilerplate/.env
+MIBoilerplate/.env.*
+.DS_Store

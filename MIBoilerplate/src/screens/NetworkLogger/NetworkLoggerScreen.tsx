@@ -4,7 +4,7 @@ import NetworkLogger from 'react-native-network-logger';
 
 import { BaseLayout } from '@src/components';
 
-const NetworkloggerScreen = () => {
+const NetworkLoggerScreen = () => {
   return (
     <BaseLayout>
       <NetworkLogger theme={'light'} />
@@ -12,4 +12,4 @@ const NetworkloggerScreen = () => {
   );
 };
 
-export default React.memo(NetworkloggerScreen);
+export default React.memo(NetworkLoggerScreen);

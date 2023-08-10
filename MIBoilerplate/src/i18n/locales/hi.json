@@ -16,7 +16,7 @@
     "internetConnectionError": "कृपया आप इंटरनेट कनेक्टिविटी की जाँच करें।"
   },
   "newsList": {
-    "breaking_News": "आज की ताजा खबर",
+    "breakingNews": "आज की ताजा खबर",
     "general": "आम"
   },
   "newsDetail": {

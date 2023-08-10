@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MainApp } from './src';
+import { MainApp } from './src/MainApp';
 
 const App = () => {
   return <MainApp />;

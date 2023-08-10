@@ -23,6 +23,7 @@ module.exports = {
     'import',
     'react-hooks',
     'sort-keys-fix',
+    'sort-destructure-keys',
     'react-native',
   ],
   root: true,
@@ -92,6 +93,10 @@ module.exports = {
     ],
     'react-hooks/exhaustive-deps': 'error',
     'react-hooks/rules-of-hooks': 'error',
+    'sort-destructure-keys/sort-destructure-keys': [
+      2,
+      { caseSensitive: false },
+    ],
     'sort-imports': [
       'error',
       {
