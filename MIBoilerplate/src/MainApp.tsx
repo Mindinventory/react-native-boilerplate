@@ -7,13 +7,8 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import { StorageKeys } from './constants';
-import {
-  AppContext,
-  AppContextType,
-  ContentLanguage,
-  storage,
-} from './context';
-import i18n from './i18n';
+import { AppContext, AppContextType, storage } from './context';
+import i18n, { ContentLanguage } from './i18n';
 import { AppNavigation, navigationRef } from './navigation/AppNavigation';
 import { ErrorBoundary } from './screens/ErrorBoundary/ErrorBoundary';
 import { appServices } from './services';
