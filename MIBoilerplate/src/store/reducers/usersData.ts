@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { UserResult } from '@src/services';
 
-type UserData = {
+type AppData = {
   users: UserResult[];
   isForceUpdate: boolean;
 };
 
-const initialState: UserData = {
+const initialState: AppData = {
   isForceUpdate: false,
   users: [],
 };

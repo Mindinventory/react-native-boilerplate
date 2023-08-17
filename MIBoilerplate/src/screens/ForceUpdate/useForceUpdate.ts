@@ -10,7 +10,9 @@ import { forceUpdateStyles } from './ForceUpdate.style';
 
 const useForceUpdate = () => {
   const { color, ...props } = useAppContext();
+
   const styles = forceUpdateStyles(color);
+
   const onUpdatePress = useCallback(() => {
     if (isIOS) {
       Linking.openURL(AppConfig.APP_STORE_URL);
