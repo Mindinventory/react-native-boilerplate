@@ -14,11 +14,7 @@ const useForceUpdate = () => {
   const styles = forceUpdateStyles(color);
 
   const onUpdatePress = useCallback(() => {
-    if (isIOS) {
-      Linking.openURL(AppConfig.APP_STORE_URL);
-    } else {
-      Linking.openURL(AppConfig.PLAY_STORE_URL);
-    }
+    Linking.openURL(isIOS ? AppConfig.APP_STORE_URL : AppConfig.PLAY_STORE_URL);
   }, []);
 
   const onRetryPress = useCallback(() => {}, []);
