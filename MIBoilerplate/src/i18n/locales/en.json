@@ -22,5 +22,10 @@
   },
   "newsDetail": {
     "anonymous": "anonymous"
+  },
+  "forceUpdate": {
+    "update": "Update",
+    "updateMessage": "We've release a new version of the App!\nPlease update your app to enjoy these new features.",
+    "retry": "Try again"
   }
 }

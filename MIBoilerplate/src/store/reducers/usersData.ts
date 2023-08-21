@@ -2,11 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { UserResult } from '@src/services';
 
-type UserData = {
+type AppData = {
   users: UserResult[];
+  isForceUpdate: boolean;
 };
 
-const initialState: UserData = {
+const initialState: AppData = {
+  isForceUpdate: false,
   users: [],
 };
 
@@ -15,6 +17,9 @@ export const userDataSlice = createSlice({
   name: 'userData',
   reducers: {
     resetUserData: () => initialState,
+    setForceUpdate: (state, { payload }: PayloadAction<boolean>) => {
+      state.isForceUpdate = payload;
+    },
     setUsers: (state, { payload }: PayloadAction<UserResult[] | []>) => {
       state.users = payload;
     },
@@ -22,7 +27,7 @@ export const userDataSlice = createSlice({
 });
 
 export const {
-  actions: { resetUserData, setUsers },
+  actions: { resetUserData, setForceUpdate, setUsers },
   name: userDataName,
   reducer: userData,
 } = userDataSlice;
