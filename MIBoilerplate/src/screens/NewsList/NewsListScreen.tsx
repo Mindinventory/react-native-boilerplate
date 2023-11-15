@@ -14,6 +14,22 @@ const NewsListScreen = () => {
   const { data, handleNavigationNetwork, handleNavigationNewsItem, styles } =
     useNewsList();
 
+  const renderItem = ({ item }: { item: NewsResult }) => {
+    return (
+      <AnimatedTouchableOpacity
+        containerStyle={styles.newsItemContainer}
+        onPress={handleNavigationNewsItem(item)}>
+        <AppImage source={item.imageUrl} style={styles.newsImage} />
+        <View style={styles.newsTextView}>
+          <Text preset="h6">
+            {item?.source ? item.source : contents('newsList.general')}
+          </Text>
+          <Text preset="title">{item.title}</Text>
+        </View>
+      </AnimatedTouchableOpacity>
+    );
+  };
+
   return (
     <BaseLayout>
       <FlatList
@@ -22,36 +38,19 @@ const NewsListScreen = () => {
         showsVerticalScrollIndicator={false}
         data={data}
         style={styles.flatlistStyles}
-        keyExtractor={(item, index) => {
-          return `${item.id}${index}`;
-        }}
-        renderItem={({ item }: { item: NewsResult }) => {
-          return (
-            <AnimatedTouchableOpacity
-              containerStyle={styles.newsItemContainer}
-              onPress={handleNavigationNewsItem(item)}>
-              <AppImage source={item.imageUrl} style={styles.newsImage} />
-              <View style={styles.newsTextView}>
-                <Text preset="h6">
-                  {item?.source ? item.source : contents('newsList.general')}
-                </Text>
-                <Text preset="title">{item.title}</Text>
-              </View>
-            </AnimatedTouchableOpacity>
-          );
-        }}
-        ListHeaderComponent={() => {
-          return (
-            <View style={styles.headerContainer}>
-              <Text preset="h1">{contents('newsList.breakingNews')}</Text>
-              <TouchableOpacity
-                style={styles.networkButton}
-                onPress={handleNavigationNetwork}>
-                <Icon icon={Icons.DEBUG_ICONS} style={styles.debugIcon} />
-              </TouchableOpacity>
-            </View>
-          );
-        }}
+        initialNumToRender={5}
+        keyExtractor={item => `${item.id}_${item.title}`}
+        renderItem={renderItem}
+        ListHeaderComponent={
+          <View style={styles.headerContainer}>
+            <Text preset="h1">{contents('newsList.breakingNews')}</Text>
+            <TouchableOpacity
+              style={styles.networkButton}
+              onPress={handleNavigationNetwork}>
+              <Icon icon={Icons.DEBUG_ICONS} style={styles.debugIcon} />
+            </TouchableOpacity>
+          </View>
+        }
       />
     </BaseLayout>
   );

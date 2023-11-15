@@ -1,6 +1,9 @@
+import { createRef } from 'react';
+
 import NetInfo from '@react-native-community/netinfo';
 
 import { scaledSize } from './dimensions';
+import { IndicatorRef } from '../../blueprints/Indicator/Indicator';
 
 export const isNetworkConnected = async () => {
   const state = await NetInfo.refresh();
@@ -24,3 +27,24 @@ export const scaled = (value: number) => {
     width: scaledSize(value),
   };
 };
+
+export function boxShadow(
+  color: string,
+  offset = { height: 2, width: 2 },
+  radius = 8,
+  opacity = 0.2
+) {
+  return {
+    elevation: radius,
+    shadowColor: color,
+    shadowOffset: offset,
+    shadowOpacity: opacity,
+    shadowRadius: radius,
+  };
+}
+
+export function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve as () => void, ms));
+}
+
+export const loader = createRef<IndicatorRef>();

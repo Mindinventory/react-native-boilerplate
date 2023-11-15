@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 
-import { useAppContext } from '@src/context';
+import { useColor } from '@src/context';
 import { Palette, scaledSize } from '@src/utils';
 
 import { Text } from '../Text/Text';
@@ -26,7 +26,7 @@ export const IndicatorViewRef = (
   ref: React.Ref<IndicatorRef>
 ) => {
   const { isLoading = true } = props;
-  const { color } = useAppContext();
+  const { color } = useColor();
   const [loading, setIsLoading] = useState(isLoading);
 
   const pressCount = useRef(0);

@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { useAppContext } from '@src/context';
+import { contents, useAppContext } from '@src/context';
 import { NewsResult } from '@src/services';
 import { getNewsData as newsData, setNews, useAppDispatch } from '@src/store';
 import { logger } from '@src/utils';
@@ -11,7 +11,7 @@ import { newsListStyles } from './NewsList.style';
 import { Screen } from '../../navigation/appNavigation.type';
 
 const useNewsList = () => {
-  const { color, contents, loader, navigation, services } = useAppContext();
+  const { color, loader, navigation, services } = useAppContext();
   const dispatch = useAppDispatch();
 
   const data = useSelector(newsData);
