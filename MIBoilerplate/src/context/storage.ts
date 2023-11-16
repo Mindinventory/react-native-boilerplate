@@ -8,19 +8,11 @@ export type dataStoreType = 'string' | 'boolean' | 'number' | 'object';
 
 export const storageMmkv = new MMKV();
 
-export const getData = (key: STORAGES_KEY, type: dataStoreType) => {
+export const getData = (key: STORAGES_KEY, _type?: dataStoreType) => {
   try {
-    if (type === 'string') {
-      return storageMmkv.getString(key);
-    } else if (type === 'number') {
-      return storageMmkv.getNumber(key);
-    } else if (type === 'boolean') {
-      return storageMmkv.getBoolean(key);
-    } else {
-      const data = storageMmkv.getString(key);
-      const parseData = JSON.parse(data as string);
-      return parseData;
-    }
+    const data = storageMmkv.getString(key);
+    const parseData = JSON.parse(data as string);
+    return parseData;
   } catch (error) {
     logger(error);
   }

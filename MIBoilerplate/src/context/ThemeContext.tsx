@@ -65,7 +65,12 @@ export const ThemeProvider = ({ children }: React.PropsWithChildren) => {
   }, [appTheme, setAppTheme]);
 
   useEffect(() => {
-    setAppTheme(colorScheme);
+    const theme = storage.getData(StorageKeys.APP_THEME);
+    if (theme) {
+      setAppTheme(theme);
+    } else {
+      setAppTheme(colorScheme);
+    }
   }, [colorScheme, setAppTheme]);
 
   return (

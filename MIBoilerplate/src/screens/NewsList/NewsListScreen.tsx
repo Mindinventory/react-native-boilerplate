@@ -3,16 +3,23 @@ import { FlatList, TouchableOpacity, View } from 'react-native';
 
 import { AnimatedTouchableOpacity, Text } from '@app/blueprints';
 
-import { Icons } from '@src/assets';
-import { AppImage, BaseLayout, Icon } from '@src/components';
+import { Icons, SVGIcons } from '@src/assets';
+import { AppImage, BaseLayout, Icon, SvgIcon } from '@src/components';
 import { contents } from '@src/context';
 import type { NewsResult } from '@src/services';
+import { scaled } from '@src/utils';
 
 import useNewsList from './useNewsList';
 
 const NewsListScreen = () => {
-  const { data, handleNavigationNetwork, handleNavigationNewsItem, styles } =
-    useNewsList();
+  const {
+    color,
+    data,
+    handleNavigationNetwork,
+    handleNavigationNewsItem,
+    handleSetting,
+    styles,
+  } = useNewsList();
 
   const renderItem = ({ item }: { item: NewsResult }) => {
     return (
@@ -49,6 +56,15 @@ const NewsListScreen = () => {
               onPress={handleNavigationNetwork}>
               <Icon icon={Icons.DEBUG_ICONS} style={styles.debugIcon} />
             </TouchableOpacity>
+            <AnimatedTouchableOpacity
+              onPress={handleSetting}
+              containerStyle={styles.settingBtn}>
+              <SvgIcon
+                pathFill={color.primaryColor}
+                icon={SVGIcons.SETTING}
+                {...scaled(25)}
+              />
+            </AnimatedTouchableOpacity>
           </View>
         }
       />

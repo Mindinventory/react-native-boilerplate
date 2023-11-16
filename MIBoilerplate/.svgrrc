@@ -1,0 +1,5 @@
+{
+  "replaceAttrValues": {
+    "#FFF": "{props.pathFill}"
+  }
+}

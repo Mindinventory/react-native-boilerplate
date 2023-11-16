@@ -15,7 +15,7 @@ export const useAppContextOnly = () => {
   const { ...language } = useLanguage();
 
   return {
-    loader: loader.current,
+    loader: loader,
     services: appServices,
     storage,
     ...color,

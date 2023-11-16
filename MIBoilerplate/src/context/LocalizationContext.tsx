@@ -2,11 +2,15 @@ import React, {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
 
+import { StorageKeys } from '@src/constants';
 import i18n, { ContentLanguage } from '@src/i18n';
+
+import { storage } from './storage';
 
 export type LocalizationAppContextType = {
   /**
@@ -44,6 +48,7 @@ export const LocalizationProvider = ({ children }: React.PropsWithChildren) => {
    * @return void change app content language.
    */
   const setLanguageInApp = useCallback((lang: ContentLanguage) => {
+    storage.setData(StorageKeys.APP_LANGUAGE, lang);
     i18n.locale = lang;
     setLanguage(lang);
   }, []);
@@ -54,6 +59,13 @@ export const LocalizationProvider = ({ children }: React.PropsWithChildren) => {
       setLanguageInApp,
     };
   }, [language, setLanguageInApp]);
+
+  useEffect(() => {
+    const appLanguage = storage.getData(StorageKeys.APP_LANGUAGE);
+    if (appLanguage) {
+      setLanguageInApp(appLanguage);
+    }
+  }, [setLanguageInApp]);
 
   return (
     <LocalizationAppContext.Provider value={value}>

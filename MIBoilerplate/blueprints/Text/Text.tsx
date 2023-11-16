@@ -96,10 +96,17 @@ export interface TextProps extends TextProperties {
   style?: StyleProp<TextStyle>;
   preset?: TextPresets;
   color?: string;
+  textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify';
 }
 
 export const Text = ({ children, ...props }: TextProps) => {
-  const { color, preset = 'default', style: styleOverride, ...rest } = props;
+  const {
+    color,
+    preset = 'default',
+    style: styleOverride,
+    textAlign = 'auto',
+    ...rest
+  } = props;
 
   const { color: palette } = useColor();
 
@@ -108,7 +115,7 @@ export const Text = ({ children, ...props }: TextProps) => {
       {...rest}
       style={[
         presets[preset] as TextProps,
-        { color: color ? color : palette.textColor },
+        { color: color ? color : palette.textColor, textAlign: textAlign },
         styleOverride,
       ]}>
       {children}

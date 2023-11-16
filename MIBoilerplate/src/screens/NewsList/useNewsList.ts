@@ -17,19 +17,19 @@ const useNewsList = () => {
   const data = useSelector(newsData);
 
   const getNewsData = useCallback(async () => {
-    loader?.show();
+    loader.current?.show();
     try {
       const getNews = await services.getNews();
       dispatch(setNews(getNews));
     } catch (error) {
       logger('Error getNews>>', error);
     } finally {
-      loader?.hide();
+      loader.current?.hide();
     }
-  }, [dispatch, loader, services]);
+  }, [loader, services, dispatch]);
 
   const handleNavigationNetwork = useCallback(() => {
-    navigation.navigate(Screen.SETTING);
+    navigation.navigate(Screen.NETWORK_CHECK);
   }, [navigation]);
 
   const handleNavigationNewsItem = useCallback(
@@ -41,15 +41,22 @@ const useNewsList = () => {
     [navigation]
   );
 
+  const handleSetting = useCallback(() => {
+    navigation.navigate(Screen.SETTING);
+  }, [navigation]);
+
   useEffect(() => {
+    logger('Calling Use Effect');
     getNewsData();
   }, [getNewsData]);
 
   return {
+    color,
     contents,
     data,
     handleNavigationNetwork,
     handleNavigationNewsItem,
+    handleSetting,
     styles: newsListStyles(color),
   };
 };

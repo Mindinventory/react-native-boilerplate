@@ -27,5 +27,10 @@
     "update": "Update",
     "updateMessage": "We've release a new version of the App!\nPlease update your app to enjoy these new features.",
     "retry": "Try again"
+  },
+  "setting": {
+    "languages": "Languages",
+    "settingScreen": "Setting Screen",
+    "theme": "Theme"
   }
 }

@@ -17,7 +17,6 @@ export interface IndicatorProps {
 
 export type IndicatorRef = {
   hide: () => void;
-  isLoading: boolean;
   show: () => void;
 };
 
@@ -49,11 +48,10 @@ export const IndicatorViewRef = (
     () => {
       return {
         hide,
-        isLoading: loading,
         show,
       };
     },
-    [hide, loading, show]
+    [hide, show]
   );
 
   const styles = indicatorStyles(color);
