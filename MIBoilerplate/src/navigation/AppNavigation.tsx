@@ -8,6 +8,7 @@ import {
 import { useSelector } from 'react-redux';
 
 import {
+  LoginScreen,
   NetworkLoggerScreen,
   NewsDetailScreen,
   NewsListScreen,
@@ -43,6 +44,7 @@ export const AppNavigation = () => {
             component={NewsDetailScreen}
           />
           <Stack.Screen name={Screen.SETTING} component={SettingScreen} />
+          <Stack.Screen name={Screen.LOGIN} component={LoginScreen} />
           {__DEV__ && (
             <Stack.Screen
               name={Screen.NETWORK_CHECK}

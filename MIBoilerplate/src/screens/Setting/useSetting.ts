@@ -5,6 +5,7 @@ import { ContentLanguage } from '@src/i18n';
 import { Theme } from '@src/utils';
 
 import { settingStyles } from './Setting.style';
+import { Screen } from '../../navigation/appNavigation.type';
 
 const themes = ['Dark', 'Light', 'Theme1', 'Theme2', 'Theme3'];
 
@@ -34,6 +35,10 @@ const useSetting = () => {
     [setLanguageInApp]
   );
 
+  const handleLogin = useCallback(() => {
+    navigation.navigate(Screen.LOGIN);
+  }, [navigation]);
+
   // add your code here
 
   return {
@@ -41,6 +46,7 @@ const useSetting = () => {
     color,
     handleChangeLanguage,
     handleChangeTheme,
+    handleLogin,
     language,
     languages,
     navigation,

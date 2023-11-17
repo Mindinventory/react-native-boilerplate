@@ -220,7 +220,6 @@ export const Input = React.memo(
     const animatedPlaceholder = useAnimatedProps<TextInputProps>(() => {
       return {
         placeholder: label ? (focused.value ? placeholder : '') : placeholder,
-        placeholderTextColor: '#d5d5',
       };
     }, [label, focused, placeholder]);
 
@@ -265,6 +264,7 @@ export const Input = React.memo(
             ref={ref}
             style={[styles.input, animatedInput, inputStyle]}
             animatedProps={animatedPlaceholder}
+            placeholderTextColor={color.textColor}
             onFocus={handleFocus}
             onBlur={handleBlur}
             {...({

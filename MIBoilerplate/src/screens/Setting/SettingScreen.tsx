@@ -1,7 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { AnimatedTouchableOpacity, Text } from '@app/blueprints';
+import {
+  AnimatedButton,
+  AnimatedTouchableOpacity,
+  Text,
+} from '@app/blueprints';
 
 import { BaseLayout } from '@src/components';
 import { contents } from '@src/context';
@@ -14,6 +18,7 @@ const SettingScreen = () => {
     appTheme,
     handleChangeLanguage,
     handleChangeTheme,
+    handleLogin,
     language,
     languages,
     styles,
@@ -31,7 +36,10 @@ const SettingScreen = () => {
         </Text>
         {themes.map(m => {
           return (
-            <View style={styles.themes} key={`${m}`}>
+            <AnimatedTouchableOpacity
+              containerStyle={styles.themes}
+              onPress={handleChangeTheme(m.toLowerCase())}
+              key={`${m}`}>
               <Text preset="h4">{m}</Text>
               <AnimatedTouchableOpacity
                 onPress={handleChangeTheme(m.toLowerCase())}
@@ -40,7 +48,7 @@ const SettingScreen = () => {
                   <View style={styles.selectedRadio} />
                 ) : null}
               </AnimatedTouchableOpacity>
-            </View>
+            </AnimatedTouchableOpacity>
           );
         })}
 
@@ -49,7 +57,10 @@ const SettingScreen = () => {
         </Text>
         {languages.map(m => {
           return (
-            <View style={styles.themes} key={`${m}`}>
+            <AnimatedTouchableOpacity
+              onPress={handleChangeLanguage(m)}
+              containerStyle={styles.themes}
+              key={`${m}`}>
               <Text preset="h4">{m}</Text>
               <AnimatedTouchableOpacity
                 onPress={handleChangeLanguage(m)}
@@ -59,9 +70,14 @@ const SettingScreen = () => {
                   <View style={styles.selectedRadio} />
                 ) : null}
               </AnimatedTouchableOpacity>
-            </View>
+            </AnimatedTouchableOpacity>
           );
         })}
+        <AnimatedButton
+          title="Login"
+          buttonContainerStyle={styles.btn}
+          onPress={handleLogin}
+        />
       </View>
     </BaseLayout>
   );

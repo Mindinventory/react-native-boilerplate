@@ -9,6 +9,8 @@ export enum Screen {
   NEWS_DETAIL = 'NEWS_DETAIL',
   NEWS_LIST = 'NEWS_LIST',
   SETTING = 'SETTING',
+  LOGIN = 'LOGIN',
+  SIGNUP = 'SIGNUP',
 }
 
 export type NavStackParams = {
@@ -17,6 +19,8 @@ export type NavStackParams = {
   [Screen.NEWS_DETAIL]: NewsDetailParams;
   [Screen.NEWS_LIST]: undefined;
   [Screen.SETTING]: undefined;
+  [Screen.LOGIN]: undefined;
+  [Screen.SIGNUP]: undefined;
 };
 
 export type NewsDetailParams = {

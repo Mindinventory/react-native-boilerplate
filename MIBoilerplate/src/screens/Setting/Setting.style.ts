@@ -4,9 +4,12 @@ import { Palette, scaled, scaleHeight, scaleWidth } from '@src/utils';
 
 export const settingStyles = ({ primaryColor }: Palette) =>
   StyleSheet.create({
+    btn: {
+      marginTop: scaleHeight(30),
+    },
     content: {
       marginTop: scaleHeight(25),
-      paddingHorizontal: scaleWidth(15),
+      paddingHorizontal: scaleWidth(50),
     },
     header: {
       alignItems: 'center',
@@ -18,7 +21,6 @@ export const settingStyles = ({ primaryColor }: Palette) =>
       borderRadius: 10,
       borderWidth: 1,
       justifyContent: 'center',
-      marginRight: '20%',
     },
     selectedRadio: {
       ...scaled(10),
