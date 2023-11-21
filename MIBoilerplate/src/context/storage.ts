@@ -11,10 +11,12 @@ export const storageMmkv = new MMKV();
 export const getData = (key: STORAGES_KEY, _type?: dataStoreType) => {
   try {
     const data = storageMmkv.getString(key);
-    const parseData = JSON.parse(data as string);
-    return parseData;
+    if (data) {
+      const parseData = JSON.parse(data);
+      return parseData;
+    }
   } catch (error) {
-    logger(error);
+    logger('storage getData', error);
   }
 };
 
@@ -29,7 +31,7 @@ export const setData = (key: STORAGES_KEY, value: any) => {
       storageMmkv.set(key, jsonValue);
     }
   } catch (error) {
-    logger(error);
+    logger('storage setData', error);
   }
 };
 
