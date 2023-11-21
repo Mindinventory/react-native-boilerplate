@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { AnimatedButton, Text } from '@app/blueprints';
+import { Button, Text } from '@app/blueprints';
 
 import { contents } from '@src/context';
 
@@ -15,11 +15,11 @@ const ForceUpdateScreen = () => {
       <Text preset="h4" style={styles.messageStyle}>
         {contents('forceUpdate.updateMessage')}
       </Text>
-      <AnimatedButton
+      <Button
         title={contents('forceUpdate.update')}
         titleStyle={styles.updateText}
       />
-      <AnimatedButton
+      <Button
         title={contents('forceUpdate.retry')}
         buttonContainerStyle={styles.retryButton}
       />

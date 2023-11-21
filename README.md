@@ -62,15 +62,15 @@ npx react-native init APP_NAME --template @mindinventory/react-native-boilerplat
 
 | Library                   | Category             | Version | Description                                    |
 | ------------------------- | -------------------- | ------- | ---------------------------------------------- |
-| React Native              | Mobile Framework     | v0.71   | The best cross-platform mobile framework       |
+| React Native              | Mobile Framework     | v0.72   | The best cross-platform mobile framework       |
 | React                     | UI Framework         | v18     | The most popular UI framework in the world     |
 | TypeScript                | Language             | v4      | Static typechecking                            |
 | React Navigation          | Navigation           | v6      | Performant and consistent navigation framework |
 | React Native Localization | Internationalization | v13     | i18n support (including RTL!)                  |
 | Redux                     | State Management     | v5      | Observable state tree                          |
 | Redux-toolkit             | Redux integration    | v3      | New redux library with some function helpers   |
-| RN Reanimated             | Animations           | v2      | Beautiful and performant animations            |
-| MMKV                      | Persistence          | v1      | State persistence                              |
+| RN Reanimated             | Animations           | v3      | Beautiful and performant animations            |
+| MMKV                      | Persistence          | v2      | State persistence                              |
 | axios                     | REST client          | v1      | Communicate with back-end                      |
 | Hermes                    | JS engine            |         | Fine-tuned JS engine for RN                    |
 
@@ -80,9 +80,11 @@ The project structure follows a modular approach to organize your codebase in a 
 
 ```
 ├── blueprints
-│ ├── text
-│ ├── image
-│ └── indicator
+│ ├── Text
+│ ├── Image
+│ └── Indicator
+│ └── Button
+│ └── TextInput
 │ └── ...
 ```
 
@@ -120,10 +122,33 @@ The project structure follows a modular approach to organize your codebase in a 
     loader.current.isLoading;
     ```
 
+  - **Button**: Animated scalability adds an extra layer of interactivity to your buttons with TouchableOpacity
+    For Example:
+
+    ```js
+    import { Button } from "@app/blueprints";
+
+    <Button
+      buttonContainerStyle={{ marginTop: scaleHeight(15) }}
+      title="Go back"
+      {...TouchableOpacityProps}
+    />;
+    ```
+
+  - **TextInput**: Material UI all input variant added.
+    For Example:
+
+    ```js
+    import { Input } from "@app/blueprints";
+
+    <Input variant="standard" {...TextInputProps} />;
+    ```
+
 ```
 ├── src
 │ ├── assets
 │ ├── components
+│ ├── constants
 │ ├── context
 │ ├── hooks
 │ ├── i18n
@@ -132,7 +157,7 @@ The project structure follows a modular approach to organize your codebase in a 
 │ ├── services
 │ ├── store
 │ ├── utils
-└── index.tsx
+└── MainApp.tsx
 ```
 
 - **src**: Contains the main source code of your application.
@@ -192,6 +217,7 @@ The project structure follows a modular approach to organize your codebase in a 
 │ ├── assets
 │ ├──├── fonts (all fonts in this)
 │ ├──├── icons (app icons)
+│ ├──├── svgIcons (svg app icons)
 │ ├──├── images (local images used in app)
 │ ├──├── ...
 │ ├── components
@@ -322,7 +348,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
   2. Run the following command to automatically import the images into the assets/images/index.ts file:
 
      ```bash
-     npm run generate:images
+     npm run images
      ```
 
   3. Get your images in app from context
@@ -347,7 +373,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
   2. Run the following command to automatically import the icons into the assets/icons/index.ts file:
 
      ```bash
-     npm run generate:icons
+     npm run icons
      ```
 
   3. Get your icon in app from context

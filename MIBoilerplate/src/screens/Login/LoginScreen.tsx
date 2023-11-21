@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { AnimatedButton, Text, TextInput } from '@app/blueprints';
+import { Button, Text, TextInput } from '@app/blueprints';
 import { Formik } from 'formik';
 
 import { BaseLayout } from '@src/components';
@@ -49,16 +49,18 @@ const LoginScreen = () => {
                 style={styles.input}
                 onSubmitEditing={submitForm}
               />
-              <AnimatedButton
+              <Button
                 title={contents('login.login')}
                 buttonContainerStyle={styles.loginBtn}
                 onPress={submitForm}
                 disabled={disabled}
               />
-              <AnimatedButton
+              <Button
                 title={'reset'}
                 buttonContainerStyle={styles.loginBtn}
-                onPress={resetForm}
+                onPress={() => {
+                  resetForm();
+                }}
               />
             </View>
           )}

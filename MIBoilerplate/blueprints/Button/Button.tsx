@@ -65,7 +65,7 @@ export const AnimatedTouchableOpacity = React.memo(
   }
 );
 
-export const AnimatedButton = React.memo((props: ButtonProps) => {
+export const Button = React.memo((props: ButtonProps) => {
   const { buttonContainerStyle, title, titleContainerStyle, titleStyle } =
     props;
 

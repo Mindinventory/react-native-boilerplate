@@ -1,11 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import {
-  AnimatedButton,
-  AnimatedTouchableOpacity,
-  Text,
-} from '@app/blueprints';
+import { AnimatedTouchableOpacity, Button, Text } from '@app/blueprints';
 
 import { BaseLayout } from '@src/components';
 import { contents } from '@src/context';
@@ -73,7 +69,7 @@ const SettingScreen = () => {
             </AnimatedTouchableOpacity>
           );
         })}
-        <AnimatedButton
+        <Button
           title="Login"
           buttonContainerStyle={styles.btn}
           onPress={handleLogin}
