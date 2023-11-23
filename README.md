@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# React Native Boilerplate
+# React Native Boilerplate!🚀
 
 [![npm version](https://img.shields.io/npm/v/@mindinventory/react-native-boilerplate.svg)](<[https://www.npmjs.org/package/@mindinventory/react-native-boilerplate](https://www.npmjs.com/package/@mindinventory/react-native-boilerplate)>)
 ![@mindinventory/React Native Boilerplate Top Language](https://img.shields.io/github/languages/top/Mindinventory/react-native-boilerplate)
@@ -29,6 +29,33 @@ Built in implemented features.
 - [x] Network request (API implementation).
 - [x] Supported for responsive UI.
 - [x] Typescript.
+
+## Advantages
+
+1. Attractive Code Architecture
+   Our boilerplate comes with a clean and organized code structure that enhances readability and maintainability.
+2. Context API
+   Leverage the power of React's Context API for efficient state management, making it easier to share data between components.
+3. Environment Setup
+   Hassle-free setup with detailed instructions, ensuring a smooth onboarding process for developers.
+4. Eslint for Better Code Linting
+   Catch and fix issues early with Eslint integration, promoting consistent and error-free code.
+5. Husky Improves Your Commits and More
+   Benefit from Husky's pre-commit hooks to enforce code quality and ensure that only well-formatted code makes it into your repository.
+6. Light/Dark Custom Theme Modes
+   Enjoy the flexibility of light and dark theme modes with easy customization options to suit your app's design.
+7. Local Storage (MMKV)
+   Efficient and reliable local storage using MMKV, optimizing data persistence in your React Native application.
+8. Localization
+   Easily add multilingual support to your app with our localization feature, ensuring a global reach for your audience.
+9. Navigation
+   Seamless navigation setup with React Navigation, providing a smooth and intuitive user experience.
+10. Network Request (API Implementation)
+    Simplified API integration for making network requests, saving you time and effort in implementing backend communication.
+11. Supported for Responsive UI
+    Build responsive user interfaces that adapt to various screen sizes, providing a consistent user experience across devices.
+12. Typescript
+    Harness the benefits of TypeScript for static typing, catching errors at compile-time and improving code quality.
 
 ## Code linting
 
