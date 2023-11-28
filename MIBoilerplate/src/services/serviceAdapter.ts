@@ -1,8 +1,8 @@
-import { contents } from '@src/context';
 import { isNetworkConnected } from '@src/utils';
 
 import { API } from './apiHandler';
 import { API_METHODS } from './appServices.type';
+import { contents } from '../context/content';
 
 export default async function serviceAdapter<T, reqParams>(
   method: API_METHODS,

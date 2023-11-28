@@ -3,16 +3,39 @@ import { FlatList, TouchableOpacity, View } from 'react-native';
 
 import { AnimatedTouchableOpacity, Text } from '@app/blueprints';
 
-import { Icons } from '@src/assets';
-import { AppImage, BaseLayout, Icon } from '@src/components';
+import { Icons, SVGIcons } from '@src/assets';
+import { AppImage, BaseLayout, Icon, SvgIcon } from '@src/components';
 import { contents } from '@src/context';
 import type { NewsResult } from '@src/services';
+import { scaled } from '@src/utils';
 
 import useNewsList from './useNewsList';
 
 const NewsListScreen = () => {
-  const { data, handleNavigationNetwork, handleNavigationNewsItem, styles } =
-    useNewsList();
+  const {
+    color,
+    data,
+    handleNavigationNetwork,
+    handleNavigationNewsItem,
+    handleSetting,
+    styles,
+  } = useNewsList();
+
+  const renderItem = ({ item }: { item: NewsResult }) => {
+    return (
+      <AnimatedTouchableOpacity
+        containerStyle={styles.newsItemContainer}
+        onPress={handleNavigationNewsItem(item)}>
+        <AppImage source={item.imageUrl} style={styles.newsImage} />
+        <View style={styles.newsTextView}>
+          <Text preset="h6">
+            {item?.source ? item.source : contents('newsList.general')}
+          </Text>
+          <Text preset="title">{item.title}</Text>
+        </View>
+      </AnimatedTouchableOpacity>
+    );
+  };
 
   return (
     <BaseLayout>
@@ -22,36 +45,28 @@ const NewsListScreen = () => {
         showsVerticalScrollIndicator={false}
         data={data}
         style={styles.flatlistStyles}
-        keyExtractor={(item, index) => {
-          return `${item.id}${index}`;
-        }}
-        renderItem={({ item }: { item: NewsResult }) => {
-          return (
+        initialNumToRender={5}
+        keyExtractor={item => `${item.id}_${item.title}`}
+        renderItem={renderItem}
+        ListHeaderComponent={
+          <View style={styles.headerContainer}>
+            <Text preset="h1">{contents('newsList.breakingNews')}</Text>
+            <TouchableOpacity
+              style={styles.networkButton}
+              onPress={handleNavigationNetwork}>
+              <Icon icon={Icons.DEBUG_ICONS} style={styles.debugIcon} />
+            </TouchableOpacity>
             <AnimatedTouchableOpacity
-              containerStyle={styles.newsItemContainer}
-              onPress={handleNavigationNewsItem(item)}>
-              <AppImage source={item.imageUrl} style={styles.newsImage} />
-              <View style={styles.newsTextView}>
-                <Text preset="h6">
-                  {item?.source ? item.source : contents('newsList.general')}
-                </Text>
-                <Text preset="title">{item.title}</Text>
-              </View>
+              onPress={handleSetting}
+              containerStyle={styles.settingBtn}>
+              <SvgIcon
+                pathFill={color.primaryColor}
+                icon={SVGIcons.SETTING}
+                {...scaled(25)}
+              />
             </AnimatedTouchableOpacity>
-          );
-        }}
-        ListHeaderComponent={() => {
-          return (
-            <View style={styles.headerContainer}>
-              <Text preset="h1">{contents('newsList.breakingNews')}</Text>
-              <TouchableOpacity
-                style={styles.networkButton}
-                onPress={handleNavigationNetwork}>
-                <Icon icon={Icons.DEBUG_ICONS} style={styles.debugIcon} />
-              </TouchableOpacity>
-            </View>
-          );
-        }}
+          </View>
+        }
       />
     </BaseLayout>
   );

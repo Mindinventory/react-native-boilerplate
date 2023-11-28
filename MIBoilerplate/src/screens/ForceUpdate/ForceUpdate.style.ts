@@ -8,9 +8,10 @@ export const forceUpdateStyles = ({ backgroundColor, textColor }: Palette) =>
       marginTop: scaleHeight(40),
     },
     container: {
+      backgroundColor: backgroundColor,
       flex: 1,
       justifyContent: 'center',
-      marginHorizontal: scaleWidth(50),
+      paddingHorizontal: scaleWidth(35),
     },
     messageStyle: {
       color: textColor,

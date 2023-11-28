@@ -15,7 +15,7 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 
-import { useAppContext } from '@src/context';
+import { useColor } from '@src/context';
 import { moderateScale, Palette, scaleHeight } from '@src/utils';
 
 import { Text } from '../Text/Text';
@@ -65,11 +65,11 @@ export const AnimatedTouchableOpacity = React.memo(
   }
 );
 
-export const AnimatedButton = React.memo((props: ButtonProps) => {
+export const Button = React.memo((props: ButtonProps) => {
   const { buttonContainerStyle, title, titleContainerStyle, titleStyle } =
     props;
 
-  const { color } = useAppContext();
+  const { color } = useColor();
 
   const styles = buttonStyles(color);
 

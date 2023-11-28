@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import type { LayoutChangeEvent } from 'react-native';
 import {
   ActivityIndicator,
   LayoutRectangle,
@@ -7,7 +8,6 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import type { LayoutChangeEvent } from 'react-native';
 
 import FastImage, {
   FastImageProps as FastImageProp,
@@ -16,7 +16,7 @@ import FastImage, {
   Source,
 } from 'react-native-fast-image';
 
-import { useAppContext } from '@src/context';
+import { useColor } from '@src/context';
 
 export type FastImageProps = Omit<FastImageProp, 'source'>;
 
@@ -31,6 +31,7 @@ export interface ImageProps extends FastImageProps {
   showIndicator?: boolean;
   indicatorSize?: number;
   source?: string | Source | number;
+  loaderColor?: string;
 }
 
 export const Image = React.memo((props: ImageProps) => {
@@ -38,6 +39,7 @@ export const Image = React.memo((props: ImageProps) => {
     children,
     containerStyle,
     indicatorSize = 20,
+    loaderColor,
     priority,
     resizeMode,
     showIndicator = true,
@@ -47,7 +49,7 @@ export const Image = React.memo((props: ImageProps) => {
     width,
     ...rest
   } = props;
-  const { color } = useAppContext();
+  const { color } = useColor();
 
   const [loading, setLoading] = useState(false);
   const [layout, setLayout] = useState<LayoutRectangle | null>(null);
@@ -76,7 +78,7 @@ export const Image = React.memo((props: ImageProps) => {
     indicator = (
       <View style={styles.indicator}>
         <ActivityIndicator
-          color={color.primaryColor}
+          color={loaderColor ?? color.primaryColor}
           size={indicatorSize}
           animating={loading}
         />

@@ -8,9 +8,11 @@ import {
 import { useSelector } from 'react-redux';
 
 import {
+  LoginScreen,
   NetworkLoggerScreen,
   NewsDetailScreen,
   NewsListScreen,
+  SettingScreen,
 } from '@src/screens';
 import { isForceUpdate } from '@src/store';
 
@@ -41,9 +43,11 @@ export const AppNavigation = () => {
             name={Screen.NEWS_DETAIL}
             component={NewsDetailScreen}
           />
+          <Stack.Screen name={Screen.SETTING} component={SettingScreen} />
+          <Stack.Screen name={Screen.LOGIN} component={LoginScreen} />
           {__DEV__ && (
             <Stack.Screen
-              name={Screen.SETTING}
+              name={Screen.NETWORK_CHECK}
               component={NetworkLoggerScreen}
             />
           )}

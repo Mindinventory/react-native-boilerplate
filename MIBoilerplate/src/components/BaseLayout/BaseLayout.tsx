@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import { useAppContext } from '@src/context';
+import { useColor } from '@src/context';
 import { Palette } from '@src/utils';
 
 export type BaseLayoutProps = React.PropsWithChildren & {
@@ -15,13 +15,13 @@ export type BaseLayoutProps = React.PropsWithChildren & {
 };
 
 export const BaseLayout = React.memo(({ children, style }: BaseLayoutProps) => {
-  const { color } = useAppContext();
+  const { appTheme, color } = useColor();
   const styles = baseLayoutStyles(color);
 
   return (
     <SafeAreaView style={[styles.safeAreaStyle, style]}>
       <StatusBar
-        barStyle={'dark-content'}
+        barStyle={appTheme === 'dark' ? 'light-content' : 'dark-content'}
         backgroundColor={color.backgroundColor}
       />
       {children}

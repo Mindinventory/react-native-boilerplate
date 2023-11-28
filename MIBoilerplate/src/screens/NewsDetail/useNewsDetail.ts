@@ -2,13 +2,13 @@ import { useCallback } from 'react';
 
 import { useRoute } from '@react-navigation/native';
 
-import { useAppContext } from '@src/context';
+import { contents, useAppContext } from '@src/context';
 
 import { newsDetailStyles } from './NewsDetail.style';
 import { NewsDetailRoute } from '../../navigation/appNavigation.type';
 
 const useNewsDetail = () => {
-  const { color, contents, navigation } = useAppContext();
+  const { color, navigation } = useAppContext();
 
   const {
     params: { item: data },

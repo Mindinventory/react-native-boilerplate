@@ -31,11 +31,12 @@ export type SVGIconProps = SvgProps & {
   icon: SVGIcons;
   height?: number | string;
   width?: number | string;
+  pathFill?: string;
 };
 
 export const SvgIcon = (props: SVGIconProps) => {
-  const { icon } = props;
+  const { icon, pathFill = '#FFF' } = props;
   const IconsImage = SVGIconsMapper[icon];
 
-  return <IconsImage {...scaled(12)} {...props} />;
+  return <IconsImage pathFill={pathFill} {...scaled(12)} {...props} />;
 };

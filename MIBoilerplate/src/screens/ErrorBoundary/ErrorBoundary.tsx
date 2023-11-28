@@ -47,7 +47,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   // To avoid unnecessary re-renders
   shouldComponentUpdate(
-    nextProps: Readonly<Props>,
+    _nextProps: Readonly<Props>,
     nextState: Readonly<State>
   ): boolean {
     return nextState.error !== this.state.error;

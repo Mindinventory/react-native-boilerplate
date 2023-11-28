@@ -21,5 +21,10 @@
   },
   "newsDetail": {
     "anonymous": "अनाम"
+  },
+  "setting": {
+    "languages": "भाषा",
+    "settingScreen": "स्क्रीन सेट करना",
+    "theme": "विषय-वस्तु"
   }
 }

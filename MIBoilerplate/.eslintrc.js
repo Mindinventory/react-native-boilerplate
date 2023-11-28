@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    '@react-native-community',
+    '@react-native',
     'prettier',
     'plugin:react-hooks/recommended',
     'plugin:react-native/all',

@@ -8,21 +8,15 @@ export type dataStoreType = 'string' | 'boolean' | 'number' | 'object';
 
 export const storageMmkv = new MMKV();
 
-export const getData = (key: STORAGES_KEY, type: dataStoreType) => {
+export const getData = (key: STORAGES_KEY, _type?: dataStoreType) => {
   try {
-    if (type === 'string') {
-      return storageMmkv.getString(key);
-    } else if (type === 'number') {
-      return storageMmkv.getNumber(key);
-    } else if (type === 'boolean') {
-      return storageMmkv.getBoolean(key);
-    } else {
-      const data = storageMmkv.getString(key);
-      const parseData = JSON.parse(data as string);
+    const data = storageMmkv.getString(key);
+    if (data) {
+      const parseData = JSON.parse(data);
       return parseData;
     }
   } catch (error) {
-    logger(error);
+    logger('storage getData', error);
   }
 };
 
@@ -37,7 +31,7 @@ export const setData = (key: STORAGES_KEY, value: any) => {
       storageMmkv.set(key, jsonValue);
     }
   } catch (error) {
-    logger(error);
+    logger('storage setData', error);
   }
 };
 

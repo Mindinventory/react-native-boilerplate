@@ -7,7 +7,7 @@ import {
   TextStyle,
 } from 'react-native';
 
-import { useAppContext } from '@src/context';
+import { useColor } from '@src/context';
 import { scaledSize } from '@src/utils';
 
 export enum Fonts {
@@ -20,6 +20,26 @@ const BASE_TEXT: TextStyle = {
 
 export const presets = {
   default: BASE_TEXT,
+  font400: {
+    ...BASE_TEXT,
+    //add your font normal for weight 400
+    fontFamily: Fonts.Poppins,
+  } as TextStyle,
+  font500: {
+    ...BASE_TEXT,
+    //add your font medium for weight 500
+    fontFamily: Fonts.Poppins,
+  } as TextStyle,
+  font600: {
+    ...BASE_TEXT,
+    //add your font semi-bold for weight 600
+    fontFamily: Fonts.Poppins,
+  } as TextStyle,
+  font700: {
+    ...BASE_TEXT,
+    //add your font bold for weight 700
+    fontFamily: Fonts.Poppins,
+  } as TextStyle,
   h1: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
@@ -48,13 +68,13 @@ export const presets = {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(12),
-    fontWeight: '300',
+    fontWeight: '400',
   } as TextStyle,
   h6: {
     ...BASE_TEXT,
     fontFamily: Fonts.Poppins,
     fontSize: scaledSize(9),
-    fontWeight: '300',
+    fontWeight: '400',
   } as TextStyle,
   small: {
     ...BASE_TEXT,
@@ -76,19 +96,26 @@ export interface TextProps extends TextProperties {
   style?: StyleProp<TextStyle>;
   preset?: TextPresets;
   color?: string;
+  textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify';
 }
 
 export const Text = ({ children, ...props }: TextProps) => {
-  const { color, preset = 'default', style: styleOverride, ...rest } = props;
+  const {
+    color,
+    preset = 'default',
+    style: styleOverride,
+    textAlign = 'auto',
+    ...rest
+  } = props;
 
-  const { color: palette } = useAppContext();
+  const { color: palette } = useColor();
 
   return (
     <RNText
       {...rest}
       style={[
         presets[preset] as TextProps,
-        { color: color ? color : palette.textColor },
+        { color: color ? color : palette.textColor, textAlign: textAlign },
         styleOverride,
       ]}>
       {children}

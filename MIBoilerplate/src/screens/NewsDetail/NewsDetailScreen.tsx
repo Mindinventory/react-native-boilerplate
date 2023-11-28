@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 
-import { AnimatedButton, Text } from '@app/blueprints';
+import { Button, Text } from '@app/blueprints';
 
 import { AppImage, BaseLayout } from '@src/components';
 import { contents } from '@src/context';
@@ -31,7 +31,7 @@ const NewsDetailScreen = () => {
         <Text preset="h5" style={styles.descriptionText}>
           {data.body}
         </Text>
-        <AnimatedButton
+        <Button
           buttonContainerStyle={{ marginTop: scaleHeight(15) }}
           title="Go back"
           onPress={handleGoBack}
