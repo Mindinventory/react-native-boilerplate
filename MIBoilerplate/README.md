@@ -11,11 +11,9 @@ The Boilerplate contains all the basic packages, common components and, prebuilt
 
 <a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="../media/BannerV2.png"></a>
 
-# Using Boilerplate
-
 ## Features
 
-Built in implemented features.
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="../media/featuresV2.png"><p>Built in implemented features.</p></a>
 
 - [x] Attractive code architecture.
 - [x] Context API.
@@ -30,7 +28,7 @@ Built in implemented features.
 - [x] Supported for responsive UI.
 - [x] Typescript.
 
-<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="../media/featuresV2.png"></a>
+# Using Boilerplate
 
 ## Advantages
 
@@ -293,7 +291,7 @@ The project structure follows a modular approach to organize your codebase in a 
 ## Modules
 
 <p align="center">
- <img src="./media/modules.png">
+ <img src="../media/modules.png">
 </p>
 
 Modules are collection of source files and build settings that allow you to divide a project into discrete units of functionality. In this case apart from dividing by functionality/responsibility, existing the following dependence between them:
