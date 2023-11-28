@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# React Native Boilerplate!🚀
+# Mindinventory React Native Boilerplate! 🚀
 
 [![npm version](https://img.shields.io/npm/v/@mindinventory/react-native-boilerplate.svg)](<[https://www.npmjs.org/package/@mindinventory/react-native-boilerplate](https://www.npmjs.com/package/@mindinventory/react-native-boilerplate)>)
 ![@mindinventory/React Native Boilerplate Top Language](https://img.shields.io/github/languages/top/Mindinventory/react-native-boilerplate)
