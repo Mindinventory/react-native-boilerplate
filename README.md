@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# Mindinventory React Native Boilerplate! 🚀
+# React Native Boilerplate!🚀
 
 [![npm version](https://img.shields.io/npm/v/@mindinventory/react-native-boilerplate.svg)](<[https://www.npmjs.org/package/@mindinventory/react-native-boilerplate](https://www.npmjs.com/package/@mindinventory/react-native-boilerplate)>)
 ![@mindinventory/React Native Boilerplate Top Language](https://img.shields.io/github/languages/top/Mindinventory/react-native-boilerplate)
@@ -9,11 +9,11 @@
 
 The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.
 
-<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="./media/BannerV2.png"></a>
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/assets/89060719/951a5232-970e-41fa-8c40-96dd021e588e"></a>
 
 ## Features
 
-<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="./media/featuresV2.png"><p>Built in implemented features.</p></a>
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/assets/89060719/97d796e3-e6f6-4c02-b6fb-c4628bed158f"><p>Built in implemented features.</p></a>
 
 - [x] Attractive code architecture.
 - [x] Context API.
@@ -34,37 +34,26 @@ The Boilerplate contains all the basic packages, common components and, prebuilt
 
 1. Attractive Code Architecture
    Our boilerplate comes with a clean and organized code structure that enhances readability and maintainability.
-
 2. Advanced State Management with Redux and Context API
    Harness the power of both Redux and React's Context API for efficient state management. Redux with Thunk middleware handles complex state logic, while the Context API facilitates easy sharing of data between components, especially for app theme and localization management.
-
 3. Environment Setup
    Hassle-free setup with detailed instructions, ensuring a smooth onboarding process for developers.
-
 4. Eslint for Better Code Linting
    Catch and fix issues early with Eslint integration, promoting consistent and error-free code.
-
 5. Husky Improves Your Commits and More
    Benefit from Husky's pre-commit hooks to enforce code quality and ensure that only well-formatted code makes it into your repository.
-
 6. Light/Dark Custom Theme Modes
    Enjoy the flexibility of light and dark theme modes with easy customization options to suit your app's design. This feature is seamlessly managed through the Context API.
-
 7. Local Storage (MMKV)
    Efficient and reliable local storage using MMKV, optimizing data persistence in your React Native application.
-
 8. Localization
    Easily add multilingual support to your app with our localization feature, utilizing the power of the Context API for seamless language switching and management.
-
 9. Navigation
    Seamless navigation setup with React Navigation, providing a smooth and intuitive user experience.
-
 10. Network Request (API Implementation)
     Simplified API integration for making network requests, saving you time and effort in implementing backend communication.
-
 11. Supported for Responsive UI
     Build responsive user interfaces that adapt to various screen sizes, providing a consistent user experience across devices.
-
 12. TypeScript
     Harness the benefits of TypeScript for static typing, catching errors at compile-time, and improving code quality. The combination of TypeScript with Redux and Context API ensures a robust and type-safe application architecture.
 
@@ -291,7 +280,7 @@ The project structure follows a modular approach to organize your codebase in a 
 ## Modules
 
 <p align="center">
- <img src="./media/modules.png">
+ <img src="../media/modules.png">
 </p>
 
 Modules are collection of source files and build settings that allow you to divide a project into discrete units of functionality. In this case apart from dividing by functionality/responsibility, existing the following dependence between them:
@@ -434,7 +423,6 @@ This boilerplate provides a convenient set of scripts to generate images and ico
   ```
 
 - **Linking fonts:**
-
 - [React-Native-Asset](https://github.com/unimonkiez/react-native-asset)
 
   1. Place your fonts in the `src/assets/fonts` directory.
@@ -485,7 +473,6 @@ Config your api in `src/services/apiHandler.ts` in this file set your all api ha
 
 - **Api Mapper with DTOs:**
   API Mapper with DTOs is a utility that simplifies the process of making API requests and mapping the response data to Data Transfer Objects (DTOs) in a React Native application.
-
 - **Usage:**
 
 Declare
@@ -519,7 +506,6 @@ Declare
 
 2. Define API Endpoints
    API endpoints in your React Native application in `src/services/appServicesEndPoints.ts`. These endpoints should include the URL, HTTP method, and any required headers or parameters.
-
 3. Call api as per serviceAdapter methods in `src/services/appServices.ts`.
    Create a function in class:
 
@@ -541,7 +527,6 @@ Declare
    ```
 
 4. Map your response in `src/services/commercial/adapters/response` with your api name like for newList `getNewsListResponseAdapter.ts`
-
 5. Call your api mapper DTOs to in services as show in 3rd point.
 
 ## Start the development server
@@ -555,11 +540,8 @@ npm start
 Feel free to customize the React Native Boilerplate to fit your project's specific needs. Here are some areas you might consider modifying:
 
 - **App Configuration:** Update the app's configuration files, such as `app.json`, `babel.config.js` and `metro.config.js`, to match your desired settings.
-
 - **Directory Structure:** Adjust the project's directory structure to better organize your codebase.
-
 - **Styling and Theming:** Modify the existing styles and themes or add your own to create a unique visual identity for your app.
-
 - **Additional Scripts:** Extend the `scripts` directory with your own scripts to automate repetitive tasks specific to your project.
 
 ## Contribution
@@ -576,5 +558,6 @@ If you use our open-source libraries in your project, please make sure to credit
 
 <p><h4>Please feel free to use this component and Let us know if you are interested to building Apps or Designing Products.</h4>
 <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=circular-cards-stack-view" target="__blank">
-<img src="./media/hire_button.png" width="203" height="43"  alt="app development">
+<img src="../media/hire_button.png" width="203" height="43"  alt="app development">
 </a>
+<!-- @format -->
