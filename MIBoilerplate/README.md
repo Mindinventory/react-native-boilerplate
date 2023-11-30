@@ -2,7 +2,7 @@
 
 # React Native Boilerplate!🚀
 
-[![npm version](https://img.shields.io/npm/v/@mindinventory/react-native-boilerplate.svg)](<[https://www.npmjs.org/package/@mindinventory/react-native-boilerplate](https://www.npmjs.com/package/@mindinventory/react-native-boilerplate)>)
+[![npm version](https://img.shields.io/npm/v/@mindinventory/react-native-boilerplate.svg)]([https://www.npmjs.org/package/@mindinventory/react-native-boilerplate](https://www.npmjs.com/package/@mindinventory/react-native-boilerplate))
 ![@mindinventory/React Native Boilerplate Top Language](https://img.shields.io/github/languages/top/Mindinventory/react-native-boilerplate)
 ![@mindinventory/React Native Boilerplate TypeScript](https://badgen.net/npm/types/tslib)
 ![@mindinventory/React Native Boilerplate License](https://img.shields.io/github/license/Mindinventory/react-native-boilerplate)
@@ -15,18 +15,18 @@ The Boilerplate contains all the basic packages, common components and, prebuilt
 
 <a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/assets/89060719/97d796e3-e6f6-4c02-b6fb-c4628bed158f"><p>Built in implemented features.</p></a>
 
-- [x] Attractive code architecture.
-- [x] Context API.
-- [x] Environment Setup
-- [x] Eslint for better code linting
-- [x] Husky improves your commits and more.
-- [x] Light/Dark custom theme modes.
-- [x] Local storage(MMKV).
-- [x] Localization.
-- [x] Navigation.
-- [x] Network request (API implementation).
-- [x] Supported for responsive UI.
-- [x] Typescript.
+- [X] Attractive code architecture.
+- [X] Context API.
+- [X] Environment Setup
+- [X] Eslint for better code linting
+- [X] Husky improves your commits and more.
+- [X] Light/Dark custom theme modes.
+- [X] Local storage(MMKV).
+- [X] Localization.
+- [X] Navigation.
+- [X] Network request (API implementation).
+- [X] Supported for responsive UI.
+- [X] Typescript.
 
 # Using Boilerplate
 
@@ -34,37 +34,26 @@ The Boilerplate contains all the basic packages, common components and, prebuilt
 
 1. Attractive Code Architecture
    Our boilerplate comes with a clean and organized code structure that enhances readability and maintainability.
-
 2. Advanced State Management with Redux and Context API
    Harness the power of both Redux and React's Context API for efficient state management. Redux with Thunk middleware handles complex state logic, while the Context API facilitates easy sharing of data between components, especially for app theme and localization management.
-
 3. Environment Setup
    Hassle-free setup with detailed instructions, ensuring a smooth onboarding process for developers.
-
 4. Eslint for Better Code Linting
    Catch and fix issues early with Eslint integration, promoting consistent and error-free code.
-
 5. Husky Improves Your Commits and More
    Benefit from Husky's pre-commit hooks to enforce code quality and ensure that only well-formatted code makes it into your repository.
-
 6. Light/Dark Custom Theme Modes
    Enjoy the flexibility of light and dark theme modes with easy customization options to suit your app's design. This feature is seamlessly managed through the Context API.
-
 7. Local Storage (MMKV)
    Efficient and reliable local storage using MMKV, optimizing data persistence in your React Native application.
-
 8. Localization
    Easily add multilingual support to your app with our localization feature, utilizing the power of the Context API for seamless language switching and management.
-
 9. Navigation
    Seamless navigation setup with React Navigation, providing a smooth and intuitive user experience.
-
 10. Network Request (API Implementation)
     Simplified API integration for making network requests, saving you time and effort in implementing backend communication.
-
 11. Supported for Responsive UI
     Build responsive user interfaces that adapt to various screen sizes, providing a consistent user experience across devices.
-
 12. TypeScript
     Harness the benefits of TypeScript for static typing, catching errors at compile-time, and improving code quality. The combination of TypeScript with Redux and Context API ensures a robust and type-safe application architecture.
 
@@ -136,7 +125,6 @@ The project structure follows a modular approach to organize your codebase in a 
 
     <Text preset="h1">{contents('newsList', 'breakingNews')}</Text>;
     ```
-
   - **Image**: React Native's Image component handles image caching like browsers for the most part using `react-native-fast-image` library.
     For Example:
 
@@ -145,7 +133,6 @@ The project structure follows a modular approach to organize your codebase in a 
 
     <Image source={sourcePath} {...props} />;
     ```
-
   - **Indicator**: Show loader in app with customize way. use it form context of app.
     For Example:
 
@@ -159,7 +146,6 @@ The project structure follows a modular approach to organize your codebase in a 
     //get Indicator status
     loader.current.isLoading;
     ```
-
   - **Button**: Animated scalability adds an extra layer of interactivity to your buttons with TouchableOpacity
     For Example:
 
@@ -172,7 +158,6 @@ The project structure follows a modular approach to organize your codebase in a 
       {...TouchableOpacityProps}
     />;
     ```
-
   - **TextInput**: Material UI all input variant added.
     For Example:
 
@@ -312,6 +297,85 @@ The boilerplate comes with a few configuration files that you can customize to f
 - **.eslintrc**: Configuration for ESLint code linting.
 - **tsconfig.json**: TypeScript compiler configuration.
 
+# Scripts
+
+### React Native Screen Generator
+
+**Automation Script:** This Node.js script streamlines React Native screen module creation by generating a folder structure with key files based on a provided folder name.
+
+**Features:**
+
+* Includes a custom hook for state and styling management.
+* Appends an export statement to the screens index file for easy project-wide accessibility.
+
+**Efficiency Boost:** Standardizing screen module creation, the script promotes development efficiency in React Native projects.
+
+#### Usage
+
+**Run the Script:**
+
+```
+  yarn screens screeName
+```
+
+# Icons Script
+
+This Node.js script generates a TypeScript enum for React Native icons based on image files within the "**../src/assets/icons**" directory. It filters and organizes icon filenames, ensuring compatibility with multiple resolutions, and exports them within the generated enum.
+
+##### Example:
+
+ Suppose the "../src/assets/icons" directory contains icon files like "**home@2x.png**" and "**home@3x.png**." Running the script creates a TypeScript enum (Icons) in "../src/assets/icons/index.ts," providing organized references to these icons:
+
+ ```
+yarn icons
+```
+
+```typescript
+ export enum Icons {
+  HOME_ICONS = require('./home.png'),
+  // Other icons...
+}
+```
+
+# Images Script
+
+This Node.js script creates a TypeScript enum for React Native images, sourcing filenames from the "**../src/assets/images**" directory. It filters and organizes image files, accommodating different resolutions, and exports them as enum properties for easy referencing.
+
+##### Example:
+
+ Assuming the "../src/assets/images" directory includes files like **"background@2x.jpg"** and "logo.png," running the script generates a TypeScript enum (Images) in "../src/assets/images/index.ts," providing organized references to these images:
+
+```
+yarn images
+```
+```typescript
+ export enum Images {
+  BACKGROUND_IMAGE = require('./background.jpg'),
+  LOGO_IMAGE = require('./logo.png'),
+  // Other images...
+}
+```
+
+# Refresh.sh
+This Bash script performs a cleanup and dependency reinstall for a React Native project. It removes various generated and dependency-related files, clears the node_modules directory, and then reinstalls dependencies using yarn. Additionally, it runs bundle and pod install commands for iOS.
+
+```
+yarn refresh
+```
+# SvgIcons Script
+
+This TypeScript script generates a module for managing SVG icons in a React Native project. It extracts SVG filenames from the "../src/assets/svgIcons" directory, imports them as React components, and creates an enum for easy referencing. Additionally, it provides a mapper object for dynamically accessing SVG icons.
+
+**Note:** Ensure your project includes a suitable React SVG library for rendering these components.
+
+##### Example:
+
+ Run this script to create a TypeScript module managing SVG icons in your React Native project:
+
+```
+yarn svgs
+```
+
 # Responsive UI Helpers
 
 This set of helper functions provides a convenient way to create responsive user interfaces in your React Native applications. It helps in scaling and sizing UI elements based on the device's screen dimensions.
@@ -343,7 +407,6 @@ To utilize these functions for creating a responsive UI, follow these steps:
      screenHeight,
    } from '@src/utils/dimensions';
    ```
-
 2. Use the functions in your styles or component logic to achieve responsive sizing:
 
    ```javascript
@@ -358,7 +421,6 @@ To utilize these functions for creating a responsive UI, follow these steps:
    ```
 
    In this example, the width and height of the container will be scaled proportionally based on the device's screen width and height. The `moderateScale` function is used to provide a moderate scaling effect to the margin, and the `scaledSize` function is used to scale the font size.
-
 3. Adjust the predefined design width and height if needed:
 
    ```javascript
@@ -388,7 +450,6 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      ```bash
      npm run images
      ```
-
   3. Get your images in app from context
      For example:
 
@@ -404,7 +465,6 @@ This boilerplate provides a convenient set of scripts to generate images and ico
     {getImages(`imageSource || Images.PLACEHOLDER_IMAGE`, { resizeMode: 'contain', style:styles.debugIcon, })}
   </TouchableOpacity>
   ```
-
 - **Generating Icons:**
 
   1. Place your source icon image in the `src/assets/icons` directory.
@@ -413,7 +473,6 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      ```bash
      npm run icons
      ```
-
   3. Get your icon in app from context
      For example:
 
@@ -432,9 +491,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
     })}
   </TouchableOpacity>
   ```
-
 - **Linking fonts:**
-
 - [React-Native-Asset](https://github.com/unimonkiez/react-native-asset)
 
   1. Place your fonts in the `src/assets/fonts` directory.
@@ -443,7 +500,6 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      ```bash
      npx react-native-asset
      ```
-
   3. For linking of custom that not in google fonts required extra steps in iOS.
 
   - add those fonts first in fontBook app then use that name used given in fontBook.
@@ -459,7 +515,6 @@ This boilerplate uses the `react-native-config` library for environment variable
    - `.env.production` for production environment variables
 
    Note: You can create additional `.env` files for other environments as needed.
-
 2. Define environment-specific variables in the `.env` files:
 
    ```env
@@ -468,7 +523,6 @@ This boilerplate uses the `react-native-config` library for environment variable
    ```
 
    Customize the variables based on your project's requirements.
-
 3. Access environment variables in your code:
    Declare env keys in `constants/config` file
 
@@ -485,7 +539,6 @@ Config your api in `src/services/apiHandler.ts` in this file set your all api ha
 
 - **Api Mapper with DTOs:**
   API Mapper with DTOs is a utility that simplifies the process of making API requests and mapping the response data to Data Transfer Objects (DTOs) in a React Native application.
-
 - **Usage:**
 
 Declare
@@ -516,10 +569,8 @@ Declare
      text: string;
    }
    ```
-
 2. Define API Endpoints
    API endpoints in your React Native application in `src/services/appServicesEndPoints.ts`. These endpoints should include the URL, HTTP method, and any required headers or parameters.
-
 3. Call api as per serviceAdapter methods in `src/services/appServices.ts`.
    Create a function in class:
 
@@ -539,9 +590,7 @@ Declare
      });
    };
    ```
-
 4. Map your response in `src/services/commercial/adapters/response` with your api name like for newList `getNewsListResponseAdapter.ts`
-
 5. Call your api mapper DTOs to in services as show in 3rd point.
 
 ## Start the development server
@@ -555,11 +604,8 @@ npm start
 Feel free to customize the React Native Boilerplate to fit your project's specific needs. Here are some areas you might consider modifying:
 
 - **App Configuration:** Update the app's configuration files, such as `app.json`, `babel.config.js` and `metro.config.js`, to match your desired settings.
-
 - **Directory Structure:** Adjust the project's directory structure to better organize your codebase.
-
 - **Styling and Theming:** Modify the existing styles and themes or add your own to create a unique visual identity for your app.
-
 - **Additional Scripts:** Extend the `scripts` directory with your own scripts to automate repetitive tasks specific to your project.
 
 ## Contribution
