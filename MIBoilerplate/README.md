@@ -9,6 +9,17 @@
 
 The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.
 
+## Introduction
+
+This repository serves as a boilerplate for React Native projects, providing a solid foundation to kickstart your development process. It includes a collection of scripts to generate images and icons, making it easier to customize your app's visual assets.
+
+Create a new project using the boilerplate :
+
+```
+npx react-native init APP_NAME --template @mindinventory/react-native-boilerplate
+```
+
+
 <a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/assets/89060719/951a5232-970e-41fa-8c40-96dd021e588e"></a>
 
 ## Features
@@ -74,16 +85,6 @@ The ESLint configuration in this boilerplate includes the following features and
 - `eslint-plugin-sort-keys-fix`: Sorts object keys in alphabetical order.
 
 configuration of this lint is added in `.eslintrc.js` file.
-
-## Introduction
-
-This repository serves as a boilerplate for React Native projects, providing a solid foundation to kickstart your development process. It includes a collection of scripts to generate images and icons, making it easier to customize your app's visual assets.
-
-Create a new project using the boilerplate :
-
-```
-npx react-native init APP_NAME --template @mindinventory/react-native-boilerplate
-```
 
 ## Tech Stack
 
@@ -326,7 +327,7 @@ This Node.js script generates a TypeScript enum for React Native icons based on 
 
  Suppose the "../src/assets/icons" directory contains icon files like "**home@2x.png**" and "**home@3x.png**." Running the script creates a TypeScript enum (Icons) in "../src/assets/icons/index.ts," providing organized references to these icons:
 
- ```
+```
 yarn icons
 ```
 
@@ -348,6 +349,7 @@ This Node.js script creates a TypeScript enum for React Native images, sourcing 
 ```
 yarn images
 ```
+
 ```typescript
  export enum Images {
   BACKGROUND_IMAGE = require('./background.jpg'),
@@ -357,11 +359,13 @@ yarn images
 ```
 
 # Refresh.sh
+
 This Bash script performs a cleanup and dependency reinstall for a React Native project. It removes various generated and dependency-related files, clears the node_modules directory, and then reinstalls dependencies using yarn. Additionally, it runs bundle and pod install commands for iOS.
 
 ```
 yarn refresh
 ```
+
 # SvgIcons Script
 
 This TypeScript script generates a module for managing SVG icons in a React Native project. It extracts SVG filenames from the "../src/assets/svgIcons" directory, imports them as React components, and creates an enum for easy referencing. Additionally, it provides a mapper object for dynamically accessing SVG icons.
