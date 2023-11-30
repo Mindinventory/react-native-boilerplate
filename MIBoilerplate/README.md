@@ -2,7 +2,7 @@
 
 # React Native Boilerplate!🚀
 
-[![npm version](https://img.shields.io/npm/v/@mindinventory/react-native-boilerplate.svg)]([https://www.npmjs.org/package/@mindinventory/react-native-boilerplate](https://www.npmjs.com/package/@mindinventory/react-native-boilerplate))
+[![npm version](https://img.shields.io/npm/v/@mindinventory/react-native-boilerplate.svg)](<[https://www.npmjs.org/package/@mindinventory/react-native-boilerplate](https://www.npmjs.com/package/@mindinventory/react-native-boilerplate)>)
 ![@mindinventory/React Native Boilerplate Top Language](https://img.shields.io/github/languages/top/Mindinventory/react-native-boilerplate)
 ![@mindinventory/React Native Boilerplate TypeScript](https://badgen.net/npm/types/tslib)
 ![@mindinventory/React Native Boilerplate License](https://img.shields.io/github/license/Mindinventory/react-native-boilerplate)
@@ -19,25 +19,24 @@ Create a new project using the boilerplate :
 npx react-native init APP_NAME --template @mindinventory/react-native-boilerplate
 ```
 
-
 <a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/assets/89060719/951a5232-970e-41fa-8c40-96dd021e588e"></a>
 
 ## Features
 
 <a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/assets/89060719/97d796e3-e6f6-4c02-b6fb-c4628bed158f"><p>Built in implemented features.</p></a>
 
-- [X] Attractive code architecture.
-- [X] Context API.
-- [X] Environment Setup
-- [X] Eslint for better code linting
-- [X] Husky improves your commits and more.
-- [X] Light/Dark custom theme modes.
-- [X] Local storage(MMKV).
-- [X] Localization.
-- [X] Navigation.
-- [X] Network request (API implementation).
-- [X] Supported for responsive UI.
-- [X] Typescript.
+- [x] Attractive code architecture.
+- [x] Context API.
+- [x] Environment Setup
+- [x] Eslint for better code linting
+- [x] Husky improves your commits and more.
+- [x] Light/Dark custom theme modes.
+- [x] Local storage(MMKV).
+- [x] Localization.
+- [x] Navigation.
+- [x] Network request (API implementation).
+- [x] Supported for responsive UI.
+- [x] Typescript.
 
 # Using Boilerplate
 
@@ -122,18 +121,20 @@ The project structure follows a modular approach to organize your codebase in a 
     For Example:
 
     ```js
-    import { Text } from '@app/blueprints';
+    import { Text } from "@app/blueprints";
 
-    <Text preset="h1">{contents('newsList', 'breakingNews')}</Text>;
+    <Text preset="h1">{contents("newsList", "breakingNews")}</Text>;
     ```
+
   - **Image**: React Native's Image component handles image caching like browsers for the most part using `react-native-fast-image` library.
     For Example:
 
     ```js
-    import { Image } from '@app/blueprints';
+    import { Image } from "@app/blueprints";
 
     <Image source={sourcePath} {...props} />;
     ```
+
   - **Indicator**: Show loader in app with customize way. use it form context of app.
     For Example:
 
@@ -147,11 +148,12 @@ The project structure follows a modular approach to organize your codebase in a 
     //get Indicator status
     loader.current.isLoading;
     ```
+
   - **Button**: Animated scalability adds an extra layer of interactivity to your buttons with TouchableOpacity
     For Example:
 
     ```js
-    import { Button } from '@app/blueprints';
+    import { Button } from "@app/blueprints";
 
     <Button
       buttonContainerStyle={{ marginTop: scaleHeight(15) }}
@@ -159,11 +161,12 @@ The project structure follows a modular approach to organize your codebase in a 
       {...TouchableOpacityProps}
     />;
     ```
+
   - **TextInput**: Material UI all input variant added.
     For Example:
 
     ```js
-    import { Input } from '@app/blueprints';
+    import { Input } from "@app/blueprints";
 
     <Input variant="standard" {...TextInputProps} />;
     ```
@@ -306,8 +309,8 @@ The boilerplate comes with a few configuration files that you can customize to f
 
 **Features:**
 
-* Includes a custom hook for state and styling management.
-* Appends an export statement to the screens index file for easy project-wide accessibility.
+- Includes a custom hook for state and styling management.
+- Appends an export statement to the screens index file for easy project-wide accessibility.
 
 **Efficiency Boost:** Standardizing screen module creation, the script promotes development efficiency in React Native projects.
 
@@ -325,15 +328,15 @@ This Node.js script generates a TypeScript enum for React Native icons based on 
 
 ##### Example:
 
- Suppose the "../src/assets/icons" directory contains icon files like "**home@2x.png**" and "**home@3x.png**." Running the script creates a TypeScript enum (Icons) in "../src/assets/icons/index.ts," providing organized references to these icons:
+Suppose the "../src/assets/icons" directory contains icon files like "**home@2x.png**" and "**home@3x.png**." Running the script creates a TypeScript enum (Icons) in "../src/assets/icons/index.ts," providing organized references to these icons:
 
 ```
 yarn icons
 ```
 
 ```typescript
- export enum Icons {
-  HOME_ICONS = require('./home.png'),
+export enum Icons {
+  HOME_ICONS = require("./home.png"),
   // Other icons...
 }
 ```
@@ -344,16 +347,16 @@ This Node.js script creates a TypeScript enum for React Native images, sourcing 
 
 ##### Example:
 
- Assuming the "../src/assets/images" directory includes files like **"background@2x.jpg"** and "logo.png," running the script generates a TypeScript enum (Images) in "../src/assets/images/index.ts," providing organized references to these images:
+Assuming the "../src/assets/images" directory includes files like **"background@2x.jpg"** and "logo.png," running the script generates a TypeScript enum (Images) in "../src/assets/images/index.ts," providing organized references to these images:
 
 ```
 yarn images
 ```
 
 ```typescript
- export enum Images {
-  BACKGROUND_IMAGE = require('./background.jpg'),
-  LOGO_IMAGE = require('./logo.png'),
+export enum Images {
+  BACKGROUND_IMAGE = require("./background.jpg"),
+  LOGO_IMAGE = require("./logo.png"),
   // Other images...
 }
 ```
@@ -374,7 +377,7 @@ This TypeScript script generates a module for managing SVG icons in a React Nati
 
 ##### Example:
 
- Run this script to create a TypeScript module managing SVG icons in your React Native project:
+Run this script to create a TypeScript module managing SVG icons in your React Native project:
 
 ```
 yarn svgs
@@ -409,8 +412,9 @@ To utilize these functions for creating a responsive UI, follow these steps:
      scaledSize,
      screenWidth,
      screenHeight,
-   } from '@src/utils/dimensions';
+   } from "@src/utils/dimensions";
    ```
+
 2. Use the functions in your styles or component logic to achieve responsive sizing:
 
    ```javascript
@@ -425,6 +429,7 @@ To utilize these functions for creating a responsive UI, follow these steps:
    ```
 
    In this example, the width and height of the container will be scaled proportionally based on the device's screen width and height. The `moderateScale` function is used to provide a moderate scaling effect to the margin, and the `scaledSize` function is used to scale the font size.
+
 3. Adjust the predefined design width and height if needed:
 
    ```javascript
@@ -454,6 +459,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      ```bash
      npm run images
      ```
+
   3. Get your images in app from context
      For example:
 
@@ -469,6 +475,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
     {getImages(`imageSource || Images.PLACEHOLDER_IMAGE`, { resizeMode: 'contain', style:styles.debugIcon, })}
   </TouchableOpacity>
   ```
+
 - **Generating Icons:**
 
   1. Place your source icon image in the `src/assets/icons` directory.
@@ -477,6 +484,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      ```bash
      npm run icons
      ```
+
   3. Get your icon in app from context
      For example:
 
@@ -490,11 +498,12 @@ This boilerplate provides a convenient set of scripts to generate images and ico
   ```js
   <TouchableOpacity>
     {getIcons(Icons.DEBUG_ICONS, {
-      resizeMode: 'contain',
+      resizeMode: "contain",
       style: styles.debugIcon,
     })}
   </TouchableOpacity>
   ```
+
 - **Linking fonts:**
 - [React-Native-Asset](https://github.com/unimonkiez/react-native-asset)
 
@@ -504,6 +513,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      ```bash
      npx react-native-asset
      ```
+
   3. For linking of custom that not in google fonts required extra steps in iOS.
 
   - add those fonts first in fontBook app then use that name used given in fontBook.
@@ -519,6 +529,7 @@ This boilerplate uses the `react-native-config` library for environment variable
    - `.env.production` for production environment variables
 
    Note: You can create additional `.env` files for other environments as needed.
+
 2. Define environment-specific variables in the `.env` files:
 
    ```env
@@ -527,6 +538,7 @@ This boilerplate uses the `react-native-config` library for environment variable
    ```
 
    Customize the variables based on your project's requirements.
+
 3. Access environment variables in your code:
    Declare env keys in `constants/config` file
 
@@ -573,6 +585,7 @@ Declare
      text: string;
    }
    ```
+
 2. Define API Endpoints
    API endpoints in your React Native application in `src/services/appServicesEndPoints.ts`. These endpoints should include the URL, HTTP method, and any required headers or parameters.
 3. Call api as per serviceAdapter methods in `src/services/appServices.ts`.
@@ -585,15 +598,16 @@ Declare
          API_METHODS.GET,
          ServicesEndPoints.NEWS
        )
-         .then(res => {
+         .then((res) => {
            resolve(new getNewsListResponseAdapter().service(res));
          })
-         .catch(error => {
+         .catch((error) => {
            reject(error);
          });
      });
    };
    ```
+
 4. Map your response in `src/services/commercial/adapters/response` with your api name like for newList `getNewsListResponseAdapter.ts`
 5. Call your api mapper DTOs to in services as show in 3rd point.
 
