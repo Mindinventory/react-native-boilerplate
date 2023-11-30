@@ -84,17 +84,6 @@
   "resolutions": {
     "@types/react": "^18.0.24"
   },
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
-  },
   "engines": {
     "node": ">=16"
   },
