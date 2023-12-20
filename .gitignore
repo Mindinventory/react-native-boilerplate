@@ -1,13 +1,4 @@
 
-# 
-
-MIBoilerplate/ios/Podfile.lock
-
-.scannerwork/.sonar_lock
-.scannerwork/scanner-report/
-.scannerwork/report-task.txt
-sonar-project.properties
-
 # node.js
 #
 npm-debug.log
@@ -17,5 +8,3 @@ package-lock.json
 yarn.lock
 
 node_modules
-
-.DS_Store
