@@ -19,5 +19,6 @@ MIBoilerplate/android/.idea
 MIBoilerplate/.buckconfig
 MIBoilerplate/.flowconfig
 MIBoilerplate/.gitattributes
-MIBoilerplate/.gitignore
+!MIBoilerplate/.gitignore
+!.gitignore
 MIBoilerplate/.watchmanconfig
