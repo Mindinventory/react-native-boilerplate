@@ -89,13 +89,13 @@ configuration of this lint is added in `.eslintrc.js` file.
 
 | Library                   | Category             | Version | Description                                    |
 | ------------------------- | -------------------- | ------- | ---------------------------------------------- |
-| React Native              | Mobile Framework     | v0.72   | The best cross-platform mobile framework       |
+| React Native              | Mobile Framework     | v0.73   | The best cross-platform mobile framework       |
 | React                     | UI Framework         | v18     | The most popular UI framework in the world     |
-| TypeScript                | Language             | v4      | Static typechecking                            |
+| TypeScript                | Language             | v5      | Static typechecking                            |
 | React Navigation          | Navigation           | v6      | Performant and consistent navigation framework |
-| React Native Localization | Internationalization | v13     | i18n support (including RTL!)                  |
+| React Native Localization | Internationalization | v3      | i18n support (including RTL!)                  |
 | Redux                     | State Management     | v5      | Observable state tree                          |
-| Redux-toolkit             | Redux integration    | v3      | New redux library with some function helpers   |
+| Redux-toolkit             | Redux integration    | v2      | New redux library with some function helpers   |
 | RN Reanimated             | Animations           | v3      | Beautiful and performant animations            |
 | MMKV                      | Persistence          | v2      | State persistence                              |
 | axios                     | REST client          | v1      | Communicate with back-end                      |

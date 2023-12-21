@@ -4,12 +4,33 @@ console.log("Welcome to Mindinventory React native boilerplate");
 
 const { execSync } = require("child_process");
 
+const installDependencies = () => {
+  console.log("\n\n");
+
+  console.log(
+    "@mindinventory/react-native-boilerplate initialized with success! 🚀\n"
+  );
+
+  console.log("Installing dependencies... 🛠️\n");
+  execSync(`yarn`, { stdio: "inherit" });
+  console.log("Dependencies installed successfully. 🚀\n");
+
+  console.log("bundle Installing 🛠️\n");
+  execSync(`bundle`, { stdio: "inherit" });
+  console.log("bundle installed successfully.🚀\n");
+
+  console.log("pod-install Installing 🛠️\n");
+  execSync(`npx pod-install`, { stdio: "inherit" });
+  console.log("pod-install installed successfully.🚀\n");
+};
+
 const renameNpmignoreToGitignore = () => {
   execSync("mv .npmignore .gitignore", { stdio: "inherit" });
 };
 
 const main = () => {
   execSync("git init", { stdio: "inherit" });
+  installDependencies();
   renameNpmignoreToGitignore();
 };
 

@@ -10,7 +10,7 @@ import renderer from 'react-test-renderer';
 
 import App from '../App';
 
-// Note: import explicitly to use the types shiped with jest.
+// Note: import explicitly to use the types shipped with jest.
 
 // Note: test renderer must be required after react-native.
 

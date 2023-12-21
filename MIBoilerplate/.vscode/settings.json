@@ -1,9 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    //organize Imports
-    // "source.organizeImports": true,
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "cSpell.words": ["Formik", "gradlew", "MMKV", "persistor"]
 }
