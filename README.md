@@ -412,7 +412,7 @@ To utilize these functions for creating a responsive UI, follow these steps:
      scaledSize,
      screenWidth,
      screenHeight,
-   } from "@src/utils/dimensions";
+   } from "@src/utils";
    ```
 
 2. Use the functions in your styles or component logic to achieve responsive sizing:
@@ -460,21 +460,32 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      npm run images
      ```
 
-  3. Get your images in app from context
+  3. Get your images in app from components
      For example:
 
      ```javascript
-     getIcons: return JSX.Element;
-     const { getImages } = useAppContext();
+     import { AppImage, Images } from "@src/components";
      ```
 
      use it in component as
 
-  ```JSX
-  <TouchableOpacity>
-    {getImages(`imageSource || Images.PLACEHOLDER_IMAGE`, { resizeMode: 'contain', style:styles.debugIcon, })}
-  </TouchableOpacity>
-  ```
+     get local static Images from same assets
+
+     ```javascript
+     import { Images } from "@src/assets";
+     ```
+
+     For Placing static image from local assets
+
+     ```html
+     <AppImage source="{Images.PLACEHOLDER_IMAGE}" style="{styles.newsImage}" />
+     ```
+
+     To get from url or any base64
+
+     ```html
+     <AppImage source={"url || any"} style={styles.newsImage} />
+     ```
 
 - **Generating Icons:**
 
@@ -485,24 +496,32 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      npm run icons
      ```
 
-  3. Get your icon in app from context
+  3. Get your icon in app from components
      For example:
 
      ```javascript
-     getIcons: return JSX.Element;
-     const { getIcons } = useAppContext();
+     import { Icon, SvgIcon } from "@src/components";
+     ```
+
+     get local static Icons and SVGIcons from same assets
+
+     ```javascript
+     import { Icons, SVGIcons } from "@src/assets";
      ```
 
      use it in component as
 
-  ```js
-  <TouchableOpacity>
-    {getIcons(Icons.DEBUG_ICONS, {
-      resizeMode: "contain",
-      style: styles.debugIcon,
-    })}
-  </TouchableOpacity>
-  ```
+     ```html
+     <Icon icon="{Icons.DEBUG_ICONS}" style="{styles.debugIcon}" />
+     ```
+
+     ```html
+     <SvgIcon
+       pathFill="{color.primaryColor}"
+       icon="{SVGIcons.SETTING}"
+       {...scaled(25)}
+     />
+     ```
 
 - **Linking fonts:**
 - [React-Native-Asset](https://github.com/unimonkiez/react-native-asset)

@@ -1,17 +1,4 @@
 
-# 
-MIBoilerplate/.DS_Store
-MIBoilerplate/ios/Pods/
-MIBoilerplate/ios/Podfile.lock
-MIBoilerplate/node_modules
-MIBoilerplate/yarn-error.log
-MIBoilerplate/yarn.lock
-.scannerwork/.sonar_lock
-.scannerwork/scanner-report/
-.scannerwork/report-task.txt
-mindinventory-react-native-boilerplate-1.0.7.tgz
-sonar-project.properties
-
 # node.js
 #
 npm-debug.log
@@ -21,7 +8,3 @@ package-lock.json
 yarn.lock
 
 node_modules
-mindinventory-react-native-boilerplate-2.0.0.tgz
-MIBoilerplate/.env
-MIBoilerplate/.env.*
-.DS_Store
