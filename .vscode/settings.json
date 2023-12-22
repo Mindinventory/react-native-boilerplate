@@ -1,7 +1,7 @@
 {
   "eslint.options": {},
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "eslint.run": "onSave",
   "editor.defaultFormatter": "esbenp.prettier-vscode",

@@ -4,8 +4,8 @@ module.exports = {
   placeholderName: "MIBoilerplate",
 
   // Directory with template
-  templateDir: "./MIBoilerplate",
+  templateDir: "./template",
 
   // Path to script, which will be executed after init
-  // postInitScript: "./script.js",
+  postInitScript: "./script.js",
 };

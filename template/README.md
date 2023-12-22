@@ -121,16 +121,16 @@ The project structure follows a modular approach to organize your codebase in a 
     For Example:
 
     ```js
-    import { Text } from "@app/blueprints";
+    import { Text } from '@app/blueprints';
 
-    <Text preset="h1">{contents("newsList", "breakingNews")}</Text>;
+    <Text preset="h1">{contents('newsList', 'breakingNews')}</Text>;
     ```
 
   - **Image**: React Native's Image component handles image caching like browsers for the most part using `react-native-fast-image` library.
     For Example:
 
     ```js
-    import { Image } from "@app/blueprints";
+    import { Image } from '@app/blueprints';
 
     <Image source={sourcePath} {...props} />;
     ```
@@ -153,7 +153,7 @@ The project structure follows a modular approach to organize your codebase in a 
     For Example:
 
     ```js
-    import { Button } from "@app/blueprints";
+    import { Button } from '@app/blueprints';
 
     <Button
       buttonContainerStyle={{ marginTop: scaleHeight(15) }}
@@ -166,7 +166,7 @@ The project structure follows a modular approach to organize your codebase in a 
     For Example:
 
     ```js
-    import { Input } from "@app/blueprints";
+    import { Input } from '@app/blueprints';
 
     <Input variant="standard" {...TextInputProps} />;
     ```
@@ -280,7 +280,7 @@ The project structure follows a modular approach to organize your codebase in a 
 ## Modules
 
 <p align="center">
- <img src="./media/modules.png">
+ <img src="../media/modules.png">
 </p>
 
 Modules are collection of source files and build settings that allow you to divide a project into discrete units of functionality. In this case apart from dividing by functionality/responsibility, existing the following dependence between them:
@@ -336,7 +336,7 @@ yarn icons
 
 ```typescript
 export enum Icons {
-  HOME_ICONS = require("./home.png"),
+  HOME_ICONS = require('./home.png'),
   // Other icons...
 }
 ```
@@ -355,8 +355,8 @@ yarn images
 
 ```typescript
 export enum Images {
-  BACKGROUND_IMAGE = require("./background.jpg"),
-  LOGO_IMAGE = require("./logo.png"),
+  BACKGROUND_IMAGE = require('./background.jpg'),
+  LOGO_IMAGE = require('./logo.png'),
   // Other images...
 }
 ```
@@ -412,7 +412,7 @@ To utilize these functions for creating a responsive UI, follow these steps:
      scaledSize,
      screenWidth,
      screenHeight,
-   } from "@src/utils";
+   } from '@src/utils';
    ```
 
 2. Use the functions in your styles or component logic to achieve responsive sizing:
@@ -464,7 +464,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      For example:
 
      ```javascript
-     import { AppImage, Images } from "@src/components";
+     import { AppImage, Images } from '@src/components';
      ```
 
      use it in component as
@@ -472,7 +472,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      get local static Images from same assets
 
      ```javascript
-     import { Images } from "@src/assets";
+     import { Images } from '@src/assets';
      ```
 
      For Placing static image from local assets
@@ -500,13 +500,13 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      For example:
 
      ```javascript
-     import { Icon, SvgIcon } from "@src/components";
+     import { Icon, SvgIcon } from '@src/components';
      ```
 
      get local static Icons and SVGIcons from same assets
 
      ```javascript
-     import { Icons, SVGIcons } from "@src/assets";
+     import { Icons, SVGIcons } from '@src/assets';
      ```
 
      use it in component as
@@ -519,8 +519,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      <SvgIcon
        pathFill="{color.primaryColor}"
        icon="{SVGIcons.SETTING}"
-       {...scaled(25)}
-     />
+       {...scaled(25)} />
      ```
 
 - **Linking fonts:**
@@ -617,10 +616,10 @@ Declare
          API_METHODS.GET,
          ServicesEndPoints.NEWS
        )
-         .then((res) => {
+         .then(res => {
            resolve(new getNewsListResponseAdapter().service(res));
          })
-         .catch((error) => {
+         .catch(error => {
            reject(error);
          });
      });
@@ -659,5 +658,5 @@ If you use our open-source libraries in your project, please make sure to credit
 
 <p><h4>Please feel free to use this component and Let us know if you are interested to building Apps or Designing Products.</h4>
 <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=circular-cards-stack-view" target="__blank">
-<img src="./media/hire_button.png" width="203" height="43"  alt="app development">
+<img src="../media/hire_button.png" width="203" height="43"  alt="app development">
 </a>
