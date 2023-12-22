@@ -13,7 +13,7 @@ class APIhandler {
     this.axiosInstance = axios.create({
       baseURL: AppConfig.API_URL,
       headers: this.axiosHeaders,
-      timeout: 1000,
+      timeout: 10000,
       timeoutErrorMessage: 'Slow Network',
       validateStatus(status) {
         return (
