@@ -70,3 +70,4 @@ Gemfile.lock
 
 # testing
 /coverage
+/.yarn/
