@@ -16,7 +16,7 @@ const installDependencies = () => {
   console.log("Dependencies installed successfully. 🚀\n")
 
   console.log("bundle Installing 🛠️\n")
-  execSync(`bundle install`, { stdio: "inherit" })
+  execSync(`bundle`, { stdio: "inherit" })
   console.log("bundle installed successfully.🚀\n")
 
   console.log("pod-install Installing 🛠️\n")
