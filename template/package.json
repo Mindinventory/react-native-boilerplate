@@ -90,6 +90,5 @@
   "eslintIgnore": [
     "node_modules/",
     "lib/"
-  ],
-  "packageManager": "yarn@3.6.4"
+  ]
 }
