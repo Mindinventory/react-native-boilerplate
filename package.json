@@ -15,6 +15,7 @@
     "url": "https://github.com/Mindinventory/react-native-boilerplate/issues"
   },
   "homepage": "https://github.com/Mindinventory/react-native-boilerplate/blob/master/README.md",
+  "main": "script.js",
   "keywords": [
     "react-native",
     "mindinventory",
