@@ -4,4 +4,5 @@ module.exports = {
     android: {},
     ios: {},
   },
+  automaticPodsInstallation: true,
 };
