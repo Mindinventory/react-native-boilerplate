@@ -2,7 +2,8 @@ module.exports = {
   assets: ['./src/assets/fonts'],
   project: {
     android: {},
-    ios: {},
+    ios: {
+      automaticPodsInstallation: true,
+    },
   },
-  automaticPodsInstallation: true,
 };
