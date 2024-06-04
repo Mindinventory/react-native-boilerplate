@@ -89,7 +89,7 @@ configuration of this lint is added in `.eslintrc.js` file.
 
 | Library                   | Category             | Version | Description                                    |
 | ------------------------- | -------------------- | ------- | ---------------------------------------------- |
-| React Native              | Mobile Framework     | v0.73   | The best cross-platform mobile framework       |
+| React Native              | Mobile Framework     | v0.74   | The best cross-platform mobile framework       |
 | React                     | UI Framework         | v18     | The most popular UI framework in the world     |
 | TypeScript                | Language             | v5      | Static typechecking                            |
 | React Navigation          | Navigation           | v6      | Performant and consistent navigation framework |
@@ -121,54 +121,50 @@ The project structure follows a modular approach to organize your codebase in a 
     For Example:
 
     ```js
-    import { Text } from "@app/blueprints";
-
-    <Text preset="h1">{contents("newsList", "breakingNews")}</Text>;
+    import { Text } from "@app/blueprints"
+    ;<Text preset="h1">{contents("newsList", "breakingNews")}</Text>
     ```
 
   - **Image**: React Native's Image component handles image caching like browsers for the most part using `react-native-fast-image` library.
     For Example:
 
     ```js
-    import { Image } from "@app/blueprints";
-
-    <Image source={sourcePath} {...props} />;
+    import { Image } from "@app/blueprints"
+    ;<Image source={sourcePath} {...props} />
     ```
 
   - **Indicator**: Show loader in app with customize way. use it form context of app.
     For Example:
 
     ```js
-    const { loader } = useAppContext();
+    const { loader } = useAppContext()
 
     //to show Indicator
-    loader.current.show();
+    loader.current.show()
     //to hide Indicator
-    loader.current.hide();
+    loader.current.hide()
     //get Indicator status
-    loader.current.isLoading;
+    loader.current.isLoading
     ```
 
   - **Button**: Animated scalability adds an extra layer of interactivity to your buttons with TouchableOpacity
     For Example:
 
     ```js
-    import { Button } from "@app/blueprints";
-
-    <Button
+    import { Button } from "@app/blueprints"
+    ;<Button
       buttonContainerStyle={{ marginTop: scaleHeight(15) }}
       title="Go back"
       {...TouchableOpacityProps}
-    />;
+    />
     ```
 
   - **TextInput**: Material UI all input variant added.
     For Example:
 
     ```js
-    import { Input } from "@app/blueprints";
-
-    <Input variant="standard" {...TextInputProps} />;
+    import { Input } from "@app/blueprints"
+    ;<Input variant="standard" {...TextInputProps} />
     ```
 
 ```
@@ -412,7 +408,7 @@ To utilize these functions for creating a responsive UI, follow these steps:
      scaledSize,
      screenWidth,
      screenHeight,
-   } from "@src/utils";
+   } from "@src/utils"
    ```
 
 2. Use the functions in your styles or component logic to achieve responsive sizing:
@@ -425,7 +421,7 @@ To utilize these functions for creating a responsive UI, follow these steps:
        marginVertical: moderateScale(10),
        fontSize: scaledSize(16),
      },
-   });
+   })
    ```
 
    In this example, the width and height of the container will be scaled proportionally based on the device's screen width and height. The `moderateScale` function is used to provide a moderate scaling effect to the margin, and the `scaledSize` function is used to scale the font size.
@@ -433,8 +429,8 @@ To utilize these functions for creating a responsive UI, follow these steps:
 3. Adjust the predefined design width and height if needed:
 
    ```javascript
-   export const designWidth = 375;
-   export const designHeight = 812;
+   export const designWidth = 375
+   export const designHeight = 812
    ```
 
    Modify these values according to your design specifications to ensure accurate scaling.
@@ -464,7 +460,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      For example:
 
      ```javascript
-     import { AppImage, Images } from "@src/components";
+     import { AppImage, Images } from "@src/components"
      ```
 
      use it in component as
@@ -472,7 +468,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      get local static Images from same assets
 
      ```javascript
-     import { Images } from "@src/assets";
+     import { Images } from "@src/assets"
      ```
 
      For Placing static image from local assets
@@ -500,13 +496,13 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      For example:
 
      ```javascript
-     import { Icon, SvgIcon } from "@src/components";
+     import { Icon, SvgIcon } from "@src/components"
      ```
 
      get local static Icons and SVGIcons from same assets
 
      ```javascript
-     import { Icons, SVGIcons } from "@src/assets";
+     import { Icons, SVGIcons } from "@src/assets"
      ```
 
      use it in component as
@@ -519,8 +515,7 @@ This boilerplate provides a convenient set of scripts to generate images and ico
      <SvgIcon
        pathFill="{color.primaryColor}"
        icon="{SVGIcons.SETTING}"
-       {...scaled(25)}
-     />
+       {...scaled(25)} />
      ```
 
 - **Linking fonts:**
@@ -563,9 +558,9 @@ This boilerplate uses the `react-native-config` library for environment variable
 
    ```typescript
    export type ConfigTypes = {
-     ENV: string;
-     API_URL: string;
-   };
+     ENV: string
+     API_URL: string
+   }
    ```
 
 ## Services(API) handling
@@ -585,23 +580,23 @@ Declare
 
    ```typescript
    export interface UserResponseDTO {
-     page: number;
-     per_page: number;
-     total: number;
-     total_pages: number;
-     data: DatumDTO[];
-     support: SupportDTO;
+     page: number
+     per_page: number
+     total: number
+     total_pages: number
+     data: DatumDTO[]
+     support: SupportDTO
    }
    export interface DatumDTO {
-     id: number;
-     email: string;
-     first_name: string;
-     last_name: string;
-     avatar: string;
+     id: number
+     email: string
+     first_name: string
+     last_name: string
+     avatar: string
    }
    export interface SupportDTO {
-     url: string;
-     text: string;
+     url: string
+     text: string
    }
    ```
 
@@ -618,13 +613,13 @@ Declare
          ServicesEndPoints.NEWS
        )
          .then((res) => {
-           resolve(new getNewsListResponseAdapter().service(res));
+           resolve(new getNewsListResponseAdapter().service(res))
          })
          .catch((error) => {
-           reject(error);
-         });
-     });
-   };
+           reject(error)
+         })
+     })
+   }
    ```
 
 4. Map your response in `src/services/commercial/adapters/response` with your api name like for newList `getNewsListResponseAdapter.ts`
