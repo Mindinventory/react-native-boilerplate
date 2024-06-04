@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Mindinventory React Native Boilerplate',
+  tagline: `The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.`,
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -68,11 +68,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        // {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Mindinventory/react-native-boilerplate',
           label: 'GitHub',
           position: 'right',
         },
