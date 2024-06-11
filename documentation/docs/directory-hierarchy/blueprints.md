@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Blueprints
@@ -18,7 +18,9 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
 │ └── ...
 ```
 
-- **Text**: Text element(typography) for app consist presets of all font family and font-size that we have to use in app.
+- ### Text:
+
+  Text element(typography) for app consist presets of all font family and font-size that we have to use in app.
   For Example:
 
   ```js
@@ -26,7 +28,9 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
   ;<Text preset="h1">{contents("newsList", "breakingNews")}</Text>
   ```
 
-- **Image**: React Native's Image component handles image caching like browsers for the most part using `react-native-fast-image` library.
+- ### Image:
+
+  React Native's Image component handles image caching like browsers for the most part using `react-native-fast-image` library.
   For Example:
 
   ```js
@@ -34,7 +38,9 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
   ;<Image source={sourcePath} {...props} />
   ```
 
-- **Indicator**: Show loader in app with customize way. use it form context of app.
+- ### Indicator:
+
+  Show loader in app with customize way. use it form context of app.
   For Example:
 
   ```js
@@ -48,7 +54,9 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
   loader.current.isLoading
   ```
 
-- **Button**: Animated scalability adds an extra layer of interactivity to your buttons with TouchableOpacity
+- ### Button:
+
+  Animated scalability adds an extra layer of interactivity to your buttons with TouchableOpacity
   For Example:
 
   ```js
@@ -60,7 +68,9 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
   />
   ```
 
-- **TextInput**: Material UI all input variant added.
+- ### TextInput:
+
+  Material UI all input variant added.
   For Example:
 
   ```tsx
