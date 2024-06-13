@@ -69,8 +69,9 @@ const config: Config = {
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/Mindinventory/react-native-boilerplate',
-          label: 'GitHub',
+          
           position: 'right',
+          className:"github_icon group"
         },
       ],
     },
@@ -89,17 +90,14 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            // {
-            //   label: 'Stack Overflow',
-            //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            // },
-            // {
-            //   label: 'Discord',
-            //   href: 'https://discordapp.com/invite/docusaurus',
-            // },
+
             {
               label: 'Twitter',
               href: 'https://x.com/Mindinventory',
+            },
+            {
+              label: 'linkedin',
+              href: 'https://www.linkedin.com/company/mindinventory/mycompany/verification/',
             },
           ],
         },
