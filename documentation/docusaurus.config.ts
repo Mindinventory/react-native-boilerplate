@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Mindinventory React Native Boilerplate',
+  title: 'React Native Boilerplate',
   tagline: `The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.`,
   favicon: 'img/favicon.ico',
 
@@ -111,6 +111,19 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: null,
+          items: [
+           
+            {              
+              html:`
+              <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=circular-cards-stack-view" target="__blank">
+                <img src="https://raw.githubusercontent.com/Mindinventory/react-native-boilerplate/master/media/hire_button.png" width="203" height="43"  alt="app_development" />
+              </a>
+              `
+            },
+          ],
+        }
       ],
       copyright: `© ${new Date().getFullYear()} MindInventory. All rights reserved.`,
     },
