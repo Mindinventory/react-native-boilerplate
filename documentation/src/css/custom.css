@@ -28,3 +28,23 @@
   --ifm-color-primary-lightest: #f36186;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.have_project_buttons {
+  width: 203px;
+  background-color: #ed184f;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+  font-weight: 800;
+  font-size: medium;
+}
+
+.have_project_buttons:hover {
+  background-color: #da1145;
+}
