@@ -10,12 +10,44 @@
   overflow: hidden;
   background: url("../../static/img/home_hero_bg.webp");
   background-size: cover;
-  background-position: top -9.5vw left 0vw;
+  background-position: top -9vw left 0vw;
   height: calc(100vh - 235px);
   background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+    background-position: top 0vw left 0vw;
+  }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+  .heroBanner {
+    padding: 2rem;
+    background-position: top 10vw left 0vw;
+  }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .heroBanner {
+    padding: 2rem;
+    background-position: top 10vw left 0vw;
+  }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .heroBanner {
+    padding: 2rem;
+    background-position: top 0vw left 0vw;
+  }
+}
+
+/* Media Query for Large screens */
+@media (max-width: 1581px) {
   .heroBanner {
     padding: 2rem;
     background-position: top 0vw left 0vw;
