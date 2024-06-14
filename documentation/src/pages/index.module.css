@@ -15,6 +15,10 @@
   background-repeat: no-repeat;
 }
 
+.container_layout {
+  margin-top: 50px;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
