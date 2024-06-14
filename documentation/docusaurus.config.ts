@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'React Native Boilerplate',
-  tagline: `The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.`,
+  tagline: `Boilerplate code provides a pre-made foundation for your project, including essential packages, reusable components, and a structured architecture. This jumpstarts development by saving you time on initial setup`,
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -131,6 +131,9 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    colorMode:{
+      disableSwitch: true
+    }
   } satisfies Preset.ThemeConfig,
 };
 
