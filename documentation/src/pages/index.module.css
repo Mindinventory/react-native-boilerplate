@@ -19,10 +19,27 @@
   margin-top: 50px;
 }
 
+.subtitle {
+  font-size: 1.5rem;
+}
+
+.header_text {
+  font-size: 3rem;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
     background-position: top 0vw left 0vw;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .container_layout {
+    margin-top: 0px;
+  }
+  .header_text {
+    font-size: 2rem;
   }
 }
 
