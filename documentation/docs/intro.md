@@ -9,7 +9,7 @@ The Boilerplate contains all the basic packages, common components and, prebuilt
 <a
   href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate"
   target="__blank">
-<img src="https://github.com/Mindinventory/react-native-boilerplate/assets/104554054/4bbe083a-9d15-48a6-b004-5b976790f3ab" />
+![title banner](../static/img/title_img.png)
 </a>
 <br />
 <br />
