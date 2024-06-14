@@ -13,6 +13,7 @@
   background-position: top -9vw left 0vw;
   height: calc(100vh - 235px);
   background-repeat: no-repeat;
+  display: inline-block;
 }
 
 .container_layout {
@@ -31,6 +32,7 @@
   .heroBanner {
     padding: 2rem;
     background-position: top 0vw left 0vw;
+    height: auto;
   }
   .subtitle {
     font-size: 1.2rem;
