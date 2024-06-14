@@ -135,6 +135,8 @@ const config: Config = {
       disableSwitch: true
     }
   } satisfies Preset.ThemeConfig,
+  
+  trailingSlash: false
 };
 
 export default config;
