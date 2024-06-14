@@ -79,16 +79,12 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Organizations',
+          title: 'Organization',
           items: [
             {
               label: 'Mindinventory',
               href: 'https://www.mindinventory.com/',
-            },
-            {
-              label:'300Mind',
-              href:'https://300mind.studio/'
-            }
+            },           
           ],
         },
         {
