@@ -1,12 +1,14 @@
-name: Publishing new boilerplate version on NPM.
+name: Check TypeScript and ESLint
 
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - feat/CI-CD
+  pull_request:
+    branches:
+      - feat/CI-CD
 jobs:
   build:
-    if: github.ref == 'refs/heads/feat/CI-CD' || startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +19,14 @@ jobs:
         with:
           node-version: 20
 
-      #   - run: npm login ${{ secrets.NPM_TOKEN }}
-      #     env:
-      #       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: npm login --auth-type=web
+      - name: Install dependencies
+        run: yarn
+        working-directory: ./template
+
+      - name: Run ESLint
+        run: yarn lint
+        working-directory: ./template
+
+      - name: Run TypeScript
+        run: yarn typescript
+        working-directory: ./template
