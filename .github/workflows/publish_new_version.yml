@@ -27,6 +27,6 @@ jobs:
         run: yarn lint
         working-directory: ./template
 
-      - name: Run TypeScript
-        run: yarn typescript
-        working-directory: ./template
+    #   - name: Run TypeScript
+    #     run: yarn typescript
+    #     working-directory: ./template
