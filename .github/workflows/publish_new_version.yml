@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm login ${{ secrets.NPM_TOKEN }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   - run: npm login ${{ secrets.NPM_TOKEN }}
+      #     env:
+      #       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: npm login --auth-type=web
