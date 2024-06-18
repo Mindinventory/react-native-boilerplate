@@ -2,9 +2,11 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+
+
 const config: Config = {
-  title: 'Mindinventory React Native Boilerplate',
-  tagline: `The Boilerplate contains all the basic packages, common components and, prebuilt code architecture. It will save developer's project setup time.`,
+  title: 'React Native Boilerplate',
+  tagline: `Boilerplate code provides a pre-made foundation for your project, including essential packages, reusable components, and a structured architecture. This jumpstarts development by saving you time on initial setup`,
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -67,8 +69,9 @@ const config: Config = {
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/Mindinventory/react-native-boilerplate',
-          label: 'GitHub',
+          
           position: 'right',
+          className:"github_icon group"
         },
       ],
     },
@@ -76,28 +79,25 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Organization',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
+              label: 'Mindinventory',
+              href: 'https://www.mindinventory.com/',
+            },           
           ],
         },
         {
           title: 'Community',
           items: [
-            // {
-            //   label: 'Stack Overflow',
-            //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            // },
-            // {
-            //   label: 'Discord',
-            //   href: 'https://discordapp.com/invite/docusaurus',
-            // },
+
             {
               label: 'Twitter',
               href: 'https://x.com/Mindinventory',
+            },
+            {
+              label: 'linkedin',
+              href: 'https://www.linkedin.com/company/mindinventory/mycompany/verification/',
             },
           ],
         },
@@ -111,6 +111,19 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: null,
+          items: [
+           
+            {              
+              html:`                            
+                <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=circular-cards-stack-view" target="__blank">
+                  <button class="have_project_buttons" >Have a project?</button>
+                </a>              
+              `
+            },
+          ],
+        }
       ],
       copyright: `© ${new Date().getFullYear()} MindInventory. All rights reserved.`,
     },
@@ -118,7 +131,12 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    colorMode:{
+      disableSwitch: true
+    }
   } satisfies Preset.ThemeConfig,
+  
+  trailingSlash: false
 };
 
 export default config;

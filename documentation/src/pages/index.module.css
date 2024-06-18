@@ -8,11 +8,74 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: url("../../static/img/home_hero_bg.webp");
+  background-size: cover;
+  background-position: top -9vw left 0vw;
+  height: calc(100vh - 235px);
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.container_layout {
+  margin-top: 50px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+}
+
+.header_text {
+  font-size: 3rem;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
+    background-position: top 0vw left 0vw;
+    height: auto;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  .container_layout {
+    margin-top: 0px;
+  }
+  .header_text {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+  .heroBanner {
+    padding: 2rem;
+    background-position: top 10vw left 0vw;
+  }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .heroBanner {
+    padding: 2rem;
+    background-position: top 10vw left 0vw;
+  }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .heroBanner {
+    padding: 2rem;
+    background-position: top 0vw left 0vw;
+  }
+}
+
+/* Media Query for Large screens */
+@media (max-width: 1581px) {
+  .heroBanner {
+    padding: 2rem;
+    background-position: top 0vw left 0vw;
   }
 }
 

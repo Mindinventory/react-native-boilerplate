@@ -23,9 +23,11 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
   Text element(typography) for app consist presets of all font family and font-size that we have to use in app.
   For Example:
 
-  ```js
-  import { Text } from "@app/blueprints"
-  ;<Text preset="h1">{contents("newsList", "breakingNews")}</Text>
+  ```tsx
+  import { Text } from "@app/blueprints";
+  ...
+
+  <Text preset="h1">{contents("newsList", "breakingNews")}</Text>
   ```
 
 - ### Image:
@@ -33,9 +35,11 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
   React Native's Image component handles image caching like browsers for the most part using `react-native-fast-image` library.
   For Example:
 
-  ```js
-  import { Image } from "@app/blueprints"
-  ;<Image source={sourcePath} {...props} />
+  ```tsx
+  import { Image } from "@app/blueprints";
+  ...
+
+  <Image source={sourcePath} {...props} />
   ```
 
 - ### Indicator:
@@ -43,7 +47,7 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
   Show loader in app with customize way. use it form context of app.
   For Example:
 
-  ```js
+  ```tsx
   const { loader } = useAppContext()
 
   //to show Indicator
@@ -59,9 +63,11 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
   Animated scalability adds an extra layer of interactivity to your buttons with TouchableOpacity
   For Example:
 
-  ```js
-  import { Button } from "@app/blueprints"
-  ;<Button
+  ```tsx
+  import { Button } from "@app/blueprints";
+  ...
+
+  <Button
     buttonContainerStyle={{ marginTop: scaleHeight(15) }}
     title="Go back"
     {...TouchableOpacityProps}
@@ -74,6 +80,8 @@ Let's discuss about the Blueprints directory. And understand how to utilize its 
   For Example:
 
   ```tsx
-  import { Input } from "@app/blueprints"
-  ;<Input variant="standard" {...TextInputProps} />
+  import { Input } from "@app/blueprints";
+  ...
+  
+  <Input variant="standard" {...TextInputProps} />
   ```

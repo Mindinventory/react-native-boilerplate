@@ -7,7 +7,9 @@ sidebar_position: 3
 The boilerplate comes loaded with several features. Here's a breakdown of each one.
 
 <br />
-<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" ><img src="https://github.com/Mindinventory/react-native-boilerplate/assets/89060719/97d796e3-e6f6-4c02-b6fb-c4628bed158f" /></a>
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank" >
+![features banner](../static/img/features_banner.png)
+</a>
 <br />
 
 ## Built in implemented features.
