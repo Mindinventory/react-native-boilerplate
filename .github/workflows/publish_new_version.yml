@@ -13,5 +13,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: dsstep-1
-        run: echo "::called on create tag::"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm login ${{ secrets.NPM_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
