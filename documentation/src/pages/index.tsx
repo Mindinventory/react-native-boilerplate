@@ -12,7 +12,7 @@ function HomepageHeader() {
     <header className={clsx('hero--primary', styles.heroBanner)}>
       <div className={clsx('container', styles.container_layout)}>
         <Heading as="h1" className={clsx('hero__title', styles.header_text)}>
-          {siteConfig.title}
+          React Native Boilerplate
         </Heading>
         <p className={clsx('hero__subtitle', styles.subtitle)}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
