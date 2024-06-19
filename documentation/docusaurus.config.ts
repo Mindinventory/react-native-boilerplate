@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'React Native Boilerplate',
-  tagline: `Boilerplate code provides a pre-made foundation for your project, including essential packages, reusable components, and a structured architecture. Build modern applications effortlessly with our streamlined React Native boilerplate, designed for simplicity and scalability. Join our active community to collaborate, share ideas, and accelerate your app development journey.`,
+  tagline: `Boilerplate code provides a pre-made foundation for your project, including essential packages, reusable components, and a structured architecture. Build modern applications effortlessly with our React Native boilerplate, designed for simplicity and scalability. Join our active community to collaborate, share ideas, and accelerate your app development journey.`,
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
