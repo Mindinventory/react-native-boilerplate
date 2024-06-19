@@ -1,8 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
-
+import tailwindPlugin from "./plugins/tailwind-plugin.cjs"; 
 
 const config: Config = {
   title: 'Best React Native Boilerplate By MindInventory',
@@ -141,19 +140,7 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
   
   trailingSlash: true,
-  plugins: [
-    async function myPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
-  ]
+  plugins: [tailwindPlugin]
 };
 
 export default config;
