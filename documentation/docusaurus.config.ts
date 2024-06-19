@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 
 const config: Config = {
-  title: 'Best Best React Native Boilerplate By MindInventory By MindInventory',
+  title: 'Best React Native Boilerplate By MindInventory',
   tagline: `Boilerplate code provides a pre-made foundation for your project, including essential packages, reusable components, and a structured architecture. Build modern applications effortlessly with our React Native boilerplate, designed for simplicity and scalability. Join our active community to collaborate, share ideas, and accelerate your app development journey.`,
   favicon: 'img/favicon.ico',
 
