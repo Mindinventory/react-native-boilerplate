@@ -136,7 +136,7 @@ const config: Config = {
       disableSwitch: true
     },
     metadata: [
-      {name: 'description', content: 'Build high-performance apps with our React Native template. Select between JavaScript and TypeScript for a seamless development experience.'},      
+      {name: 'description', content: 'Develop high-performance applications using our comprehensive React Native Boilerplate for a smooth development process with integrated support for TypeScript.'},      
     ],
   } satisfies Preset.ThemeConfig,
   
