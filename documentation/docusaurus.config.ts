@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 
 const config: Config = {
-  title: 'React Native Boilerplate',
+  title: 'Best React Native Boilerplate By MindInventory',
   tagline: `Boilerplate code provides a pre-made foundation for your project, including essential packages, reusable components, and a structured architecture. Build modern applications effortlessly with our streamlined React Native boilerplate, designed for simplicity and scalability. Join our active community to collaborate, share ideas, and accelerate your app development journey.`,
   favicon: 'img/favicon.ico',
 
@@ -136,7 +136,7 @@ const config: Config = {
       disableSwitch: true
     },
     metadata: [
-      {name: 'Best React Native Boilerplate By MindInventory', content: 'Build high-performance apps with our React Native template. Select between JavaScript and TypeScript for a seamless development experience.'},      
+      {name: 'description', content: 'Build high-performance apps with our React Native template. Select between JavaScript and TypeScript for a seamless development experience.'},      
     ],
   } satisfies Preset.ThemeConfig,
   
