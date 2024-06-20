@@ -7,22 +7,6 @@
   background-color: #111111;
 }
 
-.glass_effect {
-  /* background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border: 1px solid rgba(255, 255, 255, 0.3); */
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
 .section_title {
   @apply font-semibold
   text-[2.75rem]
@@ -30,7 +14,7 @@
 }
 
 .grid_view {
-  @apply grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4 gap-y-14 md:gap-y-14 lg:gap-10 xl:gap-10 2xl:gap-10;
+  @apply grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-y-14 md:gap-y-14 lg:gap-10 xl:gap-10 2xl:gap-10;
 }
 
 .icon_view {
@@ -59,15 +43,16 @@
 }
 
 .divider {
-  /* border: none;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255) 20%,
-    rgba(255, 255, 255) 0%
-  );
-  height: 1.5px; */
   border-width: 1.5px;
   border-style: solid;
   border-image: linear-gradient(to left, #ffffff00 0%, #ffffff33 20%) 0 0 100% 0;
   margin: 12px 0px 12px 0px;
+}
+
+.item_view {
+  @apply flex flex-col items-center md:items-center lg:items-start xl:items-start 2xl:items-start;
+}
+
+.item_content {
+  @apply text-center sm:max-sm:text-center md:text-center lg:text-left xl:text-left 2xl:text-start;
 }

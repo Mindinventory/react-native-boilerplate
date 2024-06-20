@@ -104,21 +104,12 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({ title, Svg, description, id, iconBgColor }: FeatureItem) {
     return (
-        // <div key={id.toString()} className={clsx('my-4 bg-slate-500 p-6 rounded-xl', styles.glass_effect)}>
-        //     <div className="text--center">
-        //         <Svg className={styles.featureSvg} role="img" />
-        //     </div>
-        //     <div className="text--center padding-horiz--md">
-        //         <Heading as="h3">{title}</Heading>
-        //         <p>{description}</p>
-        //     </div>
-        // </div>
-        <div key={id.toString()} >
+        <div key={id.toString()} className={clsx(styles.item_view)}  >
             <div className={clsx(styles.icon_view)} style={{ backgroundColor: iconBgColor }
             }>
                 <Svg className={styles.featureSvg} role="img" />
             </div>
-            <div >
+            <div className={clsx(styles.item_content)}>
                 <span className={clsx(styles.card_title)}>{title}</span>
                 <div className={clsx(styles.divider)}></div>
                 <p className={clsx(styles.card_description)}>{description}</p>
