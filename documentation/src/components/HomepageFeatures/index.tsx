@@ -118,7 +118,7 @@ function Feature({ title, Svg, description, id, iconBgColor }: FeatureItem) {
     );
 }
 
-export default function HomepageFeatures(): JSX.Element {
+const HomepageFeatures = (): JSX.Element => {
     return (
         <section className={styles.features}>
             <span className={clsx(styles.section_title)}>Our Features</span>
@@ -132,3 +132,5 @@ export default function HomepageFeatures(): JSX.Element {
         </section>
     );
 }
+
+export default HomepageFeatures
