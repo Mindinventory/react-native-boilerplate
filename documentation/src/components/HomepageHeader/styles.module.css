@@ -8,10 +8,11 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: url("../../../static/img/home_hero_bg.webp");
+  background: url("../../../static/img/home_hero_bg.png");
   background-size: cover;
   background-position: top -9vw left 0vw;
-  height: calc(100vh - 235px);
+  /* height: calc(100vh - 235px); */
+  height: auto;
   background-repeat: no-repeat;
   display: inline-block;
 }
