@@ -4,21 +4,21 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
+  padding: 0rem 0;
+  /* text-align: center; */
+  /* position: relative; */
   overflow: hidden;
   background: url("../../../static/img/home_hero_bg.png");
   background-size: cover;
-  background-position: top -9vw left 0vw;
+  /* background-position: top -9vw left 0vw; */
   /* height: calc(100vh - 235px); */
-  height: auto;
+  height: 80vh;
   background-repeat: no-repeat;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .container_layout {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .subtitle {
@@ -28,12 +28,16 @@
 .header_text {
   font-size: 3rem;
 }
+.header_img {
+  height: 80vh;
+  object-fit: contain;
+}
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
-    background-position: top 0vw left 0vw;
-    height: auto;
+    padding: 0rem;
+    /* background-position: top 0vw left 0vw; */
+    height: 80vh;
   }
   .subtitle {
     font-size: 1.2rem;
@@ -51,37 +55,41 @@
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
   .heroBanner {
-    padding: 2rem;
-    background-position: top 10vw left 0vw;
+    padding: 0rem;
+    height: 80vh;
+    /* background-position: top 10vw left 0vw; */
   }
 }
 
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
   .heroBanner {
-    padding: 2rem;
-    background-position: top 10vw left 0vw;
+    padding: 0rem;
+    height: 80vh;
+    /* background-position: top 10vw left 0vw; */
   }
 }
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px) {
   .heroBanner {
-    padding: 2rem;
-    background-position: top 0vw left 0vw;
+    padding: 0rem;
+    height: 80vh;
+    /* background-position: top 0vw left 0vw; */
   }
 }
 
 /* Media Query for Large screens */
 @media (max-width: 1581px) {
   .heroBanner {
-    padding: 2rem;
-    background-position: top 0vw left 0vw;
+    padding: 0rem;
+    height: 80vh;
+    /* background-position: top 0vw left 0vw; */
   }
 }
 
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
