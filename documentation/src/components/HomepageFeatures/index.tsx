@@ -27,7 +27,7 @@ const FeatureList: FeatureItem[] = [
     },
     {
         id: 3,
-        title: 'Husky improves your commits and more',
+        title: 'Husky',
         description: `Husky Improves Your Commits and More Benefit from Husky's pre-commit hooks to enforce code quality and ensure that only well-formatted code makes it into your repository.`,
         iconBgColor: '#B5F1CC',
         Svg: require('@site/static/svg/husky_improves.svg').default
@@ -56,7 +56,7 @@ const FeatureList: FeatureItem[] = [
     {
         id: 7,
         title: 'Context API',
-        description: `Advanced State Management with Redux and Context API Harness the power of both Redux and React's Context API for efficient state management. Redux with Thunk middleware handles complex state logic, while the Context API facilitates easy sharing of data between components, especially for app theme and localization management.`,
+        description: `Advanced State Management with Redux and Context API Harness the power of both Redux and React's Context API for efficient state management.`,
         iconBgColor: '#D0BFFF',
         Svg: require('@site/static/svg/context.svg').default
     },
@@ -87,7 +87,7 @@ const FeatureList: FeatureItem[] = [
 
     {
         id: 11,
-        title: 'Network request (API implementation)',
+        title: 'Network request',
         description: `Network Request (API Implementation) Simplified API integration for making network requests, saving you time and effort in implementing backend communication.`,
         iconBgColor: '#FFC0D9',
         Svg: require('@site/static/svg/network_request.svg').default
@@ -102,17 +102,28 @@ const FeatureList: FeatureItem[] = [
     },
 ];
 
-function Feature({ title, Svg, description, id }: FeatureItem) {
+function Feature({ title, Svg, description, id, iconBgColor }: FeatureItem) {
     return (
-        <div key={id.toString()} className={clsx('my-4 bg-slate-500 p-6 rounded-xl', styles.glass_effect)}>
-            <div className="text--center">
+        // <div key={id.toString()} className={clsx('my-4 bg-slate-500 p-6 rounded-xl', styles.glass_effect)}>
+        //     <div className="text--center">
+        //         <Svg className={styles.featureSvg} role="img" />
+        //     </div>
+        //     <div className="text--center padding-horiz--md">
+        //         <Heading as="h3">{title}</Heading>
+        //         <p>{description}</p>
+        //     </div>
+        // </div>
+        <div key={id.toString()} >
+            <div className={clsx(styles.icon_view)} style={{ backgroundColor: iconBgColor }
+            }>
                 <Svg className={styles.featureSvg} role="img" />
             </div>
-            <div className="text--center padding-horiz--md">
-                <Heading as="h3">{title}</Heading>
-                <p>{description}</p>
+            <div >
+                <span className={clsx(styles.card_title)}>{title}</span>
+                <div className={clsx(styles.divider)}></div>
+                <p className={clsx(styles.card_description)}>{description}</p>
             </div>
-        </div>
+        </div >
     );
 }
 
@@ -120,7 +131,7 @@ export default function HomepageFeatures(): JSX.Element {
     return (
         <section className={styles.features}>
             <span className={clsx(styles.section_title)}>Our Features</span>
-            <div className="container">
+            <div className="container mt-24">
                 <div className={clsx(styles.grid_view)}>
                     {FeatureList.map((props, idx) => (
                         <Feature key={idx} {...props} />
