@@ -45,6 +45,7 @@ const config: Config = {
      
         theme: {
           customCss: './src/css/custom.css',
+        
         },
       } satisfies Preset.Options,
     ],
@@ -137,6 +138,7 @@ const config: Config = {
     metadata: [
       {name: 'description', content: 'Develop high-performance applications using our comprehensive React Native Boilerplate for a smooth development process with integrated support for TypeScript.'},      
     ],
+    
   } satisfies Preset.ThemeConfig,
   
   trailingSlash: true,
