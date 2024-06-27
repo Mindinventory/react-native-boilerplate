@@ -4,17 +4,27 @@
  */
 
 .heroBanner {
-  padding: 0rem 0;
+  /* padding: 0rem 0; */
   /* text-align: center; */
   /* position: relative; */
-  overflow: hidden;
+  /* overflow: hidden;
   background: url("../../../static/img/home_hero_bg.png");
-  background-size: cover;
+  background-size: cover; */
   /* background-position: top -9vw left 0vw; */
   /* height: calc(100vh - 235px); */
-  height: 80vh;
-  background-repeat: no-repeat;
+  /* height: 80vh;
+  background-repeat: no-repeat; */
   /* display: inline-block; */
+  @apply p-0
+  overflow-hidden
+  bg-[url("../../../static/img/home_hero_bg.png")]
+  bg-cover
+  /* h-[80vh] */
+  bg-no-repeat
+  h-[115vh]
+  lg:h-[80vh]
+  xl:h-[80vh]
+  2xl:h-[80vh];
 }
 
 .container_layout {
@@ -42,7 +52,7 @@
   @apply flex 
   flex-col 
   z-50 
-  justify-center 
+  justify-start 
   h-full 
   bg-green-200
   items-center
@@ -54,13 +64,21 @@
   md:items-center
   lg:items-start 
   xl:items-start 
-  2xl:items-start;
+  2xl:items-start
+  mt-4
+  lg:mt-0 
+  xl:mt-0 
+  2xl:mt-0
+  lg:justify-center
+  xl:justify-center
+  2xl:justify-center;
 }
 
 .header_img_wrapper {
   /* @apply right-16 top-0 bg-green-700 absolute z-10 w-fit; */
   @apply text-center   
   relative 
+  bg-red-100
   sm:text-center 
   sm:relative  
   md:relative 
@@ -83,11 +101,10 @@
 }
 
 @media screen and (max-width: 996px) {
-  .heroBanner {
+  /* .heroBanner {
     padding: 0rem;
-    /* background-position: top 0vw left 0vw; */
     height: 80vh;
-  }
+  } */
   .subtitle {
     font-size: 1.2rem;
     margin-bottom: 30px;
@@ -103,38 +120,34 @@
 
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
-  .heroBanner {
+  /* .heroBanner {
     padding: 0rem;
     height: 80vh;
-    /* background-position: top 10vw left 0vw; */
-  }
+  } */
 }
 
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .heroBanner {
+  /* .heroBanner {
     padding: 0rem;
     height: 80vh;
-    /* background-position: top 10vw left 0vw; */
-  }
+  } */
 }
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px) {
-  .heroBanner {
+  /* .heroBanner {
     padding: 0rem;
     height: 80vh;
-    /* background-position: top 0vw left 0vw; */
-  }
+  } */
 }
 
 /* Media Query for Large screens */
 @media (max-width: 1581px) {
-  .heroBanner {
+  /* .heroBanner {
     padding: 0rem;
     height: 80vh;
-    /* background-position: top 0vw left 0vw; */
-  }
+  } */
 }
 
 .buttons {
