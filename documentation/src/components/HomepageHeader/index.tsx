@@ -18,9 +18,8 @@ const HomepageHeader = () => {
                 <div className={clsx(styles.header_img_wrapper)}>
                     <img src={HeaderImg} alt="header-hero-img" className={clsx(styles.header_img)} />
                 </div>
-            </div>
-            <div className={clsx('container h-full z-50', styles.container_layout)}>
-                {/* <Heading as="h1" className={clsx('hero__title', styles.header_text)}>
+                <div className={clsx('container h-full z-50', styles.container_layout)}>
+                    {/* <Heading as="h1" className={clsx('hero__title', styles.header_text)}>
                     React Native Boilerplate
                 </Heading>
                 <p className={clsx('hero__subtitle', styles.subtitle)}>{siteConfig.tagline}</p>
@@ -32,21 +31,23 @@ const HomepageHeader = () => {
                         Get started
                     </Link>
                 </div> */}
-                {/* <div className='flex flex-col z-50 justify-center  h-full w-1/2'>
-                    <Heading as="h1" className={clsx('hero__title', styles.header_text)}>
-                        React Native Boilerplate
-                    </Heading>
-                    <p className={clsx('hero__subtitle z-50', styles.subtitle)}>{siteConfig.tagline}</p>
-                    <div className={styles.buttons}>
-                        <Link
-                            className="
+                    <div className={clsx(styles.header_content_view)}>
+                        <Heading as="h1" className={clsx('hero__title', styles.header_text)}>
+                            React Native Boilerplate
+                        </Heading>
+                        <p className={clsx('hero__subtitle z-50', styles.subtitle)}>{siteConfig.tagline}</p>
+                        <div className={styles.buttons}>
+                            <Link
+                                className="
                         button button--primary button--lg"
-                            to="/docs/intro">
-                            Get started
-                        </Link>
+                                to="/docs/intro">
+                                Get started
+                            </Link>
+                        </div>
                     </div>
-                </div> */}
+                </div>
             </div>
+
         </header>
     );
 }

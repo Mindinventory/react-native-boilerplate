@@ -38,6 +38,25 @@
   @apply h-[90vh] relative;
 }
 
+.header_content_view {
+  @apply flex 
+  flex-col 
+  z-50 
+  justify-center 
+  h-full 
+  bg-green-200
+  items-center
+  w-full
+  lg:w-1/2 
+  xl:w-1/2 
+  2xl:w-1/2
+  sm:items-center
+  md:items-center
+  lg:items-start 
+  xl:items-start 
+  2xl:items-start;
+}
+
 .header_img_wrapper {
   /* @apply right-16 top-0 bg-green-700 absolute z-10 w-fit; */
   @apply text-center   
