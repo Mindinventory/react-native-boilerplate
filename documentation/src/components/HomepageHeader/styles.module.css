@@ -95,7 +95,13 @@
   2xl:w-fit;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 355px) {
+  .header_text {
+    font-size: 1.1rem;
+  }
+  .subtitle {
+    font-size: 0.8rem;
+  }
 }
 
 /* Media Query for low resolution  Tablets, Ipads */
