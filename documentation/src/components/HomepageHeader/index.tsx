@@ -9,8 +9,13 @@ const HomepageHeader = () => {
     const { siteConfig } = useDocusaurusContext();
     return (
         <header className={clsx('hero--primary', styles.heroBanner)}>
-            <div className='h-fit relative '>
+            {/* <div className='h-fit relative '>
                 <div className='right-16 top-0 absolute z-10 w-fit'>
+                    <img src={HeaderImg} alt="header-hero-img" className={clsx(styles.header_img)} />
+                </div>
+            </div> */}
+            <div className={clsx(styles.header_img_container)}>
+                <div className={clsx(styles.header_img_wrapper)}>
                     <img src={HeaderImg} alt="header-hero-img" className={clsx(styles.header_img)} />
                 </div>
             </div>
@@ -27,7 +32,7 @@ const HomepageHeader = () => {
                         Get started
                     </Link>
                 </div> */}
-                <div className='flex flex-col z-50 justify-center  h-full w-1/2'>
+                {/* <div className='flex flex-col z-50 justify-center  h-full w-1/2'>
                     <Heading as="h1" className={clsx('hero__title', styles.header_text)}>
                         React Native Boilerplate
                     </Heading>
@@ -40,10 +45,7 @@ const HomepageHeader = () => {
                             Get started
                         </Link>
                     </div>
-
-
-
-                </div>
+                </div> */}
             </div>
         </header>
     );
