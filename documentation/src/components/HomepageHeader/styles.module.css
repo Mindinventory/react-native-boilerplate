@@ -20,10 +20,20 @@
 
 .subtitle {
   font-size: 1.5rem;
+  @apply text-[1.2rem] 
+  sm:text-[1.3rem] 
+  md:text-[1.5rem] 
+  lg:text-[1.5rem] 
+  xl:text-[1.5rem] 
+  2xl:text-[1.5rem]
+  text-center
+  lg:text-justify
+  xl:text-justify
+  2xl:text-justify;
 }
 
 .header_text {
-  font-size: 3rem;
+  @apply text-[1.8rem] sm:text-[2rem] md:text-[3rem] lg:text-[3rem] xl:text-[3rem] 2xl:text-[3rem];
 }
 .header_img {
   @apply h-[40vh] object-contain   sm:h-[40vh] md:h-[45vh] lg:h-[90vh] xl:h-[90vh] 2xl:h-[90vh];
@@ -56,9 +66,9 @@
   lg:justify-center
   xl:justify-center
   2xl:justify-center
-  lg:mb-[12rem]
-  xl:mb-[12rem]
-  2xl:mb-[12rem];
+  lg:mb-[10rem]
+  xl:mb-[10rem]
+  2xl:mb-[10rem];
 }
 
 .header_img_wrapper {
@@ -86,15 +96,6 @@
 }
 
 @media screen and (max-width: 996px) {
-  .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-  }
-
-  .header_text {
-    font-size: 2.6rem;
-    margin-bottom: 10px;
-  }
 }
 
 /* Media Query for low resolution  Tablets, Ipads */
