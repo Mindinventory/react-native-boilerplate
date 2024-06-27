@@ -4,22 +4,10 @@
  */
 
 .heroBanner {
-  /* padding: 0rem 0; */
-  /* text-align: center; */
-  /* position: relative; */
-  /* overflow: hidden;
-  background: url("../../../static/img/home_hero_bg.png");
-  background-size: cover; */
-  /* background-position: top -9vw left 0vw; */
-  /* height: calc(100vh - 235px); */
-  /* height: 80vh;
-  background-repeat: no-repeat; */
-  /* display: inline-block; */
   @apply p-0
   overflow-hidden
   bg-[url("../../../static/img/home_hero_bg.png")]
-  bg-cover
-  /* h-[80vh] */
+  bg-cover  
   bg-no-repeat
   h-[115vh]
   lg:h-[80vh]
@@ -28,7 +16,6 @@
 }
 
 .container_layout {
-  margin-top: 0px;
 }
 
 .subtitle {
@@ -39,8 +26,6 @@
   font-size: 3rem;
 }
 .header_img {
-  /* height: 80vh;
-  object-fit: contain; */
   @apply h-[40vh] object-contain   sm:h-[40vh] md:h-[45vh] lg:h-[90vh] xl:h-[90vh] 2xl:h-[90vh];
 }
 
@@ -52,9 +37,8 @@
   @apply flex 
   flex-col 
   z-50 
-  justify-start 
-  h-full 
-  bg-green-200
+  justify-start   
+  mb-[0rem]  
   items-center
   w-full
   lg:w-1/2 
@@ -71,14 +55,15 @@
   2xl:mt-0
   lg:justify-center
   xl:justify-center
-  2xl:justify-center;
+  2xl:justify-center
+  lg:mb-[12rem]
+  xl:mb-[12rem]
+  2xl:mb-[12rem];
 }
 
 .header_img_wrapper {
-  /* @apply right-16 top-0 bg-green-700 absolute z-10 w-fit; */
   @apply text-center   
   relative 
-  bg-red-100
   sm:text-center 
   sm:relative  
   md:relative 
@@ -101,17 +86,11 @@
 }
 
 @media screen and (max-width: 996px) {
-  /* .heroBanner {
-    padding: 0rem;
-    height: 80vh;
-  } */
   .subtitle {
     font-size: 1.2rem;
     margin-bottom: 30px;
   }
-  .container_layout {
-    margin-top: 0px;
-  }
+
   .header_text {
     font-size: 2.6rem;
     margin-bottom: 10px;
@@ -120,34 +99,18 @@
 
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
-  /* .heroBanner {
-    padding: 0rem;
-    height: 80vh;
-  } */
 }
 
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* .heroBanner {
-    padding: 0rem;
-    height: 80vh;
-  } */
 }
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px) {
-  /* .heroBanner {
-    padding: 0rem;
-    height: 80vh;
-  } */
 }
 
 /* Media Query for Large screens */
 @media (max-width: 1581px) {
-  /* .heroBanner {
-    padding: 0rem;
-    height: 80vh;
-  } */
 }
 
 .buttons {

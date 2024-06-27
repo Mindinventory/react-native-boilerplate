@@ -9,28 +9,11 @@ const HomepageHeader = () => {
     const { siteConfig } = useDocusaurusContext();
     return (
         <header className={clsx('hero--primary', styles.heroBanner)}>
-            {/* <div className='h-fit relative '>
-                <div className='right-16 top-0 absolute z-10 w-fit'>
-                    <img src={HeaderImg} alt="header-hero-img" className={clsx(styles.header_img)} />
-                </div>
-            </div> */}
             <div className={clsx(styles.header_img_container)}>
                 <div className={clsx(styles.header_img_wrapper)}>
                     <img src={HeaderImg} alt="header-hero-img" className={clsx(styles.header_img)} />
                 </div>
-                <div className={clsx('container h-full z-50', styles.container_layout)}>
-                    {/* <Heading as="h1" className={clsx('hero__title', styles.header_text)}>
-                    React Native Boilerplate
-                </Heading>
-                <p className={clsx('hero__subtitle', styles.subtitle)}>{siteConfig.tagline}</p>
-                <div className={styles.buttons}>
-                    <Link
-                        className="
-                        button button--primary button--lg"
-                        to="/docs/intro">
-                        Get started
-                    </Link>
-                </div> */}
+                <div className={'container h-full  flex items-start lg:items-center xl:items-center 2xl:items-center z-50'}>
                     <div className={clsx(styles.header_content_view)}>
                         <Heading as="h1" className={clsx('hero__title', styles.header_text)}>
                             React Native Boilerplate
