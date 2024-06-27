@@ -1,8 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
-
+import tailwindPlugin from "./plugins/tailwind-plugin.cjs"; 
 
 const config: Config = {
   title: 'Best React Native Boilerplate By MindInventory',
@@ -46,6 +45,7 @@ const config: Config = {
      
         theme: {
           customCss: './src/css/custom.css',
+        
         },
       } satisfies Preset.Options,
     ],
@@ -64,7 +64,7 @@ const config: Config = {
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
-          position: 'left',
+          position: 'right',
           label: 'Docs',
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
@@ -138,9 +138,11 @@ const config: Config = {
     metadata: [
       {name: 'description', content: 'Develop high-performance applications using our comprehensive React Native Boilerplate for a smooth development process with integrated support for TypeScript.'},      
     ],
+    
   } satisfies Preset.ThemeConfig,
   
   trailingSlash: true,
+  plugins: [tailwindPlugin]
 };
 
 export default config;
