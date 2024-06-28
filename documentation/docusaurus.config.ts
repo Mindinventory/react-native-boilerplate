@@ -118,7 +118,7 @@ const config: Config = {
            
             {              
               html:`                            
-                <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=circular-cards-stack-view" target="__blank">
+                <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank">
                   <button class="have_project_buttons" >Have a project?</button>
                 </a>              
               `
