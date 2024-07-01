@@ -1,12 +1,11 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
-
+import tailwindPlugin from "./plugins/tailwind-plugin.cjs"; 
 
 const config: Config = {
-  title: 'React Native Boilerplate',
-  tagline: `Boilerplate code provides a pre-made foundation for your project, including essential packages, reusable components, and a structured architecture. Build modern applications effortlessly with our streamlined React Native boilerplate, designed for simplicity and scalability. Join our active community to collaborate, share ideas, and accelerate your app development journey.`,
+  title: 'Best React Native Boilerplate By MindInventory',
+  tagline: `Boilerplate code provides a pre-made foundation for your project, including essential packages, reusable components, and a structured architecture. Build modern applications effortlessly with our React Native boilerplate, designed for simplicity and scalability. Join our active community to collaborate, share ideas, and accelerate your app development journey.`,
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -46,6 +45,7 @@ const config: Config = {
      
         theme: {
           customCss: './src/css/custom.css',
+        
         },
       } satisfies Preset.Options,
     ],
@@ -64,7 +64,7 @@ const config: Config = {
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
-          position: 'left',
+          position: 'right',
           label: 'Docs',
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
@@ -118,7 +118,7 @@ const config: Config = {
            
             {              
               html:`                            
-                <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=circular-cards-stack-view" target="__blank">
+                <a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=react-native-boilerplate" target="__blank">
                   <button class="have_project_buttons" >Have a project?</button>
                 </a>              
               `
@@ -134,13 +134,11 @@ const config: Config = {
     },
     colorMode:{
       disableSwitch: true
-    },
-    metadata: [
-      {name: 'Best React Native Boilerplate By MindInventory', content: 'Build high-performance apps with our React Native template. Select between JavaScript and TypeScript for a seamless development experience.'},      
-    ],
+    }
   } satisfies Preset.ThemeConfig,
   
   trailingSlash: true,
+  plugins: [tailwindPlugin]
 };
 
 export default config;

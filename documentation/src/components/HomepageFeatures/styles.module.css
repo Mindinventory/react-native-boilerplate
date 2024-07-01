@@ -1,0 +1,58 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 60px 0px 60px 0px;
+  width: 100%;
+  flex-direction: column;
+  background-color: #111111;
+}
+
+.section_title {
+  @apply font-semibold
+  text-[2.75rem]
+  text-[#EDEDED];
+}
+
+.grid_view {
+  @apply grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-y-14 md:gap-y-14 lg:gap-10 xl:gap-10 2xl:gap-10;
+}
+
+.icon_view {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  /* padding: 14px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card_title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  @apply text-white;
+}
+
+.card_description {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  @apply text-white;
+}
+
+.divider {
+  border-width: 1.5px;
+  border-style: solid;
+  border-image: linear-gradient(to left, #ffffff00 0%, #ffffff33 20%) 0 0 100% 0;
+  margin: 12px 0px 12px 0px;
+}
+
+.item_view {
+  @apply flex flex-col items-center md:items-center lg:items-start xl:items-start 2xl:items-start;
+}
+
+.item_content {
+  @apply text-center sm:max-sm:text-center md:text-center lg:text-left xl:text-left 2xl:text-start;
+}

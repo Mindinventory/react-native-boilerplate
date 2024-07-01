@@ -1,0 +1,127 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  @apply p-0
+  overflow-hidden
+  bg-[url("../../../static/img/home_hero_bg.png")]
+  bg-cover  
+  bg-no-repeat
+  h-[115vh]
+  lg:h-[80vh]
+  xl:h-[80vh]
+  2xl:h-[80vh];
+}
+
+.container_layout {
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  @apply text-[1.2rem] 
+  sm:text-[1.3rem] 
+  md:text-[1.5rem] 
+  lg:text-[1.5rem] 
+  xl:text-[1.5rem] 
+  2xl:text-[1.5rem]
+  text-center
+  lg:text-justify
+  xl:text-justify
+  2xl:text-justify;
+}
+
+.header_text {
+  @apply text-[1.8rem] sm:text-[2rem] md:text-[3rem] lg:text-[3rem] xl:text-[3rem] 2xl:text-[3rem];
+}
+.header_img {
+  @apply h-[40vh] object-contain   sm:h-[40vh] md:h-[45vh] lg:h-[90vh] xl:h-[90vh] 2xl:h-[90vh];
+}
+
+.header_img_container {
+  @apply h-[90vh] relative;
+}
+
+.header_content_view {
+  @apply flex 
+  flex-col 
+  z-50 
+  justify-start   
+  mb-[0rem]  
+  items-center
+  w-full
+  lg:w-1/2 
+  xl:w-1/2 
+  2xl:w-1/2
+  sm:items-center
+  md:items-center
+  lg:items-start 
+  xl:items-start 
+  2xl:items-start
+  mt-4
+  lg:mt-0 
+  xl:mt-0 
+  2xl:mt-0
+  lg:justify-center
+  xl:justify-center
+  2xl:justify-center
+  lg:mb-[10rem]
+  xl:mb-[10rem]
+  2xl:mb-[10rem];
+}
+
+.header_img_wrapper {
+  @apply text-center   
+  relative 
+  sm:text-center 
+  sm:relative  
+  md:relative 
+  md:text-center 
+  lg:right-16 
+  lg:top-[-4rem]  
+  lg:absolute 
+  lg:z-10 
+  lg:w-fit
+  xl:right-16 
+  xl:top-[-4rem]  
+  xl:absolute 
+  xl:z-10 
+  xl:w-fit
+  2xl:right-16 
+  2xl:top-[-4rem]  
+  2xl:absolute 
+  2xl:z-10 
+  2xl:w-fit;
+}
+
+@media screen and (max-width: 355px) {
+  .header_text {
+    font-size: 1.1rem;
+  }
+  .subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+/* Media Query for Large screens */
+@media (max-width: 1581px) {
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
