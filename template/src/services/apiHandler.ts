@@ -2,6 +2,7 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
 import { AppConfig } from '@src/constants';
 
+
 class APIhandler {
   private readonly axiosInstance: AxiosInstance;
   private readonly axiosHeaders = {

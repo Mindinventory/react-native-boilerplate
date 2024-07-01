@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MIBoilerplateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MIBoilerplateTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-MIBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MIBoilerplate.a */; };
-		115AB07F1A9D46F7A4886B07 /* Poppins.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E08BC15BFA44338B4C6A207 /* Poppins.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-MIBoilerplate-MIBoilerplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MIBoilerplate-MIBoilerplateTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		AD012B0CAE985EACFCEE8BD9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9ED2BB560F2ACE119C9702C2 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +37,15 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MIBoilerplate/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MIBoilerplate/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MIBoilerplate/main.m; sourceTree = "<group>"; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = MIBoilerplate/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-MIBoilerplate-MIBoilerplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MIBoilerplate-MIBoilerplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-MIBoilerplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIBoilerplate.debug.xcconfig"; path = "Target Support Files/Pods-MIBoilerplate/Pods-MIBoilerplate.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-MIBoilerplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIBoilerplate.release.xcconfig"; path = "Target Support Files/Pods-MIBoilerplate/Pods-MIBoilerplate.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-MIBoilerplate-MIBoilerplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIBoilerplate-MIBoilerplateTests.debug.xcconfig"; path = "Target Support Files/Pods-MIBoilerplate-MIBoilerplateTests/Pods-MIBoilerplate-MIBoilerplateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-MIBoilerplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MIBoilerplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E08BC15BFA44338B4C6A207 /* Poppins.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Poppins.ttf; path = ../src/assets/fonts/Poppins.ttf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MIBoilerplate/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MIBoilerplate-MIBoilerplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIBoilerplate-MIBoilerplateTests.release.xcconfig"; path = "Target Support Files/Pods-MIBoilerplate-MIBoilerplateTests/Pods-MIBoilerplate-MIBoilerplateTests.release.xcconfig"; sourceTree = "<group>"; };
+		9ED2BB560F2ACE119C9702C2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = MIBoilerplate/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -94,6 +95,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				9ED2BB560F2ACE119C9702C2 /* PrivacyInfo.xcprivacy */,
 			);
 			name = MIBoilerplate;
 			sourceTree = "<group>";
@@ -124,7 +127,6 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				A67BC29958C1486C8C6AD280 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -138,15 +140,6 @@
 				00E356EE1AD99517003FC87E /* MIBoilerplateTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A67BC29958C1486C8C6AD280 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6E08BC15BFA44338B4C6A207 /* Poppins.ttf */,
-			);
-			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -255,7 +248,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				115AB07F1A9D46F7A4886B07 /* Poppins.ttf in Resources */,
+				AD012B0CAE985EACFCEE8BD9 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
 		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -528,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -555,9 +549,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CXX = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -565,7 +560,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
-					_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -575,6 +569,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -586,13 +582,13 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
+					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -608,6 +604,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -635,15 +632,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				CXX = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION,
-				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -651,6 +645,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -661,13 +657,13 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
+					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

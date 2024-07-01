@@ -1,7 +1,0 @@
-{
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
-  },
-  "cSpell.words": ["Formik", "gradlew", "MMKV", "persistor"]
-}

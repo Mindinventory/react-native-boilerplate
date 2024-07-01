@@ -8,3 +8,6 @@ package-lock.json
 yarn.lock
 
 node_modules
+.yarn/
+template/android/app/build
+template/ios/build

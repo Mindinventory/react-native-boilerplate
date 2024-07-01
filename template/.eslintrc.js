@@ -12,7 +12,7 @@ module.exports = {
         '@typescript-eslint/no-shadow': ['error'],
         'no-shadow': 'off',
         'no-undef': 'off',
-        'react/no-unstable-nested-components': ['off', { allowAsProps: true }],
+        'react/no-unstable-nested-components': ['off', {allowAsProps: true}],
       },
     },
   ],
@@ -38,18 +38,18 @@ module.exports = {
     'import/order': [
       'error',
       {
-        'alphabetize': {
+        alphabetize: {
           caseInsensitive: true,
           order: 'asc',
         },
-        'groups': [
+        groups: [
           ['external', 'builtin'],
           'internal',
           ['sibling', 'parent'],
           'index',
         ],
         'newlines-between': 'always',
-        'pathGroups': [
+        pathGroups: [
           {
             group: 'external',
             pattern: '@(react|react-native)',
@@ -64,7 +64,7 @@ module.exports = {
             pattern: '@src/**',
           },
         ],
-        'pathGroupsExcludedImportTypes': ['internal', 'react'],
+        pathGroupsExcludedImportTypes: ['internal', 'react'],
       },
     ],
     'no-console': ['error'],
@@ -93,10 +93,7 @@ module.exports = {
     ],
     'react-hooks/exhaustive-deps': 'error',
     'react-hooks/rules-of-hooks': 'error',
-    'sort-destructure-keys/sort-destructure-keys': [
-      2,
-      { caseSensitive: false },
-    ],
+    'sort-destructure-keys/sort-destructure-keys': [2, {caseSensitive: false}],
     'sort-imports': [
       'error',
       {

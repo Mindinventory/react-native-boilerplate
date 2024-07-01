@@ -2,3 +2,21 @@
 
 !.gitignore
 !.env
+media/
+.yarn/
+
+# 
+
+# node.js
+#
+npm-debug.log
+yarn-error.log
+yarn-lock.json
+package-lock.json
+yarn.lock
+
+node_modules/
+.husky/
+.vscode/
+template/android/app/build
+template/ios/build

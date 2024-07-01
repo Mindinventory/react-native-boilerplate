@@ -2,8 +2,6 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
-
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -53,7 +51,6 @@ react {
     // hermesFlags = ["-O", "-output-source-map"]
 }
 
-
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */
@@ -72,12 +69,10 @@ def enableProguardInReleaseBuilds = false
  */
 def jscFlavor = 'org.webkit:android-jsc:+'
 
-
 android {
     ndkVersion rootProject.ext.ndkVersion
-
     buildToolsVersion rootProject.ext.buildToolsVersion
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk rootProject.ext.compileSdkVersion
 
     namespace "com.miboilerplate"
     defaultConfig {
@@ -112,7 +107,6 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-    implementation("com.facebook.react:flipper-integration")
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
