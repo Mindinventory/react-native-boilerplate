@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
-import HeaderImg from '../../../static/img/hero_header_img.png'
+import HeaderImg from '../../../static/img/hero_header_img.webp'
 
 const HomepageHeader = () => {
     const { siteConfig } = useDocusaurusContext();
@@ -11,7 +11,7 @@ const HomepageHeader = () => {
         <header className={clsx('hero--primary', styles.heroBanner)}>
             <div className={clsx(styles.header_img_container)}>
                 <div className={clsx(styles.header_img_wrapper)}>
-                    <img src={HeaderImg} alt="header-hero-img" className={clsx(styles.header_img)} />
+                    <img src={HeaderImg} alt="react-native-boilerplate" className={clsx(styles.header_img)} />
                 </div>
                 <div className={'container h-full  flex items-start lg:items-center xl:items-center 2xl:items-center z-50'}>
                     <div className={clsx(styles.header_content_view)}>
