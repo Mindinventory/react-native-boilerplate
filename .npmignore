@@ -20,3 +20,5 @@ node_modules/
 .vscode/
 template/android/app/build
 template/ios/build
+documentation/
+.yarn/
