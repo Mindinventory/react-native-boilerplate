@@ -1,6 +1,5 @@
 .github
 
-!.gitignore
 !.env
 media/
 .yarn/
@@ -13,11 +12,8 @@ npm-debug.log
 yarn-error.log
 yarn-lock.json
 package-lock.json
-yarn.lock
-
 node_modules/
 .husky/
-.vscode/
 template/android/app/build
 template/ios/build
 documentation/

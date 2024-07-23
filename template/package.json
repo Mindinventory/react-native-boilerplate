@@ -4,11 +4,21 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "fix:lint": "yarn lint --fix && yarn typescript",
+    "icons": "cd scripts && node icons.js",
+    "images": "cd scripts && node images.js",
+    "screens": "cd scripts && node generateScreenFile.js",
+    "svgs": "cd scripts && node svgIcons.js",
+    "preios": "ENVFILE=.env",
+    "preandroid": "ENVFILE=.env",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "postinstall": "npx pod-install",
+    "prepare": "husky install",
+    "refresh": "bash ./scripts/refresh.sh",
     "start": "react-native start",
     "test": "jest",
-    "prepare": "husky"
+    "typescript": "tsc --noEmit"
   },
   "dependencies": {
     "@react-native-community/netinfo": "^11.3.2",

@@ -1,11 +1,10 @@
 {
   "name": "@mindinventory/react-native-boilerplate",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "React Native Template",
   "repository": "https://github.com/Mindinventory/react-native-boilerplate.git",
   "author": "Mindinventory",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "android": "cd MIBoilerplate/ && npx react-native run-android",
     "ios": "cd MIBoilerplate/ && npx react-native run-ios",
