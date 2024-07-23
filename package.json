@@ -8,7 +8,7 @@
   "scripts": {
     "android": "cd MIBoilerplate/ && npx react-native run-android",
     "ios": "cd MIBoilerplate/ && npx react-native run-ios",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "bugs": {
     "url": "https://github.com/Mindinventory/react-native-boilerplate/issues"
@@ -33,6 +33,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
-    "husky": "^8.0.3"
+    "husky": "^9.1.1"
   }
 }
