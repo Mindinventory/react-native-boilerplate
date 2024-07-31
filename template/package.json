@@ -4,11 +4,21 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "fix:lint": "yarn lint --fix && yarn typescript",
+    "icons": "cd scripts && node icons.js",
+    "images": "cd scripts && node images.js",
+    "screens": "cd scripts && node generateScreenFile.js",
+    "svgs": "cd scripts && node svgIcons.js",
+    "preios": "ENVFILE=.env",
+    "preandroid": "ENVFILE=.env",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "postinstall": "npx pod-install",
+    "prepare": "husky",
+    "refresh": "bash ./scripts/refresh.sh",
     "start": "react-native start",
     "test": "jest",
-    "prepare": "husky"
+    "typescript": "tsc --noEmit"
   },
   "dependencies": {
     "@react-native-community/netinfo": "^11.3.2",
@@ -64,7 +74,7 @@
     "eslint-plugin-react-native": "^4.1.0",
     "eslint-plugin-sort-destructure-keys": "^2.0.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
-    "husky": "^9.0.11",
+    "husky": "^9.1.1",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
     "react-native-svg-transformer": "^1.4.0",
