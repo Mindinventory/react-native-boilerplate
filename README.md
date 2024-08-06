@@ -19,6 +19,20 @@ Create a new project using the boilerplate :
 npx react-native init APP_NAME --template @mindinventory/react-native-boilerplate
 ```
 
+or
+
+```
+npx @react-native-community/cli@latest init APP_NAME --template @mindinventory/react-native-boilerplate
+```
+
+<br />
+
+> [!NOTE]
+>
+> - Both commands will initialize a new React Native project with boilerplate code.
+> - The `npx react-native init` command uses the globally available react-native package to create a new React Native project.
+> - The `@react-native-community/cli` command is actively maintained, and CLI is recommended for creating React Native projects. It offers more features, bug fixes, and improvements.
+
 ## [Comprehensive documentation](https://mindinventory.github.io/react-native-boilerplate)
 
 Unlock the power of our boilerplate with our comprehensive [documentation here](https://mindinventory.github.io/react-native-boilerplate)! Learn the rationale behind design decisions and get clear instructions on using features.
