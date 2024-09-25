@@ -35,7 +35,7 @@ async function main() {
 
   const srcPath = path.resolve(
     __dirname,
-    "templates",
+    "../templates",
     boilerplates
   )
 
