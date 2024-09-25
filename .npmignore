@@ -14,7 +14,7 @@ yarn-lock.json
 package-lock.json
 node_modules/
 .husky/
-template/android/app/build
-template/ios/build
+templates/CliTemplate/android/app/build
+templates/CliTemplate/ios/build
 documentation/
 .yarn/

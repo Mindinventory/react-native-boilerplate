@@ -9,5 +9,6 @@ yarn.lock
 
 node_modules
 .yarn/
-template/android/app/build
-template/ios/build
+
+templates/CliTemplate/android/app/build
+templates/CliTemplate/ios/build

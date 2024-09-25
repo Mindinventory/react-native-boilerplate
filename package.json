@@ -5,10 +5,14 @@
   "repository": "https://github.com/Mindinventory/react-native-boilerplate.git",
   "author": "Mindinventory",
   "license": "MIT",
+  "main": "./bin/index.js",
   "scripts": {
     "android": "cd MIBoilerplate/ && npx react-native run-android",
     "ios": "cd MIBoilerplate/ && npx react-native run-ios",
     "prepare": "husky"
+  },
+  "bin": {
+    "@mindinventory/react-native-boilerplate": "./bin/index.js"
   },
   "bugs": {
     "url": "https://github.com/Mindinventory/react-native-boilerplate/issues"
@@ -34,5 +38,16 @@
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "husky": "^9.1.1"
-  }
+  },
+  "dependencies": {
+    "execa": "^9.4.0",
+    "figlet": "^1.7.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^11.0.2",
+    "kleur": "^4.1.5",
+    "ora": "^8.1.0",
+    "path": "^0.12.7",
+    "replace-in-file": "^8.2.0"
+  },
+  "type": "module"
 }
