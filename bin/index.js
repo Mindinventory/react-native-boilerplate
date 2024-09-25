@@ -2,11 +2,11 @@
 import path from "path"
 import { fileURLToPath } from "url"
 import kleur from "kleur"
-import  {getProjectName, getBoilerplateType, getPackageId}  from "./src/prompts.js"
-import {expoProjectSetup} from './src/projectSetup.js'
-import {setupInitialdependency} from './src/dependencyHandler.js'
-import {gitInitialize} from './src/gitHandler.js'
-import { textBanners } from "./src/helper.js"
+import  {getProjectName, getBoilerplateType, getPackageId}  from "../src/prompts.js"
+import {expoProjectSetup} from '../src/projectSetup.js'
+import {setupInitialdependency} from '../src/dependencyHandler.js'
+import {gitInitialize} from '../src/gitHandler.js'
+import { textBanners } from "../src/helper.js"
 
 const { green } = kleur
 
