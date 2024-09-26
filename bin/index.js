@@ -26,13 +26,13 @@ async function main() {
   const appJsonPath = path.join(destPath, "app.json")
 
   const { boilerplate } = await getBoilerplateType()
-  const { gitInit } = await getConfirmationForGitInit()
-
+  
   let packageId = null
   if (boilerplate === "bare react native") {
     const response = await getPackageId(projectName)
     packageId = response.packageId
   }
+  const { gitInit } = await getConfirmationForGitInit()
 
   const srcPath = path.resolve(
     __dirname,
@@ -51,7 +51,7 @@ async function main() {
 
       console.log("\n")
       console.log(
-        green().bold("🚀 Project created successfully.")
+        green().bold("🚀\u00A0Project created successfully.")
       )
     } else {
       if (projectName && packageId) {
@@ -63,7 +63,7 @@ async function main() {
   
         console.log("\n")
         console.log(
-          green().bold("🚀 Project created successfully.")
+          green().bold("🚀\u00A0Project created successfully.")
         )        
       } else {
         return
