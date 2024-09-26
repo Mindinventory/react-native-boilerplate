@@ -2,7 +2,7 @@ import fs from "fs-extra"
 import { loading } from "./helper.js"
 
 export const expoProjectSetup = async({srcPath, destPath, packageJsonPath, appJsonPath, projectName, packageId, makePreBuildConfig}) => {
-  let initLoading = loading('Setting up environment...').start()
+  let initLoading = loading('🧰 Setting up environment...').start()
   await fs.copy(srcPath, destPath)
   if (await fs.pathExists(packageJsonPath)) {
     const packageJson = await fs.readJson(packageJsonPath)

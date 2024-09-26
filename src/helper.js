@@ -2,6 +2,7 @@
 import kleur from "kleur"
 import ora from 'ora';
 import figlet from 'figlet'
+import chalk from 'chalk';
 
 
 const { red, green, yellow } = kleur
@@ -38,7 +39,7 @@ export const textBanners = () => {
         console.dir(err);
         return;
       }
-      console.log(data);
+      console.log(chalk.hex('#ED184F')(data));
     }
   );
 }

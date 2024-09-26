@@ -49,3 +49,14 @@ export const getPackageId = async(projectName) => {
     },
   ]);
 }
+
+export const getConfirmationForGitInit = async(projectName) => {
+  return await inquirer.prompt([
+    {
+      type: "confirm",
+      name: "gitInit",
+      message: "Initialize git repository?",      
+      default: true
+    },
+  ]);
+}

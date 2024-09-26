@@ -2,7 +2,7 @@
 import path from "path"
 import { fileURLToPath } from "url"
 import kleur from "kleur"
-import  {getProjectName, getBoilerplateType, getPackageId}  from "../src/prompts.js"
+import  {getProjectName, getBoilerplateType, getPackageId, getConfirmationForGitInit}  from "../src/prompts.js"
 import {expoProjectSetup} from '../src/projectSetup.js'
 import {setupInitialdependency} from '../src/dependencyHandler.js'
 import {gitInitialize} from '../src/gitHandler.js'
@@ -26,6 +26,7 @@ async function main() {
   const appJsonPath = path.join(destPath, "app.json")
 
   const { boilerplate } = await getBoilerplateType()
+  const { gitInit } = await getConfirmationForGitInit()
 
   let packageId = null
   if (boilerplate === "bare react native") {
@@ -44,28 +45,32 @@ async function main() {
     if (boilerplate === "expo") {
       await expoProjectSetup({srcPath, destPath, packageJsonPath, appJsonPath, projectName, packageId, makePreBuildConfig: false})
       await setupInitialdependency({makePreBuildConfig: false})
-      await gitInitialize()
+      if (gitInit) {        
+        await gitInitialize()
+      }
 
       console.log("\n")
       console.log(
-        green().bold("Project created successfully.")
+        green().bold("🚀 Project created successfully.")
       )
     } else {
       if (projectName && packageId) {
         await expoProjectSetup({srcPath, destPath, packageJsonPath, appJsonPath, projectName, packageId, makePreBuildConfig: true})    
         await setupInitialdependency({makePreBuildConfig: true})
-        await gitInitialize()
+        if (gitInit) {          
+          await gitInitialize()
+        }
   
         console.log("\n")
         console.log(
-          green().bold("Project created successfully.")
+          green().bold("🚀 Project created successfully.")
         )        
       } else {
         return
       }
     }
   } catch (err) {
-    console.error("Error setting up boilerplate:", err)
+    console.error("❌ Error setting up boilerplate:", err)
   }
 }
 
