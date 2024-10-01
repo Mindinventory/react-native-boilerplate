@@ -8,6 +8,7 @@ async function setupInitialdependency({makePreBuildConfig}) {
   let installDepenLoading = await loading('🛠️\u00A0dependency installing...')
   installDepenLoading.start()
   await execAsync("yarn",{stdio: 'inherit'});
+  await execAsync("npx expo install --fix ",{stdio: 'inherit'});
   if (makePreBuildConfig) {
     await execAsync(`npx expo install expo-dev-client`)  
   }
