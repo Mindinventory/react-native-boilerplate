@@ -1,18 +1,28 @@
-import { exec } from "child_process"
-import util from "util"
-import { loading } from "./helper.js";
+const { exec } = require('child_process');
+
+var util = require('util')
+const { loading, logger } = require("./helper.js");
 const execAsync = util.promisify(exec)
 
-export const setupInitialdependency = async({makePreBuildConfig}) => {
-  let installDepenLoading = loading('🛠️\u00A0dependency installing...').start()
+async function setupInitialdependency({makePreBuildConfig}) {
+  let installDepenLoading = await loading('🛠️\u00A0dependency installing...')
+  installDepenLoading.start()
   await execAsync("yarn",{stdio: 'inherit'});
   if (makePreBuildConfig) {
     await execAsync(`npx expo install expo-dev-client`)  
   }
   installDepenLoading.succeed('dependency install successfully...')
   if (makePreBuildConfig) {
-    let preBuildLoading = loading('⚙️\u00A0Configuring project...').start()
+    logger('⚙️' + '  ' + 'Configuring project...')
+    logger('⏱️' + '  ' + 'Please wait. May this process will take minutes...')
+    console.log("\n")
+    let preBuildLoading = await loading('⚙️' + '  ' + 'Configuring project...')
+    preBuildLoading.start()
     await execAsync(`npx expo prebuild --clean`)
     preBuildLoading.succeed('Configured project successfully!! ...')
   }
 }
+
+module.exports = {
+  setupInitialdependency
+};

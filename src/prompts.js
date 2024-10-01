@@ -1,9 +1,9 @@
-import inquirer from "inquirer"
-import path from "path"
-import fs from "fs-extra"
-import {logError} from './helper.js'
+const path = require('path')
+const fs = require('fs-extra')
+const {logError} = require('./helper.js') 
 
-export  const getProjectName = async () =>  {
+async function getProjectName() {
+  const inquirer = (await import('inquirer')).default;
   const { projectName } = await inquirer.prompt([
     {
       type: "input",
@@ -25,7 +25,8 @@ export  const getProjectName = async () =>  {
   }
 }
 
-export const getBoilerplateType = async() => {
+async function getBoilerplateType() {
+  const inquirer = (await import('inquirer')).default;
   return await inquirer.prompt([
     {
       type: "list",
@@ -37,7 +38,8 @@ export const getBoilerplateType = async() => {
 }
 
 
-export const getPackageId = async(projectName) => {
+async function getPackageId(projectName) {
+  const inquirer = (await import('inquirer')).default;
   return await inquirer.prompt([
     {
       type: "input",
@@ -50,7 +52,8 @@ export const getPackageId = async(projectName) => {
   ]);
 }
 
-export const getConfirmationForGitInit = async(projectName) => {
+async function getConfirmationForGitInit() {
+  const inquirer = (await import('inquirer')).default;
   return await inquirer.prompt([
     {
       type: "confirm",
@@ -60,3 +63,10 @@ export const getConfirmationForGitInit = async(projectName) => {
     },
   ]);
 }
+
+module.exports = {
+  getProjectName,
+  getBoilerplateType,
+  getPackageId,
+  getConfirmationForGitInit
+};

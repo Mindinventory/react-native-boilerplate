@@ -1,28 +1,30 @@
 
-import kleur from "kleur"
-import ora from 'ora';
-import figlet from 'figlet'
-import chalk from 'chalk';
-
-
+const kleur = require('kleur')
+var figlet = require("figlet");
 const { red, green, yellow } = kleur
 
-export const logError = (message) => {  
+function logError(message) {  
   console.error(red().bold(`[ERROR] ${message}`))
   process.exit(1); // Exit the process after logging error
 }
-export const logWarning = (message) => {  
+function logWarning (message) {  
   console.warn(yellow().bold(`[WARNING] ${message}`))
 }
-export const logSuccess = (message) => {  
+function logSuccess(message) {  
   console.log(green().bold(`[SUCCESS] ${message}`))  
 }
 
-export const loading = (text) => {
-    return ora(`${text}`)
+function logger(message){  
+  console.log(`${message}`)
 }
 
-export const textBanners = () => {
+async function loading(text) {
+  const ora = (await import('ora')).default;
+  return ora(`${text}`)
+}
+
+async function textBanners() {
+  const chalk = (await import('chalk')).default;
   return figlet.text(
     "M I",
     {
@@ -43,3 +45,12 @@ export const textBanners = () => {
     }
   );
 }
+
+module.exports = {
+  logError,
+  logWarning,
+  logSuccess,
+  loading,
+  textBanners,
+  logger
+};

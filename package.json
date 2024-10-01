@@ -50,5 +50,5 @@
     "path": "^0.12.7",
     "replace-in-file": "^8.2.0"
   },
-  "type": "module"
+  "type": "commonjs"
 }

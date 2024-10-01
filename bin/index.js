@@ -1,17 +1,22 @@
 #!/usr/bin/env node
-import path from "path"
-import { fileURLToPath } from "url"
-import kleur from "kleur"
-import  {getProjectName, getBoilerplateType, getPackageId, getConfirmationForGitInit}  from "../src/prompts.js"
-import {expoProjectSetup} from '../src/projectSetup.js'
-import {setupInitialdependency} from '../src/dependencyHandler.js'
-import {gitInitialize} from '../src/gitHandler.js'
-import { textBanners } from "../src/helper.js"
+const path = require('path')
+const { fileURLToPath, URL } = require('node:url');
+const kleur = require('kleur')
+const  {getProjectName, getBoilerplateType, getPackageId, getConfirmationForGitInit} = require('../src/prompts.js')  
+const {expoProjectSetup} = require('../src/projectSetup.js')
+const {setupInitialdependency} = require('../src/dependencyHandler.js')
+const {gitInitialize} = require('../src/gitHandler.js')
+const { textBanners } = require('../src/helper.js')
 
 const { green } = kleur
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+// const __filename = fileURLToPath(import.meta.url)
+// const __filenameNew = fileURLToPath(new URL('.', './index.js'));
+
+// const __dirnameNew = path.dirname(__filenameNew)
+const __filenameNew = path.resolve(__dirname, 'index.js');  // Resolves index.js in the current directory
+const __dirnameNew = path.dirname(__filenameNew);
+console.log('__dirnameNew: ', __dirnameNew);
 
 const boilerplates = 'ExpoTemplate'
 
@@ -35,13 +40,13 @@ async function main() {
   const { gitInit } = await getConfirmationForGitInit()
 
   const srcPath = path.resolve(
-    __dirname,
+    __dirnameNew,
     "../templates",
     boilerplates
   )
 
   try {
-    textBanners()    
+    await textBanners()    
     if (boilerplate === "expo") {
       await expoProjectSetup({srcPath, destPath, packageJsonPath, appJsonPath, projectName, packageId, makePreBuildConfig: false})
       await setupInitialdependency({makePreBuildConfig: false})
