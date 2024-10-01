@@ -4,9 +4,9 @@ sidebar_position: 1
 
 # Environment Setup
 
-### Environment Variable Setup with react-native-config
+### Environment Variable Setup with react-native-dotenv
 
-This boilerplate leverages the `react-native-config` library for managing environment variables. This approach enables you to define environment-specific variables and access them seamlessly within your React Native code.
+This boilerplate leverages the `react-native-dotenv` library for managing environment variables. This approach enables you to define environment-specific variables and access them seamlessly within your React Native code.
 
 1.  ### Creating Environment Files
 

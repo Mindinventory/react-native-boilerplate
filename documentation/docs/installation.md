@@ -12,22 +12,24 @@ The first step to getting started is to set up your development environment acco
 
 To start a new React Native project, use the **init** command from the CLI and choose the desired template by running the following command:
 
-```jsx title=">_ terminal"
-npx react-native init APP_NAME --template @mindinventory/react-native-boilerplate
-```
-
-or
+### For React Native Cli
 
 ```jsx title=">_ terminal"
 npx @react-native-community/cli@latest init APP_NAME --template @mindinventory/react-native-boilerplate
 ```
 
-<br />
+### For Expo
+
+```jsx title=">_ terminal"
+npx @mindinventory/react-native-boilerplate
+```
+
+<!-- <br />
 :::note
 - Both commands will initialize a new React Native project with boilerplate code.
 - The `npx react-native init` command uses the globally available react-native package to create a new React Native project.
 - The `@react-native-community/cli` command is actively maintained, and CLI is recommended for creating React Native projects. It offers more features, bug fixes, and improvements.
-:::
+::: -->
 
 
 
