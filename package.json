@@ -26,7 +26,8 @@
     "react-native-template",
     "react",
     "native",
-    "template"
+    "template",
+    "expo"
   ],
   "licenses": [
     {
