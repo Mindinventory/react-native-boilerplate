@@ -12,3 +12,6 @@ node_modules
 
 templates/CliTemplate/android/app/build
 templates/CliTemplate/ios/build
+templates/ExpoTemplate/.env.production
+templates/ExpoTemplate/.env.staging
+templates/ExpoTemplate/.env.development
