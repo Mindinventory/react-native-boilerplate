@@ -2,8 +2,6 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
 import { AppConfig } from '@src/constants';
 
-console.log('AppConfig ::: ', AppConfig);
-
 class APIhandler {
   private readonly axiosInstance: AxiosInstance;
   private readonly axiosHeaders = {

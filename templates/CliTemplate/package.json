@@ -16,7 +16,10 @@
     "postinstall": "npx pod-install",
     "prepare": "husky",
     "refresh": "bash ./scripts/refresh.sh",
-    "start": "react-native start",
+    "start": "NODE_ENV=default APP_ENV=default npx react-native start --reset-cache",
+    "start:development": "NODE_ENV=development APP_ENV=development npx react-native start --reset-cache",
+    "start:staging": "NODE_ENV=staging APP_ENV=staging npx react-native start --reset-cache",
+    "start:production": "NODE_ENV=production APP_ENV=production npx react-native start --reset-cache",
     "test": "jest",
     "typescript": "tsc --noEmit"
   },
