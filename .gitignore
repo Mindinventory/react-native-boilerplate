@@ -9,5 +9,12 @@ yarn.lock
 
 node_modules
 .yarn/
-template/android/app/build
-template/ios/build
+
+templates/CliTemplate/android/app/build
+templates/CliTemplate/ios/build
+templates/ExpoTemplate/.env.production
+templates/ExpoTemplate/.env.staging
+templates/ExpoTemplate/.env.development
+templates/CliTemplate/.env.development
+templates/CliTemplate/.env.production
+templates/CliTemplate/.env.staging
