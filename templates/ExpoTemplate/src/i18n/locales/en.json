@@ -1,0 +1,54 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "create": "Create",
+    "delete": "Delete",
+    "errorMessage": "Unknown error..!!!",
+    "hey": "Hey there,",
+    "ohhNo": "Ohh Noo!!!",
+    "or": "Or",
+    "ok": "OK",
+    "save": "Save",
+    "see_more": "See More",
+    "skip": "Skip",
+    "welcome": "Welcome",
+    "yes": "Yes",
+    "hello": "Hello {{name}}!",
+    "internetConnectionError": "Please check you internet connectivity."
+  },
+  "newsList": {
+    "breakingNews": "Breaking News",
+    "general": "general"
+  },
+  "newsDetail": {
+    "anonymous": "anonymous"
+  },
+  "forceUpdate": {
+    "update": "Update",
+    "updateMessage": "We've release a new version of the App!\nPlease update your app to enjoy these new features.",
+    "retry": "Try again"
+  },
+  "setting": {
+    "languages": "Languages",
+    "settingScreen": "Setting Screen",
+    "theme": "Theme"
+  },
+  "login": {
+    "log_in": "Log-in",
+    "email": "Email",
+    "yourEmailId": "Your Email ID",
+    "password": "Password",
+    "login": "Login",
+    "don'tHaveAnAccount": "Don't have an account ?",
+    "sign_up": "Sign-up"
+  },
+  "signUp": {
+    "sign_up": "Sign-up",
+    "name": "Name",
+    "email": "Email",
+    "yourEmailId": "Your Email ID",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "signUp": "SignUp"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "common": {
+    "cancel": "रद्द करना",
+    "create": "बनाएं",
+    "delete": "मिटाना",
+    "errorMessage": "अज्ञात त्रुटि..!!!",
+    "hey": "सुनो,",
+    "ohhNo": "ओह तेरी!!!",
+    "or": "या",
+    "ok": "ठीक",
+    "save": "बचाना",
+    "see_more": "और देखें",
+    "skip": "छोड़ें",
+    "welcome": "स्वागत",
+    "yes": "हाँ",
+    "internetConnectionError": "कृपया आप इंटरनेट कनेक्टिविटी की जाँच करें।"
+  },
+  "newsList": {
+    "breakingNews": "आज की ताजा खबर",
+    "general": "आम"
+  },
+  "newsDetail": {
+    "anonymous": "अनाम"
+  },
+  "setting": {
+    "languages": "भाषा",
+    "settingScreen": "स्क्रीन सेट करना",
+    "theme": "विषय-वस्तु"
+  }
+}
