@@ -6,6 +6,7 @@
   "author": "Mindinventory",
   "license": "MIT",
   "main": "./bin/index.js",
+  "private": false,
   "scripts": {
     "android": "cd MIBoilerplate/ && npx react-native run-android",
     "ios": "cd MIBoilerplate/ && npx react-native run-ios",
