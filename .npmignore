@@ -18,4 +18,3 @@ templates/CliTemplate/android/app/build
 templates/CliTemplate/ios/build
 documentation/
 .yarn/
-templates/ExpoTemplate/
