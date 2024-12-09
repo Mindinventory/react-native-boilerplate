@@ -15,23 +15,17 @@ This repository serves as a boilerplate for React Native projects, providing a s
 
 Create a new project using the boilerplate :
 
-```
-npx react-native init APP_NAME --template @mindinventory/react-native-boilerplate
-```
-
-or
+**For React Native Cli**
 
 ```
 npx @react-native-community/cli@latest init APP_NAME --template @mindinventory/react-native-boilerplate
 ```
 
-<br />
+**For Expo**
 
-> [!NOTE]
->
-> - Both commands will initialize a new React Native project with boilerplate code.
-> - The `npx react-native init` command uses the globally available react-native package to create a new React Native project.
-> - The `@react-native-community/cli` command is actively maintained, and CLI is recommended for creating React Native projects. It offers more features, bug fixes, and improvements.
+```
+npx @mindinventory/react-native-boilerplate
+```
 
 ## [Comprehensive documentation](https://mindinventory.github.io/react-native-boilerplate)
 
@@ -39,19 +33,21 @@ Unlock the power of our boilerplate with our comprehensive [documentation here](
 
 ## Tech Stack
 
-| Library                   | Category             | Version | Description                                    |
-| ------------------------- | -------------------- | ------- | ---------------------------------------------- |
-| React Native              | Mobile Framework     | v0.74   | The best cross-platform mobile framework       |
-| React                     | UI Framework         | v18     | The most popular UI framework in the world     |
-| TypeScript                | Language             | v5      | Static typechecking                            |
-| React Navigation          | Navigation           | v6      | Performant and consistent navigation framework |
-| React Native Localization | Internationalization | v3      | i18n support (including RTL!)                  |
-| Redux                     | State Management     | v5      | Observable state tree                          |
-| Redux-toolkit             | Redux integration    | v2      | New redux library with some function helpers   |
-| RN Reanimated             | Animations           | v3      | Beautiful and performant animations            |
-| MMKV                      | Persistence          | v2      | State persistence                              |
-| axios                     | REST client          | v1      | Communicate with back-end                      |
-| Hermes                    | JS engine            |         | Fine-tuned JS engine for RN                    |
+| Library                            | Category             | Version | Description                                    |
+| ---------------------------------- | -------------------- | ------- | ---------------------------------------------- |
+| React Native                       | Mobile Framework     | v0.74   | The best cross-platform mobile framework       |
+| React                              | UI Framework         | v18     | The most popular UI framework in the world     |
+| TypeScript                         | Language             | v5      | Static typechecking                            |
+| React Navigation                   | Navigation           | v6      | Performant and consistent navigation framework |
+| React Native Localization(for CLI) | Internationalization | v3      | i18n support (including RTL!)                  |
+| Redux                              | State Management     | v5      | Observable state tree                          |
+| Redux-toolkit                      | Redux integration    | v2      | New redux library with some function helpers   |
+| RN Reanimated                      | Animations           | v3      | Beautiful and performant animations            |
+| MMKV(for CLI)                      | Persistence          | v2      | State persistence                              |
+| axios                              | REST client          | v1      | Communicate with back-end                      |
+| Hermes                             | JS engine            |         | Fine-tuned JS engine for RN                    |
+| Async storage(for Expo)            | Persistence          | v1      | State persistence                              |
+| expo-localization(for Expo)        | Internationalization | v15     | localization support                           |
 
 ## Contribution
 
