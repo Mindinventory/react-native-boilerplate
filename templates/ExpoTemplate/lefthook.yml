@@ -1,0 +1,5 @@
+pre-commit:
+  # Add your specific scripts or commands you want to run before a commit
+  scripts:
+    # Linting with ESLint for JavaScript/TypeScript projects
+    run: yarn lint & npx yarn typescript
