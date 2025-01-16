@@ -25,7 +25,7 @@ export const MainApp = () => {
              */}
             <PersistGate loading={null} persistor={persistor}>
               <AppNavigation />
-              <IndicatorView isLoading={false} ref={loader} />
+               <IndicatorView isLoading={false} ref={loader} />
             </PersistGate>
           </NavigationContainer>
         </LocalizationProvider>

@@ -62,7 +62,7 @@
     "@typescript-eslint/parser": "^8.7.0",
     "babel-jest": "^29.7.0",
     "babel-plugin-module-resolver": "^5.0.2",
-    "eslint": "^9.11.1",
+    "eslint": "8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-import-order-autofix": "^0.8.3",
