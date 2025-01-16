@@ -1,9 +1,9 @@
 pre-commit:
-  parallel: false # Ensures commands run sequentially to catch errors properly
-  scripts:
+  parallel: true
+  commands:
+    type-check:
+      glob: '*.{ts,tsx}'
+      run: yarn typescript
     lint:
-      # Run ESLint linting command
-      run: 'yarn lint'
-    typescript-check:
-      # Run TypeScript type-checking
-      run: 'npx tsc --noEmit' # Ensures TypeScript doesn't emit files
+      glob: '*.{js,ts,jsx,tsx}'
+      run: yarn lint
