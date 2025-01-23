@@ -1,21 +1,16 @@
 import React from 'react';
 
 import { IndicatorView } from '@app/blueprints';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import { LocalizationProvider, ThemeProvider } from './context';
 import { AppNavigation, navigationRef } from './navigation/AppNavigation';
-import { Screen } from './navigation/appNavigation.type';
-import { NewsListScreen, SettingScreen } from './screens';
 import store, { persistor } from './store';
 import { loader } from './utils';
-import App from '../App';
 
 export const MainApp = () => {
-  const Tab = createBottomTabNavigator();
 
   return (
     <Provider store={store}>

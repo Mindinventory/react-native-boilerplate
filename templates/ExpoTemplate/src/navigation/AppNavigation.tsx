@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 import { SVGIcons } from '@src/assets';
 import { SvgIcon } from '@src/components';
 import { useAppContext } from '@src/context';
-import { NewsListScreen, SettingScreen } from '@src/screens';
+import { SettingScreen } from '@src/screens';
 import { isForceUpdate } from '@src/store';
 
 import { NavStackParams, Screen } from './appNavigation.type';
