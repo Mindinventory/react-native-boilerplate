@@ -1,0 +1,38 @@
+import React from 'react';
+
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationOptions,
+} from '@react-navigation/native-stack';
+
+import {
+  NetworkLoggerScreen,
+  NewsDetailScreen,
+  NewsListScreen,
+} from '@src/screens';
+
+import { NavStackParams, Screen } from './appNavigation.type';
+
+const Stack = createNativeStackNavigator<NavStackParams>();
+
+const screenOptions: NativeStackNavigationOptions = {
+  animation: 'slide_from_right',
+  headerShown: false,
+};
+
+export const NewsListNavigation = () => {
+  return (
+    <>
+      <Stack.Navigator screenOptions={screenOptions}>
+        <Stack.Screen name={Screen.NEWS_LIST} component={NewsListScreen} />
+        <Stack.Screen name={Screen.NEWS_DETAIL} component={NewsDetailScreen} />
+        {__DEV__ && (
+          <Stack.Screen
+            name={Screen.NETWORK_CHECK}
+            component={NetworkLoggerScreen}
+          />
+        )}
+      </Stack.Navigator>
+    </>
+  );
+};

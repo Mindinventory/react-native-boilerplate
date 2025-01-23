@@ -20,10 +20,10 @@ const useForceUpdate = () => {
         ? AppConfig.APP_STORE_URL
         : AppConfig.PLAY_STORE_URL;
       Linking.canOpenURL(URLToOpen)
-        .then(res => {
+        .then((res: any) => {
           res && Linking.openURL(URLToOpen);
         })
-        .catch(error => {
+        .catch((error: any) => {
           logger(`Error:: ${error}`);
         });
     } catch (error) {
