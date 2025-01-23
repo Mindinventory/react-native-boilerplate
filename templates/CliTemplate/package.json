@@ -45,6 +45,7 @@
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^3.1.0",
+    "@react-navigation/bottom-tabs": "6.6.1",
     "yup": "^1.4.0"
   },
   "devDependencies": {

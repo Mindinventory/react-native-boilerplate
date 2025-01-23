@@ -7,9 +7,13 @@ import { useAppContext } from '@src/context';
 import { logger } from '@src/utils';
 
 import { loginStyles } from './Login.style';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { NavStackParams, Screen } from '@src/navigation/appNavigation.type';
 
 const useLogin = () => {
-  const { color, navigation } = useAppContext();
+  const { color } = useAppContext();
+  const navigation =
+    useNavigation<NavigationProp<NavStackParams, Screen.LOGIN>>();
 
   const [disabled, setDisabled] = useState(false);
   const passwordRef = useRef<TextInput>(null);
