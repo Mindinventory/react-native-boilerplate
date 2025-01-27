@@ -81,15 +81,16 @@ const SettingScreen = () => {
             <View>
               <TextInput
                 name="email"
+                label="email"
                 variant="outlined"
                 secureTextEntry={true}
                 colors={{
-                  backgroundColor: 'red',
+                  backgroundColor: 'blue',
                   borderColor: 'red',
                   disabledBackgroundColor: 'gray',
                 }}
+                borderRadius={10}
                 containerStyle={{
-                  borderRadius: 20,
                   marginTop: 20,
                 }}
                 placeholder={contents('login.yourEmailId')}

@@ -16,7 +16,6 @@ const useNewsList = () => {
   const navigation =
     useNavigation<NavigationProp<NavStackParams, Screen.NEWS_LIST>>();
   const dispatch = useAppDispatch();
-
   const data = useSelector(newsData);
 
   const getNewsData = useCallback(async () => {

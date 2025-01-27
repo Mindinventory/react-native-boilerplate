@@ -1,114 +1,140 @@
 import {
-  NativeSyntheticEvent,
   TextInputProps as RNTextInputProps,
   StyleProp,
-  TargetedEvent,
   TextStyle,
   ViewStyle,
 } from 'react-native';
 
-export interface TextInputProps extends InputProps {
-  name: string;
-}
+export type Variant = 'outlined' | 'filled' | 'standard';
 
-export type Variant = 'filled' | 'outlined' | 'standard';
-
-export interface InputProps extends RNTextInputProps {
+export interface TextInputProps extends RNTextInputProps {
   /**
-   * The variant of the TextInput style.
-   * @default "filled"
-   */
-  variant?: Variant;
-  /**
-   * The label to display.
+   * The label text to display above the input field.
    */
   label?: string;
+
   /**
-   * The element placed before the text input.
+   * The font size of the label.
    */
-  leftIcon?: React.ReactNode | null;
+  labelFontSize?: number;
+
   /**
-   * The element placed after the text input.
+   * Placeholder text to display when the input is empty.
    */
-  rightIcon?: React.ReactNode | null;
+  placeholder?: string;
+
   /**
-   * The helper text to display.
+   * Custom style for the container wrapping the input and label.
    */
-  error?: string;
+  containerStyle?: StyleProp<ViewStyle>;
+
   /**
-   * Callback function to call when user moves pointer over the input.
+   * Custom style for the label text.
    */
-  onMouseEnter?: (event: NativeSyntheticEvent<TargetedEvent>) => void;
+  labelStyle?: StyleProp<TextStyle>;
+
   /**
-   * Callback function to call when user moves pointer away from the input.
+   * Custom style for the input field text.
    */
-  onMouseLeave?: (event: NativeSyntheticEvent<TargetedEvent>) => void;
+  inputStyle?: StyleProp<TextStyle>;
+
   /**
-   * The style of the container view.
-   */
-  style?: StyleProp<ViewStyle>;
-  /**
-   * The style of the text input container view.
-   */
-  inputContainerStyle?: StyleProp<ViewStyle>;
-  /**
-   * The style of the text input.
-   */
-  inputStyle?: RNTextInputProps['style'];
-  /**
-   * The style of the text input's leading element container.
-   */
-  leftIconContainerStyle?: StyleProp<ViewStyle>;
-  /**
-   * The style of the text input's trailing element container.
-   */
-  rightIconContainerStyle?: StyleProp<ViewStyle>;
-  /**
-   * Background color of the input container style.
-   * @default "white"
-   */
-  backgroundColor?: string;
-  /**
-   * On focus background color of the input container style.
-   * @default "#e9e9e9"
-   */
-  onFocusBackgroundColor?: string;
-  /**
-   * Border color of the outline input container style.
-   * @default "black"
-   */
-  borderColor?: string;
-  /**
-   * On focus Border color of the outline input container style.
-   * @default "#0c5fed"
-   */
-  onFocusBorderColor?: string;
-  /**
-   * On hover background color of the filled input container style.
-   * @default "#e9e9e9"
-   */
-  onHoverBackgroundColor?: string;
-  /**
-   * Label text color of the input.
-   * @default "black"
-   */
-  labelColor?: string;
-  /**
-   * On focus Label text color change.
-   * @default "#0c5fed"
-   */
-  onFocusLabelColor?: string;
-  /**
-   * On error or any helper text below text Input container style.
-   */
-  errorContainerStyle?: StyleProp<ViewStyle>;
-  /**
-   * On error or any helper text below text Input Text-Style.
+   * Custom style for the error message text.
    */
   errorStyle?: StyleProp<TextStyle>;
+
   /**
-   * In outlined variant the gap border color.
-   * @default white
+   * JSX element to display as an icon on the left side of the input field.
    */
-  outlineGapColor?: string;
+  leftIcon?: JSX.Element;
+
+  /**
+   * JSX element to display as an icon on the right side of the input field.
+   */
+  rightIcon?: JSX.Element;
+
+  /**
+   * Callback function triggered when the right icon is pressed.
+   */
+  onRightIconPress?: () => void;
+
+  /**
+   * Callback function triggered when the left icon is pressed.
+   */
+  onLeftIconPress?: () => void;
+
+  /**
+   * Defines the visual variant of the input field (e.g., outline, filled).
+   */
+  variant?: Variant;
+
+  /**
+   * Determines if the input field is disabled.
+   */
+  disabled?: boolean;
+
+  /**
+   * Name of the field, used in Formik for identifying the input.
+   */
+  name: string;
+
+  /**
+   * Border width for the input field.
+   */
+  borderWidth?: number;
+
+  /**
+   * Border radius for the input field corners.
+   */
+  borderRadius?: number;
+
+  /**
+   * Object to define various colors for different input field states.
+   */
+  colors?: {
+    /**
+     * Border color of the input field.
+     */
+    borderColor?: string;
+
+    /**
+     * Background color of the input field.
+     */
+    backgroundColor?: string;
+
+    /**
+     * Border color to display when there is an error.
+     */
+    errorColor?: string;
+
+    /**
+     * Text color for the error message.
+     */
+    errorTextColor?: string;
+
+    /**
+     * Border color to use when the input is disabled.
+     */
+    disabledBorderColor?: string;
+
+    /**
+     * Background color to use when the input is disabled.
+     */
+    disabledBackgroundColor?: string;
+
+    /**
+     * Text color to use when the input is disabled.
+     */
+    disabledTextColor?: string;
+
+    /**
+     * Default text color for the input.
+     */
+    textColor?: string;
+
+    /**
+     * Color for the placeholder text in the input field.
+     */
+    placeholderColor?: string;
+  };
 }

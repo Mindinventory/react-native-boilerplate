@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux';
 import { SVGIcons } from '@src/assets';
 import { SvgIcon } from '@src/components';
 import { useAppContext } from '@src/context';
-import { SettingScreen } from '@src/screens';
 import { isForceUpdate } from '@src/store';
 
 import { NavStackParams, Screen } from './appNavigation.type';
@@ -43,6 +42,7 @@ export const AppNavigation = () => {
             name={Screen.NEWS_LIST}
             component={NewsListNavigation}
             options={{
+              tabBarActiveTintColor: color.primaryColor,
               tabBarIcon: () => (
                 <SvgIcon
                   icon={SVGIcons.NEWS}
@@ -58,6 +58,7 @@ export const AppNavigation = () => {
             name={Screen.SETTING}
             component={SettingNavigation}
             options={{
+              tabBarActiveTintColor: color.primaryColor,
               tabBarIcon: () => (
                 <SvgIcon
                   icon={SVGIcons.SETTING}
