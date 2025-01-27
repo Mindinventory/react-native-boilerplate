@@ -43,16 +43,12 @@ export const IndicatorViewRef = (
     }
   }, []);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        hide,
-        show,
-      };
-    },
-    [hide, show]
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      hide,
+      show,
+    };
+  }, [hide, show]);
 
   const styles = indicatorStyles(color);
 
@@ -66,9 +62,7 @@ export const IndicatorViewRef = (
           color={color.primaryColor}
           style={styles.loaderStyle}
         />
-        <Text preset="h2" color={color.textColor}>
-          Please wait ...
-        </Text>
+        <Text color={color.textColor}>Please wait ...</Text>
       </View>
     </Pressable>
   );

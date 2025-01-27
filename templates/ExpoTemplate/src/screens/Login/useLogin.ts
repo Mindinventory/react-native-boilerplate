@@ -19,7 +19,7 @@ const useLogin = () => {
   const passwordRef = useRef<TextInput>(null);
 
   const fieldValidation = yup.object().shape({
-    email: yup.string().trim().required('Please enter your Email'),
+    email: yup.string().email().required('Please enter your Email'),
     password: yup.string().trim().required('Please enter your Password'),
   });
 

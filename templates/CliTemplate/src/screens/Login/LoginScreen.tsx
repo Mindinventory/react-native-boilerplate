@@ -23,7 +23,7 @@ const LoginScreen = () => {
     <BaseLayout>
       <View style={styles.header} />
       <View style={styles.content}>
-        <Text preset="h1">{contents('login.log_in')}</Text>
+        <Text>{contents('login.log_in')}</Text>
         <Formik
           validationSchema={fieldValidation}
           initialValues={initialValues}

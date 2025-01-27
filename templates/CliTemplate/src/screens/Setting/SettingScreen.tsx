@@ -24,19 +24,17 @@ const SettingScreen = () => {
   return (
     <BaseLayout>
       <View style={styles.header}>
-        <Text preset="h1">{contents('setting.settingScreen')}</Text>
+        <Text>{contents('setting.settingScreen')}</Text>
       </View>
       <View style={styles.content}>
-        <Text preset="h3" textAlign="center">
-          {contents('setting.theme')}
-        </Text>
+        <Text textAlign="center">{contents('setting.theme')}</Text>
         {themes.map(m => {
           return (
             <AnimatedTouchableOpacity
               containerStyle={styles.themes}
               onPress={handleChangeTheme(m.toLowerCase())}
               key={`${m}`}>
-              <Text preset="h4">{m}</Text>
+              <Text>{m}</Text>
               <AnimatedTouchableOpacity
                 onPress={handleChangeTheme(m.toLowerCase())}
                 containerStyle={styles.radio}>
@@ -48,16 +46,14 @@ const SettingScreen = () => {
           );
         })}
 
-        <Text preset="h3" textAlign="center">
-          {contents('setting.languages')}
-        </Text>
+        <Text textAlign="center">{contents('setting.languages')}</Text>
         {languages.map(m => {
           return (
             <AnimatedTouchableOpacity
               onPress={handleChangeLanguage(m)}
               containerStyle={styles.themes}
               key={`${m}`}>
-              <Text preset="h4">{m}</Text>
+              <Text>{m}</Text>
               <AnimatedTouchableOpacity
                 onPress={handleChangeLanguage(m)}
                 containerStyle={styles.radio}>

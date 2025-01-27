@@ -79,7 +79,7 @@ export const Button = React.memo((props: ButtonProps) => {
       {...props}>
       <View style={[styles.titleContainer, titleContainerStyle]}>
         {props.leftIcon}
-        <Text preset="h3" color={color.textColor} style={titleStyle}>
+        <Text color={color.textColor} style={titleStyle}>
           {title}
         </Text>
         {props.rightIcon}
