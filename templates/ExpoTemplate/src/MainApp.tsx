@@ -11,6 +11,7 @@ import store, { persistor } from './store';
 import { loader } from './utils';
 
 export const MainApp = () => {
+
   return (
     <Provider store={store}>
       <ThemeProvider>

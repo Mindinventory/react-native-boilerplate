@@ -78,19 +78,6 @@ module.exports = {
       },
     ],
     'no-shadow': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        arrowParens: 'avoid',
-        bracketSameLine: true,
-        bracketSpacing: true,
-        quoteProps: 'consistent',
-        singleQuote: true,
-        tabWidth: 2,
-        trailingComma: 'es5',
-        useTabs: false,
-      },
-    ],
     'react-hooks/exhaustive-deps': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'sort-destructure-keys/sort-destructure-keys': [

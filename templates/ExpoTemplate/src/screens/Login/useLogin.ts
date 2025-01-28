@@ -1,15 +1,19 @@
 import { useCallback, useRef, useState } from 'react';
 import { TextInput } from 'react-native';
 
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import * as yup from 'yup';
 
 import { useAppContext } from '@src/context';
+import { NavStackParams, Screen } from '@src/navigation/appNavigation.type';
 import { logger } from '@src/utils';
 
 import { loginStyles } from './Login.style';
 
 const useLogin = () => {
-  const { color, navigation } = useAppContext();
+  const { color } = useAppContext();
+  const { navigate } =
+    useNavigation<NavigationProp<NavStackParams, Screen.LOGIN>>();
 
   const [disabled, setDisabled] = useState(false);
   const passwordRef = useRef<TextInput>(null);
@@ -39,7 +43,7 @@ const useLogin = () => {
     fieldValidation,
     handleButtonSubmit,
     initialValues,
-    navigation,
+    navigate,
     passwordRef,
     styles: loginStyles(color),
   };

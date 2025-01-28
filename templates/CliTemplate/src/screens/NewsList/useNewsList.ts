@@ -8,10 +8,13 @@ import { getNewsData as newsData, setNews, useAppDispatch } from '@src/store';
 import { logger } from '@src/utils';
 
 import { newsListStyles } from './NewsList.style';
-import { Screen } from '../../navigation/appNavigation.type';
+import { NavStackParams, Screen } from '../../navigation/appNavigation.type';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 const useNewsList = () => {
-  const { color, loader, navigation, services } = useAppContext();
+  const { color, loader, services } = useAppContext();
+  const navigation =
+    useNavigation<NavigationProp<NavStackParams, Screen.NEWS_LIST>>();
   const dispatch = useAppDispatch();
 
   const data = useSelector(newsData);

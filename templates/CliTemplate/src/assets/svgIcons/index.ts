@@ -1,9 +1,12 @@
+import NEWS_ICON from './news.svg';
 import SETTING_ICON from './setting.svg';
 
 export enum SVGIcons {
-  SETTING = 1,
+  SETTING = 'SETTING',
+  NEWS = 'NEWS',
 }
 
 export const SVGIconsMapper = {
-  1: SETTING_ICON,
+  NEWS: NEWS_ICON,
+  SETTING: SETTING_ICON,
 };
