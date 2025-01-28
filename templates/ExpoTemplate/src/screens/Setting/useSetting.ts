@@ -22,6 +22,7 @@ const useSetting = () => {
   const handleChangeTheme = useCallback(
     (m: string) => () => {
       setAppTheme(m as Theme);
+      console.log('Theme changed to: ', m);
     },
     [setAppTheme]
   );

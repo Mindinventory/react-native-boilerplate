@@ -10,12 +10,12 @@ import { useSelector } from 'react-redux';
 import { SVGIcons } from '@src/assets';
 import { SvgIcon } from '@src/components';
 import { useAppContext } from '@src/context';
-import { SettingScreen } from '@src/screens';
 import { isForceUpdate } from '@src/store';
 
 import { NavStackParams, Screen } from './appNavigation.type';
 import { ForUpdateStack } from './ForceupdateStack';
 import { NewsListNavigation } from './NewsListNavigation';
+import { SettingNavigation } from './SettingNavigation';
 
 export const navigationRef =
   React.createRef<NavigationContainerRef<NavStackParams>>();
@@ -39,9 +39,10 @@ export const AppNavigation = () => {
       ) : (
         <Tab.Navigator screenOptions={screenOptions}>
           <Tab.Screen
-            name={Screen.NEWS_LIST}
+            name={Screen.NEWS_TAB}
             component={NewsListNavigation}
             options={{
+              tabBarActiveTintColor: color.primaryColor,
               tabBarIcon: () => (
                 <SvgIcon
                   icon={SVGIcons.NEWS}
@@ -54,9 +55,10 @@ export const AppNavigation = () => {
             }}
           />
           <Tab.Screen
-            name={Screen.SETTING}
-            component={SettingScreen}
+            name={Screen.SETTING_TAB}
+            component={SettingNavigation}
             options={{
+              tabBarActiveTintColor: color.primaryColor,
               tabBarIcon: () => (
                 <SvgIcon
                   icon={SVGIcons.SETTING}

@@ -23,7 +23,7 @@ const LoginScreen = () => {
     <BaseLayout>
       <View style={styles.header} />
       <View style={styles.content}>
-        <Text preset="h1">{contents('login.log_in')}</Text>
+        <Text>{contents('login.log_in')}</Text>
         <Formik
           validationSchema={fieldValidation}
           initialValues={initialValues}
@@ -32,7 +32,7 @@ const LoginScreen = () => {
             <View style={styles.fieldContainer}>
               <TextInput
                 label={contents('login.email')}
-                variant="filled"
+                variant="outlined"
                 name={'email'}
                 placeholder={contents('login.yourEmailId')}
                 style={styles.input}
@@ -42,7 +42,7 @@ const LoginScreen = () => {
               />
               <TextInput
                 label={contents('login.password')}
-                variant="filled"
+                variant="outlined"
                 name={'password'}
                 ref={passwordRef}
                 placeholder={contents('login.password')}

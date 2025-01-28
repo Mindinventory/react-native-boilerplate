@@ -28,10 +28,10 @@ const NewsListScreen = () => {
         onPress={handleNavigationNewsItem(item)}>
         <AppImage source={item.imageUrl} style={styles.newsImage} />
         <View style={styles.newsTextView}>
-          <Text preset="h6">
+          <Text>
             {item?.source ? item.source : contents('newsList.general')}
           </Text>
-          <Text preset="title">{item.title}</Text>
+          <Text>{item.title}</Text>
         </View>
       </AnimatedTouchableOpacity>
     );
@@ -50,7 +50,7 @@ const NewsListScreen = () => {
         renderItem={renderItem}
         ListHeaderComponent={
           <View style={styles.headerContainer}>
-            <Text preset="h1">{contents('newsList.breakingNews')}</Text>
+            <Text>{contents('newsList.breakingNews')}</Text>
             <TouchableOpacity
               style={styles.networkButton}
               onPress={handleNavigationNetwork}>

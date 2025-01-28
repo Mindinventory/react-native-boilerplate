@@ -13,6 +13,9 @@ import { Text } from '../Text/Text';
 
 export interface IndicatorProps {
   isLoading: boolean;
+  text?: string;
+  textColor?: string;
+  backgroundColor?: string;
 }
 
 export type IndicatorRef = {
@@ -24,7 +27,12 @@ export const IndicatorViewRef = (
   props: IndicatorProps,
   ref: React.Ref<IndicatorRef>
 ) => {
-  const { isLoading = true } = props;
+  const {
+    backgroundColor = 'black',
+    isLoading = true,
+    text = 'Please wait ...',
+    textColor = 'white',
+  } = props;
   const { color } = useColor();
   const [loading, setIsLoading] = useState(isLoading);
 
@@ -43,16 +51,12 @@ export const IndicatorViewRef = (
     }
   }, []);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        hide,
-        show,
-      };
-    },
-    [hide, show]
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      hide,
+      show,
+    };
+  }, [hide, show]);
 
   const styles = indicatorStyles(color);
 
@@ -60,15 +64,13 @@ export const IndicatorViewRef = (
 
   return (
     <Pressable onPress={handlePressCount} style={styles.container}>
-      <View style={styles.loaderContainer}>
+      <View style={[styles.loaderContainer, { backgroundColor }]}>
         <ActivityIndicator
           size={'large'}
           color={color.primaryColor}
           style={styles.loaderStyle}
         />
-        <Text preset="h2" color={color.textColor}>
-          Please wait ...
-        </Text>
+        <Text color={textColor}>{text}</Text>
       </View>
     </Pressable>
   );

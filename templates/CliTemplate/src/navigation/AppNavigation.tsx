@@ -16,6 +16,7 @@ import { isForceUpdate } from '@src/store';
 import { NavStackParams, Screen } from './appNavigation.type';
 import { ForUpdateStack } from './ForceupdateStack';
 import { NewsListNavigation } from './NewsListNavigation';
+import { SettingNavigation } from './SettingNavigation';
 
 export const navigationRef =
   React.createRef<NavigationContainerRef<NavStackParams>>();
@@ -55,7 +56,7 @@ export const AppNavigation = () => {
           />
           <Tab.Screen
             name={Screen.SETTING}
-            component={SettingScreen}
+            component={SettingNavigation}
             options={{
               tabBarIcon: () => (
                 <SvgIcon

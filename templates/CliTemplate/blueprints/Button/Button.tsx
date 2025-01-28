@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
+  ActivityIndicator,
   StyleProp,
   StyleSheet,
   TextStyle,
@@ -13,6 +14,7 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
+  WithSpringConfig,
 } from 'react-native-reanimated';
 
 import { useColor } from '@src/context';
@@ -20,16 +22,25 @@ import { moderateScale, Palette, scaleHeight } from '@src/utils';
 
 import { Text } from '../Text/Text';
 
-const AnimatedButtonComponent =
-  Animated.createAnimatedComponent(TouchableOpacity);
+const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
+
+type ButtonVariant = 'standard' | 'outlined';
 
 interface ExtraButtonProps {
+  variant?: ButtonVariant; // Outlined or standard
   buttonContainerStyle?: StyleProp<ViewStyle>;
   titleContainerStyle?: StyleProp<ViewStyle>;
   titleStyle?: StyleProp<TextStyle>;
   title?: React.ReactNode;
   rightIcon?: JSX.Element;
   leftIcon?: JSX.Element;
+  activeOpacity?: number;
+  springConfig?: WithSpringConfig;
+  disableScaleAnimation?: boolean;
+  isLoading?: boolean; // Show loader
+  loaderColor?: string; // Default loader color customization
+  customLoader?: React.ReactNode; // Custom loader component
+  disabled?: boolean; // Disable the button
 }
 
 export type AnimatedButtonProps = Omit<
@@ -41,9 +52,15 @@ export type AnimatedButtonProps = Omit<
 
 export type ButtonProps = AnimatedButtonProps & ExtraButtonProps;
 
-export const AnimatedTouchableOpacity = React.memo(
-  (props: AnimatedButtonProps) => {
-    const { containerStyle } = props;
+export const AnimatedTouchableOpacity = memo(
+  ({
+    activeOpacity = 0.8,
+    children,
+    containerStyle,
+    disableScaleAnimation = false,
+    springConfig,
+    ...rest
+  }: AnimatedButtonProps & ExtraButtonProps) => {
     const scaleValue = useSharedValue(1);
 
     const animatedButtonStyle = useAnimatedStyle(() => {
@@ -52,50 +69,124 @@ export const AnimatedTouchableOpacity = React.memo(
       };
     });
 
+    const handlePressIn = () => {
+      if (!disableScaleAnimation) {
+        scaleValue.value = withSpring(0.9, springConfig);
+      }
+    };
+
+    const handlePressOut = () => {
+      if (!disableScaleAnimation) {
+        scaleValue.value = withSpring(1, springConfig);
+      }
+    };
+
     return (
-      <AnimatedButtonComponent
+      <AnimatedTouchable
         style={[containerStyle, animatedButtonStyle]}
-        onPressIn={() => (scaleValue.value = withSpring(0.9))}
-        onPressOut={() => (scaleValue.value = withSpring(1))}
-        activeOpacity={0.8}
-        {...props}>
-        {props.children}
-      </AnimatedButtonComponent>
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        activeOpacity={activeOpacity}
+        {...rest}>
+        {children}
+      </AnimatedTouchable>
     );
   }
 );
 
-export const Button = React.memo((props: ButtonProps) => {
-  const { buttonContainerStyle, title, titleContainerStyle, titleStyle } =
-    props;
+export const Button = memo((props: ButtonProps) => {
+  const {
+    activeOpacity,
+    buttonContainerStyle,
+    customLoader,
+    disabled = false,
+    disableScaleAnimation,
+    isLoading = false,
+    leftIcon,
+    loaderColor,
+    rightIcon,
+    springConfig,
+    title,
+    titleContainerStyle,
+    titleStyle,
+    variant = 'standard',
+    ...rest
+  } = props;
 
   const { color } = useColor();
+  const styles = createButtonStyles(color);
 
-  const styles = buttonStyles(color);
+  // Determine styles based on variant
+  const variantStyle =
+    variant === 'outlined'
+      ? {
+          backgroundColor: 'transparent',
+          borderColor: color.primaryColor,
+          borderWidth: 2,
+        }
+      : {
+          backgroundColor: disabled ? color.secondaryColor : color.primaryColor,
+        };
 
   return (
     <AnimatedTouchableOpacity
-      containerStyle={[styles.buttonContainer, buttonContainerStyle]}
-      {...props}>
+      containerStyle={[
+        styles.buttonContainer,
+        variantStyle,
+        buttonContainerStyle,
+        disabled && styles.disabledContainer,
+      ]}
+      activeOpacity={disabled ? 1 : activeOpacity}
+      springConfig={springConfig}
+      disableScaleAnimation={disableScaleAnimation || disabled}
+      disabled={disabled}
+      {...rest}>
       <View style={[styles.titleContainer, titleContainerStyle]}>
-        {props.leftIcon}
-        <Text preset="h3" color={color.textColor} style={titleStyle}>
-          {title}
-        </Text>
-        {props.rightIcon}
+        {isLoading ? (
+          customLoader || (
+            <ActivityIndicator
+              color={loaderColor || color.textColor}
+              style={styles.loader}
+            />
+          )
+        ) : (
+          <>
+            {leftIcon}
+            {title && (
+              <Text
+                color={
+                  variant === 'outlined'
+                    ? color.primaryColor
+                    : color.buttonTextColor
+                }
+                style={[titleStyle, disabled && styles.disabledText]}>
+                {title}
+              </Text>
+            )}
+            {rightIcon}
+          </>
+        )}
       </View>
     </AnimatedTouchableOpacity>
   );
 });
 
-const buttonStyles = ({ primaryColor }: Palette) =>
+const createButtonStyles = ({ secondaryColor }: Palette) =>
   StyleSheet.create({
     buttonContainer: {
       alignItems: 'center',
-      backgroundColor: primaryColor,
       borderRadius: moderateScale(60),
       height: scaleHeight(45),
       width: '100%',
+    },
+    disabledContainer: {
+      backgroundColor: secondaryColor,
+    },
+    disabledText: {
+      color: secondaryColor,
+    },
+    loader: {
+      height: scaleHeight(20),
     },
     titleContainer: {
       alignItems: 'center',
