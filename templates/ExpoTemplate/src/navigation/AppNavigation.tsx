@@ -39,7 +39,7 @@ export const AppNavigation = () => {
       ) : (
         <Tab.Navigator screenOptions={screenOptions}>
           <Tab.Screen
-            name={Screen.NEWS_LIST}
+            name={Screen.NEWS_TAB}
             component={NewsListNavigation}
             options={{
               tabBarActiveTintColor: color.primaryColor,
@@ -55,7 +55,7 @@ export const AppNavigation = () => {
             }}
           />
           <Tab.Screen
-            name={Screen.SETTING}
+            name={Screen.SETTING_TAB}
             component={SettingNavigation}
             options={{
               tabBarActiveTintColor: color.primaryColor,

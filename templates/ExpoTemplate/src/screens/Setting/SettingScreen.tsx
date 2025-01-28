@@ -1,13 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import {
-  AnimatedTouchableOpacity,
-  Button,
-  Text,
-  TextInput,
-} from '@app/blueprints';
-import { Formik } from 'formik';
+import { AnimatedTouchableOpacity, Button, Text } from '@app/blueprints';
 
 import { BaseLayout } from '@src/components';
 import { contents } from '@src/context';
@@ -76,36 +70,6 @@ const SettingScreen = () => {
           buttonContainerStyle={styles.btn}
           onPress={handleLogin}
         />
-        <Formik initialValues={{ email: '' }} onSubmit={() => {}}>
-          {({ resetForm, submitForm }) => (
-            <View>
-              <TextInput
-                name="email"
-                label="email"
-                variant="outlined"
-                secureTextEntry={true}
-                colors={{
-                  backgroundColor: 'blue',
-                  borderColor: 'red',
-                  disabledBackgroundColor: 'gray',
-                }}
-                borderRadius={10}
-                containerStyle={{
-                  marginTop: 20,
-                }}
-                placeholder={contents('login.yourEmailId')}
-                onSubmitEditing={() => {}}
-              />
-              <TextInput
-                name="password"
-                variant="outlined"
-                containerStyle={{ marginTop: 20 }}
-                placeholder={contents('login.yourEmailId')}
-                onSubmitEditing={() => {}}
-              />
-            </View>
-          )}
-        </Formik>
       </View>
     </BaseLayout>
   );
