@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux';
 import { SVGIcons } from '@src/assets';
 import { SvgIcon } from '@src/components';
 import { useAppContext } from '@src/context';
-import { SettingScreen } from '@src/screens';
 import { isForceUpdate } from '@src/store';
 
 import { NavStackParams, Screen } from './appNavigation.type';
@@ -40,7 +39,7 @@ export const AppNavigation = () => {
       ) : (
         <Tab.Navigator screenOptions={screenOptions}>
           <Tab.Screen
-            name={Screen.NEWS_LIST}
+            name={Screen.NEWS_TAB}
             component={NewsListNavigation}
             options={{
               tabBarIcon: () => (
@@ -55,7 +54,7 @@ export const AppNavigation = () => {
             }}
           />
           <Tab.Screen
-            name={Screen.SETTING}
+            name={Screen.SETTING_TAB}
             component={SettingNavigation}
             options={{
               tabBarIcon: () => (

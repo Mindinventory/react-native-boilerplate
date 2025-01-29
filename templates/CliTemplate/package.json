@@ -13,7 +13,6 @@
     "preandroid": "ENVFILE=.env",
     "ios": "react-native run-ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "postinstall": "npx pod-install",
     "refresh": "bash ./scripts/refresh.sh",
     "start": "NODE_ENV=default APP_ENV=default npx react-native start --reset-cache",
     "start:development": "NODE_ENV=development APP_ENV=development npx react-native start --reset-cache",
