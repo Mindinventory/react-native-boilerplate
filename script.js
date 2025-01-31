@@ -12,12 +12,13 @@ const installDependencies = () => {
   );
 
   console.log("Installing dependencies... 🛠️\n");
+  console.log("dependencies Installation started... 🛠️\n");
   execSync(`yarn`, { stdio: "inherit" });
   console.log("Dependencies installed successfully. 🚀\n");
 
-  console.log("bundle Installing 🛠️\n");
-  execSync(`bundle`, { stdio: "inherit" });
-  console.log("bundle installed successfully.🚀\n");
+  // console.log("bundle Installing 🛠️\n");
+  // execSync(`bundle`, { stdio: "inherit" });
+  // console.log("bundle installed successfully.🚀\n");
 
   console.log("pod-install Installing 🛠️\n");
   execSync(`npx pod-install`, { stdio: "inherit" });
@@ -60,21 +61,27 @@ yarn-error.log*
       stdio: "inherit",
       shell: true,
     });
+
+    console.log("Installing lefthook... 🛠️\n");
+    execSync(`npx lefthook install`, { stdio: "inherit" });
+    console.log("lefthook installed successfully. 🚀\n");
   } catch (error) {
     console.error(`🚨 An error occurred while initializing git: ${error}`);
   }
 };
 
 const main = async () => {
-  execSync("git init", { stdio: "inherit" });
-  installDependencies();
-  initializeGit();
+  try {
+    installDependencies();
+    execSync("git init", { stdio: "inherit" });
+    initializeGit();
+  } catch (error) {
+    console.error(`🚨 Critical error: ${error}`);
+    process.exit(1);
+  }
 };
 
-new Promise((resolve) => {
-  main();
-  resolve();
-})
+main()
   .then(() => {
     console.log(
       "- 🎉  Congrats! Your project is ready with @mindinventory/react-native-boilerplate! 🎉\n"
@@ -89,6 +96,7 @@ new Promise((resolve) => {
     console.log(
       "- ⭐ If you love this boilerplate, give us a star, you will be a ray of sunshine in our lives :) https://github.com/Mindinventory/react-native-boilerplate\n"
     );
+    console.log("completed :::::::: Mindinventory React native boilerplate 🚀");
   })
   .catch((error) => {
     console.error(`🚨 An error occurred with post init script: ${error}`);

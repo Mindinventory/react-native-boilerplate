@@ -1,57 +1,76 @@
 import React from 'react';
 
-import { NavigationContainerRef } from '@react-navigation/native';
 import {
-  createNativeStackNavigator,
-  NativeStackNavigationOptions,
-} from '@react-navigation/native-stack';
+  BottomTabNavigationOptions,
+  createBottomTabNavigator,
+} from '@react-navigation/bottom-tabs';
+import { NavigationContainerRef } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
-import {
-  LoginScreen,
-  NetworkLoggerScreen,
-  NewsDetailScreen,
-  NewsListScreen,
-  SettingScreen,
-} from '@src/screens';
+import { SVGIcons } from '@src/assets';
+import { SvgIcon } from '@src/components';
+import { useAppContext } from '@src/context';
 import { isForceUpdate } from '@src/store';
 
 import { NavStackParams, Screen } from './appNavigation.type';
 import { ForUpdateStack } from './ForceupdateStack';
+import { NewsListNavigation } from './NewsListNavigation';
+import { SettingNavigation } from './SettingNavigation';
 
 export const navigationRef =
   React.createRef<NavigationContainerRef<NavStackParams>>();
 
-const Stack = createNativeStackNavigator<NavStackParams>();
-
-const screenOptions: NativeStackNavigationOptions = {
-  animation: 'slide_from_right',
-  headerShown: false,
-};
-
 export const AppNavigation = () => {
+  const { color } = useAppContext();
+
+  const screenOptions: BottomTabNavigationOptions = {
+    headerShown: false,
+    tabBarStyle: { backgroundColor: color.backgroundColor },
+  };
+
   const isForceUpdateApp = useSelector(isForceUpdate);
+
+  const Tab = createBottomTabNavigator();
 
   return (
     <>
       {isForceUpdateApp ? (
         <ForUpdateStack />
       ) : (
-        <Stack.Navigator screenOptions={screenOptions}>
-          <Stack.Screen name={Screen.NEWS_LIST} component={NewsListScreen} />
-          <Stack.Screen
-            name={Screen.NEWS_DETAIL}
-            component={NewsDetailScreen}
+        <Tab.Navigator screenOptions={screenOptions}>
+          <Tab.Screen
+            name={Screen.NEWS_TAB}
+            component={NewsListNavigation}
+            options={{
+              tabBarActiveTintColor: color.primaryColor,
+              tabBarIcon: () => (
+                <SvgIcon
+                  icon={SVGIcons.NEWS}
+                  height={25}
+                  width={25}
+                  color={color.primaryColor}
+                />
+              ),
+              title: 'News',
+            }}
           />
-          <Stack.Screen name={Screen.SETTING} component={SettingScreen} />
-          <Stack.Screen name={Screen.LOGIN} component={LoginScreen} />
-          {__DEV__ && (
-            <Stack.Screen
-              name={Screen.NETWORK_CHECK}
-              component={NetworkLoggerScreen}
-            />
-          )}
-        </Stack.Navigator>
+          <Tab.Screen
+            name={Screen.SETTING_TAB}
+            component={SettingNavigation}
+            options={{
+              tabBarActiveTintColor: color.primaryColor,
+              tabBarIcon: () => (
+                <SvgIcon
+                  icon={SVGIcons.SETTING}
+                  height={25}
+                  width={25}
+                  color={color.primaryColor}
+                />
+              ),
+              title: 'Setting',
+            }}
+          />
+        </Tab.Navigator>
       )}
     </>
   );

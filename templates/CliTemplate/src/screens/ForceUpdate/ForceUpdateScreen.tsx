@@ -12,7 +12,7 @@ const ForceUpdateScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text preset="h4" style={styles.messageStyle}>
+      <Text style={styles.messageStyle}>
         {contents('forceUpdate.updateMessage')}
       </Text>
       <Button

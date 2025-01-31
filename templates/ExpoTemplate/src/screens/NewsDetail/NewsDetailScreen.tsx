@@ -15,22 +15,18 @@ const NewsDetailScreen = () => {
   return (
     <BaseLayout>
       <ScrollView bounces={false} style={styles.scrollViewContainer}>
-        <Text preset="h2" style={styles.title}>
-          {data.title}
-        </Text>
+        <Text style={styles.title}>{data.title}</Text>
         <AppImage source={data.imageUrl} style={styles.newsImage} />
         <View style={styles.infoContainer}>
-          <Text preset="h5">
+          <Text>
             {data.categories
               ? data.categories
               : contents('newsDetail.anonymous')}
           </Text>
-          <Text preset="h5">{getPublishedMonth(data.published_on)}</Text>
+          <Text>{getPublishedMonth(data.published_on)}</Text>
         </View>
 
-        <Text preset="h5" style={styles.descriptionText}>
-          {data.body}
-        </Text>
+        <Text style={styles.descriptionText}>{data.body}</Text>
         <Button
           buttonContainerStyle={{ marginTop: scaleHeight(15) }}
           title="Go back"

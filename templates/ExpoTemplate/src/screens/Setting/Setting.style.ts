@@ -18,6 +18,7 @@ export const settingStyles = ({ primaryColor }: Palette) =>
     radio: {
       ...scaled(20),
       alignItems: 'center',
+      borderColor: primaryColor,
       borderRadius: 10,
       borderWidth: 1,
       justifyContent: 'center',

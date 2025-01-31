@@ -1,6 +1,6 @@
 {
   "name": "@mindinventory/react-native-boilerplate",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "React Native Template",
   "repository": "https://github.com/Mindinventory/react-native-boilerplate.git",
   "author": "Mindinventory",
@@ -9,8 +9,7 @@
   "private": false,
   "scripts": {
     "android": "cd MIBoilerplate/ && npx react-native run-android",
-    "ios": "cd MIBoilerplate/ && npx react-native run-ios",
-    "prepare": "husky"
+    "ios": "cd MIBoilerplate/ && npx react-native run-ios"
   },
   "bin": {
     "@mindinventory/react-native-boilerplate": "./bin/index.js"
@@ -39,7 +38,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "husky": "^9.1.6"
+    "lefthook": "^1.10.4"
   },
   "dependencies": {
     "chalk": "^5.3.0",

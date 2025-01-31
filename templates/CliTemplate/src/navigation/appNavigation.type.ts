@@ -11,6 +11,8 @@ export enum Screen {
   SETTING = 'SETTING',
   LOGIN = 'LOGIN',
   SIGNUP = 'SIGNUP',
+  NEWS_TAB = 'NEWS_TAB',
+  SETTING_TAB = 'SETTING_TAB',
 }
 
 export type NavStackParams = {
