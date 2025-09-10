@@ -1,13 +1,12 @@
 import { useCallback } from 'react';
 
-import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { router } from 'expo-router';
 
 import { useAppContext } from '@src/context';
 import { ContentLanguage } from '@src/i18n';
 import { Theme } from '@src/utils';
 
 import { settingStyles } from './Setting.style';
-import { NavStackParams, Screen } from '../../navigation/appNavigation.type';
 
 const themes = ['Dark', 'Light', 'Theme1', 'Theme2', 'Theme3'];
 
@@ -16,8 +15,6 @@ const languages = Object.keys(ContentLanguage);
 const useSetting = () => {
   const { appTheme, color, language, setAppTheme, setLanguageInApp } =
     useAppContext();
-  const { navigate } =
-    useNavigation<NavigationProp<NavStackParams, Screen.SETTING>>();
 
   const handleChangeTheme = useCallback(
     (m: string) => () => {
@@ -37,8 +34,8 @@ const useSetting = () => {
   );
 
   const handleLogin = useCallback(() => {
-    navigate(Screen.LOGIN);
-  }, [navigate]);
+    router.push('/login');
+  }, []);
 
   return {
     appTheme,
@@ -48,7 +45,6 @@ const useSetting = () => {
     handleLogin,
     language,
     languages,
-    navigate,
     styles: settingStyles(color),
     themes,
   };

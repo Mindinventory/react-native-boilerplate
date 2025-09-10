@@ -1,19 +1,3 @@
-import React from 'react';
-
-import { useFonts } from 'expo-font';
-
-import { MainApp } from './src/MainApp';
-
-const App = () => {
-  const [fontsLoaded] = useFonts({
-    Poppins: require('./src/assets/fonts/Poppins.ttf'),
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  }
-
-  return <MainApp />;
-};
-
-export default App;
+// This file is no longer needed with expo-router
+// The app entry point is now handled by expo-router/entry
+// All routing is managed through the app/ directory structure

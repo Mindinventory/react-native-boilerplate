@@ -1,18 +1,17 @@
 import { useCallback } from 'react';
 
-import { useRoute } from '@react-navigation/native';
+import { router, useLocalSearchParams } from 'expo-router';
 
 import { contents, useAppContext } from '@src/context';
+import { NewsResult } from '@src/services';
 
 import { newsDetailStyles } from './NewsDetail.style';
-import { NewsDetailRoute } from '../../navigation/appNavigation.type';
 
 const useNewsDetail = () => {
-  const { color, navigation } = useAppContext();
+  const { color } = useAppContext();
+  const { item } = useLocalSearchParams<{ item: string }>();
 
-  const {
-    params: { item: data },
-  } = useRoute<NewsDetailRoute>();
+  const data: NewsResult = item ? JSON.parse(item) : null;
 
   const getPublishedMonth = useCallback((val: number) => {
     const publishedAt = new Date(val).toString();
@@ -20,15 +19,14 @@ const useNewsDetail = () => {
   }, []);
 
   const handleGoBack = useCallback(async () => {
-    navigation.goBack();
-  }, [navigation]);
+    router.back();
+  }, []);
 
   return {
     contents,
     data,
     getPublishedMonth,
     handleGoBack,
-    navigation,
     styles: newsDetailStyles(color),
   };
 };

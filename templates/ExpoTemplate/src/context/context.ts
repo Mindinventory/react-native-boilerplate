@@ -3,11 +3,6 @@ import { loader } from '@src/utils';
 import { useLanguage } from './LocalizationContext';
 import { storage } from './storage';
 import { useColor } from './ThemeContext';
-import { AppNavigationProp } from '../navigation/appNavigation.type';
-import {
-  useWithNavigation,
-  WithNavigation,
-} from '../navigation/withNavigation';
 import { appServices } from '../services/appServices';
 
 export const useAppContextOnly = () => {
@@ -25,11 +20,6 @@ export const useAppContextOnly = () => {
 
 export type AppContextType = ReturnType<typeof useAppContextOnly>;
 
-export const useAppContext = (): WithNavigation<
-  AppNavigationProp,
-  AppContextType
-> => {
-  return useWithNavigation<AppNavigationProp, AppContextType>(
-    useAppContextOnly()
-  );
+export const useAppContext = (): AppContextType => {
+  return useAppContextOnly();
 };

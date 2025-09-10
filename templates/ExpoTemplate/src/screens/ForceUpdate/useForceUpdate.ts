@@ -1,7 +1,5 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { Linking } from 'react-native';
-
-import { useFocusEffect } from '@react-navigation/native';
 
 import { AppConfig, isIOS } from '@src/constants';
 import { useAppContext } from '@src/context';
@@ -33,11 +31,9 @@ const useForceUpdate = () => {
 
   const onRetryPress = useCallback(() => {}, []);
 
-  useFocusEffect(
-    useCallback(() => {
-      onRetryPress();
-    }, [onRetryPress])
-  );
+  useEffect(() => {
+    onRetryPress();
+  }, [onRetryPress]);
 
   return {
     onRetryPress,
